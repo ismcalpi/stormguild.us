@@ -5,14 +5,14 @@
 
 		/**
 		 * Connect to the database
-		 * 
+		 *
 		 * @return bool false on failure / mysqli MySQLi object instance on success
 		 */
-		public function connect() {    
+		public function connect() {
 			// Try and connect to the database
 			if(!isset(self::$connection)) {
 				// Load configuration as an array. Use the actual location of your configuration file
-				$config = parse_ini_file('include/db.ini'); 
+				$config = parse_ini_file('include/db.ini');
 				self::$connection = new mysqli('localhost',$config['username'],$config['password'],$config['dbname']);
 			}
 
@@ -41,6 +41,22 @@
 		}
 
 		/**
+		 * Query the database
+		 *
+		 * @param $query The query string
+		 * @return mixed The result of the mysqli::query() function
+		 */
+		public function select_single($query) {
+			$row = array();
+			$result = $this -> query($query);
+			if (!$result) {
+				return false;
+			}
+			$row = $result -> fetch_assoc();
+			return $row;
+		}
+
+		/**
 		 * Fetch rows from the database (SELECT query)
 		 *
 		 * @param $query The query string
@@ -60,7 +76,7 @@
 
 		/**
 		 * Fetch the last error from the database
-		 * 
+		 *
 		 * @return string Database error message
 		 */
 		public function error() {

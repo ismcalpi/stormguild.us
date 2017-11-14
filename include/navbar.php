@@ -1,5 +1,7 @@
 <?php
+
   include 'db.php';
+
   ob_start();
   session_start();
 
@@ -62,7 +64,7 @@
                             <a href="recruitment.php" class="nav-link">Recruitment</a>
                         </li>
                         <!-- Mega Menu Item -->
-                        <li class="hs-has-mega-menu nav-item g-mx-20--lg" data-animation-in="fadeIn" data-animation-out="fadeOut" data-position="right" <?php IF(!empty($_SESSION['valid'])){echo 'style="display:none"';} ?>>
+                        <li class="hs-has-mega-menu nav-item g-mx-20--lg" data-animation-in="fadeIn" data-animation-out="fadeOut" data-position="right" <?php IF(!empty($_SESSION['valid']) || $_SESSION['valid'] == true){echo 'style="display:none"';} ?>>
                             <a id="mega-menu-label-1" class="nav-link g-px-0" href="#" aria-haspopup="true" aria-expanded="false">Login
                                 <i class="hs-icon hs-icon-arrow-bottom g-font-size-11 g-ml-7"></i>
                             </a>
@@ -110,7 +112,7 @@
 
                         </li>
 
-                        <li class="nav-item hs-has-sub-menu g-mx-20--lg" <?php IF (empty($_SESSION['valid'])){echo 'style="display: none "';} ?> >
+                        <li class="nav-item hs-has-sub-menu g-mx-20--lg" <?php IF (empty($_SESSION['valid']) || $_SESSION['valid'] == false){echo 'style="display: none "';} ?> >
                             <a href="#" class="nav-link g-px-0 g-color-blue" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1"><?php IF(!empty($_SESSION['username'])){echo $_SESSION['username'];} ?>
                                 <i class="hs-icon hs-icon-arrow-bottom g-font-size-11 g-ml-7"></i>
                             </a>
@@ -119,10 +121,11 @@
 
                                 <?php
                                 if (!empty($_SESSION['user_rank']) && $_SESSION['user_rank'] == 'admin') {
-                                    echo '
-                        <li class="dropdown-item">
-                          <a class="nav-link" href="admin.php">Admin</a>
-                        </li>';
+                                ?>
+                                    <li class="dropdown-item">
+                                      <a class="nav-link" href="admin.php">Admin</a>
+                                    </li>
+                                <?php
                                 }
                                 ?>
                                 <li class="dropdown-item">

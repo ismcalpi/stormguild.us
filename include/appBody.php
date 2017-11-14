@@ -1,6 +1,6 @@
 <?php
 
-$applications = $db -> select("SELECT * FROM stormguild.application WHERE application_id =".$app_id." order by application_id desc");
+$applications = $db -> select_single("SELECT * FROM stormguild.application WHERE application_id =".$app_id);
 if(!empty($applications)) {
 foreach ($applications as $application) {
 
@@ -10,13 +10,13 @@ foreach ($applications as $application) {
 <div class="row">
     <div class="col-sm-12">
         <p>
-            <strong>You understand that you should put some thought and time into your application?</strong> 
+            <strong>You understand that you should put some thought and time into your application?</strong>
             <?php echo $application['screen01']; ?>
         </p>
 
         <p>
             <strong>Can you make all of our scheduled raids? <br /> Including the extra extended raid the week new Mythic content releases?</strong>
-            <?php echo $application['screen02']; ?>  
+            <?php echo $application['screen02']; ?>
         </p>
     </div>
 </div>
@@ -65,7 +65,7 @@ foreach ($applications as $application) {
             <div class="col-sm-8">
                 <h5>
                     <?php echo $application['charName']; ?>
-                    - 
+                    -
                     <?php echo $application['charRealm']; ?>
                     (<?php echo $application['charSpec'].' '.$application['charClass']; ?>)
                     <br/>
@@ -92,7 +92,7 @@ foreach ($applications as $application) {
             <div class="col-sm-8">
                 <h5>
                     <?php echo $application['altName']; ?>
-                    - 
+                    -
                     <?php echo $application['altRealm']; ?>
                     (<?php echo $application['altSpec'].' '.$application['altClass']; ?>)
                     <br/>
@@ -169,9 +169,9 @@ foreach ($applications as $application) {
             <?php echo nl2br($application['quest06']); ?>
         </p>
         <a style="max-height:200px;max-width:300px;"
-           class="js-fancybox d-block u-block-hover g-my-20" 
-           href="<?php echo $application['imgUI']; ?>" 
-           data-fancybox-animate-in="zoomIn" data-fancybox-animate-out="zoomOut" 
+           class="js-fancybox d-block u-block-hover g-my-20"
+           href="<?php echo $application['imgUI']; ?>"
+           data-fancybox-animate-in="zoomIn" data-fancybox-animate-out="zoomOut"
            data-fancybox-speed="500" data-fancybox-bg="rgba(0,0,0, 1)">
             <img class="img-fluid" src="<?php echo $application['imgUI']; ?>" alt="Missing UI Image">
             <span class="u-block-hover__additional--fade g-bg-black-opacity-0_8 g-color-white">

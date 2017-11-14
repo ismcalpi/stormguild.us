@@ -3,13 +3,13 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if(!empty($_POST['commentBody'])) {
-        
+
         if(empty($_SESSION['username'])) {
             $comUID = $db -> quote($app_uid);
         } else {
             $comUID = $db -> quote($_SESSION['username']);
         }
-        
+
         if(!empty($_POST['reply_id'])) {
             $replyID = $db -> quote($_POST['reply_id']);
         } else {
@@ -17,13 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         $comBody = $db -> quote($_POST['commentBody']);
-        
 
         $db -> query("INSERT INTO stormguild.app_comment (comment_id,reply_id,application_id,user,body,create_datetime)
                             VALUE (NULL,".$replyID.",".$app_id.",".$comUID.",".$comBody.",now())");
-
     }
-
 }
 ?>
 <div class="row">
@@ -51,11 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <ul class="list-inline d-sm-flex my-0">
                     <li class="list-inline-item ml-auto">
-                        <a 
-                           class="collapsed u-link-v5 g-color-main g-color-primary--hover" 
-                           href="#<?php echo "body-".$comment['comment_id']; ?>" 
+                        <a
+                           class="collapsed u-link-v5 g-color-main g-color-primary--hover"
+                           href="#<?php echo "body-".$comment['comment_id']; ?>"
                            data-toggle="collapse"
-                           aria-expanded="false" 
+                           aria-expanded="false"
                            aria-controls="<?php echo "body-".$comment['comment_id']; ?>">
                             <i class="icon-note g-pos-rel g-top-1 g-mr-3"></i>
                             Reply
@@ -90,10 +87,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </div>
 
-        <?php  
+        <?php
                     }
 
-                }                                 
+                }
 
         ?>
 
@@ -105,11 +102,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <button type="submit" class="btn btn-md u-btn-inset u-btn-outline-blue g-mr-10 g-my-15">
                         Post Reply
                     </button>
-                    <a 
-                       class="collapsed u-link-v5 g-color-main g-color-primary--hover" 
-                       href="#<?php echo "body-".$comment['comment_id']; ?>" 
+                    <a
+                       class="collapsed u-link-v5 g-color-main g-color-primary--hover"
+                       href="#<?php echo "body-".$comment['comment_id']; ?>"
                        data-toggle="collapse"
-                       aria-expanded="false" 
+                       aria-expanded="false"
                        aria-controls="<?php echo "body-".$comment['comment_id']; ?>">
                         <span class="g-color-red">Cancel</span>
                     </a>
