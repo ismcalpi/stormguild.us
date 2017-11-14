@@ -8,11 +8,12 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="shortcut icon" href="/img/icon/storm.png">
 	<!-- Google Fonts -->
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik">
 	<!-- CSS Global Compulsory -->
 	<link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/vendor/bootstrap/offcanvas.css">
 	<!-- CSS Global Icons -->
 	<link rel="stylesheet" href="assets/vendor/icon-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/vendor/icon-line/css/simple-line-icons.css">
@@ -34,6 +35,7 @@
 
 	<!-- CSS Implementing Plugins -->
     <link  rel="stylesheet" href="assets/vendor/fancybox/jquery.fancybox.min.css">
+    <link  rel="stylesheet" href="assets/vendor/jquery-ui/themes/base/jquery-ui.min.css">
 	
 	<!-- CSS Customization -->
 	<link rel="stylesheet" href="assets/css/custom.css">

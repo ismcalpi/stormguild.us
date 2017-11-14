@@ -1,16 +1,50 @@
 /* Add here all your css styles (customizations) */
-.u-header__section--light .navbar-nav:not([class*="u-main-nav-v"]) .open > .nav-link,
-.u-header__section--light .navbar-nav:not([class*="u-main-nav-v"]) .active > .nav-link,
-.u-header__section--light .navbar-nav:not([class*="u-main-nav-v"]) .nav-link.open,
-.u-header__section--light .navbar-nav:not([class*="u-main-nav-v"]) .nav-link.active,
-.u-header__section--light--shift.js-header-change-moment .navbar-nav:not([class*="u-main-nav-v"]) .open > .nav-link,
-.u-header__section--light--shift.js-header-change-moment .navbar-nav:not([class*="u-main-nav-v"]) .active > .nav-link,
-.u-header__section--light--shift.js-header-change-moment .navbar-nav:not([class*="u-main-nav-v"]) .nav-link.open,
-.u-header__section--light--shift.js-header-change-moment .navbar-nav:not([class*="u-main-nav-v"]) .nav-link.active,
-.u-secondary-navigation .active a {
-  color: #107ef4;
+
+@charset "UTF-8";
+
+.bg-white-0-75 {
+	background:rgba(255,255,255,0.75);
 }
-.u-block-hover:hover .g-color-primary--hover,
-.g-color-primary--hover:hover {
-  color: #107ef4 !important;
+
+.bg-white-0-90 {
+	background:rgba(255,255,255,0.9);
+}
+
+.bg-black-0-70 {
+	background:rgba(0,0,0,0.7);
+}
+
+.main-body {
+	background: url("../../img/bgBody.jpg"); 
+	background-repeat: no-repeat;
+	background-position: center;
+  	background-attachment: fixed;
+  	background-size: cover;
+}
+
+.home-lg-col {
+    border: 2px 0px 2px 2px double #0D042F;
+}
+
+.home-sm-col {
+    border-right: 10px solid #0D042F;
+}
+
+.main-container {
+    background:rgba(255,255,255,0.89);
+    border-radius:5px 30px 5px 30px;
+    padding: 20px;
+    border: 2px solid #0D042F;
+}
+
+.mt-body-sm {
+    margin-top: 70px;
+}
+
+.mt-body-lg {
+    margin-top: 82px;
+}
+
+.g-hide {
+    display: none;
 }

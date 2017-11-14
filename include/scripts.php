@@ -4,6 +4,7 @@
 <script src="assets/vendor/jquery.easing/js/jquery.easing.js"></script>
 <script src="assets/vendor/popper.min.js"></script>
 <script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="assets/vendor/jquery-ui/jquery-ui.core.js"></script>
 
 <!-- JS Implementing Plugins -->
 <script src="assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
@@ -14,8 +15,8 @@
 <script src="assets/vendor/image-select/src/ImageSelect.jquery.js"></script>
 <script src="assets/vendor/masonry/dist/masonry.pkgd.min.js"></script>
 <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
-<script src="assets/vendor/jquery.countdown.min.js"></script>
 <script src="assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+<script src="assets/vendor/appear.js"></script>
 
 <!-- JS Unify -->
 <script src="assets/js/hs.core.js"></script>
@@ -28,19 +29,40 @@
 <script src="assets/js/components/hs.carousel.js"></script>
 <script src="assets/js/components/hs.countdown.js"></script>
 <script src="assets/js/components/hs.popup.js"></script>
+<script src="assets/js/components/hs.progress-bar.js"></script>
+<script src="assets/js/helpers/hs.navigation-splitted.js"></script>
 
 <!-- JS Custom -->
 <script src="assets/js/custom.js"></script>
 
 <script>
- $(window).on('load', function () {
 
-      // initialization of header
-
-      $.HSCore.components.HSHeader.init($('#js-header'));
-
-      $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
+	$(document).on('ready', function () {
+		// initialization of HSNavigationSplitted helper
+		$.HSCore.helpers.HSNavigationSplitted.init($('.navbar-collapse'));
+		
+		// initialization of masonry
+		$('.masonry-grid').imagesLoaded().then(function () {
+			$('.masonry-grid').masonry({
+			  columnWidth: '.masonry-grid-sizer',
+			  itemSelector: '.masonry-grid-item',
+			  percentPosition: true
+			});
+		});
+		
+		// initialization of go to
+		$.HSCore.components.HSGoTo.init('.js-go-to');
+		
+	});
+	$(window).on('load', function () {
+	 
+		// initialization of header
+		$.HSCore.components.HSHeader.init($('#js-header'));
+		$.HSCore.helpers.HSHamburgers.init('.hamburger');
+		
+		// initialization of HSMegaMenu component
+		$('.js-mega-menu').HSMegaMenu();
+				
     });
 	
 </script>

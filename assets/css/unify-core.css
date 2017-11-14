@@ -18,12 +18,12 @@ body {
   background-color: #fff; }
 
 a {
-  color: #107ef4;
+  color: #72c02c;
   outline: none; }
 
 a:focus,
 a:hover {
-  color: #107ef4; }
+  color: #66ab27; }
 
 .nav-link {
   color: #555; }
@@ -58,16 +58,16 @@ h1, h2, h3, h4, h5, h6 {
 ------------------------------------*/
 ::-moz-selection {
   color: #fff;
-  background-color: #107ef4; }
+  background-color: #72c02c; }
 
 ::selection {
   color: #fff;
-  background-color: #107ef4; }
+  background-color: #72c02c; }
 
 .g-bg-primary ::-moz-selection {
-  color: #107ef4;
+  color: #72c02c;
   background-color: #fff; }
 
 .g-bg-primary ::selection {
-  color: #107ef4;
+  color: #72c02c;
   background-color: #fff; }
