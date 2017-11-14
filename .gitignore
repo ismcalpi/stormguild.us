@@ -1,5 +1,5 @@
 
-include/db.ini
-forums
+*db.ini
+forums/*
 .htaccess
 .ftpquota
