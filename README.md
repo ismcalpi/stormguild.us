@@ -4,16 +4,18 @@ Website Repo for Storm on Stormrage (US) hosted at [www.stormguild.us](http://st
 
 Forums provided by phpBB, hosting provided by GoDaddy.
 
+Storm is a raiding guild in the game [World of Warcraft](http://www.worldofwarcraft.com/), a competitive mythic guild raiding on a casual schedule.
+
 ### TODO List (Needed Before Launch)
 + [x] Run full QA on the hosted Site
 + [X] Add US Rank above Progress
 + [X] Implement Email Notifications
-+ [ ] Implement SMS Notifications
 + [X] Add in a "Remember Me" Option for log in
 + [ ] Full phpBB Integration (Use Custom User Control as primary)
 
-### TODO List (After Launch, IE fun feat0ures)
+### TODO List (After Launch, IE fun features)
 + [ ] Finalize Admin Panel
++ [ ] Implement SMS Notifications
 + [ ] Finish Roster using User Profiles
 + [ ] Code & Directory Cleanup
 + [ ] Look at integrating RaidBots into the user login under guild license?
