@@ -1,5 +1,7 @@
-# stormguild.us
+stormguild.us
+=====
 Website Repo for Storm on Stormrage (US) hosted at [www.stormguild.us](http://stormguild.us/).
+
 Forums provided by phpBB, hosting provided by GoDaddy.
 
 ### TODO List (Needed Before Launch)
