@@ -1,4 +1,5 @@
 
+forums/*
 .htaccess
 .ftpquota
 *.ini
