@@ -14,9 +14,9 @@ Storm is a raiding guild in the game [World of Warcraft](http://www.worldofwarcr
 + [ ] Full phpBB Integration (Use Custom User Control as primary)
 
 ### TODO List (After Launch, IE fun features)
++ [ ] Code & Directory Cleanup
 + [ ] Finalize Admin Panel
 + [ ] Implement SMS Notifications
 + [ ] Finish Roster using User Profiles
-+ [ ] Code & Directory Cleanup
-+ [ ] Look at integrating RaidBots into the user login under guild license?
 + [ ] Make the Twitch page look good and advertise our streamers better
++ [ ] Look at integrating RaidBots into the user login under guild license?
