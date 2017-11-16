@@ -3,39 +3,39 @@
 <div class="ms-stackview-template g-rounded-10">
     <!-- masterslider -->
     <div class="master-slider ms-skin-default" id="masterslider">
-        
+
 <?php
-    
-    $db = new db();	
+
+    $db = new db();
 
     $killshots = $db -> select("select image_url, video_url, upload_date
                                 from stormguild.killshots
                                 order by killshot_id desc
                                 limit 10");
-        
+
     foreach($killshots as $killshot) {
-        
+
       if (strpos($killshot['video_url'], 'youtube') !== FAlSE ) {
-          
+
           $vidBlock = '<a class="js-fancybox" href="'.$killshot['video_url'].'">
                             <span class="u-icon-v2 u-icon-size--md g-color-white g-color-red--hover g-mr-15 g-mb-15">
                                 <i class="fa fa-youtube-play"></i>
                             </span>
                         </a>';
-          
+
       } else if (strpos($killshot['video_url'], 'twitch') !== FAlSE ) {
-          
+
           $vidBlock = '<a target=_blank href="'.$killshot['video_url'].'">
                             <span class="u-icon-v2 u-icon-size--md g-color-white g-color-purple--hover g-mr-15 g-mb-15">
                                 <i class="fa fa-twitch"></i>
                             </span>
                         </a>';
-          
+
       } else {
       	$vidBlock = '';
       }
-      
-      echo '<div class="ms-slide">
+
+      echo '<div class="ms-slide" data-delay="6">
                 <img src="'.$killshot['image_url'].'" data-src="'.$killshot['image_url'].'" />
                 <div class="ms-layer ms-caption" style="top:20px; left:40px;">
                     <a class="js-fancybox" href="'.$killshot['image_url'].'">
@@ -47,9 +47,9 @@
                 </div>
             </div>';
     }
-        
-?>  
-        
+
+?>
+
     </div>
     <!-- end of masterslider -->
 </div>
@@ -74,7 +74,9 @@
       space: 5,
       view: 'stack',
       loop: true,
-      autoplay: true
+      autoplay: true,
+      overPause: true,
+      speed: 40
     });
 
 </script>
