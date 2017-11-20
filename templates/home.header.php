@@ -19,19 +19,11 @@
 	<!-- CSS Global Icons -->
 	<link rel="stylesheet" href="assets/vendor/icon-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/vendor/hamburgers/hamburgers.min.css">
-	<link rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
-	<link rel="stylesheet" href="assets/vendor/animate.css">
 
 	<!-- CSS Unify -->
 	<link rel="stylesheet" href="assets/css/unify-core.css">
 	<link rel="stylesheet" href="assets/css/unify-components.css">
 	<link rel="stylesheet" href="assets/css/unify-globals.css">
-
-	<!-- CSS Implementing Plugins -->
-  <link  rel="stylesheet" href="assets/vendor/fancybox/jquery.fancybox.min.css">
-
-	<!-- Master Slider -->
-	<link rel="stylesheet" href="assets/vendor/master-slider/source/assets/css/masterslider.main.css">
 
 	<!-- CSS Customization -->
 	<link rel="stylesheet" href="assets/css/custom.css">
