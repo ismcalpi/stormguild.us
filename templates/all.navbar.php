@@ -1,5 +1,4 @@
 <?php
-  global $_SERVER;
   $twitchActive = $aboutActive = $homeActive = $recruitActive = $userActive = '';
   switch($_SERVER['REQUEST_URI']) {
     case 'twitch.php':
