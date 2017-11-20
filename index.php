@@ -38,4 +38,5 @@
       </div>
     </main>
   </body>
+  <?php include 'tempaltes/home.js.php' ?>
 </html>
