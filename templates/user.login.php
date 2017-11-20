@@ -6,7 +6,7 @@
 <!-- Form -->
 <div class="row justify-content-center">
   <div class="col-md-6">
-    <form class="g-py-15" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <form class="g-py-15" method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
       <div class="mb-4">
         <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" placeholder="Username" name="username">
       </div>
