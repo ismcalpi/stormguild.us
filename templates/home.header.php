@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="assets/vendor/icon-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/vendor/hamburgers/hamburgers.min.css">
 	<link rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
+	<link rel="stylesheet" href="assets/vendor/animate.css">
 
 	<!-- CSS Unify -->
 	<link rel="stylesheet" href="assets/css/unify-core.css">
