@@ -1,8 +1,7 @@
 <?php
-
   $twitchActive = $aboutActive = $homeActive = $recruitActive = $userActive = '';
-
-  switch($_SERVER['REQUEST_URI']) {
+  $uri = $_SERVER['REQUEST_URI'];
+  switch($uri) {
     case '/stormguild/twitch.php':
       $twitchActive = 'active';
       break;
@@ -19,9 +18,6 @@
       $userActive = 'active';
       break;
   }
-
-
-
 ?>
 <header
   id="js-header"
