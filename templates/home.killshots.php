@@ -11,7 +11,7 @@
     $killshots = $db -> read_select("select image_url, video_url, upload_date
                                 from stormguild.killshots
                                 order by killshot_id desc
-                                limit 10");
+                                limit 5");
 
     foreach($killshots as $killshot) {
 
