@@ -1,20 +1,20 @@
 <?php
+  global $_SERVER;
   $twitchActive = $aboutActive = $homeActive = $recruitActive = $userActive = '';
-  $uri = $_SERVER['REQUEST_URI'];
-  switch($uri) {
-    case '/stormguild/twitch.php':
+  switch($_SERVER['REQUEST_URI']) {
+    case 'twitch.php':
       $twitchActive = 'active';
       break;
-    case '/stormguild/about.php':
+    case 'about.php':
       $aboutActive = 'active';
       break;
-    case '/stormguild/index.php':
+    case 'index.php':
       $homeActive = 'active';
       break;
-    case '/stormguild/recruit.php':
+    case 'recruit.php':
       $recruitActive = 'active';
       break;
-    case '/stormguild/user.php':
+    case 'user.php':
       $userActive = 'active';
       break;
   }
