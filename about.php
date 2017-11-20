@@ -5,7 +5,7 @@
 	<body class="main-body">
 		<main>
 			<?php include 'templates/all.navbar.php' ?>
-			<div class="container main-container g-px-30 g-mt-60">
+			<div class="container main-container g-px-30 g-mt-80">
 			<!-- GENERAL -->
 			<section class="g-pt-20">
 				<div class="u-heading-v2-3--bottom g-brd-blue g-mb-30">

@@ -5,7 +5,7 @@
 	<body class="main-body">
 		<main>
 			<?php include 'templates/all.navbar.php' ?>
-			<div class="container main-container g-mt-60">
+			<div class="container main-container g-mt-80">
 				<div class="row">
 					<div class="col-lg-6">
 						<div id="twitch-embed-kniny"></div>

@@ -1,7 +1,12 @@
+<?php
+  if (!empty($_POST)) {
+    $auth->login($_POST['username'], $_POST['password'],$_POST['autologin'], 1, 0)
+  }
+?>
 <!-- Form -->
 <div class="row justify-content-center">
   <div class="col-md-6">
-    <form class="g-py-15" method="POST" action="forums/ucp.php?mode=login">
+    <form class="g-py-15" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
       <div class="mb-4">
         <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" placeholder="Username" name="username">
       </div>
@@ -22,11 +27,10 @@
           </div>-->
         </div>
       </div>
-
+      <input type="hidden" name="redirect" value="index.php">
       <div class="mb-4">
         <button class="btn btn-md btn-block u-btn-blue rounded g-py-13" type="submit">Login</button>
       </div>
-      <input type="hidden" name="redirect" value="index.php">
     </form>
   </div>
 </div>

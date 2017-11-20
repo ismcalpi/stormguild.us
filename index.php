@@ -5,7 +5,7 @@
   <body class="main-body">
     <main>
       <?php include 'templates/all.navbar.php' ?>
-      <div class="container main-container g-px-10 g-mt-60">
+      <div class="container main-container g-px-10 g-mt-80">
         <div class="row">
           <!-- Start Left Column -->
           <div class = "col-lg-8 g-pa-10">

@@ -5,7 +5,7 @@
 	<body class="main-body">
 		<main>
 			<?php include 'templates/all.navbar.php' ?>
-			<div class="container main-container g-mt-60">
+			<div class="container main-container g-mt-80">
 				<?php
 					echo '<h1>User Array</h1>';
 					echo '<p>'.array_values($user).'</p>';

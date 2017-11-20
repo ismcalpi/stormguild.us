@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php include 'templates/recruit.head.php' ?>
-  <body class="main-body g-mt-60">
+  <body class="main-body g-mt-80">
     <main>
       <?php include 'templates/all.navbar.php' ?>
       <?php include 'templates/recruit.banner.php' ?>
