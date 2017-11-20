@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <?php include 'templates/all.header.php' ?>
+  <?php include 'templates/home.header.php' ?>
   <body class="main-body">
     <main>
       <?php include 'templates/all.navbar.php' ?>
@@ -37,6 +37,5 @@
         </div>
       </div>
     </main>
-    <?php include 'templates/all.scripts.php' ?>
   </body>
 </html>
