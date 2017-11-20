@@ -38,5 +38,5 @@
       </div>
     </main>
   </body>
-  <?php include 'tempaltes/home.js.php' ?>
+  <?php include 'templates/home.js.php' ?>
 </html>
