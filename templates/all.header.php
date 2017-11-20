@@ -37,13 +37,10 @@
 	<link rel="stylesheet" href="assets/css/unify-globals.css">
 
 	<!-- CSS Implementing Plugins -->
-  <link  rel="stylesheet" href="assets/vendor/fancybox/jquery.fancybox.min.css">
-  <link  rel="stylesheet" href="assets/vendor/jquery-ui/themes/base/jquery-ui.min.css">
+    <link  rel="stylesheet" href="assets/vendor/fancybox/jquery.fancybox.min.css">
+    <link  rel="stylesheet" href="assets/vendor/jquery-ui/themes/base/jquery-ui.min.css">
 
 	<!-- CSS Customization -->
 	<link rel="stylesheet" href="assets/css/custom.css">
-
-	<!-- Master Slider -->
-	<link rel="stylesheet" href="assets/vendor/master-slider/source/assets/css/masterslider.main.css">
 
 </head>
