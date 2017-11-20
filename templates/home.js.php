@@ -18,8 +18,6 @@
 <script src="assets/js/hs.core.js"></script>
 <script src="assets/js/components/hs.header.js"></script>
 <script src="assets/js/helpers/hs.hamburgers.js"></script>
-<script src="assets/js/components/hs.scroll-nav.js"></script>
-<script src="assets/js/components/hs.sticky-block.js"></script>
 <script src="assets/js/helpers/hs.height-calc.js"></script>
 <script src="assets/js/components/hs.carousel.js"></script>
 <script src="assets/js/components/hs.popup.js"></script>
