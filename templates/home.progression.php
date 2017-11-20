@@ -5,7 +5,7 @@
 	?>
 		<div class="col-lg-12 col-sm-12 g-pa-0 g-ma-0">
 			<div class="u-bg-overlay g-bg-black-gradient-opacity-v1--after g-pa-0 g-ma-0" role="tab">
-				<img style="max-height:60px;width:100%;" class="img-fluid" src="assets/img/all.bg.body.jpg">
+				<img style="max-height:60px;width:100%;" class="img-fluid" src="assets/img/home.progression.bg.jpg">
 			</div>
 			<a href='https://www.wowprogress.com/guild/us/stormrage/storm' target='_blank'><h5 class="h5 g-pos-abs g-top-5 g-left-40 g-bottom-10 g-color-white"><strong><u>WoW Progress Ranking</u></strong><br /> US Rank #<?php echo $json->area_rank; ?> Realm Rank #<?php echo $json->realm_rank; ?></h5></a>
 		</div>
