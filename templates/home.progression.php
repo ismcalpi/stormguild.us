@@ -74,9 +74,9 @@
 		foreach($bosses as $boss) {
 
 			if ($boss['status'] == 'alive') {
-				$iconKill = '<i class="fa fa-check-square-o g-color-red g-mt-5 g-mr-10"></i>';
+				$iconKill = '<i class="fa fa-square-o g-color-red g-mt-5 g-mr-10"></i>';
 			} else {
-				$iconKill = '<i class="fa fa-square-o g-color-primary g-mt-5 g-mr-10"></i>';
+				$iconKill = '<i class="fa fa-check-square-o g-color-primary g-mt-5 g-mr-10"></i>';
 			}
 
 			echo '<p class="g-my-0">'
