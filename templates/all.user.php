@@ -1,6 +1,6 @@
 <?php
 define('IN_PHPBB', true);
-define('ROOT_PATH', "../forums/");
+define('ROOT_PATH', "forums/");
 
 if (!defined('IN_PHPBB') || !defined('ROOT_PATH')) {
     exit();
