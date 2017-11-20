@@ -1,6 +1,6 @@
 <?php
   if (!empty($_POST)) {
-    $auth->login($_POST['username'], $_POST['password'],$_POST['autologin'], 1, 0)
+    $auth->login($_POST['username'], $_POST['password'], $_POST['autologin'], 1, 0);
   }
 ?>
 <!-- Form -->
