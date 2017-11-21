@@ -80,7 +80,7 @@
           <?php
             if($phpbb_username != 'Anonymous' && ISSET($phpbb_username)) {
           ?>
-          <li class="nav-item hs-has-sub-menu g-mx-20--lg g-mb-5 g-mb-0--lg" data-event="click">
+          <li class="nav-item hs-has-sub-menu g-mx-20--lg g-mb-5 g-mb-0--lg">
             <a href="#" class="nav-link g-color-blue" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1"><?php echo $phpbb_username; ?></a>
             <!-- Submenu -->
             <ul class="hs-sub-menu list-unstyled g-text-transform-none g-brd-top g-brd-blue g-brd-top-2 g-min-width-200 g-mt-20 g-mt-10--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
