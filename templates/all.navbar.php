@@ -127,5 +127,11 @@
 	$(window).on('load', function () {
 		$.HSCore.components.HSHeader.init($('#js-header'));
 		$.HSCore.helpers.HSHamburgers.init('.hamburger');
+    // initialization of HSMegaMenu component
+    $('.js-mega-menu').HSMegaMenu({
+      event: 'hover',
+      pageContainer: $('.container'),
+      breakpoint: 991
+    });
   });
 </script>
