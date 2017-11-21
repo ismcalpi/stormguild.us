@@ -7,6 +7,10 @@
         echo '//Users login failed';
     }
   }
+
+  if ($user -> data['is_registered']) {
+    header("Location: https://stormguild.us");
+  }
 ?>
 <!-- Form -->
 <div class="row justify-content-center">
