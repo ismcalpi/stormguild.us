@@ -23,6 +23,8 @@
 <script src="assets/js/components/hs.popup.js"></script>
 <script src="assets/js/helpers/hs.navigation-splitted.js"></script>
 <script src="assets/vendor/master-slider/source/assets/js/masterslider.min.js"></script>
+<script src="assets/js/helpers/hs.navigation-splitted.js"></script>
+<script src="assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
 
 <!-- JS Custom -->
 <script src="assets/js/custom.js"></script>
