@@ -12,10 +12,11 @@ if (is_dir('forums')) {
   include($phpbb_root_path . 'common.' . $phpEx);
 
   $request->enable_super_globals();
+  
   $user->session_begin();
   $auth->acl($user->data);
   $user->setup();
-  
+
 } else {
   echo 'ERROR: No Forums installed';
 }

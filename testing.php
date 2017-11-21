@@ -8,9 +8,9 @@
 			<div class="container main-container g-mt-80">
 				<?php
 					echo '<h1>User Array</h1>';
-					echo '<p>'.array_values($user).'</p>';
+					echo '<p>'.array_values($user -> data).'</p>';
 					echo '<h1>Auth Array</h1>';
-					echo '<p>'.array_values($auth).'</p>';
+					echo '<p>'.array_values($auth -> data).'</p>';
 				?>
 			</div>
 		</main>
