@@ -80,11 +80,11 @@
               if($phpbb_username != 'Anonymous' && ISSET($phpbb_username)) {
             ?>
             <li class="nav-item dropdown g-mx-20--lg">
-              <a href="#" class="nav-link dropdown-toggle g-px-0" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1" data-toggle="dropdown"><?php echo $phpbb_username; ?></a>
+              <a href="#" class="nav-link dropdown-toggle g-color-blue" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1" data-toggle="dropdown"><?php echo $phpbb_username; ?></a>
               <!-- Submenu -->
-              <ul class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
+              <ul class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-blue g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
                 <li class="dropdown-item">
-                  <a class="nav-link g-px-0" href="user.php?page=logout">Logout</a>
+                  <a class="nav-link g-px-0" href="library/function.logout.php">Logout</a>
                 </li>
               </ul>
               <!-- End Submenu -->
