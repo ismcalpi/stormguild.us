@@ -1,6 +1,6 @@
 <?php
 
-include_once 'templates/all.user.php';
+include_once '../templates/all.user.php';
 
 $user->session_kill();
 $user->session_begin();
