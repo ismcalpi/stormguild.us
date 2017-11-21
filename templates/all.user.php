@@ -1,6 +1,6 @@
 <?php
 define('IN_PHPBB', true);
-define('ROOT_PATH', "forums/");
+define('ROOT_PATH', "forums");
 
 if (!defined('IN_PHPBB') || !defined('ROOT_PATH')) {
     exit();
@@ -14,6 +14,8 @@ if (is_dir('forums')) {
   $request->enable_super_globals();
   $user->session_begin();
   $auth->acl($user->data);
+  $user->setup();
+  
 } else {
   echo 'ERROR: No Forums installed';
 }

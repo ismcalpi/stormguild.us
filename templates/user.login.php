@@ -1,6 +1,13 @@
 <?php
   if (!empty($_POST)) {
-    $auth->login($_POST['username'], $_POST['password'], $_POST['autologin'], 1, 0);
+    $result = $auth->login($_POST['username'], $_POST['password'], $_POST['autologin'], 1, 0);
+    print_r($result);
+    if ($result['status'] == LOGIN_SUCCESS){
+        echo '//User was successfully logged into phpBB';
+    } else {
+        echo '//Users login failed';
+        exit;
+    }
   }
 ?>
 <!-- Form -->
