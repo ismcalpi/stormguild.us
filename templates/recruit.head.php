@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="assets/vendor/dzsparallaxer/dzsparallaxer.css">
   <link rel="stylesheet" href="assets/vendor/dzsparallaxer/dzsscroller/scroller.css">
   <link rel="stylesheet" href="assets/vendor/dzsparallaxer/advancedscroller/plugin.css">
+	<link rel="stylesheet" href="assets/vendor/hs-megamenu/src/hs.megamenu.css">
 	<!-- CSS Unify -->
 	<link rel="stylesheet" href="assets/css/unify-core.css">
 	<link rel="stylesheet" href="assets/css/unify-components.css">
