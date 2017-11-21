@@ -11,7 +11,7 @@
 <!-- Form -->
 <div class="row justify-content-center">
   <div class="col-md-6">
-    <form class="g-py-15" method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
+    <form class="g-py-15" method="POST" action="forums/ucp.php?mode=login">
       <div class="mb-4">
         <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15"
           type="text" placeholder="Username" name="username">
@@ -24,7 +24,7 @@
             <label class="form-check-inline u-check g-color-gray-dark-v5 g-font-size-12 g-pl-25 mb-0">
               <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" name="autologin">
               <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                <i class="fa" data-check-icon="x"></i>
+                <i class="fa" data-check-icon="&#10003;"></i>
               </div>
               Keep signed in
             </label>
