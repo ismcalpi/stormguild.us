@@ -84,18 +84,6 @@
               <i class="hs-icon hs-icon-arrow-bottom g-font-size-11 g-ml-7"></i>
             </a>
             <ul class="hs-sub-menu list-unstyled g-text-transform-none g-brd-top g-brd-blue g-brd-top-2 g-min-width-200 g-mt-20 g-mt-10--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
-              <?php
-                if (!empty($_SESSION['user_rank']) && $_SESSION['user_rank'] == 'admin') {
-              ?>
-              <li class="dropdown-item">
-                <a class="nav-link" href="admin.php">Admin</a>
-              </li>
-              <?php
-              }
-              ?>
-              <li class="dropdown-item">
-                <a class="nav-link" href="application.php">Applications</a>
-              </li>
               <li class="dropdown-item">
                 <a class="nav-link" href="user.php?page=logout">Logout</a>
               </li>
