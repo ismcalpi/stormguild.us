@@ -73,11 +73,9 @@
           <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg <?php $recruitActive ?>">
             <a href="recruit.php" class="nav-link">Recruitment</a>
           </li>
-          <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg <?php $userActive ?>">
-            <a href="user.php?page=login" class="nav-link">Log In</a>
-          </li>
+
           <?php
-            if($user -> data['is_registered']) {
+            if($user -> data['username'] != 'Anonymous') {
           ?>
           <li class="nav-item hs-has-sub-menu g-mx-20--lg">
             <a href="#" class="nav-link g-px-0 g-color-blue" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1"><?php $user->data['username'] ?>
@@ -90,7 +88,13 @@
             </ul>
           </li>
           <?php
-          }
+        } else {
+          ?>
+          <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg <?php $userActive ?>">
+            <a href="user.php?page=login" class="nav-link">Log In</a>
+          </li>
+          <?php
+          } 
           ?>
         </ul>
         </div>
