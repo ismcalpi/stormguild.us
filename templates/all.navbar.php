@@ -84,6 +84,9 @@
               <!-- Submenu -->
               <ul class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-blue g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
                 <li class="dropdown-item">
+                  <a class="nav-link g-px-0" href="forums/">Forums</a>
+                </li>
+                <li class="dropdown-item">
                   <a class="nav-link g-px-0" href="user.php?page=logout">Logout</a>
                 </li>
               </ul>
