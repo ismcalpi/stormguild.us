@@ -113,7 +113,6 @@
 </header>
 <script src="assets/js/helpers/hs.navigation-splitted.js"></script>
 <script src="assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
-<script src="assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
 <script>
 	$(document).on('ready', function () {
 		$.HSCore.helpers.HSNavigationSplitted.init($('.navbar-collapse'));
@@ -121,5 +120,11 @@
 	$(window).on('load', function () {
 		$.HSCore.components.HSHeader.init($('#js-header'));
 		$.HSCore.helpers.HSHamburgers.init('.hamburger');
+    // initialization of HSMegaMenu component
+    $('.js-mega-menu').HSMegaMenu({
+      event: 'hover',
+      pageContainer: $('.container'),
+      breakpoint: 991
+    });
   });
 </script>
