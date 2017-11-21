@@ -33,11 +33,11 @@
     <nav class="js-mega-menu navbar navbar-expand-lg">
       <div class="container">
         <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-        <span class="hamburger hamburger--slider">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
+          <span class="hamburger hamburger--slider">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
           </span>
-        </span>
         </button>
         <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 " id="navBar">
           <ul class="navbar-nav align-items-lg-center mx-auto text-uppercase g-font-weight-600 u-main-nav-v5">

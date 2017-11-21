@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <?php include 'templates/all.user.php' ?>
   <?php include 'templates/recruit.head.php' ?>
   <body class="main-body g-mt-80">
     <main>
