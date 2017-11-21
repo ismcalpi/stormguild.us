@@ -76,41 +76,15 @@
             <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg <?php $recruitActive ?>">
               <a href="recruit.php" class="nav-link">Recruitment</a>
             </li>
-            <li class="nav-item dropdown g-mx-20--lg">
-                  <a href="#" class="nav-link dropdown-toggle g-px-0" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1" data-toggle="dropdown">Pages
-
-              </a>
-                  <!-- Submenu (Bootstrap) -->
-                  <ul class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
-                    <li class="dropdown-item active">
-                      <a class="nav-link g-px-0" href="#">Page 1</a>
-                    </li>
-                    <li class="dropdown-item">
-                      <a class="nav-link g-px-0" href="#">Page 2</a>
-                    </li>
-                    <li class="dropdown-item">
-                      <a class="nav-link g-px-0" href="#">Page 3</a>
-                    </li>
-                  </ul>
-                  <!-- End Submenu (Bootstrap) -->
-                </li>
-                <li class="nav-item g-mx-20--lg">
-                  <a href="#" class="nav-link px-0">Demos
-
-              </a>
-                </li>
             <?php
               if($phpbb_username != 'Anonymous' && ISSET($phpbb_username)) {
             ?>
-            <li class="nav-item hs-has-sub-menu g-mx-20--lg" data-event="click">
-              <a href="#" class="nav-link g-color-blue" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1"><?php echo $phpbb_username; ?></a>
+            <li class="nav-item dropdown g-mx-20--lg">
+              <a href="#" class="nav-link dropdown-toggle g-px-0" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1" data-toggle="dropdown"><?php echo $phpbb_username; ?></a>
               <!-- Submenu -->
-              <ul class="hs-sub-menu list-unstyled g-text-transform-none g-brd-top g-brd-blue g-brd-top-2 g-min-width-200 g-mt-20 g-mt-10--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
+              <ul class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
                 <li class="dropdown-item">
-                    <a class="nav-link" href="application.php">Applications</a>
-                </li>
-                <li class="dropdown-item">
-                  <a class="nav-link g-px-0" href="#">Logout</a>
+                  <a class="nav-link g-px-0" href="user.php?page=logout">Logout</a>
                 </li>
               </ul>
               <!-- End Submenu -->
