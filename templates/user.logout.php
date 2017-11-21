@@ -10,5 +10,5 @@ $user->session_begin();
 </div>
 <!-- End Form -->
 <script>
-  window.location = "/";
+  window.location = "index.php";
 </script>
