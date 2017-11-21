@@ -21,8 +21,6 @@
   $phpbb_username = $user -> data['username'];
 
 ?>
-<link rel="stylesheet" href="assets/vendor/hs-megamenu/src/hs.megamenu.css">
-<link rel="stylesheet" href="assets/vendor/bootstrap/offcanvas.css">
 <header
   id="js-header"
   class="u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance g-mb-50"
