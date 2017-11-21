@@ -87,6 +87,12 @@
               <li class="dropdown-item">
                 <a class="nav-link g-px-0" href="#">Logout</a>
               </li>
+              <li class="dropdown-item">
+                <a class="nav-link g-px-0" href="#">Logout</a>
+              </li>
+              <li class="dropdown-item">
+                <a class="nav-link g-px-0" href="#">Logout</a>
+              </li>
             </ul>
             <!-- End Submenu -->
           </li>
@@ -103,19 +109,6 @@
         </div>
       </div>
     </nav>
-    <div class="alert alert-dismissible fade show g-bg-red g-color-white rounded-0 <?php if (empty($msg)) { echo "g-hide"; } ?>" role="alert">
-      <button type="button" class="close u-alert-close--light" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">×</span>
-      </button>
-      <div class="media">
-        <span class="d-flex g-mr-10 g-mt-5">
-          <i class="icon-ban g-font-size-25"></i>
-        </span>
-        <span class="media-body align-self-center">
-          <?php if (!empty($msg)) { echo $msg; } ?>
-        </span>
-      </div>
-    </div>
   </div>
 </header>
 <script src="assets/js/helpers/hs.navigation-splitted.js"></script>
