@@ -22,6 +22,7 @@
 
 ?>
 <link rel="stylesheet" href="assets/vendor/hs-megamenu/src/hs.megamenu.css">
+<link rel="stylesheet" href="assets/vendor/bootstrap/offcanvas.css">
 <header
   id="js-header"
   class="u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance g-mb-50"
@@ -127,11 +128,5 @@
 	$(window).on('load', function () {
 		$.HSCore.components.HSHeader.init($('#js-header'));
 		$.HSCore.helpers.HSHamburgers.init('.hamburger');
-    // initialization of HSMegaMenu component
-    $('.js-mega-menu').HSMegaMenu({
-      event: 'hover',
-      pageContainer: $('.container'),
-      breakpoint: 991
-    });
   });
 </script>
