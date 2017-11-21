@@ -7,7 +7,7 @@
 			<?php include 'templates/all.navbar.php' ?>
 			<div class="container main-container g-mt-80">
 				<?php
-					echo '<h1>'.$user['username'].' '.$user['user_rank'].'</h1>';
+					echo '<h1>'.$user -> data['username'].' '.$user -> data['user_rank'].'</h1>';
 					echo '<ul>';
 					foreach($user -> data as $item) {
 						echo '<li>'.$item.'</li>';
