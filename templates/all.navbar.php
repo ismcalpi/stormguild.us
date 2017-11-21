@@ -17,6 +17,9 @@
       $userActive = 'active';
       break;
   }
+
+  $phpbb_username = $user -> data['username'];
+
 ?>
 <header
   id="js-header"
@@ -75,10 +78,10 @@
           </li>
 
           <?php
-            if($user -> data['username'] != 'Anonymous') {
+            if($phpbb_username != 'Anonymous' && ISSET($phpbb_username)) {
           ?>
           <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg">
-            <a href="forums/" class="nav-link"><?php $user -> data['username'] ?></a>
+            <a href="forums/" class="nav-link"><?php echo $phpbb_username; ?></a>
           </li>
           <!--<li class="nav-item hs-has-sub-menu g-mx-20--lg">
             <a href="#" class="nav-link g-px-0 g-color-blue" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1"><?php $user->data['username'] ?>
