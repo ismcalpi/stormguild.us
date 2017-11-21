@@ -19,9 +19,12 @@
               Keep signed in
             </label>
           </div>
-          <!--<div class="col align-self-center text-right">
-            <a class="g-font-size-12" href="#">Forgot password?</a>
-          </div>-->
+          <div class="col align-self-center text-right">
+            <a class="g-font-size-12" href="forums/ucp.php?mode=sendpassword">Forgot password?</a>
+          </div>
+          <div class="col align-self-center text-right">
+            <a class="g-font-size-12" href="forums/ucp.php?mode=register">Register</a>
+          </div>
         </div>
       </div>
       <input type="hidden" name="redirect" value="../index.php">
