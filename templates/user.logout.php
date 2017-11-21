@@ -10,10 +10,5 @@ $user->session_begin();
 </div>
 <!-- End Form -->
 <script>
-$(document).ready(function () {
-    // Handler for .ready() called.
-    window.setTimeout(function () {
-        location.href = "index.php";
-    }, 1000);
-});
+  window.location = "/";
 </script>
