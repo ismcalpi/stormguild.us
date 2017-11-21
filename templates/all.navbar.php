@@ -77,8 +77,8 @@
           <?php
             if($user -> data['username'] != 'Anonymous') {
           ?>
-          <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg <?php $recruitActive ?>">
-            <a href="forums/" class="nav-link"><?php $user->data['username'] ?></a>
+          <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg">
+            <a href="forums/" class="nav-link"><?php $user -> data['username'] ?></a>
           </li>
           <!--<li class="nav-item hs-has-sub-menu g-mx-20--lg">
             <a href="#" class="nav-link g-px-0 g-color-blue" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1"><?php $user->data['username'] ?>
