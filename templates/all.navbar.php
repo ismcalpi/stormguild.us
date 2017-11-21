@@ -76,8 +76,11 @@
           <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg <?php $userActive ?>">
             <a href="user.php?page=login" class="nav-link">Log In</a>
           </li>
-          <li class="nav-item hs-has-sub-menu g-mx-20--lg" <?php IF (empty($_SESSION['valid'])){echo 'style="display: none "';} ?> >
-            <a href="#" class="nav-link g-px-0 g-color-blue" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1"><?php IF(!empty($_SESSION['username'])){echo $_SESSION['username'];} ?>
+          <?php
+            if($user -> data['is_registered']) {
+          ?>
+          <li class="nav-item hs-has-sub-menu g-mx-20--lg">
+            <a href="#" class="nav-link g-px-0 g-color-blue" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1"><?php $user->data['username'] ?>
               <i class="hs-icon hs-icon-arrow-bottom g-font-size-11 g-ml-7"></i>
             </a>
             <ul class="hs-sub-menu list-unstyled g-text-transform-none g-brd-top g-brd-blue g-brd-top-2 g-min-width-200 g-mt-20 g-mt-10--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
@@ -98,6 +101,9 @@
               </li>
             </ul>
           </li>
+          <?php
+          }
+          ?>
         </ul>
         </div>
       </div>
