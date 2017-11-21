@@ -22,9 +22,6 @@
           <div class="col align-self-center text-right">
             <a class="g-font-size-12" href="forums/ucp.php?mode=sendpassword">Forgot password?</a>
           </div>
-          <div class="col align-self-center text-right">
-            <a class="g-font-size-12" href="forums/ucp.php?mode=register">Register</a>
-          </div>
         </div>
       </div>
       <input type="hidden" name="redirect" value="../index.php">
@@ -32,6 +29,11 @@
         <button class="btn btn-md btn-block u-btn-blue rounded g-py-13" type="submit" name="login" value="login">Login</button>
       </div>
     </form>
+    <div class="row">
+      <div class="col align-self-center text-right">
+        <a class="btn btn-md btn-block u-btn-primary rounded g-py-13" href="forums/ucp.php?mode=register">Create Account</a>
+      </div>
+    </div>
   </div>
 </div>
 <!-- End Form -->
