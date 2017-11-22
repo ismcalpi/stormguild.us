@@ -4,7 +4,6 @@
 	<?php include 'templates/admin.head.php' ?>
 	<body class="main-body">
 		<main>
-			<div class="container main-container g-mt-80">
         <?php
           if($rank < 1){
         ?>
@@ -24,7 +23,6 @@
         <?php
         }
         ?>
-			</div>
 		</main>
 	</body>
 	<?php include 'templates/admin.js.php' ?>
