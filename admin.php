@@ -2,7 +2,7 @@
 <html lang="en">
 	<?php include 'templates/all.user.php' ?>
 	<?php include 'templates/admin.head.php' ?>
-	<body class="main-body">
+	<body>
 		<main>
         <?php
           if($rank < 1){
