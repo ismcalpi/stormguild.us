@@ -1,13 +1,12 @@
 <?php
-
-include_once 'forums/includes/functions_messenger.php';
-include_once 'library/class.database.php';
-
-$database = new database();
-$messenger = new messenger();
-
 #Error Checking for FORM
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    include_once 'forums/includes/functions_messenger.php';
+    include_once 'library/class.database.php';
+
+    $database = new database();
+    $messenger = new messenger();
 
     $appSuccess = TRUE; #Set to true until it's decided to be false
 
@@ -320,28 +319,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $destFile = $database -> quote($destFile);
       $accessIDClean = $database -> quote($accessID);
 
-      mail_guild();
-      add_to_db();
-
-    }
-
-    function mail_guild() {
-      $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))";
-      while($row = $database->sql_fetchrow($result))
-      {
-        $messenger->template('new_app', $row['user_lang'], '../email');
-        $messenger->to($row['user_email'], $row['username']);
-        $messenger->from('applications@stormguild.us', 'Storm Raider Applications');
-        $messenger->assign_vars(array(
-            'APP_LINK'  => 'https://stormguild.us/admin?mode=application&access_id='.str_replace("'", "", $accessID),
-            'APP_CLASS' => $charSpec.' '.$charClass
-        ));
-        $messenger->send($row['user_notify_type']);
-      }
-    }
-
-    function add_to_db() {
-
       $sql = "INSERT INTO `application`
                       (`application_id`,`access_id`,`screen01`,
                       `screen02`,`perName`,
@@ -378,6 +355,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       'applied',now())";
 
       $database -> query($sql);
+
+      $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))";
+      while($row = $database->sql_fetchrow($result))
+      {
+        $messenger->template('new_app', $row['user_lang'], '../email');
+        $messenger->to($row['user_email'], $row['username']);
+        $messenger->from('applications@stormguild.us', 'Storm Raider Applications');
+        $messenger->assign_vars(array(
+            'APP_LINK'  => 'https://stormguild.us/admin?mode=application&access_id='.$accessID,
+            'APP_CLASS' => $charSpec.' '.$charClass
+        ));
+        $messenger->send($row['user_notify_type']);
+      }
+
     }
 
 }
