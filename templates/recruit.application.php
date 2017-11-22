@@ -1,8 +1,5 @@
 <?php
 
-include_once 'library/class.database.php';
-$db = new dataabase();
-
 #Error Checking for FORM
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $appSuccess = TRUE; #Set to true until it's decided to be false
@@ -232,7 +229,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     #If all is successful then add to Database and provide popup
     if ($appSuccess == TRUE) {
-      $db = new db;
+
+      include_once 'library/class.database.php';
+      $db = new dataabase();
 
     	$accessID = uniqid();
 
