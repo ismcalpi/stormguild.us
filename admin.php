@@ -5,12 +5,25 @@
 	<body class="main-body">
 		<main>
 			<div class="container main-container g-mt-80">
-        <div class="col-sm-2 g-brd-right g-brd-black">
+        <?php
+          if($rank < 1){
+        ?>
+          <h1 class="h1 g-color-red">Access Denied, Redirecting Home.</h1>
+          <script>
+            window.location = "index.php";
+          </script>
+        <?php
+        } else {
+        ?>
+        <div class="col-2 g-brd-right g-brd-black">
             <?php include 'templates/admin.navbar.php' ?>
         </div>
-        <div class="col-sm-10 g-pa-20">
+        <div class="col-10 g-pa-20">
             <?php include 'templates/admin.'.$_GET['mode'].'.php' ?>
         </div>
+        <?php
+        }
+        ?>
 			</div>
 		</main>
 	</body>
