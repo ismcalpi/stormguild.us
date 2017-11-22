@@ -1,8 +1,8 @@
 <?php
-	class application {
+class application {
 
-  include_once 'class.database.php';
-  include_once '../forums/includes/functions_messenger.php';
+  include_once 'library/class.database.php';
+  include_once 'forums/includes/functions_messenger.php';
 
   $messenger = new messenger();
   $database = new database();
@@ -45,7 +45,7 @@
 
   public function send_app() {
     $this -> add_to_db();
-    $this -> mail_guild('new_app');
+    $this -> mail_guild();
   }
 
   private function add_to_db() {
@@ -87,12 +87,12 @@
     $database -> query($sql);
   }
 
-  private function mail_guild($template) {
+  private function mail_guild() {
 
     $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))"
     while ($row = $db->sql_fetchrow($result))
     {
-      $messenger->template($template, $row['user_lang'], '../email');
+      $messenger->template('new_app', $row['user_lang'], '../email');
       $messenger->to($row['user_email'], $row['username']);
       $messenger->from('applications@stormguild.us', 'Storm Raider Applications');
       $messenger->assign_vars(array(
