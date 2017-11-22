@@ -14,7 +14,7 @@
     </li>
     <!-- Application End Here -->
     <?php
-      if($rank >= 2) {
+      if($rank >= 3) {
     ?>
     <!-- Start Admin Required Links -->
     <li class="nav-item">
@@ -36,5 +36,8 @@
             Guild Killshots
         </a>
     </li>
+    <?php
+    }
+    ?>
     <!-- End Admin Required Links -->
 </ul>
