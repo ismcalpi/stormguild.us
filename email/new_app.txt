@@ -1,0 +1,7 @@
+Subject: New {APP_CLASS} Raider Application
+
+Please find the application at the following link.
+{APP_LINK}
+
+Thanks,
+Your Friendly Neighborhood Application Robot

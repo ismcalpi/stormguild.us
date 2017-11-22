@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } else {
         $appSuccess = FALSE;
-        $perEmailERR = "This is a required field.";        
+        $perEmailERR = "This is a required field.";
     }
 
     #perBnet Question
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $perBnet = $_POST['perBnet'];
     } else {
         $appSuccess = FALSE;
-        $perBnetERR = "This is a required field.";        
+        $perBnetERR = "This is a required field.";
     }
 
     #charName Question
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $charName = $_POST['charName'];
     } else {
         $appSuccess = FALSE;
-        $charNameERR = "This is a required field.";        
+        $charNameERR = "This is a required field.";
     }
 
     #charRealm Question
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $charRealm = $_POST['charRealm'];
     } else {
         $appSuccess = FALSE;
-        $charRealmERR = "This is a required field.";        
+        $charRealmERR = "This is a required field.";
     }
 
     #charClass Question
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $charClass = $_POST['charClass'];
     } else {
         $appSuccess = FALSE;
-        $charClassERR = "This is a required field.";        
+        $charClassERR = "This is a required field.";
     }
 
     #charSpec Question
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $charSpec = $_POST['charSpec'];
     } else {
         $appSuccess = FALSE;
-        $charSpecERR = "This is a required field.";        
+        $charSpecERR = "This is a required field.";
     }
 
     #charArt Question
@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $charArt = $_POST['charArt'];
     } else {
         $appSuccess = FALSE;
-        $charArtERR = "This is a required field.";        
+        $charArtERR = "This is a required field.";
     }
 
     #charArmory Question
@@ -112,10 +112,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $charArmory = $_POST['charArmory'];
     } else if (empty($_POST['charArmory'])) {
         $appSuccess = FALSE;
-        $charArmoryERR = "This is a required field.";        
+        $charArmoryERR = "This is a required field.";
     } else if (!filter_var($charArmory, FILTER_VALIDATE_URL)) {
         $appSuccess = FALSE;
-        $charArmoryERR = "Not a valid URL.";        
+        $charArmoryERR = "Not a valid URL.";
     }
 
     #charLogs Question
@@ -123,10 +123,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $charLogs = $_POST['charLogs'];
     } else if (empty($_POST['charLogs'])) {
         $appSuccess = FALSE;
-        $charLogsERR = "This is a required field.";        
+        $charLogsERR = "This is a required field.";
     } else if (!filter_var($charLogs, FILTER_VALIDATE_URL)) {
         $appSuccess = FALSE;
-        $charLogsERR = "Not a valid URL.";        
+        $charLogsERR = "Not a valid URL.";
     }
 
     #altName Question
@@ -139,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $altRealm = $_POST['altRealm'];
     } else if (!empty($altName)) {
         $appSuccess = FALSE;
-        $altRealmERR = "This is a required field.";        
+        $altRealmERR = "This is a required field.";
     }
 
     #altClass Question
@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $altClass = $_POST['altClass'];
     } else if (!empty($altName)) {
         $appSuccess = FALSE;
-        $altClassERR = "This is a required field.";        
+        $altClassERR = "This is a required field.";
     }
 
     #altSpec Question
@@ -155,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $altSpec = $_POST['altSpec'];
     } else if (!empty($altName)) {
         $appSuccess = FALSE;
-        $altSpecERR = "This is a required field.";        
+        $altSpecERR = "This is a required field.";
     }
 
     #altArt Question
@@ -163,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $altArt = $_POST['altArt'];
     } else if (!empty($altName)) {
         $appSuccess = FALSE;
-        $altArtERR = "This is a required field.";        
+        $altArtERR = "This is a required field.";
     }
 
     #altArmory Question
@@ -171,10 +171,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $altArmory = $_POST['altArmory'];
     } else if (!empty($altName)) {
         $appSuccess = FALSE;
-        $altArmoryERR = "This is a required field.";        
+        $altArmoryERR = "This is a required field.";
     } else if (!empty($altName) && !filter_var($altArmory, FILTER_VALIDATE_URL)) {
         $appSuccess = FALSE;
-        $altArmoryERR = "Not a valid URL.";        
+        $altArmoryERR = "Not a valid URL.";
     }
 
     #altLogs Question
@@ -182,10 +182,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $altLogs = $_POST['altLogs'];
     } else if (!empty($altName)) {
         $appSuccess = FALSE;
-        $altLogsERR = "This is a required field.";        
+        $altLogsERR = "This is a required field.";
     } else if (!empty($altName) && !filter_var($altLogs, FILTER_VALIDATE_URL)) {
         $appSuccess = FALSE;
-        $altLogsERR = "Not a valid URL.";        
+        $altLogsERR = "Not a valid URL.";
     }
 
     #quest01
@@ -193,7 +193,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $quest01 = $_POST['quest01'];
     } else {
         $appSuccess = FALSE;
-        $quest01ERR = "This is a required field.";        
+        $quest01ERR = "This is a required field.";
     }
 
     #quest02
@@ -201,7 +201,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $quest02 = $_POST['quest02'];
     } else {
         $appSuccess = FALSE;
-        $quest02ERR = "This is a required field.";        
+        $quest02ERR = "This is a required field.";
     }
 
     #quest03
@@ -209,7 +209,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $quest03 = $_POST['quest03'];
     } else {
         $appSuccess = FALSE;
-        $quest03ERR = "This is a required field.";        
+        $quest03ERR = "This is a required field.";
     }
 
     #quest04
@@ -217,7 +217,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $quest04 = $_POST['quest04'];
     } else {
         $appSuccess = FALSE;
-        $quest04ERR = "This is a required field.";        
+        $quest04ERR = "This is a required field.";
     }
 
     #quest05
@@ -225,7 +225,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $quest05 = $_POST['quest05'];
     } else {
         $appSuccess = FALSE;
-        $quest05ERR = "This is a required field.";        
+        $quest05ERR = "This is a required field.";
     }
 
     #quest06
@@ -233,7 +233,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $quest06 = $_POST['quest06'];
     } else {
         $appSuccess = FALSE;
-        $quest06ERR = "This is a required field.";        
+        $quest06ERR = "This is a required field.";
     }
 
     #fileUI
@@ -247,7 +247,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $quest07 = $_POST['quest07'];
     } else {
         $appSuccess = FALSE;
-        $quest07ERR = "This is a required field.";        
+        $quest07ERR = "This is a required field.";
     }
 
     #quest08
@@ -255,184 +255,81 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $quest08 = $_POST['quest08'];
     } else {
         $appSuccess = FALSE;
-        $quest08ERR = "This is a required field.";        
+        $quest08ERR = "This is a required field.";
     }
 
     #If all is successful then add to Database and provide popup
     if ($appSuccess == TRUE) {
 
-      $db = new db;
-    
-    	$accessID = uniqid();
-    	
-    	  $to      = $perEmail;
-        $subject = 'Storm Raiding Application';
+      include_once('library/class.applciation.php');
+      $app = new application;
 
-        $message = '
-        <html>
-          <head>
-            <title>Thank you for your Application to Storm - Stormrage (US)</title>
-          </head>
-          <body>
-            <h3>Thank you for your Application to Storm - Stormrage (US)</h3>
-            <p>
-              Please make sure to check your <a href="http://www.stormguild.us/application.php?access_id='.$accessID.'" target="_blank">application</a>
-              on a regular basis in order to respond to comments.
-            </p>
-            <p>
-              If accepted you will be invited to the guild as a recruit, with a trial period of 2 weeks (extended in special circumstances).
-            </p>
-          </body>
-        </html>
-        ';
+      $app -> radScreen1 = $db -> quote($radScreen1);
+      $app -> radScreen2 = $db -> quote($radScreen2);
 
-        $emheaders[] = 'MIME-Version: 1.0';
-        $emheaders[] = 'Content-type: text/html; charset=iso-8859-1';
-        //$emheaders[] = 'To: '.$perName.' <'.$perEmail.'>';
-        $emheaders[] = 'From: Storm Applications <applications@stormguild.us>';
-        
-        mail($to, $subject, $message, implode("\r\n", $emheaders));
-        
-          if($email_lists = $db -> query("SELECT group_concat(email ORDER BY email SEPARATOR ', ') as email_list FROM stormguild.users where user_rank = 'admin'")) {
-          	
-          	while($email_list = $email_lists -> fetch_assoc()){
-          		  $to = $email_list['email_list'];
-          		  $subject = "New Application ".$charName."-".$charRealm." ".$charSpec." ".$charClass;
-	
-			  $message = '
-			  <html>
-			  	<head>
-		            	<title>New Application</title>
-		          	</head>
-			    <body>
-			      <h3>New Raider Application</h3>
-			      <p>
-			      <a href="http://www.stormguild.us/application.php">http://www.stormguild.us/application.php</a>
-			      <br />
-			      Testing Email Stuff.
-			      </p>
-			    </body>
-			  </html>
-			  ';
-			
-			  $headers[] = 'MIME-Version: 1.0';
-			  $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-			  //$emheaders[] = 'To: admins & officers <places@fake.com>';
-			  $headers[] = 'From: Storm Applications <applications@stormguild.us>';
-			  
-			  mail($to, $subject, $message, implode("\r\n", $headers));
-			  
-          	}
-          	
-          } else {
-          	echo 'ERROR: Email List Query';
-          	exit;
-          }
-          
-	  
-        
-        $radScreen1 = $db -> quote($radScreen1);
-        $radScreen2 = $db -> quote($radScreen2);
+      $app -> perName = $db -> quote($perName);
+      $app -> perAge = $db -> quote($perAge);
+      $app -> perEmail = $db -> quote($perEmail);
+      $app -> perBnet = $db -> quote($perBnet);
 
-        $perName = $db -> quote($perName);
-        $perAge = $db -> quote($perAge);
-        $perEmail = $db -> quote($perEmail);
-        $perBnet = $db -> quote($perBnet);
+      $app -> charName = $db -> quote($charName);
+      $app -> charRealm = $db -> quote($charRealm);
+      $app -> charClass = $db -> quote($charClass);
+      $app -> charSpec = $db -> quote($charSpec);
+      $app -> charArt = $db -> quote($charArt);
+      $app -> charArmory = $db -> quote($charArmory);
+      $app -> charLogs = $db -> quote($charLogs);
 
-        $charName = $db -> quote($charName);
-        $charRealm = $db -> quote($charRealm);
-        $charClass = $db -> quote($charClass);
-        $charSpec = $db -> quote($charSpec);
-        $charArt = $db -> quote($charArt);
-        $charArmory = $db -> quote($charArmory);
-        $charLogs = $db -> quote($charLogs);
+      if (empty($altName)) {
+          $app -> altName = 'NULL';
+          $app -> altRealm = 'NULL';
+          $app -> altClass = 'NULL';
+          $app -> altSpec = 'NULL';
+          $app -> altArt = 'NULL';
+          $app -> altArmory = 'NULL';
+          $app -> altLogs = 'NULL';
+      } else {
+          $app -> altName = $db -> quote($altName);
+          $app -> altRealm = $db -> quote($altRealm);
+          $app -> altClass = $db -> quote($altClass);
+          $app -> altSpec = $db -> quote($altSpec);
+          $app -> altArt = $db -> quote($altArt);
+          $app -> altArmory = $db -> quote($altArmory);
+          $app -> altLogs = $db -> quote($altLogs);
+      }
 
-        if (empty($altName)) {
-            $altName = 'NULL';
-            $altRealm = 'NULL';
-            $altClass = 'NULL';
-            $altSpec = 'NULL';
-            $altArt = 'NULL';
-            $altArmory = 'NULL';
-            $altLogs = 'NULL';
-        } else {
-            $altName = $db -> quote($altName);
-            $altRealm = $db -> quote($altRealm);
-            $altClass = $db -> quote($altClass);
-            $altSpec = $db -> quote($altSpec);
-            $altArt = $db -> quote($altArt);
-            $altArmory = $db -> quote($altArmory);
-            $altLogs = $db -> quote($altLogs);   
-        }
+      $app -> quest01 = $db -> quote($quest01);
+      $app -> quest02 = $db -> quote($quest02);
+      $app -> quest03 = $db -> quote($quest03);
+      $app -> quest04 = $db -> quote($quest04);
+      $app -> quest05 = $db -> quote($quest05);
+      $app -> quest06 = $db -> quote($quest06);
+      $app -> quest07 = $db -> quote($quest07);
+      $app -> quest08 = $db -> quote($quest08);
 
-        $quest01 = $db -> quote($quest01);
-        $quest02 = $db -> quote($quest02);
-        $quest03 = $db -> quote($quest03);
-        $quest04 = $db -> quote($quest04);
-        $quest05 = $db -> quote($quest05);
-        $quest06 = $db -> quote($quest06);
-        $quest07 = $db -> quote($quest07);
-        $quest08 = $db -> quote($quest08);
+      #Start Upload UI Image
+      $accessID = uniqid();
+      $destPath = 'assets/img/uploads/applications/'.$accessID.'/';
+      mkdir($destPath);
+      $destFile = $destPath.basename($_FILES['imgUI']['name']);
+      $tmpFile = $_FILES['imgUI']['tmp_name'];
+      move_uploaded_file($tmpFile, $destFile);
+      #End Upload UI Image
 
-        
-        $destPath = 'img/uploads/applications/'.$accessID.'/';
-        mkdir($destPath);
-        $destFile = $destPath.basename($_FILES['imgUI']['name']);
-        $tmpFile = $_FILES['imgUI']['tmp_name'];
+      $app -> destFile = $db -> quote($destFile);
+      $app -> accessIDClean = $db -> quote($accessID);
 
-        move_uploaded_file($tmpFile, $destFile);
+      $app->send_app();
 
-        $destFile = $db -> quote($destFile);
-        $accessIDClean = $db -> quote($accessID);
-        
-        $sql = "INSERT INTO `application`
-                        (`application_id`,`access_id`,`screen01`,
-                        `screen02`,`perName`,
-                        `perAge`,`perEmail`,
-                        `perBnet`,`charName`,
-                        `charRealm`,`charClass`,
-                        `charSpec`,`charArt`,
-                        `charArmory`,`charLogs`,
-                        `altName`,`altRealm`,
-                        `altClass`,`altSpec`,
-                        `altArt`,`altArmory`,
-                        `altLogs`,`quest01`,
-                        `quest02`,`quest03`,
-                        `quest04`,`quest05`,
-                        `quest06`,`quest07`,
-                        `quest08`,`imgUI`,
-                        `status`,`create_datetime`) 
-                    VALUES 
-                        (NULL,".$accessIDClean.",".$radScreen1.",
-                        ".$radScreen2.",".$perName.",
-                        ".$perAge.",".$perEmail.",
-                        ".$perBnet.",".$charName.",
-                        ".$charRealm.",".$charClass.",
-                        ".$charSpec.",".$charArt.",
-                        ".$charArmory.",".$charLogs.",
-                        ".$altName.",".$altRealm.",
-                        ".$altClass.",".$altSpec.",
-                        ".$altArt.",".$altArmory.",
-                        ".$altLogs.",".$quest01.",
-                        ".$quest02.",".$quest03.",
-                        ".$quest04.",".$quest05.",
-                        ".$quest06.",".$quest07.",
-                        ".$quest08.",".$destFile.",
-                        'applied',now())";
+      header('Location: recruit.php?success=1&access='.$accessID);
 
-        $db -> query($sql);
-        
-        #header('Location: recruitment.php?success=1&access='.$accessID);
-        
     }
-
 }
-
 ?>
 
 <!-- Success Alert -->
-<div class="alert alert-dismissible fade show g-bg-primary g-color-white rounded-0 
-            <?php 
+<div class="alert alert-dismissible fade show g-bg-primary g-color-white rounded-0
+            <?php
             if (EMPTY($_GET['success'])) {
                 echo "g-hide";
             }
@@ -485,7 +382,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </label>
 
                 <?php if(!empty($screen1ERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$screen1ERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$screen1ERR.'</small>';
 } ?>
 
             </div>
@@ -511,7 +408,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </label>
 
                 <?php if(!empty($screen2ERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$screen2ERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$screen2ERR.'</small>';
 } ?>
 
             </div>
@@ -532,11 +429,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="input-group-addon d-flex align-items-center g-color-gray-light-v1 rounded-0">
                             <i class="fa fa-user-circle-o"></i>
                         </div>
-                        <input class="form-control form-control-md border-left-0 rounded-0 pl-0" type="text" name="perName" 
+                        <input class="form-control form-control-md border-left-0 rounded-0 pl-0" type="text" name="perName"
                                placeholder="Name" <?php if(ISSET($_POST['perName'])) {echo 'value="'.$_POST['perName'].'"'; } ?>>
                     </div>
                     <?php if(!empty($perNameERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$perNameERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$perNameERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -550,7 +447,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                placeholder="Age" <?php if(ISSET($_POST['perAge'])) {echo 'value="'.$_POST['perAge'].'"'; } ?>>
                     </div>
                     <?php if(!empty($perAgeERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$perAgeERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$perAgeERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -560,11 +457,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="input-group-addon d-flex align-items-center g-color-gray-light-v1 rounded-0">
                             <i class="fa fa-envelope-o"></i>
                         </div>
-                        <input class="form-control form-control-md border-left-0 rounded-0 pl-0" type="email" placeholder="Email Address" name="perEmail" 
+                        <input class="form-control form-control-md border-left-0 rounded-0 pl-0" type="email" placeholder="Email Address" name="perEmail"
                                <?php if(ISSET($_POST['perEmail'])) {echo 'value="'.$_POST['perEmail'].'"'; } ?>>
                     </div>
                     <?php if(!empty($perEmailERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$perEmailERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$perEmailERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -578,7 +475,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                <?php if(ISSET($_POST['perBnet'])) {echo 'value="'.$_POST['perBnet'].'"'; } ?>>
                     </div>
                     <?php if(!empty($perBnetERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$perBnetERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$perBnetERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -595,7 +492,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="row">
             <div class="col-lg-3">
                 <div class="form-group g-mb-20">
-                    <div class="input-group g-brd-primary--focus 
+                    <div class="input-group g-brd-primary--focus
                                 <?php if(ISSET($charNameERR)) {echo "u-has-error-v1";} else { echo "bg-white"; } ?>">
                         <div class="input-group-addon d-flex align-items-center g-color-gray-light-v1 rounded-0">
                             <i class="fa fa-user-circle-o"></i>
@@ -604,7 +501,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                <?php if(ISSET($_POST['charName'])) {echo 'value="'.$_POST['charName'].'"'; } ?>  name="charName" placeholder="Character Name">
                     </div>
                     <?php if(!empty($charNameERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$charNameERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$charNameERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -620,7 +517,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                placeholder="Realm Name" name="charRealm">
                     </div>
                     <?php if(!empty($charRealmERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$charRealmERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$charRealmERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -636,7 +533,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                placeholder="Class" name="charClass">
                     </div>
                     <?php if(!empty($charClassERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$charClassERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$charClassERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -652,7 +549,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                placeholder="Specialization" name="charSpec">
                     </div>
                     <?php if(!empty($charSpecERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$charSpecERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$charSpecERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -666,7 +563,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                name="charArt">
                     </div>
                     <?php if(!empty($charArtERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$charArtERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$charArtERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -674,12 +571,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="form-group g-mb-20">
                     <div class="input-group g-brd-primary--focus
                                 <?php if(ISSET($charArmoryERR)) {echo "u-has-error-v1";} else { echo "bg-white"; } ?>">
-                        <input class="form-control form-control-md rounded-0" type="url" 
+                        <input class="form-control form-control-md rounded-0" type="url"
                                <?php if(ISSET($_POST['charArmory'])) {echo 'value="'.$_POST['charArmory'].'"'; } ?>
                                placeholder="Armory Link" name="charArmory">
-                    </div>	
+                    </div>
                     <?php if(!empty($charArmoryERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$charArmoryERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$charArmoryERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -692,7 +589,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                placeholder="Warcraft Logs Link" name="charLogs">
                     </div>
                     <?php if(!empty($charLogsERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$charLogsERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$charLogsERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -702,7 +599,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="row">
             <div class="col-lg-3">
                 <div class="form-group g-mb-20">
-                    <div class="input-group g-brd-primary--focus 
+                    <div class="input-group g-brd-primary--focus
                                 <?php if(ISSET($altNameERR)) {echo "u-has-error-v1";} else { echo "bg-white"; } ?>">
                         <div class="input-group-addon d-flex align-items-center g-color-gray-light-v1 rounded-0">
                             <i class="fa fa-user-circle-o"></i>
@@ -711,7 +608,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                <?php if(ISSET($_POST['altName'])) {echo 'value="'.$_POST['altName'].'"'; } ?>  name="altName" placeholder="Alt Name (Optional)">
                     </div>
                     <?php if(!empty($altNameERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$altNameERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$altNameERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -727,7 +624,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                placeholder="Realm Name" name="altRealm">
                     </div>
                     <?php if(!empty($altRealmERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$altRealmERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$altRealmERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -743,7 +640,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                placeholder="Class" name="altClass">
                     </div>
                     <?php if(!empty($altClassERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$altClassERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$altClassERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -759,7 +656,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                placeholder="Specialization" name="altSpec">
                     </div>
                     <?php if(!empty($altSpecERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$altSpecERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$altSpecERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -773,7 +670,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                name="altArt">
                     </div>
                     <?php if(!empty($altArtERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$altArtERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$altArtERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -781,12 +678,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="form-group g-mb-20">
                     <div class="input-group g-brd-primary--focus
                                 <?php if(ISSET($altArmoryERR)) {echo "u-has-error-v1";} else { echo "bg-white"; } ?>">
-                        <input class="form-control form-control-md rounded-0" type="url" 
+                        <input class="form-control form-control-md rounded-0" type="url"
                                <?php if(ISSET($_POST['altArmory'])) {echo 'value="'.$_POST['altArmory'].'"'; } ?>
                                placeholder="Armory Link" name="altArmory">
-                    </div>	
+                    </div>
                     <?php if(!empty($altArmoryERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$altArmoryERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$altArmoryERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -799,7 +696,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                placeholder="Warcraft Logs Link" name="altLogs">
                     </div>
                     <?php if(!empty($altLogsERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$altLogsERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$altLogsERR.'</small>';
 } ?>
                 </div>
             </div>
@@ -818,7 +715,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label class="g-mb-10" for="raidQ1">Are you comfortable playing your off-spec in a raid environment? Elaborate.</label>
             <textarea id="raidQ1" class="form-control form-control-md rounded-0" rows="3" placeholder="" name="quest01"><?php if(ISSET($_POST['quest01'])) {echo $_POST['quest01']; } ?></textarea>
             <?php if(!empty($quest01ERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$quest01ERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$quest01ERR.'</small>';
 } ?>
         </div>
 
@@ -827,7 +724,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label class="g-mb-10" for="raidQ2">What is your raiding experience? Both current and past progression.</label>
             <textarea id="raidQ2" class="form-control form-control-md rounded-0" rows="3" placeholder="" name="quest02"><?php if(ISSET($_POST['quest02'])) {echo $_POST['quest02']; } ?></textarea>
             <?php if(!empty($quest02ERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$quest02ERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$quest02ERR.'</small>';
 } ?>
         </div>
 
@@ -836,7 +733,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label class="g-mb-10" for="raidQ3">Previous guilds? Why did you leave them and if applicable why are you leaving them for us?</label>
             <textarea id="raidQ3" class="form-control form-control-md rounded-0" rows="3" placeholder="" name="quest03"><?php if(ISSET($_POST['quest03'])) {echo $_POST['quest03']; } ?></textarea>
             <?php if(!empty($quest03ERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$quest03ERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$quest03ERR.'</small>';
 } ?>
         </div>
 
@@ -845,7 +742,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label class="g-mb-10" for="raidQ4">How did you hear about us and why would you like to join? Why would you be an asset to our roster?</label>
             <textarea id="raidQ4" class="form-control form-control-md rounded-0" rows="3" placeholder="" name="quest04"><?php if(ISSET($_POST['quest04'])) {echo $_POST['quest04']; } ?></textarea>
             <?php if(!empty($quest04ERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$quest04ERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$quest04ERR.'</small>';
 } ?>
         </div>
 
@@ -854,7 +751,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label class="g-mb-10" for="raidQ5">How do you prepare for a new progression boss? Would you consider dps/healing output or mechanics more important?</label>
             <textarea id="raidQ5" class="form-control form-control-md rounded-0" rows="3" placeholder="" name="quest05"><?php if(ISSET($_POST['quest05'])) {echo $_POST['quest05']; } ?></textarea>
             <?php if(!empty($quest05ERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$quest05ERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$quest05ERR.'</small>';
 } ?>
         </div>
 
@@ -864,7 +761,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <textarea id="raidQ6" class="form-control form-control-md rounded-0" rows="3" placeholder="" name="quest06"><?php if(ISSET($_POST['quest06'])) {echo $_POST['quest06']; } ?></textarea>
             <input type="file" name="imgUI" class="form-control-file" aria-describedby="fileHelp" />
             <?php if(!empty($quest06ERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$quest06ERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$quest06ERR.'</small>';
 } ?>
         </div>
 
@@ -873,7 +770,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label class="g-mb-10" for="raidQ7">Are you comfortable speaking on Discord? If you refuse to speak don't say yes. What kind of mic/headset do you use?</label>
             <textarea id="raidQ7" class="form-control form-control-md rounded-0" rows="3" placeholder="" name="quest07"><?php if(ISSET($_POST['quest07'])) {echo $_POST['quest07']; } ?></textarea>
             <?php if(!empty($quest07ERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$quest07ERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$quest07ERR.'</small>';
 } ?>
         </div>
 
@@ -882,7 +779,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label class="g-mb-10" for="raidQ8">Anything else you'd like us to know? Tell us a bit about yourself.</label>
             <textarea id="raidQ8" class="form-control form-control-md rounded-0" rows="3" placeholder="" name="quest08"><?php if(ISSET($_POST['quest08'])) {echo $_POST['quest08']; } ?></textarea>
             <?php if(!empty($quest08ERR)) {
-    echo '<small class="form-control-feedback g-color-red">'.$quest08ERR.'</small>'; 
+    echo '<small class="form-control-feedback g-color-red">'.$quest08ERR.'</small>';
 } ?>
         </div>
 
