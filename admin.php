@@ -1,30 +1,18 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-<?php include 'include/head.php' ?>
-
-<?php include 'include/db.php' ?>
-
-<body style="main-body">
-
-    <main>
-	   
-        <div class="row">
-            <div class="col-sm-2 g-brd-right g-brd-black">
-                <?php include 'include/adminNav.php' ?>
-            </div>
-            <div class="col-sm-10 g-pa-20">
-                <h1 class="h1">
-                    Welcome to the Storm Guild Admin Console!
-                </h1>
-                <p>As you can tell this section is under construction and will be fully functional at some point soon.</p>
-                <p>This page will have instructions and information on how to customize this website and the left-hand menu will provide tools to control the current content.</p>
-            </div>
+	<?php include 'templates/all.user.php' ?>
+	<?php include 'templates/admin.head.php' ?>
+	<body class="main-body">
+		<main>
+			<div class="container main-container g-mt-80">
+        <div class="col-sm-2 g-brd-right g-brd-black">
+            <?php include 'templates/admin.navbar.php' ?>
         </div>
-	</main>
-</body>
-	
-	<?php include 'include/scripts.php' ?>
-	
+        <div class="col-sm-10 g-pa-20">
+            <?php include 'templates/admin.'.$_GET['mode'].'.php' ?>
+        </div>
+			</div>
+		</main>
+	</body>
+	<?php include 'templates/admin.js.php' ?>
 </html>
