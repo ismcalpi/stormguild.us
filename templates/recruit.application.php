@@ -231,7 +231,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($appSuccess == TRUE) {
 
       include_once 'library/class.database.php';
-      $db = new dataabase();
+      $db = new database();
 
     	$accessID = uniqid();
 
