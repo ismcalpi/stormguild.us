@@ -14,12 +14,14 @@
         <?php
         } else {
         ?>
-        <div class="col-2 g-brd-right g-brd-black">
-            <?php include 'templates/admin.navbar.php' ?>
-        </div>
-        <div class="col-9 g-pa-10">
-            <?php include 'templates/admin.'.$_GET['mode'].'.php' ?>
-        </div>
+        <div class="row">
+          <div class="col-2 g-brd-right g-brd-black">
+              <?php include 'templates/admin.navbar.php' ?>
+          </div>
+          <div class="col-9 g-pa-10">
+              <?php include 'templates/admin.'.$_GET['mode'].'.php' ?>
+          </div>
+        <div class="row">
         <?php
         }
         ?>
