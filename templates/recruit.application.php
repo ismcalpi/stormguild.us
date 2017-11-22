@@ -310,9 +310,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $quest08 = $database -> quote($quest08);
 
       $accessID = uniqid();
-      $destPath = 'assets/img/uploads/applications/'.$accessID.'/';
+      $destPath = 'assets/img/uploads/applications/'.$accessID;
       mkdir($destPath);
-      $destFile = $destPath.basename($_FILES['imgUI']['name']);
+      $destFile = $destPath.'/'.basename($_FILES['imgUI']['name']);
       $tmpFile = $_FILES['imgUI']['tmp_name'];
       move_uploaded_file($tmpFile, $destFile);
 
@@ -354,7 +354,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       ".$quest08.",".$destFile.",
                       'applied',now())";
 
-      $database -> query($sql);
+      $database -> write_query($sql);
 
       $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))";
       while($row = $database->sql_fetchrow($result))
