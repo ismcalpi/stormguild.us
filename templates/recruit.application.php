@@ -1,15 +1,11 @@
 <?php
+
+include_once 'library/class.database.php';
+$db = new dataabase();
+
 #Error Checking for FORM
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    include_once 'forums/includes/functions_messenger.php';
-    include_once 'library/class.database.php';
-
-    $database = new database();
-    $messenger = new messenger();
-
     $appSuccess = TRUE; #Set to true until it's decided to be false
-
     #Screen1 Question
     if (!empty($_POST['radScreen1'])) {
         $radScreen1 = $_POST['radScreen1'];
@@ -22,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $screen1ERR = "* This is a required field";
     }
-
     #Screen2 Question
     if (!empty($_POST['radScreen2'])) {
         $radScreen2 = $_POST['radScreen2'];
@@ -35,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $screen2ERR = "* This is a required field";
     }
-
     #perName Question
     if (!empty($_POST['perName'])) {
         $perName = $_POST['perName'];
@@ -43,7 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $perNameERR = "This is a required field.";
     }
-
     #perAge Question
     if (!empty($_POST['perAge'])) {
         $perAge = $_POST['perAge'];
@@ -51,7 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $perAgeERR = "This is a required field.";
     }
-
     #perEmail Question
     if (!empty($_POST['perEmail'])) {
         $perEmail = $_POST['perEmail'];
@@ -63,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $perEmailERR = "This is a required field.";
     }
-
     #perBnet Question
     if (!empty($_POST['perBnet'])) {
         $perBnet = $_POST['perBnet'];
@@ -71,7 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $perBnetERR = "This is a required field.";
     }
-
     #charName Question
     if (!empty($_POST['charName'])) {
         $charName = $_POST['charName'];
@@ -79,7 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $charNameERR = "This is a required field.";
     }
-
     #charRealm Question
     if (!empty($_POST['charRealm'])) {
         $charRealm = $_POST['charRealm'];
@@ -87,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $charRealmERR = "This is a required field.";
     }
-
     #charClass Question
     if (!empty($_POST['charClass'])) {
         $charClass = $_POST['charClass'];
@@ -95,7 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $charClassERR = "This is a required field.";
     }
-
     #charSpec Question
     if (!empty($_POST['charSpec'])) {
         $charSpec = $_POST['charSpec'];
@@ -103,7 +90,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $charSpecERR = "This is a required field.";
     }
-
     #charArt Question
     if (!empty($_POST['charArt'])) {
         $charArt = $_POST['charArt'];
@@ -111,7 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $charArtERR = "This is a required field.";
     }
-
     #charArmory Question
     if (!empty($_POST['charArmory'])) {
         $charArmory = $_POST['charArmory'];
@@ -122,7 +107,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $charArmoryERR = "Not a valid URL.";
     }
-
     #charLogs Question
     if (!empty($_POST['charLogs'])) {
         $charLogs = $_POST['charLogs'];
@@ -133,12 +117,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $charLogsERR = "Not a valid URL.";
     }
-
     #altName Question
     if (!empty($_POST['altName'])) {
         $altName = $_POST['altName'];
     }
-
     #altRealm Question
     if (!empty($_POST['altRealm'])) {
         $altRealm = $_POST['altRealm'];
@@ -146,7 +128,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $altRealmERR = "This is a required field.";
     }
-
     #altClass Question
     if (!empty($_POST['altClass'])) {
         $altClass = $_POST['altClass'];
@@ -154,7 +135,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $altClassERR = "This is a required field.";
     }
-
     #altSpec Question
     if (!empty($_POST['altSpec'])) {
         $altSpec = $_POST['altSpec'];
@@ -162,7 +142,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $altSpecERR = "This is a required field.";
     }
-
     #altArt Question
     if (!empty($_POST['altArt'])) {
         $altArt = $_POST['altArt'];
@@ -170,7 +149,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $altArtERR = "This is a required field.";
     }
-
     #altArmory Question
     if (!empty($_POST['altArmory'])) {
         $altArmory = $_POST['altArmory'];
@@ -181,7 +159,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $altArmoryERR = "Not a valid URL.";
     }
-
     #altLogs Question
     if (!empty($_POST['altLogs'])) {
         $altLogs = $_POST['altLogs'];
@@ -192,7 +169,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $altLogsERR = "Not a valid URL.";
     }
-
     #quest01
     if (!empty($_POST['quest01'])) {
         $quest01 = $_POST['quest01'];
@@ -200,7 +176,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $quest01ERR = "This is a required field.";
     }
-
     #quest02
     if (!empty($_POST['quest02'])) {
         $quest02 = $_POST['quest02'];
@@ -208,7 +183,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $quest02ERR = "This is a required field.";
     }
-
     #quest03
     if (!empty($_POST['quest03'])) {
         $quest03 = $_POST['quest03'];
@@ -216,7 +190,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $quest03ERR = "This is a required field.";
     }
-
     #quest04
     if (!empty($_POST['quest04'])) {
         $quest04 = $_POST['quest04'];
@@ -224,7 +197,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $quest04ERR = "This is a required field.";
     }
-
     #quest05
     if (!empty($_POST['quest05'])) {
         $quest05 = $_POST['quest05'];
@@ -232,7 +204,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $quest05ERR = "This is a required field.";
     }
-
     #quest06
     if (!empty($_POST['quest06'])) {
         $quest06 = $_POST['quest06'];
@@ -240,13 +211,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $quest06ERR = "This is a required field.";
     }
-
     #fileUI
     if ($_FILES["imgUI"]["error"] != UPLOAD_ERR_OK) {
         $appSuccess = FALSE;
         $quest06ERR = "This is a required field.";
     }
-
     #quest07
     if (!empty($_POST['quest07'])) {
         $quest07 = $_POST['quest07'];
@@ -254,7 +223,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $quest07ERR = "This is a required field.";
     }
-
     #quest08
     if (!empty($_POST['quest08'])) {
         $quest08 = $_POST['quest08'];
@@ -262,26 +230,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $appSuccess = FALSE;
         $quest08ERR = "This is a required field.";
     }
-
     #If all is successful then add to Database and provide popup
     if ($appSuccess == TRUE) {
+      $db = new db;
 
-      $radScreen1 = $database -> quote($radScreen1);
-      $radScreen2 = $database -> quote($radScreen2);
+    	$accessID = uniqid();
 
-      $perName = $database -> quote($perName);
-      $perAge = $database -> quote($perAge);
-      $perEmail = $database -> quote($perEmail);
-      $perBnet = $database -> quote($perBnet);
+      include_once($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
+      $messenger = new messenger();
 
-      $charName = $database -> quote($charName);
-      $charRealm = $database -> quote($charRealm);
-      $charClass = $database -> quote($charClass);
-      $charSpec = $database -> quote($charSpec);
-      $charArt = $database -> quote($charArt);
-      $charArmory = $database -> quote($charArmory);
-      $charLogs = $database -> quote($charLogs);
+      $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))";
+      while($row = $database->sql_fetchrow($result))
+      {
+        $messenger->template('new_app', $row['user_lang'], '../email');
+        $messenger->to($row['user_email'], $row['username']);
+        $messenger->from('applications@stormguild.us', 'Storm Raider Applications');
+        $messenger->assign_vars(array(
+            'APP_LINK'  => 'https://stormguild.us/admin?mode=application&access_id='.$accessID,
+            'APP_CLASS' => $charSpec.' '.$charClass
+        ));
+        $messenger->send($row['user_notify_type']);
+      }
 
+      $radScreen1 = $db -> quote($radScreen1);
+      $radScreen2 = $db -> quote($radScreen2);
+      $perName = $db -> quote($perName);
+      $perAge = $db -> quote($perAge);
+      $perEmail = $db -> quote($perEmail);
+      $perBnet = $db -> quote($perBnet);
+      $charName = $db -> quote($charName);
+      $charRealm = $db -> quote($charRealm);
+      $charClass = $db -> quote($charClass);
+      $charSpec = $db -> quote($charSpec);
+      $charArt = $db -> quote($charArt);
+      $charArmory = $db -> quote($charArmory);
+      $charLogs = $db -> quote($charLogs);
       if (empty($altName)) {
           $altName = 'NULL';
           $altRealm = 'NULL';
@@ -291,33 +274,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $altArmory = 'NULL';
           $altLogs = 'NULL';
       } else {
-          $altName = $database -> quote($altName);
-          $altRealm = $database -> quote($altRealm);
-          $altClass = $database -> quote($altClass);
-          $altSpec = $database -> quote($altSpec);
-          $altArt = $database -> quote($altArt);
-          $altArmory = $database -> quote($altArmory);
-          $altLogs = $database -> quote($altLogs);
+          $altName = $db -> quote($altName);
+          $altRealm = $db -> quote($altRealm);
+          $altClass = $db -> quote($altClass);
+          $altSpec = $db -> quote($altSpec);
+          $altArt = $db -> quote($altArt);
+          $altArmory = $db -> quote($altArmory);
+          $altLogs = $db -> quote($altLogs);
       }
+      $quest01 = $db -> quote($quest01);
+      $quest02 = $db -> quote($quest02);
+      $quest03 = $db -> quote($quest03);
+      $quest04 = $db -> quote($quest04);
+      $quest05 = $db -> quote($quest05);
+      $quest06 = $db -> quote($quest06);
+      $quest07 = $db -> quote($quest07);
+      $quest08 = $db -> quote($quest08);
 
-      $quest01 = $database -> quote($quest01);
-      $quest02 = $database -> quote($quest02);
-      $quest03 = $database -> quote($quest03);
-      $quest04 = $database -> quote($quest04);
-      $quest05 = $database -> quote($quest05);
-      $quest06 = $database -> quote($quest06);
-      $quest07 = $database -> quote($quest07);
-      $quest08 = $database -> quote($quest08);
-
-      $accessID = uniqid();
-      $destPath = 'assets/img/uploads/applications/'.$accessID;
+      $destPath = 'img/uploads/applications/'.$accessID.'/';
       mkdir($destPath);
-      $destFile = $destPath.'/'.basename($_FILES['imgUI']['name']);
+      $destFile = $destPath.basename($_FILES['imgUI']['name']);
       $tmpFile = $_FILES['imgUI']['tmp_name'];
       move_uploaded_file($tmpFile, $destFile);
-
-      $destFile = $database -> quote($destFile);
-      $accessIDClean = $database -> quote($accessID);
+      $destFile = $db -> quote($destFile);
+      $accessIDClean = $db -> quote($accessID);
 
       $sql = "INSERT INTO `application`
                       (`application_id`,`access_id`,`screen01`,
@@ -337,7 +317,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       `quest08`,`imgUI`,
                       `status`,`create_datetime`)
                   VALUES
-                      (NULL,".$accessID.",".$radScreen1.",
+                      (NULL,".$accessIDClean.",".$radScreen1.",
                       ".$radScreen2.",".$perName.",
                       ".$perAge.",".$perEmail.",
                       ".$perBnet.",".$charName.",
@@ -353,26 +333,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       ".$quest06.",".$quest07.",
                       ".$quest08.",".$destFile.",
                       'applied',now())";
-
-      $database -> write_query($sql);
-
-      $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))";
-      while($row = $database->sql_fetchrow($result))
-      {
-        $messenger->template('new_app', $row['user_lang'], '../email');
-        $messenger->to($row['user_email'], $row['username']);
-        $messenger->from('applications@stormguild.us', 'Storm Raider Applications');
-        $messenger->assign_vars(array(
-            'APP_LINK'  => 'https://stormguild.us/admin?mode=application&access_id='.$accessID,
-            'APP_CLASS' => $charSpec.' '.$charClass
-        ));
-        $messenger->send($row['user_notify_type']);
-      }
+        $db -> query($sql);
 
     }
-
 }
-
 ?>
 
 <!-- Success Alert -->
