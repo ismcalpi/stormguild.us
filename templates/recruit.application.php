@@ -1,5 +1,11 @@
 <?php
 
+include_once 'forums/includes/functions_messenger.php';
+include_once 'library/class.database.php';
+
+$database = new database();
+$messenger = new messenger();
+
 #Error Checking for FORM
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -261,70 +267,120 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     #If all is successful then add to Database and provide popup
     if ($appSuccess == TRUE) {
 
-      include_once('library/class.application.php');
+      include_once('library/class.applciation.php');
       $app = new application;
 
-      $app -> radScreen1 = $db -> quote($radScreen1);
-      $app -> radScreen2 = $db -> quote($radScreen2);
+      $radScreen1 = $database -> quote($radScreen1);
+      $radScreen2 = $database -> quote($radScreen2);
 
-      $app -> perName = $db -> quote($perName);
-      $app -> perAge = $db -> quote($perAge);
-      $app -> perEmail = $db -> quote($perEmail);
-      $app -> perBnet = $db -> quote($perBnet);
+      $perName = $database -> quote($perName);
+      $perAge = $database -> quote($perAge);
+      $perEmail = $database -> quote($perEmail);
+      $perBnet = $database -> quote($perBnet);
 
-      $app -> charName = $db -> quote($charName);
-      $app -> charRealm = $db -> quote($charRealm);
-      $app -> charClass = $db -> quote($charClass);
-      $app -> charSpec = $db -> quote($charSpec);
-      $app -> charArt = $db -> quote($charArt);
-      $app -> charArmory = $db -> quote($charArmory);
-      $app -> charLogs = $db -> quote($charLogs);
+      $charName = $database -> quote($charName);
+      $charRealm = $database -> quote($charRealm);
+      $charClass = $database -> quote($charClass);
+      $charSpec = $database -> quote($charSpec);
+      $charArt = $database -> quote($charArt);
+      $charArmory = $database -> quote($charArmory);
+      $charLogs = $database -> quote($charLogs);
 
       if (empty($altName)) {
-          $app -> altName = 'NULL';
-          $app -> altRealm = 'NULL';
-          $app -> altClass = 'NULL';
-          $app -> altSpec = 'NULL';
-          $app -> altArt = 'NULL';
-          $app -> altArmory = 'NULL';
-          $app -> altLogs = 'NULL';
+          $altName = 'NULL';
+          $altRealm = 'NULL';
+          $altClass = 'NULL';
+          $altSpec = 'NULL';
+          $altArt = 'NULL';
+          $altArmory = 'NULL';
+          $altLogs = 'NULL';
       } else {
-          $app -> altName = $db -> quote($altName);
-          $app -> altRealm = $db -> quote($altRealm);
-          $app -> altClass = $db -> quote($altClass);
-          $app -> altSpec = $db -> quote($altSpec);
-          $app -> altArt = $db -> quote($altArt);
-          $app -> altArmory = $db -> quote($altArmory);
-          $app -> altLogs = $db -> quote($altLogs);
+          $altName = $database -> quote($altName);
+          $altRealm = $database -> quote($altRealm);
+          $altClass = $database -> quote($altClass);
+          $altSpec = $database -> quote($altSpec);
+          $altArt = $database -> quote($altArt);
+          $altArmory = $database -> quote($altArmory);
+          $altLogs = $database -> quote($altLogs);
       }
 
-      $app -> quest01 = $db -> quote($quest01);
-      $app -> quest02 = $db -> quote($quest02);
-      $app -> quest03 = $db -> quote($quest03);
-      $app -> quest04 = $db -> quote($quest04);
-      $app -> quest05 = $db -> quote($quest05);
-      $app -> quest06 = $db -> quote($quest06);
-      $app -> quest07 = $db -> quote($quest07);
-      $app -> quest08 = $db -> quote($quest08);
+      $quest01 = $database -> quote($quest01);
+      $quest02 = $database -> quote($quest02);
+      $quest03 = $database -> quote($quest03);
+      $quest04 = $database -> quote($quest04);
+      $quest05 = $database -> quote($quest05);
+      $quest06 = $database -> quote($quest06);
+      $quest07 = $database -> quote($quest07);
+      $quest08 = $database -> quote($quest08);
 
-      #Start Upload UI Image
       $accessID = uniqid();
       $destPath = 'assets/img/uploads/applications/'.$accessID.'/';
       mkdir($destPath);
       $destFile = $destPath.basename($_FILES['imgUI']['name']);
       $tmpFile = $_FILES['imgUI']['tmp_name'];
       move_uploaded_file($tmpFile, $destFile);
-      #End Upload UI Image
 
-      $app -> destFile = $db -> quote($destFile);
-      $app -> accessID = $db -> quote($accessID);
-
-      $app->send_app();
-
-      header('Location: recruit.php?success=1&access='.$accessID);
-
+      $destFile = $database -> quote($destFile);
+      $accessIDClean = $database -> quote($accessID);
     }
+
+    function mail_guild() {
+      $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))"
+      while ($row = $database->sql_fetchrow($result))
+      {
+        $messenger->template('new_app', $row['user_lang'], '../email');
+        $messenger->to($row['user_email'], $row['username']);
+        $messenger->from('applications@stormguild.us', 'Storm Raider Applications');
+        $messenger->assign_vars(array(
+            'APP_LINK'  => 'https://stormguild.us/admin?mode=application&access_id='.str_replace("'", "", $accessID),
+            'APP_CLASS' => $charSpec.' '.$charClass
+        ));
+        $messenger->send($row['user_notify_type']);
+      }
+    }
+
+    function add_to_db() {
+
+      $sql = "INSERT INTO `application`
+                      (`application_id`,`access_id`,`screen01`,
+                      `screen02`,`perName`,
+                      `perAge`,`perEmail`,
+                      `perBnet`,`charName`,
+                      `charRealm`,`charClass`,
+                      `charSpec`,`charArt`,
+                      `charArmory`,`charLogs`,
+                      `altName`,`altRealm`,
+                      `altClass`,`altSpec`,
+                      `altArt`,`altArmory`,
+                      `altLogs`,`quest01`,
+                      `quest02`,`quest03`,
+                      `quest04`,`quest05`,
+                      `quest06`,`quest07`,
+                      `quest08`,`imgUI`,
+                      `status`,`create_datetime`)
+                  VALUES
+                      (NULL,".$accessID.",".$radScreen1.",
+                      ".$radScreen2.",".$perName.",
+                      ".$perAge.",".$perEmail.",
+                      ".$perBnet.",".$charName.",
+                      ".$charRealm.",".$charClass.",
+                      ".$charSpec.",".$charArt.",
+                      ".$charArmory.",".$charLogs.",
+                      ".$altName.",".$altRealm.",
+                      ".$altClass.",".$altSpec.",
+                      ".$altArt.",".$altArmory.",
+                      ".$altLogs.",".$quest01.",
+                      ".$quest02.",".$quest03.",
+                      ".$quest04.",".$quest05.",
+                      ".$quest06.",".$quest07.",
+                      ".$quest08.",".$destFile.",
+                      'applied',now())";
+
+      $database -> query($sql);
+    }
+
 }
+
 ?>
 
 <!-- Success Alert -->
