@@ -1,11 +1,11 @@
 <?php
 class application {
 
-  include_once 'library/class.database.php';
-  include_once 'forums/includes/functions_messenger.php';
+  include 'library/class.database.php';
+  include 'forums/includes/functions_messenger.php';
 
-  $messenger = new messenger();
-  $database = new database();
+  protected $messenger = new messenger();
+  protected $database = new database();
 
   public $radScreen1;
   public $radScreen2;
@@ -49,6 +49,7 @@ class application {
   }
 
   private function add_to_db() {
+
     $sql = "INSERT INTO `application`
                     (`application_id`,`access_id`,`screen01`,
                     `screen02`,`perName`,
