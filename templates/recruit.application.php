@@ -267,9 +267,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     #If all is successful then add to Database and provide popup
     if ($appSuccess == TRUE) {
 
-      include_once('library/class.applciation.php');
-      $app = new application;
-
       $radScreen1 = $database -> quote($radScreen1);
       $radScreen2 = $database -> quote($radScreen2);
 
