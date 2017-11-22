@@ -1,12 +1,6 @@
 <?php
 class application {
 
-  include 'library/class.database.php';
-  include 'forums/includes/functions_messenger.php';
-
-  protected $messenger = new messenger();
-  protected $database = new database();
-
   public $radScreen1;
   public $radScreen2;
 
@@ -43,12 +37,19 @@ class application {
   public $destFile;
   public $accessID;
 
+  public function __construct() {
+
+  }
+
   public function send_app() {
     $this -> add_to_db();
     $this -> mail_guild();
   }
 
   private function add_to_db() {
+
+    include 'library/class.database.php';
+    $database = new database();
 
     $sql = "INSERT INTO `application`
                     (`application_id`,`access_id`,`screen01`,
@@ -89,6 +90,9 @@ class application {
   }
 
   private function mail_guild() {
+
+    include 'forums/includes/functions_messenger.php';
+    protected $messenger = new messenger();
 
     $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))"
     while ($row = $db->sql_fetchrow($result))
