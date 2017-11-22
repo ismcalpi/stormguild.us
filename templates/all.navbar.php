@@ -77,24 +77,28 @@
               <a href="recruit.php" class="nav-link">Recruitment</a>
             </li>
             <?php
-              if($rank >= 1) {
+              if($user_rank >= 1) {
             ?>
             <li class="nav-item dropdown g-mx-20--lg">
               <a href="#" class="nav-link dropdown-toggle g-color-blue" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1" data-toggle="dropdown"><?php echo $phpbb_username; ?></a>
               <!-- Submenu -->
               <ul class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-blue g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
                 <?php
-                  if($rank >= 2) {
+                  if($user_rank >= 3) {
                 ?>
                 <li class="dropdown-item">
                   <a class="nav-link g-px-0" target="_blank" href="admin.php?mode=instruction">Admin Console</a>
                 </li>
                 <?php
                 }
+                  if($user_rank >= 2) {
                 ?>
                 <li class="dropdown-item">
                   <a class="nav-link g-px-0" target="_blank" href="admin.php?mode=application">Applications</a>
                 </li>
+                <?php
+                }
+                ?>
                 <li class="dropdown-item">
                   <a class="nav-link g-px-0" target="_blank" href="forums/">Forums</a>
                 </li>

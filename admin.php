@@ -5,7 +5,7 @@
 	<body>
 		<main>
         <?php
-          if($rank < 1){
+          if($user_rank <= 1){
         ?>
           <h1 class="h1 g-color-red">Access Denied, Redirecting Home.</h1>
           <script>
