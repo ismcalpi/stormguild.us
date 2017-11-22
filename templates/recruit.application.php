@@ -324,8 +324,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $accessIDClean = $database -> quote($accessID);
 
       mail_guild();
-      add_to_db()
-      
+      add_to_db();
+
     }
 
     function mail_guild() {
