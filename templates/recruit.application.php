@@ -329,8 +329,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     function mail_guild() {
-      $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))"
-      while ($row = $database->sql_fetchrow($result))
+      $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))";
+      while($row = $database->sql_fetchrow($result))
       {
         $messenger->template('new_app', $row['user_lang'], '../email');
         $messenger->to($row['user_email'], $row['username']);
