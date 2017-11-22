@@ -317,7 +317,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       #End Upload UI Image
 
       $app -> destFile = $db -> quote($destFile);
-      $app -> accessIDClean = $db -> quote($accessID);
+      $app -> accessID = $db -> quote($accessID);
 
       $app->send_app();
 
