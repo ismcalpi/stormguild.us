@@ -9,7 +9,7 @@
     <li class="nav-item">
         <a class="nav-link" href="admin.php?mode=application">
             <i class="fa fa-bars u-tab-line-icon-pro g-mr-3"></i>
-            Applciations
+            Applications
         </a>
     </li>
     <!-- Application End Here -->
