@@ -11,7 +11,7 @@ $user->session_begin();
 $auth->acl($user->data);
 $user->setup();
 
-$user_group = strtolower(get_group_name($user->data['group_id']))
+$user_group = strtolower(get_group_name($user->data['group_id']));
 if ($user_group == 'officer') {
   $user_rank = 3;
 } else if ($user_group == 'raider') {
