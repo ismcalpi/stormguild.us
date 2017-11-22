@@ -108,5 +108,5 @@
   private function notify_discord() {
 
   }
-
+}
 ?>
