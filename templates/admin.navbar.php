@@ -14,7 +14,7 @@
     </li>
     <!-- Application End Here -->
     <?php
-      if($rank >= 3) {
+      if($user_rank >= 3) {
     ?>
     <!-- Start Admin Required Links -->
     <li class="nav-item">
