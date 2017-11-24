@@ -15,15 +15,21 @@
 		public function sql_query($query) {
 			$rows = array();
 			$result = $this -> query($query);
-			if($result === false) { return false; }
-			while ($row = $result -> fetch_assoc()) { $rows[] = $row; }
+			if($result === false) {
+				return false;
+			}
+			while ($row = $result -> fetch_assoc()) {
+				$rows[] = $row;
+			}
 			return $rows;
 		}
 
 		public function sql_fetchrow($query) {
 			$row = array();
 			$result = $this -> query($query);
-			if($result === false) { return false; }
+			if (!$result) {
+				return false;
+			}
 			$row = $result -> fetch_assoc();
 			return $row;
 		}
