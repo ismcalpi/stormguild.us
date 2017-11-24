@@ -1,8 +1,8 @@
 <?php
 include_once 'library/class.database.php';
 $db = new database();
-$applications = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE application_id =".$app_id);
-if(!empty($applications)) {
+$application = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE application_id =".$app_id);
+if(!empty($application)) {
 ?>
 <!-- Screening Questions -->
 <div class="row">
