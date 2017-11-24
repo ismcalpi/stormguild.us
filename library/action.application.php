@@ -8,6 +8,8 @@ print 'Starting work...';
 print 'Loading includes...';
 include_once 'class.database.php';
 include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
+include($phpbb_root_path . 'config.' . $phpEx);
+include($phpbb_root_path . 'includes/db/' . $dbms . '.' . $phpEx);
 
 $accessid = uniqid();
 print "Using AccessID = ".$accessid;
@@ -87,17 +89,10 @@ function notify_discord($message) {
 }
 
 function notify_phpbb() {
-
-  include($phpbb_root_path . 'config.' . $phpEx);
-  include($phpbb_root_path . 'includes/db/' . $dbms . '.' . $phpEx);
-
   $db = new $sql_db();
-
   $db->sql_connect($dbhost, $dbuser, $dbpasswd, $dbname, $dbport, false, false);
-
   // We do not need this any longer, unset for safety purposes
   unset($dbpasswd);
-  
   $msg = new messenger(false);
   $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))";
   while($row = $db->sql_fetchrow($result))
