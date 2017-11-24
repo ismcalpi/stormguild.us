@@ -19,7 +19,13 @@
               <?php include 'templates/admin.navbar.php' ?>
           </div>
           <div class="col-9 g-pa-10">
-              <?php include 'templates/admin.'.$_GET['mode'].'.php' ?>
+              <?php 
+								if (EMPTY($_GET['mode'])) {
+									include 'templates/admin.instruction.php';
+								} else {
+									include 'templates/admin.'.$_GET['mode'].'.php';
+								}
+							?>
           </div>
         <div class="row">
         <?php
