@@ -10,9 +10,8 @@ $discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application f
 app_add();
 #notify via email and phpBB
 notify_guild();
-notify_applicant()
+notify_applicant();
 #notify_discord($discord_msg);
-
 
 $redirect = $_SERVER['DOCUMENT_ROOT']."/recruit.php?status=success&accessid=".$accessid;
 header("Location: $redirect");
