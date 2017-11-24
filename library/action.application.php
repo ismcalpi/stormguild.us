@@ -2,7 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/templates/all.user.php';
 include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
 include($phpbb_root_path . 'config.' . $phpEx);
-include_once $_SERVER['DOCUMENT_ROOT'].'/class.database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 
 $accessid = uniqid();
 $discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName'].": https://www.stormguild.us/admin?mode=application&accessid=".$accessid;
