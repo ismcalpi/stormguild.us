@@ -1,0 +1,11 @@
+Subject: Storm - Stormrage US Application
+
+Thank you for applying as a raider to Storm on Stormrage US.
+
+You may access your application at the link below.
+{APP_LINK}
+
+You will be alerted if any comments or questions are posted for your application.
+
+Thanks,
+Your Friendly Neighborhood Application Robot

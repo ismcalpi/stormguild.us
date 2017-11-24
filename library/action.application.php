@@ -91,7 +91,14 @@ function notify_guild() {
 }
 
 function notify_applicant(){
-  return true;
+  $msg = new messenger(false);
+  $msg->template('notify_applicant', '', $_SERVER['DOCUMENT_ROOT'].'/email');
+  $msg->to($_POST['perEmail'], $_POST['perName']);
+  $msg->from('applications@stormguild.us', 'Storm Raider Applications');
+  $msg->assign_vars(array(
+      'APP_LINK'  => 'https://stormguild.us/admin.php?mode=application&accessid='.$accessid
+  ));
+  $msg->send();
 }
 
 function upload_ui() {
