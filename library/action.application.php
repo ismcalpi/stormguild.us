@@ -21,12 +21,12 @@ function app_add() {
   global $accessid;
 
   $destfile = upload_ui();
-  $destfile_db = $database ->quote($destfile);
-  $accessid_db = $database -> quote($accessid);
+  $destfile_db = $db ->quote($destfile);
+  $accessid_db = $db -> quote($accessid);
 
   #Clean up and declare all variables
   foreach($_POST as $key => $value){
-    $$key = $database -> quote($value);
+    $$key = $db -> quote($value);
   }
 
   if (EMPTY($_POST['altName'])) {
@@ -41,7 +41,7 @@ function app_add() {
   if ($db -> sql_query($app_sql)) {
     return true;
   } else {
-    $error_db = $database -> error();
+    $error_db = $db -> error();
     print $error_db;
     return false;
   }
