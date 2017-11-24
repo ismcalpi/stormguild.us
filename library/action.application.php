@@ -1,20 +1,24 @@
 <?php
-include_once 'class.database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/templates/all.user.php';
+include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
+include($phpbb_root_path . 'config.' . $phpEx);
+include_once $_SERVER['DOCUMENT_ROOT'].'/class.database.php';
+
 $accessid = uniqid();
+$discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName'].": https://www.stormguild.us/admin?mode=application&accessid=".$accessid;
 #App Application to database
 app_add();
 #notify via email and phpBB
-notify_phpbb();
-
-#Do Discord Things
-#$discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName'].": https://www.stormguild.us/admin?mode=application&accessid=".$accessid;
+notify_guild();
+notify_applicant()
 #notify_discord($discord_msg);
+
 
 $redirect = $_SERVER['DOCUMENT_ROOT']."/recruit.php?status=success&accessid=".$accessid;
 header("Location: $redirect");
 
 function app_add() {
-  $database = new database();
+  $db = new database();
   global $accessid;
 
   $destfile = upload_ui();
@@ -31,36 +35,15 @@ function app_add() {
   }
 
   $app_sql = "INSERT INTO stormguild.application
-      VALUES
-      (NULL,".$accessid_db.",".$radScreen1.",
-      ".$radScreen2.",".$perName.",
-      ".$perAge.",".$perEmail.",
-      ".$perBnet.",".$charName.",
-      ".$charRealm.",".$charClass.",
-      ".$charSpec.",".$charArt.",
-      ".$charArmory.",".$charLogs.",
-      ".$altName.",".$altRealm.",
-      ".$altClass.",".$altSpec.",
-      ".$altArt.",".$altArmory.",
-      ".$altLogs.",".$quest01.",
-      ".$quest02.",".$quest03.",
-      ".$quest04.",".$quest05.",
-      ".$quest06.",".$quest07.",
-      ".$quest08.",".$destfile_db.",
-      'applied',now())";
+      VALUES (NULL,".$accessid_db.",".$radScreen1.",".$radScreen2.",".$perName.",".$perAge.",".$perEmail.",".$perBnet.",".$charName.",".$charRealm.",".$charClass.",".$charSpec.",".$charArt.",
+      ".$charArmory.",".$charLogs.",".$altName.",".$altRealm.",".$altClass.",".$altSpec.",".$altArt.",".$altArmory.",".$altLogs.",".$quest01.",".$quest02.",".$quest03.",".$quest04.",".$quest05.",
+      ".$quest06.",".$quest07.",".$quest08.",".$destfile_db.",'applied',now())";
 
-  #print "-----------------------------------";
-  #print $app_sql;
-  #print "-----------------------------------";
-
-  if ($database -> write_query($app_sql)) {
-    print 'Succeeded on Database Insert';
+  if ($db -> sql_query($app_sql)) {
     return true;
   } else {
-    print 'Failed on Database Insert';
     $error_db = $database -> error();
     print $error_db;
-
     return false;
   }
 
@@ -75,20 +58,13 @@ function notify_discord($message) {
   return curl_exec($curl);
 }
 
-function notify_phpbb() {
-  define('IN_PHPBB', true);
-  $phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : $_SERVER['DOCUMENT_ROOT'].'/forums/';
-  $phpEx = substr(strrchr(__FILE__, '.'), 1);
-  include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
-  include($phpbb_root_path . 'config.' . $phpEx);
-  include($phpbb_root_path . 'phpbb/db/driver/mysqli.' . $phpEx);
-  include($phpbb_root_path . 'phpbb/db/driver/mysql_base.' . $phpEx);
+function notify_guild() {
   $msg = new messenger(false);
-  $db = new $sql_db();
-  $db->sql_connect($dbhost, $dbuser, $dbpasswd, $dbname, $dbport, false, false);
-  $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))";
-  while($row = $db->sql_fetchrow($result))
-  {
+  $db = new mysqli($dbhost, $dbuser, $dbpasswd, $dbname);
+  unset($dbpasswd);
+  $result = $db -> querty("SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))");
+
+  while($row = $db -> fetch_assoc()) {
     $msg->template('new_app', '', '../email');
     $msg->to($row['user_email'], $row['username']);
     $msg->im($row['user_jabber'], $row['username']);
@@ -99,6 +75,10 @@ function notify_phpbb() {
     ));
     $msg->send($row['user_notify_type']);
   }
+}
+
+function notify_applicant(){
+  return true;
 }
 
 function upload_ui() {
