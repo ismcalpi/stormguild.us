@@ -19,9 +19,6 @@
 <script src="assets/js/helpers/hs.hamburgers.js"></script>
 <script src="assets/js/helpers/hs.height-calc.js"></script>
 <script src="assets/js/helpers/hs.navigation-splitted.js"></script>
-<script  src="assets/js/helpers/hs.focus-state.js"></script>
-<script  src="assets/js/components/hs.file-attachement.js"></script>
-
 <script src="assets/vendor/dzsparallaxer/dzsparallaxer.js"></script>
 <script src="assets/vendor/dzsparallaxer/dzsscroller/scroller.js"></script>
 
@@ -30,16 +27,8 @@
 <script src="assets/js/jquery.validate.min.js"></script>
 <script src="assets/js/additional-methods.min.js"></script>
 <script >
-
-    $("#appForm").validate();
-
     $(document).on('ready', function () {
-
-        // initialization of forms
-        $.HSCore.components.HSFileAttachment.init('.js-file-attachment');
-        $.HSCore.helpers.HSFocusState.init();
-
-        // initialization of header's height equal offset
-        $.HSCore.helpers.HSHeightCalc.init();
+        // initialize jquery validation
+        $("#appForm").validate();
     });
 </script>

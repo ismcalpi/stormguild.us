@@ -8,18 +8,12 @@
 		 *
 		 * @return bool false on failure / mysqli MySQLi object instance on success
 		 */
-		private function connect($type="read") {
+		private function connect() {
 			// Try and connect to the database
 			if(!isset(self::$connection)) {
 				// Load configuration as an array. Use the actual location of your configuration file
-				$config = parse_ini_file('config/database.ini');
-        if($type="read") {
-          self::$connection = new mysqli('localhost',$config['read_uid'],$config['read_pwd'],$config['dbname']);
-        } else if($type="write") {
-          self::$connection = new mysqli('localhost',$config['write_uid'],$config['write_pwd'],$config['dbname']);
-        } else {
-          return false;
-        }
+				$config = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/config/database.ini');
+        self::$connection = new mysqli('localhost',$config['write_uid'],$config['write_pwd'],$config['dbname']);
 			}
 			// If connection was not successful, handle the error
 			if(self::$connection === false) {
@@ -35,9 +29,9 @@
 		 * @param $query The query string
 		 * @return mixed The result of the mysqli::query() function
 		 */
-		private function query($query,$type="read") {
+		private function query($query) {
 			// Connect to the database
-			$connection = $this -> connect($type);
+			$connection = $this -> connect();
 
 			// Query the database
 			$result = $connection -> query($query);
@@ -80,7 +74,7 @@
 		}
 
     public function write_query($query) {
-			$result = $this -> query($query,"write");
+			$result = $this -> query($query);
 			return $result;
 		}
 
