@@ -1,21 +1,15 @@
 <?php
-define('IN_PHPBB', true);
-$phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : $_SERVER['DOCUMENT_ROOT'].'/forums/';
-$phpEx = substr(strrchr(__FILE__, '.'), 1);
-
 include_once 'class.database.php';
-
 $accessid = uniqid();
-
 #App Application to database
 app_add();
-
 #notify via email and phpBB
 notify_phpbb();
 
 #Do Discord Things
 #$discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName'].": https://www.stormguild.us/admin?mode=application&accessid=".$accessid;
 #notify_discord($discord_msg);
+
 $redirect = $_SERVER['DOCUMENT_ROOT']."/recruit.php?status=success&accessid=".$accessid;
 header("Location: $redirect");
 
@@ -82,6 +76,9 @@ function notify_discord($message) {
 }
 
 function notify_phpbb() {
+  define('IN_PHPBB', true);
+  $phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : $_SERVER['DOCUMENT_ROOT'].'/forums/';
+  $phpEx = substr(strrchr(__FILE__, '.'), 1);
   include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
   include($phpbb_root_path . 'config.' . $phpEx);
   include($phpbb_root_path . 'includes/db/phpbb/db/drive/mysqli.' . $phpEx);
