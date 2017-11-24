@@ -82,6 +82,7 @@ function notify_phpbb() {
   include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
   include($phpbb_root_path . 'config.' . $phpEx);
   include($phpbb_root_path . 'phpbb/db/driver/mysqli.' . $phpEx);
+  include($phpbb_root_path . 'phpbb/db/driver/mysql_base.' . $phpEx);
   $msg = new messenger(false);
   $db = new $sql_db();
   $db->sql_connect($dbhost, $dbuser, $dbpasswd, $dbname, $dbport, false, false);
