@@ -15,22 +15,21 @@
 			return self::$connection;
 		}
 
-		public function sql_query($query) {
+		public function sql_select($query) {
 			$rows = array();
-			$result = $this -> query($query);
+			$result = $this -> sql_query($query);
 			if($result === false) {
 				return false;
 			}
-			echo "Query Result: ".$result, PHP_EOL;
 			while ($row = $result -> fetch_assoc()) {
 				$rows[] = $row;
 			}
 			return $rows;
 		}
 
-		public function sql_fetchrow($query) {
+		public function sql_row($query) {
 			$row = array();
-			$result = $this -> query($query);
+			$result = $this -> sql_query($query);
 			if (!$result) {
 				return false;
 			}
@@ -38,7 +37,7 @@
 			return $row;
 		}
 
-		private function query($query) {
+		public function sql_query($query) {
 			// Connect to the database
 			$connection = $this -> connect();
 			// Query the database
@@ -48,7 +47,7 @@
 
 		public function read_row($query) {
 			$row = array();
-			$result = $this -> query($query);
+			$result = $this -> sql_query($query);
 			if (!$result) {
 				return false;
 			}
@@ -58,7 +57,7 @@
 
 		public function read_select($query) {
 			$rows = array();
-			$result = $this -> query($query);
+			$result = $this -> sql_query($query);
 			if($result === false) {
 				return false;
 			}
@@ -69,7 +68,7 @@
 		}
 
     public function write_query($query) {
-			$result = $this -> query($query);
+			$result = $this -> sql_query($query);
 			return $result;
 		}
 
