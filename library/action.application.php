@@ -13,7 +13,7 @@ $discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application f
 #notify_applicant();
 #notify_discord($discord_msg);
 
-$redirect = "recruit.php?status=success&accessid=".$accessid;
+$redirect = "../recruit.php?status=success&accessid=".$accessid;
 header("Location: $redirect");
 
 function app_add() {
