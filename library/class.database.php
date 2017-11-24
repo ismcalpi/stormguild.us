@@ -21,6 +21,7 @@
 			if($result === false) {
 				return false;
 			}
+			echo "Query Result: ".$result, PHP_EOL;
 			while ($row = $result -> fetch_assoc()) {
 				$rows[] = $row;
 			}
