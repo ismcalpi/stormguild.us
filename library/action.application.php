@@ -13,7 +13,7 @@ notify_guild();
 notify_applicant();
 #notify_discord($discord_msg);
 
-$redirect = "../recruit.php#application?status=success&accessid=".$accessid;
+$redirect = "../recruit.php?status=success&accessid=".$accessid."#application";
 header("Location: $redirect");
 
 function app_add() {
