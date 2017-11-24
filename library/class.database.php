@@ -14,8 +14,7 @@
 
 		public function sql_query($query) {
 			$rows = array();
-			$connection = $this -> connect();
-			$result = $connection -> query($query);
+			$result = $this -> query($query);
 			if($result === false) { return false; }
 			while ($row = $result -> fetch_assoc()) { $rows[] = $row; }
 			return $rows;
@@ -23,9 +22,8 @@
 
 		public function sql_fetchrow($query) {
 			$row = array();
-			$connection = $this -> connect();
-			$result = $connection -> query($query);
-			if(!$result) { return false; }
+			$result = $this -> query($query);
+			if($result === false) { return false; }
 			$row = $result -> fetch_assoc();
 			return $row;
 		}
@@ -54,7 +52,7 @@
 			if($result === false) {
 				return false;
 			}
-			while ($row = $result -> fetch_assoc()) {
+			while ($row = $result -> fetch_assoc()) {.
 				$rows[] = $row;
 			}
 			return $rows;
