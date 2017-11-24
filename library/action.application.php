@@ -52,6 +52,8 @@ function app_add() {
       ".$quest08.",".$destfile_db.",
       'applied',now())";
 
+  echo "\n".$app_sql."\n";
+
   if ($db -> sql_query($app_sql)) {
     return true;
   } else {
@@ -75,15 +77,15 @@ function notify_guild() {
   $msg = new messenger(false);
   $db = new mysqli($dbhost, $dbuser, $dbpasswd, $dbname);
   unset($dbpasswd);
+  global $accessid;
   $result = $db -> querty("SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))");
-
   while($row = $db -> fetch_assoc()) {
-    $msg->template('new_app', '', '../email');
+    $msg->template('new_app', '', $_SERVER['DOCUMENT_ROOT'].'/email');
     $msg->to($row['user_email'], $row['username']);
     $msg->im($row['user_jabber'], $row['username']);
     $msg->from('applications@stormguild.us', 'Storm Raider Applications');
     $msg->assign_vars(array(
-        'APP_LINK'  => 'https://stormguild.us/admin?mode=application&access_id='.$accessID,
+        'APP_LINK'  => 'https://stormguild.us/admin?mode=application&access_id='.$accessid,
         'APP_CLASS' => $_POST['$charSpec'].' '.$_POST['$charClass']
     ));
     $msg->send($row['user_notify_type']);
