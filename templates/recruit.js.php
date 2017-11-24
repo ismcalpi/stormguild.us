@@ -27,9 +27,19 @@
 
 <!-- JS Custom -->
 <script src="assets/js/custom.js"></script>
-
+<script src="assets/js/jquery.validate.min.js"></script>
+<script src="assets/js/additional-methods.min.js"></script>
 <script >
+
+    $("#appForm").validate({
+      submitHandler: function(form) {
+        form.submit();
+      }
+    });
+
     $(document).on('ready', function () {
+
+
         // initialization of forms
         $.HSCore.components.HSFileAttachment.init('.js-file-attachment');
         $.HSCore.helpers.HSFocusState.init();
