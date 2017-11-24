@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-8">
-    <?php include_once $_SERVER['DOCUMENT_ROOT'].'/templates/admin.application.navar.php' ?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'].'/templates/admin.application.navbar.php' ?>
   </div>
   <div class="col-9">
     <div class="row">
