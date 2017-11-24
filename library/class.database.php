@@ -27,7 +27,7 @@
 			return $rows;
 		}
 
-		public function sql_row($query) {
+		public function sql_fetchrow($query) {
 			$row = array();
 			$result = $this -> sql_query($query);
 			if (!$result) {
