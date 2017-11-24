@@ -5,13 +5,13 @@ include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 
 $accessid = uniqid();
-$discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName'].": https://www.stormguild.us/admin?mode=application&accessid=".$accessid;
+$discord_msg = "TESTING: New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName'].": https://www.stormguild.us/admin?mode=application&accessid=".$accessid;
 #App Application to database
 app_add();
 #notify via email and phpBB
 notify_guild();
 notify_applicant();
-#notify_discord($discord_msg);
+notify_discord($discord_msg);
 
 $redirect = "../recruit.php?status=success&accessid=".$accessid."#application";
 header("Location: $redirect");
@@ -64,8 +64,8 @@ function app_add() {
 }
 
 function notify_discord($message) {
-  $data = array("content" => $message, "username" => "Captain Hook");
-  $curl = curl_init("https://discordapp.com/api/webhooks/YOUR-WEBHOOK-URL-HERE");
+  $data = array("content" => $message, "username" => "Application Robot");
+  $curl = curl_init("https://discordapp.com/api/webhooks/383667737525878798/-OZH5-jbnsIpngVOgzcsTuLqTpkDbx7OULmmBOd0zaPUAcYIiLdMczsU9m65iHzNF3vQ");
   curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
   curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
