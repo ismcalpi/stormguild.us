@@ -31,7 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <div class="col-sm-12">
         <?php
-        $comments = $db -> select("SELECT *, date_format(create_datetime,'%b %D, %Y') as formDate FROM stormguild.app_comment WHERE application_id =".$app_id." and reply_id is null order by create_datetime asc");
+        include_once 'library/class.database.php';
+        $db = new database();
+        $comments = $db -> sql_select("SELECT *, date_format(create_datetime,'%b %D, %Y') as formDate FROM stormguild.app_comment WHERE application_id =".$app_id." and reply_id is null order by create_datetime asc");
         if(!empty($comments)) {
             foreach ($comments as $comment) {
         ?>
@@ -67,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <?php
 
-                $replies = $db -> select("SELECT *, date_format(create_datetime,'%b %D, %Y') as formDate FROM stormguild.app_comment WHERE reply_id =".$comment['comment_id']." order by create_datetime asc");
+                $replies = $db -> sql_select("SELECT *, date_format(create_datetime,'%b %D, %Y') as formDate FROM stormguild.app_comment WHERE reply_id =".$comment['comment_id']." order by create_datetime asc");
 
                 if(!empty($replies)){
 

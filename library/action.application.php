@@ -104,10 +104,10 @@ function notify_applicant(){
 function upload_ui() {
   global $accessid;
   #Set and make our Destination Path
-  $destPath = $_SERVER['DOCUMENT_ROOT'].'/assets/img/uploads/applications/'.$accessid.'/';
-  mkdir($destPath);
+  $destPath = 'assets/img/uploads/applications/'.$accessid.'/';
+  mkdir($_SERVER['DOCUMENT_ROOT']."/".$destPath);
   #Find and move our file
-  $destFile = $destPath.basename($_FILES['imgUI']['name']);
+  $destFile = $_SERVER['DOCUMENT_ROOT']."/".$destPath.basename($_FILES['imgUI']['name']);
   $tmpFile = $_FILES['imgUI']['tmp_name'];
   if (move_uploaded_file($tmpFile, $destFile)){
     return $destFile;
