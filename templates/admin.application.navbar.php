@@ -1,26 +1,23 @@
 <div id="app-accordion" class="u-accordion u-accordion-color-primary" role="tablist" aria-multiselectable="true">
-    <?php 
-    
-    $result = $db -> query("SELECT max(application_id) as application_id FROM stormguild.application where status = 'applied'");
+    <?php
+    include_once 'library/class.database.php'
+    $db = new database();
+    $result = $db -> sql_fetchrow("SELECT max(application_id) as application_id FROM stormguild.application where status = 'applied'");
     if(!empty($result)) {
-        foreach ($result as $recentapp) {
+        if (!empty($_GET['appid'])) {
+            $app_id = $_GET['appid'];
+        } else {
+            $app_id = $result['application_id'];
+        }
 
-            if (!empty($_GET['application_id'])) {
-                $app_id = $_GET['application_id'];
-            } else {
-                $app_id = $recentapp['application_id'];
-            }
-
-            if (!empty($_GET['status'])) {
-                $getStatus = $_GET['status'];
-            } else {
-                $getStatus = 'applied';
-            }
-
+        if (!empty($_GET['status'])) {
+            $getStatus = $_GET['status'];
+        } else {
+            $getStatus = 'applied';
         }
     }
-    
-    $statuses = $db -> select("SELECT distinct status FROM stormguild.application");
+
+    $statuses = $db -> sql_select("SELECT distinct status FROM stormguild.application");
     if (!empty($statuses)) {
         foreach ($statuses as $status) {
 
@@ -28,13 +25,13 @@
     <div class="card rounded-0 g-brd-none">
         <div id="<?php echo $status['status'].'-heading'; ?>" class="u-accordion__header g-pa-0" role="tab">
             <h5 class="mb-0 text-uppercase g-font-size-default g-font-weight-700 g-pa-20a mb-0">
-                <a class="<?php  
+                <a class="<?php
             if ($status['status'] != $getStatus) {
                 echo 'collapsed';
             }
-                          ?> d-block g-color-main g-text-underline--none--hover" 
-                   href="#<?php echo $status['status'].'-body'; ?>" 
-                   data-toggle="collapse" data-parent="#app-accordion" 
+                          ?> d-block g-color-main g-text-underline--none--hover"
+                   href="#<?php echo $status['status'].'-body'; ?>"
+                   data-toggle="collapse" data-parent="#app-accordion"
                    aria-expanded="true" aria-controls="<?php echo $status['status'].'-body'; ?>">
                     <span class="u-accordion__control-icon d-inline-block g-brd-right g-brd-gray-light-v4 g-color-blue text-center g-pa-20">
                         <i class="fa fa-plus"></i>
@@ -70,8 +67,8 @@
                     ?>
 
                     <li class="nav-item">
-                        <a 
-                           class="nav-link <?php echo $active; ?>" 
+                        <a
+                           class="nav-link <?php echo $active; ?>"
                            href="application.php?application_id=<?php echo $applicant['application_id']; ?>&status=<?php echo $status['status']; ?>">
                             <?php echo $character; ?>
                         </a>
