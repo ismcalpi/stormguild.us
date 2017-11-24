@@ -3,16 +3,9 @@ define('IN_PHPBB', true);
 $phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : $_SERVER['DOCUMENT_ROOT'].'/forums/';
 $phpEx = substr(strrchr(__FILE__, '.'), 1);
 
-print 'Starting work...';
-
-print 'Loading includes...';
 include_once 'class.database.php';
-include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
-include($phpbb_root_path . 'config.' . $phpEx);
-include($phpbb_root_path . 'includes/db/phpbb/db/drive/mysqli.' . $phpEx);
 
 $accessid = uniqid();
-print "Using AccessID = ".$accessid;
 
 #App Application to database
 app_add();
@@ -89,9 +82,12 @@ function notify_discord($message) {
 }
 
 function notify_phpbb() {
+  include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
+  include($phpbb_root_path . 'config.' . $phpEx);
+  include($phpbb_root_path . 'includes/db/phpbb/db/drive/mysqli.' . $phpEx);
+  $msg = new messenger(false);
   $db = new $sql_db();
   $db->sql_connect($dbhost, $dbuser, $dbpasswd, $dbname, $dbport, false, false);
-  $msg = new messenger(false);
   $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))";
   while($row = $db->sql_fetchrow($result))
   {
