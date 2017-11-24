@@ -47,7 +47,7 @@
             if ($status['status'] == $getStatus) {
                 echo 'show';
             }
-                                                                  ?>" role="tabpanel" aria-labelledby="<?php echo $status['status'].'-heading'; ?>">
+            ?>" role="tabpanel" aria-labelledby="<?php echo $status['status'].'-heading'; ?>">
             <div class="u-accordion__body g-bg-gray-light-v5 g-px-5 g-py-5">
                 <ul class="nav flex-column u-nav-v3-1" role="tablist" data-target="nav-3-1-default-ver-default-icons" data-tabs-mobile-type="slide-up-down" data-btn-classes="btn btn-md btn-block rounded-0 u-btn-outline-lightgray">
 

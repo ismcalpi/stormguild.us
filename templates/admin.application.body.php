@@ -1,11 +1,9 @@
 <?php
-
-$applications = $db -> sql_select("SELECT * FROM stormguild.application WHERE application_id =".$app_id);
+include_once 'library/class.database.php';
+$db = new database();
+$applications = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE application_id =".$app_id);
 if(!empty($applications)) {
-foreach ($applications as $application) {
-
 ?>
-
 <!-- Screening Questions -->
 <div class="row">
     <div class="col-sm-12">
@@ -198,6 +196,5 @@ foreach ($applications as $application) {
 </div>
 
 <?php
-    }
 }
 ?>
