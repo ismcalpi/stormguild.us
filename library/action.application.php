@@ -7,13 +7,13 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 $accessid = uniqid();
 $discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName'].": https://www.stormguild.us/admin?mode=application&accessid=".$accessid;
 #App Application to database
-app_add();
+#app_add();
 #notify via email and phpBB
-notify_guild();
-notify_applicant();
+#notify_guild();
+#notify_applicant();
 #notify_discord($discord_msg);
 
-$redirect = $_SERVER['DOCUMENT_ROOT']."/recruit.php?status=success&accessid=".$accessid;
+$redirect = "recruit.php?status=success&accessid=".$accessid;
 header("Location: $redirect");
 
 function app_add() {
@@ -83,7 +83,7 @@ function notify_guild() {
     $msg->im($row['user_jabber'], $row['username']);
     $msg->from('applications@stormguild.us', 'Storm Raider Applications');
     $msg->assign_vars(array(
-        'APP_LINK'  => 'https://stormguild.us/admin?mode=application&access_id='.$accessid,
+        'APP_LINK'  => 'https://stormguild.us/admin.php?mode=application&accessid='.$accessid,
         'APP_CLASS' => $_POST['$charSpec'].' '.$_POST['$charClass']
     ));
     $msg->send($row['user_notify_type']);
