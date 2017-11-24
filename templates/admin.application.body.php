@@ -1,6 +1,6 @@
 <?php
 
-$applications = $db -> select_single("SELECT * FROM stormguild.application WHERE application_id =".$app_id);
+$applications = $db -> sql_select("SELECT * FROM stormguild.application WHERE application_id =".$app_id);
 if(!empty($applications)) {
 foreach ($applications as $application) {
 

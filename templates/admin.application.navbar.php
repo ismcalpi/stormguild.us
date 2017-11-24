@@ -69,7 +69,7 @@
                     <li class="nav-item">
                         <a
                            class="nav-link <?php echo $active; ?>"
-                           href="application.php?application_id=<?php echo $applicant['application_id']; ?>&status=<?php echo $status['status']; ?>">
+                           href="admin.php?mode=application&appid=<?php echo $applicant['application_id']; ?>&status=<?php echo $status['status']; ?>">
                             <?php echo $character; ?>
                         </a>
                     </li>
