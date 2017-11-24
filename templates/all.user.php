@@ -1,9 +1,9 @@
 <?php
 define('IN_PHPBB', true);
-$phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : 'forums/';
+$phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : $_SERVER['DOCUMENT_ROOT'].'/forums';
 $phpEx = substr(strrchr(__FILE__, '.'), 1);
 
-include($phpbb_root_path . 'common.' . $phpEx);
+include($phpbb_root_path . '/common.' . $phpEx);
 include($phpbb_root_path . '/includes/functions_user.' . $phpEx);
 
 // Start session management
