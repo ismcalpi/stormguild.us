@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-8">
-    <?php include 'templates/admin.application.navar.php' ?>
+    <?php include_once 'admin.application.navar.php' ?>
   </div>
   <div class="col-9">
     <div class="row">
