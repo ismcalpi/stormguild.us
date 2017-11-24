@@ -5,10 +5,10 @@
   <div class="col-9">
     <div class="row">
       <div class="col-lg-8">
-        <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/admin.application.body' ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/admin.application.body.php' ?>
       </div>
       <div class="col-lg-4">
-        <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/admin.application.comments' ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/admin.application.comments.php' ?>
       </div>
   </div>
 </div>
