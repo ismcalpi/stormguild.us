@@ -34,9 +34,23 @@ function app_add() {
   }
 
   $app_sql = "INSERT INTO stormguild.application
-      VALUES (NULL,".$accessid_db.",".$radScreen1.",".$radScreen2.",".$perName.",".$perAge.",".$perEmail.",".$perBnet.",".$charName.",".$charRealm.",".$charClass.",".$charSpec.",".$charArt.",
-      ".$charArmory.",".$charLogs.",".$altName.",".$altRealm.",".$altClass.",".$altSpec.",".$altArt.",".$altArmory.",".$altLogs.",".$quest01.",".$quest02.",".$quest03.",".$quest04.",".$quest05.",
-      ".$quest06.",".$quest07.",".$quest08.",".$destfile_db.",'applied',now())";
+      VALUES
+      (NULL,".$accessid_db.",".$radScreen1.",
+      ".$radScreen2.",".$perName.",
+      ".$perAge.",".$perEmail.",
+      ".$perBnet.",".$charName.",
+      ".$charRealm.",".$charClass.",
+      ".$charSpec.",".$charArt.",
+      ".$charArmory.",".$charLogs.",
+      ".$altName.",".$altRealm.",
+      ".$altClass.",".$altSpec.",
+      ".$altArt.",".$altArmory.",
+      ".$altLogs.",".$quest01.",
+      ".$quest02.",".$quest03.",
+      ".$quest04.",".$quest05.",
+      ".$quest06.",".$quest07.",
+      ".$quest08.",".$destfile_db.",
+      'applied',now())";
 
   if ($db -> sql_query($app_sql)) {
     return true;
