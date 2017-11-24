@@ -52,9 +52,11 @@ function app_add() {
       ".$quest08.",".$destfile_db.",
       'applied',now())";
 
-  echo "\n".$app_sql."\n";
+  echo $app_sql, PHP_EOL;
 
   if ($db -> sql_query($app_sql)) {
+    $error_db = $db -> error();
+    echo $error_db, PHP_EOL;
     return true;
   } else {
     $error_db = $db -> error();

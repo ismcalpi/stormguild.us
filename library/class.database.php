@@ -5,10 +5,13 @@
 
 		private function connect() {
 			if(!isset(self::$connection)) {
-				$config = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/config/database.ini');
+				$iniPath = $_SERVER['DOCUMENT_ROOT'].'/config/database.ini';
+				$config = parse_ini_file($iniPath);
         self::$connection = new mysqli('localhost',$config['write_uid'],$config['write_pwd'],$config['dbname']);
 			}
-			if(self::$connection === false) { return false; }
+			if(self::$connection === false) {
+				return false;
+			}
 			return self::$connection;
 		}
 
