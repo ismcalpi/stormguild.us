@@ -31,14 +31,9 @@
 <script src="assets/js/additional-methods.min.js"></script>
 <script >
 
-    $("#appForm").validate({
-      submitHandler: function(form) {
-        form.submit();
-      }
-    });
+    $("#appForm").validate();
 
     $(document).on('ready', function () {
-
 
         // initialization of forms
         $.HSCore.components.HSFileAttachment.init('.js-file-attachment');
