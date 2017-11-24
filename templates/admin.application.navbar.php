@@ -1,6 +1,6 @@
 <div id="app-accordion" class="u-accordion u-accordion-color-primary" role="tablist" aria-multiselectable="true">
     <?php
-    include_once 'library/class.database.php'
+    include_once 'library/class.database.php';
     $db = new database();
     $result = $db -> sql_fetchrow("SELECT max(application_id) as application_id FROM stormguild.application where status = 'applied'");
     if(!empty($result)) {
