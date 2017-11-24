@@ -89,10 +89,7 @@ function notify_discord($message) {
 }
 
 function notify_phpbb() {
-  $db = new $sql_db();
-  $db->sql_connect($dbhost, $dbuser, $dbpasswd, $dbname, $dbport, false, false);
-  // We do not need this any longer, unset for safety purposes
-  unset($dbpasswd);
+  global $db, $user;
   $msg = new messenger(false);
   $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))";
   while($row = $db->sql_fetchrow($result))
