@@ -7,7 +7,7 @@ print 'Starting work...';
 
 print 'Loading includes...';
 include_once 'class.database.php';
-include($phpbb_root_path . '/includes/functions_messenger.' . $phpEx);
+include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
 
 $accessid = uniqid();
 print "Using AccessID = ".$accessid;
@@ -87,19 +87,30 @@ function notify_discord($message) {
 }
 
 function notify_phpbb() {
-  $messenger = new messenger(false);
+
+  include($phpbb_root_path . 'config.' . $phpEx);
+  include($phpbb_root_path . 'includes/db/' . $dbms . '.' . $phpEx);
+
+  $db = new $sql_db();
+
+  $db->sql_connect($dbhost, $dbuser, $dbpasswd, $dbname, $dbport, false, false);
+
+  // We do not need this any longer, unset for safety purposes
+  unset($dbpasswd);
+  
+  $msg = new messenger(false);
   $result = "SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))";
   while($row = $db->sql_fetchrow($result))
   {
-    $messenger->template('new_app', '', '../email');
-    $messenger->to($row['user_email'], $row['username']);
-    $messenger->im($row['user_jabber'], $row['username']);
-    $messenger->from('applications@stormguild.us', 'Storm Raider Applications');
-    $messenger->assign_vars(array(
+    $msg->template('new_app', '', '../email');
+    $msg->to($row['user_email'], $row['username']);
+    $msg->im($row['user_jabber'], $row['username']);
+    $msg->from('applications@stormguild.us', 'Storm Raider Applications');
+    $msg->assign_vars(array(
         'APP_LINK'  => 'https://stormguild.us/admin?mode=application&access_id='.$accessID,
         'APP_CLASS' => $_POST['$charSpec'].' '.$_POST['$charClass']
     ));
-    $messenger->send($row['user_notify_type']);
+    $msg->send($row['user_notify_type']);
   }
 }
 
