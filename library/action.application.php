@@ -84,7 +84,6 @@ function upload_ui() {
   global $accessid;
   #Set and make our Destination Path
   $destPath = $_SERVER['DOCUMENT_ROOT'].'/assets/img/uploads/applications/'.$accessid.'/';
-  print_r ($destPath);
   mkdir($destPath);
   #Find and move our file
   $destFile = $destPath.basename($_FILES['imgUI']['name']);
