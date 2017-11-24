@@ -52,7 +52,7 @@
 			if($result === false) {
 				return false;
 			}
-			while ($row = $result -> fetch_assoc()) {.
+			while ($row = $result -> fetch_assoc()) {
 				$rows[] = $row;
 			}
 			return $rows;
