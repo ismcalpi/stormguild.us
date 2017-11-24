@@ -77,7 +77,7 @@ function notify_guild() {
   global $dbhost, $dbuser, $dbpasswd, $dbname, $accessid;
   $mysqli = new mysqli($dbhost, $dbuser, $dbpasswd, $dbname);
   $result = $mysqli -> query("SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))");
-  while($row = $mysqli -> fetch_assoc()) {
+  while($row = $result -> fetch_assoc()) {
     $msg->template('new_app', '', $_SERVER['DOCUMENT_ROOT'].'/email');
     $msg->to($row['user_email'], $row['username']);
     $msg->im($row['user_jabber'], $row['username']);
