@@ -53,7 +53,7 @@
 
                     <?php
 
-            $applicants = $db -> select("SELECT application_id, charName, charClass, charSpec, status FROM stormguild.application WHERE create_datetime > date_sub(now(), interval 3 month) and status = '".$status['status']."' order by application_id desc");
+            $applicants = $db -> sql_select("SELECT application_id, charName, charClass, charSpec, status FROM stormguild.application WHERE create_datetime > date_sub(now(), interval 3 month) and status = '".$status['status']."' order by application_id desc");
 
             foreach ($applicants as $applicant) {
 
