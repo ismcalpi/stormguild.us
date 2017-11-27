@@ -11,11 +11,11 @@ Storm is a raiding guild in the game [World of Warcraft](http://www.worldofwarcr
 + [X] Add US Rank above Progress
 + [X] Implement Email Notifications
 + [X] Add in a "Remember Me" Option for log in
-+ [ ] Full phpBB Integration (Use Custom User Control as primary)
++ [X] Full phpBB Integration (Use Custom User Control as primary)
 
 ### TODO List (After Launch, IE fun features)
-+ [ ] Code & Directory Cleanup (In Progress)
-+ [ ] Add Discord Web-Hook to Alert on Application
++ [X] Code & Directory Cleanup (In Progress)
++ [X] Add Discord Web-Hook to Alert on Application
 + [ ] Finalize Admin Panel
 + [ ] Implement SMS Notifications
 + [ ] Finish Roster using User Profiles
