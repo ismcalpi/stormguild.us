@@ -102,7 +102,7 @@
         <?php
             }
         } ?>
-        <?php if ($status == 'open') {
+        <?php if ($status == 'open') { ?>
         <form id="comForm" method="post" action="library/action.comment.php">
             <div class="form-group g-mb-20">
                 <?php
