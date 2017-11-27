@@ -2,7 +2,9 @@
 <html lang="en">
 	<?php include 'templates/all.user.php' ?>
 	<?php include 'templates/admin.head.php' ?>
-	<?php if(!EMPTY($_GET['appid'])) { $appid = $_GET['appid']; } ?>
+	<?php
+
+	?>
 	<body>
 		<main>
       <div class="row" style="min-height:100vh">

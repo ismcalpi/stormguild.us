@@ -9,17 +9,17 @@
     $$tmp_name = $app_count['count'];
   }
 
-  $actOpen = $actAccept = $actDecline = array('collapsed','collapse show');
+  $actOpen = $actAccept = $actDecline = array('collapsed','collapse');
   if(!empty($_GET['status'])) {
     switch ($_GET['status']) {
       case 'open':
-        $actOpen = array('','');
+        $actOpen = array('','collapse show');
         break;
       case 'accepted':
-        $actAccept = array('','');
+        $actAccept = array('','collapse show');
         break;
       case 'declined':
-        $actDecline = array('','');
+        $actDecline = array('','collapse show');
         break;
     }
   }
