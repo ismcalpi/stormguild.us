@@ -5,10 +5,12 @@ include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 
 $accessid = uniqid();
-$discord_msg = "@here New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n https://www.stormguild.us/admin.php?mode=application&accessid=".$accessid;
+$discord_msg = "@here New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n https://www.stormguild.us/application.php?appid=".$accessid;
 #App Application to database
 app_add();
 #notify via email and phpBB
+$app_link = 'https://www.stormguild.us/application.php?appid='
+$discord_msg = "@here New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']." ".$app_link;
 notify_guild();
 notify_applicant();
 notify_discord($discord_msg);
