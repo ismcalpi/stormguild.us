@@ -14,7 +14,7 @@ notify_guild($member_link,$_POST['appname'],$_POST['username']);
 notify_applicant($app_link,$_POST['username']);
 notify_discord($discord_msg);
 
-$link = 'https://www.stormguild.com'.$_POST['redirecturi'];
+$link = 'https://www.stormguild.us'.$_POST['redirecturi'];
 header("Location: $link");
 
 function comment_add() {

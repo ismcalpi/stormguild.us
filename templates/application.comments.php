@@ -9,7 +9,7 @@
         <?php
         include_once 'library/class.database.php';
         $db = new database();
-        $comments = $db -> sql_select("SELECT *, date_format(create_datetime,'%b %D, %Y') as formDate FROM stormguild.app_comment WHERE application_id =".$appid." and reply_id is null order by create_datetime asc");
+        $comments = $db -> sql_select("SELECT *, date_format(create_datetime,'%b %D, %Y') as formDate FROM stormguild.app_comment WHERE application_id =".$appid." and reply_id = 0 order by create_datetime asc");
         if(!empty($comments)) {
             foreach ($comments as $comment) {
         ?>
