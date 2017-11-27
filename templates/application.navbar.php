@@ -67,8 +67,8 @@
             $open_char = $open_app['charName'].' - '.$open_app['charSpec'].' '.$open_app['charClass'];
             $open_link = 'application.php?appid='.$open_app['application_id'].'&status='.$open_app['status'];
             ?>
-            <li class="nav-item <?php echo $is_active ?>">
-              <a href="<?php echo $open_link ?>" class="nav-link"><?php echo $open_char ?></a>
+            <li class="nav-item">
+              <a href="<?php echo $open_link ?>" class="nav-link <?php echo $is_active ?>"><?php echo $open_char ?></a>
             </li>
         <?php } ?>
       </div>
@@ -101,8 +101,8 @@
             $open_char = $open_app['charName'].' - '.$open_app['charSpec'].' '.$open_app['charClass'];
             $open_link = 'application.php?appid='.$open_app['application_id'].'&status='.$open_app['status'];
             ?>
-            <li class="nav-item <?php echo $is_active ?>">
-              <a href="<?php echo $open_link ?>" class="nav-link"><?php echo $open_char ?></a>
+            <li class="nav-item">
+              <a href="<?php echo $open_link ?>" class="nav-link <?php echo $is_active ?>"><?php echo $open_char ?></a>
             </li>
         <?php } ?>
       </div>
@@ -135,8 +135,8 @@
             $decline_char = $decline_app['charName'].' - '.$decline_app['charSpec'].' '.$decline_app['charClass'];
             $decline_link = 'application.php?appid='.$decline_app['application_id'].'&status='.$decline_app['status'];
             ?>
-            <li class="nav-item <?php echo $is_active ?>">
-              <a href="<?php echo $decline_link ?>" class="nav-link"><?php echo $decline_char ?></a>
+            <li class="nav-item">
+              <a href="<?php echo $decline_link ?>" class="nav-link <?php echo $is_active ?>"><?php echo $decline_char ?></a>
             </li>
         <?php } ?>
       </div>
