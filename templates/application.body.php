@@ -91,7 +91,7 @@ if(!empty($application)) {
     <div class="col-sm-12 g-my-10">
         <!-- Alt Character -->
         <div class="row <?php if(empty($application['altName'])) {echo "g-hide"; } ?>">
-            <div class="col-sm-8">
+            <div class="col-8">
                 <h5>
                     <?php echo $application['altName']; ?>
                     -
@@ -103,13 +103,13 @@ if(!empty($application)) {
                     </small>
                 </h5>
             </div>
-            <div class="col-sm-2 g-py-5">
-                <a target="_blank" href="<?php echo $application['altArmory']; ?>" class="btn btn-md u-btn-skew u-btn-outline-blue g-mr-10 g-mb-15">
+            <div class="col-2 g-py-5">
+                <a target="_blank" href="<?php echo $application['altArmory']; ?>" class="btn btn-sm u-btn-skew u-btn-outline-blue">
                     <span class="u-btn-skew__inner">Armory Link</span>
                 </a>
             </div>
-            <div class="col-sm-2 g-py-5">
-                <a target="_blank" href="<?php echo $application['altLogs']; ?>" class="btn btn-md u-btn-skew u-btn-outline-purple g-mr-10 g-mb-15">
+            <div class="col-2 g-py-5">
+                <a target="_blank" href="<?php echo $application['altLogs']; ?>" class="btn btn-sm u-btn-skew u-btn-outline-purple">
                     <span class="u-btn-skew__inner">Logs Link</span>
                 </a>
             </div>
