@@ -77,14 +77,10 @@ if(!empty($application)) {
                 </h5>
             </div>
             <div class="col-sm-2 g-py-5">
-                <a target="_blank" href="<?php echo $application['charArmory']; ?>" class="btn btn-md u-btn-skew u-btn-outline-blue g-mr-10 g-mb-15">
-                    <span class="u-btn-skew__inner">Armory Link</span>
-                </a>
+                <a target="_blank" href="<?php echo $application['charArmory']; ?>" class="btn btn-block u-btn-outline-blue g-mb-10">Armory</a>
             </div>
             <div class="col-sm-2 g-py-5">
-                <a target="_blank" href="<?php echo $application['charLogs']; ?>" class="btn btn-md u-btn-skew u-btn-outline-purple g-mr-10 g-mb-15">
-                    <span class="u-btn-skew__inner">Logs Link</span>
-                </a>
+                <a target="_blank" href="<?php echo $application['charLogs']; ?>" class="btn btn-block u-btn-outline-purple g-mb-10">Combat Logs</a>
             </div>
         </div>
     </div>
@@ -104,10 +100,10 @@ if(!empty($application)) {
                 </h5>
             </div>
             <div class="col-2 g-py-5">
-                <a target="_blank" href="<?php echo $application['altArmory']; ?>" class="btn btn-block u-btn-outline-blue g-mb-10">Armory Link</a>
+                <a target="_blank" href="<?php echo $application['altArmory']; ?>" class="btn btn-block u-btn-outline-blue g-mb-10">Armory</a>
             </div>
             <div class="col-2 g-py-5">
-                <a target="_blank" href="<?php echo $application['altLogs']; ?>" class="btn btn-block u-btn-outline-purple g-mb-10">Logs Link</a>
+                <a target="_blank" href="<?php echo $application['altLogs']; ?>" class="btn btn-block u-btn-outline-purple g-mb-10">Combat Logs</a>
             </div>
         </div>
     </div>
