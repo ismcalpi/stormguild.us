@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $comBody = $db -> quote($_POST['commentBody']);
 
         $db -> query("INSERT INTO stormguild.app_comment (comment_id,reply_id,application_id,user,body,create_datetime)
-                            VALUE (NULL,".$replyID.",".$app_id.",".$comUID.",".$comBody.",now())");
+                            VALUE (NULL,".$replyID.",".$appid.",".$comUID.",".$comBody.",now())");
     }
 }
 ?>
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php
         include_once 'library/class.database.php';
         $db = new database();
-        $comments = $db -> sql_select("SELECT *, date_format(create_datetime,'%b %D, %Y') as formDate FROM stormguild.app_comment WHERE application_id =".$app_id." and reply_id is null order by create_datetime asc");
+        $comments = $db -> sql_select("SELECT *, date_format(create_datetime,'%b %D, %Y') as formDate FROM stormguild.app_comment WHERE application_id =".$appid." and reply_id is null order by create_datetime asc");
         if(!empty($comments)) {
             foreach ($comments as $comment) {
         ?>
@@ -120,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        if (!empty($app_id)) {
+        if (!empty($appid)) {
         ?>
 
         <form id="comForm" method="post" action="<?php echo $_SERVER['REQUEST_URI']."#comForm"; ?>">

@@ -11,6 +11,7 @@
 <script src="assets/vendor/image-select/src/ImageSelect.jquery.js"></script>
 <script src="assets/vendor/masonry/dist/masonry.pkgd.min.js"></script>
 <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
+<script src="assets/vendor/fancybox/jquery.fancybox.min.js"></script>
 
 <!-- JS Unify -->
 <script src="assets/js/hs.core.js"></script>
@@ -18,25 +19,15 @@
 <script src="assets/js/helpers/hs.hamburgers.js"></script>
 <script src="assets/js/helpers/hs.height-calc.js"></script>
 <script src="assets/js/helpers/hs.navigation-splitted.js"></script>
+<script src="assets/js/components/hs.popup.js"></script>
 
 <!-- JS Custom -->
 <script src="assets/js/custom.js"></script>
 
 <!-- Twitch Stuff -->
-<script src="https://embed.twitch.tv/embed/v1.js"></script>
 <script type="text/javascript">
-  new Twitch.Embed("twitch-embed-kniny", {
-    width: "100%",
-    height: 480,
-    channel: "kniny",
-    layout: "video",
-    autoplay: false
-  });
-  new Twitch.Embed("twitch-embed-toludin", {
-    width: "100%",
-    height: 480,
-    channel: "toludin",
-    layout: "video",
-    autoplay: false
+  $(document).on('ready', function () {
+    // initialization of countdowns
+    $.HSCore.components.HSPopup.init('.js-fancybox');
   });
 </script>

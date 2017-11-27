@@ -1,24 +1,28 @@
 <?php
 include_once 'library/class.database.php';
 $db = new database();
-$application = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE application_id =".$app_id);
+$application = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE application_id =".$appid);
 if(!empty($application)) {
 ?>
 <!-- Screening Questions -->
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-12">
+        <div class="u-heading-v3-1 g-my-20">
+            <h2 class="h3 u-heading-v3__title">Screening Questions</h2>
+        </div>
+    </div>
+    <div class="col-12">
         <p>
             <strong>You understand that you should put some thought and time into your application?</strong>
             <?php echo $application['screen01']; ?>
         </p>
 
         <p>
-            <strong>Can you make all of our scheduled raids? <br /> Including the extra extended raid the week new Mythic content releases?</strong>
+            <strong>Can you make all of our scheduled raids? Including the extra extended raid the week new Mythic content releases?</strong>
             <?php echo $application['screen02']; ?>
         </p>
     </div>
 </div>
-
 <div class="row">
     <div class="col-sm-12">
         <div class="u-heading-v3-1 g-my-20">

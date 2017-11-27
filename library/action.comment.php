@@ -4,17 +4,14 @@ include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
 include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 
-$accessid = uniqid();
-$discord_msg = "@here New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n https://www.stormguild.us/admin.php?mode=application&accessid=".$accessid;
-#App Application to database
-app_add();
-#notify via email and phpBB
+$discord_msg = "New Comment for ".$_POST['charName']." the ".$_POST['charSpec']." ".$_POST['charClass']."! Link: https://www.stormguild.us/application.php?appid=".$_POST['appid'];
+
+comment_add();
 notify_guild();
 notify_applicant();
 notify_discord($discord_msg);
 
-$redirect = "../recruit.php?status=success&accessid=".$accessid."#application";
-header("Location: $redirect");
+header("Location: $_POST['redirect']");
 
 function app_add() {
   $db = new database();
