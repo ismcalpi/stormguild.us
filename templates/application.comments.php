@@ -7,8 +7,6 @@
     </div>
     <div class="col-sm-12">
         <?php
-        include_once 'library/class.database.php';
-        $db = new database();
         $comments = $db -> sql_select("SELECT *, date_format(create_datetime,'%b %D, %Y') as formDate FROM stormguild.app_comment WHERE application_id =".$appid." and reply_id = 0 order by create_datetime asc");
         if(!empty($comments)) {
             foreach ($comments as $comment) {
@@ -75,7 +73,6 @@
             <form method="post" action="library/action.comment.php">
 
                 <?php
-                  $db = new database();
                   $result = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE application_id = ".$appid);
                 ?>
 
@@ -104,18 +101,13 @@
 
         <?php
             }
-        }
-        ?>
-
+        } ?>
+        <?php if ($status == 'open') {
         <form id="comForm" method="post" action="library/action.comment.php">
-
             <div class="form-group g-mb-20">
-
                 <?php
-                  $db = new database();
                   $result = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE application_id = ".$appid);
                 ?>
-
                 <textarea class="form-control form-control-md g-resize-none rounded-0" rows="3" name="message" placeholder="Add a Comment..."></textarea>
                 <input type="hidden" name="redirecturi" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
                 <input type="hidden" name="appid" value="<?php echo $appid ?>" />
@@ -126,10 +118,9 @@
                 <button type="submit" class="btn btn-md u-btn-inset u-btn-outline-blue g-mr-10 g-my-15">
                     Post Comment
                 </button>
-
             </div>
-
         </form>
+      <?php } ?>
     </div>
 </div>
 <?php } ?>
