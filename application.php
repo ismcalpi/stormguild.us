@@ -8,7 +8,7 @@
 	<?php
 		if (!empty($_GET['accessid'])) {
 			#Then we have a valid applicant looking at us
-			include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
+			include_once 'library/class.database.php';
 			$db = new database();
 		  $sql = "SELECT * FROM stormguild.application WHERE access_id = ".$_GET['accessid'];
 		  $result = $db -> sql_fetchrow($sql);

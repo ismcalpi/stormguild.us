@@ -124,7 +124,7 @@ function upload_ui() {
   $destFile = $_SERVER['DOCUMENT_ROOT']."/".$destPath.basename($_FILES['imgUI']['name']);
   $tmpFile = $_FILES['imgUI']['tmp_name'];
   if (move_uploaded_file($tmpFile, $destFile)){
-    return $destFile;
+    return $destPath;
   }
 }
 
