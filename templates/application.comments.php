@@ -80,12 +80,12 @@
                 ?>
 
                 <div class="form-group g-mb-20">
-                    <input type="hidden" name="redirecturi" value="<?php $_SERVER['REQUEST_URI'] ?>" />
-                    <input type="hidden" name="appid" value="<?php $appid ?>" />
-                    <input type="hidden" name="replyid" value="<?php $comment['comment_id'] ?>" />
-                    <input type="hidden" name="username" value="<?php $username ?>" />
-                    <input type="hidden" name="appname" value="<?php $result['charName'] ?>" />
-                    <input type="hidden" name="accessid" value="<?php $result['access_id'] ?>" />
+                    <input type="hidden" name="redirecturi" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
+                    <input type="hidden" name="appid" value="<?php echo $appid ?>" />
+                    <input type="hidden" name="replyid" value="<?php echo $comment['comment_id'] ?>" />
+                    <input type="hidden" name="username" value="<?php echo $username ?>" />
+                    <input type="hidden" name="appname" value="<?php echo $result['charName'] ?>" />
+                    <input type="hidden" name="accessid" value="<?php echo $result['access_id'] ?>" />
                     <textarea class="form-control form-control-md g-resize-none rounded-0" rows="3" name="message" placeholder="Add a Comment..."></textarea>
                     <button type="submit" class="btn btn-md u-btn-inset u-btn-outline-blue g-mr-10 g-my-15">
                         Post Reply
@@ -117,12 +117,12 @@
                 ?>
 
                 <textarea class="form-control form-control-md g-resize-none rounded-0" rows="3" name="message" placeholder="Add a Comment..."></textarea>
-                <input type="hidden" name="redirecturi" value="<?php $_SERVER['REQUEST_URI'] ?>" />
-                <input type="hidden" name="appid" value="<?php $appid ?>" />
+                <input type="hidden" name="redirecturi" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
+                <input type="hidden" name="appid" value="<?php echo $appid ?>" />
                 <input type="hidden" name="replyid" value="NULL" />
-                <input type="hidden" name="username" value="<?php $username ?>" />
-                <input type="hidden" name="appname" value="<?php $result['charName'] ?>" />
-                <input type="hidden" name="accessid" value="<?php $result['access_id'] ?>" />
+                <input type="hidden" name="username" value="<?php echo $username ?>" />
+                <input type="hidden" name="appname" value="<?php echo $result['charName'] ?>" />
+                <input type="hidden" name="accessid" value="<?php echo $result['access_id'] ?>" />
                 <button type="submit" class="btn btn-md u-btn-inset u-btn-outline-blue g-mr-10 g-my-15">
                     Post Comment
                 </button>
