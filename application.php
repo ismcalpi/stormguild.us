@@ -47,10 +47,10 @@
 		</div>
 		<div class='col-10'>
 			<div class="row">
-				<div class="col-lg-8 g-pa-20">
+				<div class="col-xl-8 g-pa-20">
 						<?php include 'templates/application.body.php' ?>
 				</div>
-				<div class="col-lg-4 g-pa-20">
+				<div class="col-xl-4 g-pa-20">
 						<?php include 'templates/application.comments.php' ?>
 				</div>
 			</div>
@@ -66,10 +66,10 @@
 				<div class="col-12">
 						<h4 class="h4">Admin Control Coming Soon</h4>
 				</div>
-				<div class="col-lg-8 g-pa-20">
+				<div class="col-xl-8 g-pa-20">
 						<?php include 'templates/application.body.php' ?>
 				</div>
-				<div class="col-lg-4 g-pa-20">
+				<div class="col-xl-4 g-pa-20">
 						<?php include 'templates/application.comments.php' ?>
 				</div>
 			</div>
