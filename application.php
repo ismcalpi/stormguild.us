@@ -3,6 +3,7 @@
 	<?php include 'templates/all.user.php' ?>
 	<?php include 'templates/admin.head.php' ?>
 	<?php
+		include_once 'library/class.database.php';
 		$db = new database();
 		#Lets setup our Application access and variables
 		if (!empty($_GET['accessid'])) {
