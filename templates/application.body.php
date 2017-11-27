@@ -1,7 +1,6 @@
 <?php
 include_once 'library/class.database.php';
 $db = new database();
-if(!empty($_GET['appid'])){ $appid = $_GET['appid']; }
 $application = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE application_id =".$appid);
 if(!empty($application)) {
 ?>

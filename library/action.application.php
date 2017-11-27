@@ -5,18 +5,30 @@ include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 
 $accessid = uniqid();
-$discord_msg = "@here New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n https://www.stormguild.us/application.php?appid=".$accessid;
 #App Application to database
 app_add();
+
 #notify via email and phpBB
-$app_link = 'https://www.stormguild.us/application.php?appid='
-$discord_msg = "@here New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']." ".$app_link;
-notify_guild();
-notify_applicant();
+$appid = getAPPID();
+$member_link = 'https://www.stormguild.us/application.php?status=open&appid='.$appid
+$app_link = 'https://www.stormguild.us/application.php?accessid='.$accessid
+
+$discord_msg = "@here New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n".$app_link;
+notify_guild($member_link);
+notify_applicant($app_link);
 notify_discord($discord_msg);
 
 $redirect = "../recruit.php?status=success&accessid=".$accessid."#application";
 header("Location: $redirect");
+
+function getAPPID() {
+  $db = new database();
+  global $accessid;
+
+  $sql = "SELECT application_id FROM stormguild.application WHERE access_id = ".$accessid;
+  $appid = $db -> sql_fetchrow($sql);
+  return $appid['application_id'];
+}
 
 function app_add() {
   $db = new database();
@@ -55,7 +67,7 @@ function app_add() {
       'open',now())";
 
   $result = $db -> sql_query($app_sql);
-  if (!$result) {
+  if ($result) {
     return true;
   } else {
     $error_db = $db -> error();
@@ -74,7 +86,7 @@ function notify_discord($message) {
   return curl_exec($curl);
 }
 
-function notify_guild() {
+function notify_guild($applink) {
   $msg = new messenger(false);
   global $dbhost, $dbuser, $dbpasswd, $dbname, $accessid;
   $mysqli = new mysqli($dbhost, $dbuser, $dbpasswd, $dbname);
@@ -85,20 +97,20 @@ function notify_guild() {
     $msg->im($row['user_jabber'], $row['username']);
     $msg->from('applications@stormguild.us', 'Storm Raider Applications');
     $msg->assign_vars(array(
-        'APP_LINK'  => 'https://stormguild.us/admin.php?mode=application&accessid='.$accessid,
+        'APP_LINK'  => $applink,
         'APP_CLASS' => $_POST['charSpec'].' '.$_POST['charClass']
     ));
     $msg->send($row['user_notify_type']);
   }
 }
 
-function notify_applicant(){
+function notify_applicant($applink) {
   $msg = new messenger(false);
   $msg->template('notify_applicant', '', $_SERVER['DOCUMENT_ROOT'].'/email');
   $msg->to($_POST['perEmail'], $_POST['perName']);
   $msg->from('applications@stormguild.us', 'Storm Raider Applications');
   $msg->assign_vars(array(
-      'APP_LINK'  => 'https://stormguild.us/admin.php?mode=application&accessid='.$accessid
+      'APP_LINK'  => $applink
   ));
   $msg->send();
 }

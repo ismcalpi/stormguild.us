@@ -5,21 +5,14 @@
 	<body>
 		<main>
         <?php
-          if($user_rank <= 1){
+          if($user_rank > 2){
         ?>
-          <h1 class="h1 g-color-red">Access Denied, Redirecting Home.</h1>
-          <script>
-            window.location = "index.php";
-          </script>
-        <?php
-        } else {
-        ?>
-        <div class="row">
+				<div class="row">
           <div class="col-2 g-brd-right g-brd-black">
               <?php include 'templates/admin.navbar.php' ?>
           </div>
           <div class="col-9 g-pa-10">
-              <?php 
+              <?php
 								if (EMPTY($_GET['mode'])) {
 									include 'templates/admin.instruction.php';
 								} else {
@@ -27,7 +20,16 @@
 								}
 							?>
           </div>
-        <div class="row">
+        </div>
+        <?php
+        } else {
+        ?>
+				<form id="redirect" method="POST" action="user.php?page=login">
+					<input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
+				</form>
+				<script type="text/javascript">
+						document.getElementById('redirect').submit(); // SUBMIT FORM
+				</script>
         <?php
         }
         ?>

@@ -1,28 +1,4 @@
-<?php
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    if(!empty($_POST['commentBody'])) {
-
-        if(empty($_SESSION['username'])) {
-            $comUID = $db -> quote($app_uid);
-        } else {
-            $comUID = $db -> quote($_SESSION['username']);
-        }
-
-        if(!empty($_POST['reply_id'])) {
-            $replyID = $db -> quote($_POST['reply_id']);
-        } else {
-            $replyID = "NULL";
-        }
-
-        $comBody = $db -> quote($_POST['commentBody']);
-
-        $db -> query("INSERT INTO stormguild.app_comment (comment_id,reply_id,application_id,user,body,create_datetime)
-                            VALUE (NULL,".$replyID.",".$appid.",".$comUID.",".$comBody.",now())");
-    }
-}
-?>
+<?php if (!empty($appid)) { ?>
 <div class="row">
     <div class="col-sm-12">
         <div class="u-heading-v3-1 g-my-20">
@@ -37,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if(!empty($comments)) {
             foreach ($comments as $comment) {
         ?>
-
         <div class="media g-mb-20" id="<?php echo "head-".$comment['comment_id']; ?>">
             <div class="media-body u-shadow-v22 g-bg-secondary g-pa-15">
 
@@ -97,10 +72,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ?>
 
         <div id="<?php echo "body-".$comment['comment_id']; ?>" class="collapse" role="tabpanel" aria-labelledby="<?php echo "head-".$comment['comment_id']; ?>">
-            <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>#comForm">
+            <form method="post" action="library/action.comment.php">
+
+                <?php
+                  $db = new database();
+                  $result = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE application_id = ".$appid);
+                ?>
+
                 <div class="form-group g-mb-20">
-                    <input type="hidden" name="reply_id" value="<?php echo $comment['comment_id']; ?>" />
-                    <textarea class="form-control form-control-md g-resize-none rounded-0" rows="3" name="commentBody" placeholder="Add a Comment..."></textarea>
+                    <input type="hidden" name="redirecturi" value="<?php $_SERVER['REQUEST_URI'] ?>" />
+                    <input type="hidden" name="appid" value="<?php $appid ?>" />
+                    <input type="hidden" name="replyid" value="<?php $comment['comment_id'] ?>" />
+                    <input type="hidden" name="username" value="<?php $username ?>" />
+                    <input type="hidden" name="appname" value="<?php $result['charName'] ?>" />
+                    <input type="hidden" name="accessid" value="<?php $result['access_id'] ?>" />
+                    <textarea class="form-control form-control-md g-resize-none rounded-0" rows="3" name="message" placeholder="Add a Comment..."></textarea>
                     <button type="submit" class="btn btn-md u-btn-inset u-btn-outline-blue g-mr-10 g-my-15">
                         Post Reply
                     </button>
@@ -119,15 +105,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php
             }
         }
-
-        if (!empty($appid)) {
         ?>
 
-        <form id="comForm" method="post" action="<?php echo $_SERVER['REQUEST_URI']."#comForm"; ?>">
+        <form id="comForm" method="post" action="library/action.comment.php">
 
             <div class="form-group g-mb-20">
 
-                <textarea class="form-control form-control-md g-resize-none rounded-0" rows="3" name="commentBody" placeholder="Add a Comment..."></textarea>
+                <?php
+                  $db = new database();
+                  $result = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE application_id = ".$appid);
+                ?>
+
+                <textarea class="form-control form-control-md g-resize-none rounded-0" rows="3" name="message" placeholder="Add a Comment..."></textarea>
+                <input type="hidden" name="redirecturi" value="<?php $_SERVER['REQUEST_URI'] ?>" />
+                <input type="hidden" name="appid" value="<?php $appid ?>" />
+                <input type="hidden" name="replyid" value="NULL" />
+                <input type="hidden" name="username" value="<?php $username ?>" />
+                <input type="hidden" name="appname" value="<?php $result['charName'] ?>" />
+                <input type="hidden" name="accessid" value="<?php $result['access_id'] ?>" />
                 <button type="submit" class="btn btn-md u-btn-inset u-btn-outline-blue g-mr-10 g-my-15">
                     Post Comment
                 </button>
@@ -135,10 +130,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
         </form>
-
-        <?php
-        }
-        ?>
-
     </div>
 </div>
+<?php } ?>

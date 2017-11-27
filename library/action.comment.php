@@ -4,53 +4,35 @@ include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
 include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 
-$discord_msg = "New Comment for ".$_POST['charName']." the ".$_POST['charSpec']." ".$_POST['charClass']."! Link: https://www.stormguild.us/application.php?appid=".$_POST['appid'];
-
 comment_add();
-notify_guild();
-notify_applicant();
+
+$app_link = "https://www.stormguild.us/application.php?accessid=".$_POST['accessid'];
+$member_link = "https://www.stormguild.us/application.php?status=open&appid=".$_POST['appid'];
+$discord_msg = "New Comment from ".$_POST['username']." on ".$_POST['appname']."'s Application! \n Link: ".$member_link;
+
+notify_guild($member_link,$_POST['appname'],$_POST['username']);
+notify_applicant($app_link,$_POST['username']);
 notify_discord($discord_msg);
 
-header("Location: $_POST['redirect']");
+$link = 'https://www.stormguild.com'.$_POST['redirecturi'];
+header("Location: $link");
 
-function app_add() {
+function comment_add() {
   $db = new database();
-  global $accessid;
-
-  $destfile = upload_ui();
-  $destfile_db = $db ->quote($destfile);
-  $accessid_db = $db -> quote($accessid);
 
   #Clean up and declare all variables
   foreach($_POST as $key => $value){
     $$key = $db -> quote($value);
   }
 
-  if (EMPTY($_POST['altName'])) {
-    $altName = $altRealm = $altClass = $altSpec = $altArt = $altArmory = $altLogs = "NULL";
+  if (EMPTY($_POST['replyid'])) {
+    $replyid = 'NULL';
   }
 
-  $app_sql = "INSERT INTO stormguild.application
-      VALUES
-      (NULL,".$accessid_db.",".$radScreen1.",
-      ".$radScreen2.",".$perName.",
-      ".$perAge.",".$perEmail.",
-      ".$perBnet.",".$charName.",
-      ".$charRealm.",".$charClass.",
-      ".$charSpec.",".$charArt.",
-      ".$charArmory.",".$charLogs.",
-      ".$altName.",".$altRealm.",
-      ".$altClass.",".$altSpec.",
-      ".$altArt.",".$altArmory.",
-      ".$altLogs.",".$quest01.",
-      ".$quest02.",".$quest03.",
-      ".$quest04.",".$quest05.",
-      ".$quest06.",".$quest07.",
-      ".$quest08.",".$destfile_db.",
-      'open',now())";
+  $com_sql = "INSERT INTO stormguild.app_comment VALUE (NULL,".$replyid.",".$appid.",".$username.",".$message.",now())";
 
-  $result = $db -> sql_query($app_sql);
-  if (!$result) {
+  $result = $db -> sql_query($com_sql);
+  if ($result) {
     return true;
   } else {
     $error_db = $db -> error();
@@ -69,46 +51,34 @@ function notify_discord($message) {
   return curl_exec($curl);
 }
 
-function notify_guild() {
+function notify_guild($link, $appname, $username) {
   $msg = new messenger(false);
   global $dbhost, $dbuser, $dbpasswd, $dbname, $accessid;
   $mysqli = new mysqli($dbhost, $dbuser, $dbpasswd, $dbname);
   $result = $mysqli -> query("SELECT username, user_lang, user_email, user_allow_massemail FROM stormforums.bb_users where group_id in (select group_id from stormforums.bb_groups where lower(group_name) in ('officer','raider'))");
   while($row = $result -> fetch_assoc()) {
-    $msg->template('new_app', '', $_SERVER['DOCUMENT_ROOT'].'/email');
+    $msg->template('comment_notify_member', '', $_SERVER['DOCUMENT_ROOT'].'/email');
     $msg->to($row['user_email'], $row['username']);
     $msg->im($row['user_jabber'], $row['username']);
     $msg->from('applications@stormguild.us', 'Storm Raider Applications');
     $msg->assign_vars(array(
-        'APP_LINK'  => 'https://stormguild.us/admin.php?mode=application&accessid='.$accessid,
-        'APP_CLASS' => $_POST['charSpec'].' '.$_POST['charClass']
+        'APP_LINK'  => $link,
+        'APP_NAME' => $appname,
+        'USERNAME' => $username
     ));
     $msg->send($row['user_notify_type']);
   }
 }
 
-function notify_applicant(){
+function notify_applicant($link, $username) {
   $msg = new messenger(false);
-  $msg->template('notify_applicant', '', $_SERVER['DOCUMENT_ROOT'].'/email');
+  $msg->template('comment_notify_applicant', '', $_SERVER['DOCUMENT_ROOT'].'/email');
   $msg->to($_POST['perEmail'], $_POST['perName']);
   $msg->from('applications@stormguild.us', 'Storm Raider Applications');
   $msg->assign_vars(array(
-      'APP_LINK'  => 'https://stormguild.us/admin.php?mode=application&accessid='.$accessid
+      'APP_LINK'  => $link,
+      'USERNAME' => $username
   ));
   $msg->send();
 }
-
-function upload_ui() {
-  global $accessid;
-  #Set and make our Destination Path
-  $destPath = 'assets/img/uploads/applications/'.$accessid.'/';
-  mkdir($_SERVER['DOCUMENT_ROOT']."/".$destPath);
-  #Find and move our file
-  $destFile = $_SERVER['DOCUMENT_ROOT']."/".$destPath.basename($_FILES['imgUI']['name']);
-  $tmpFile = $_FILES['imgUI']['tmp_name'];
-  if (move_uploaded_file($tmpFile, $destFile)){
-    return $destFile;
-  }
-}
-
 ?>
