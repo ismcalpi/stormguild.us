@@ -9,7 +9,7 @@
     $$tmp_name = $app_count['count'];
   }
 
-  $actOpen = $actAccept = $actDecline = array('collapsed','collapse');
+  $actOpen = $actAccept = $actDecline = array('collapsed','collapse show');
   if(!empty($_GET['status'])) {
     switch ($_GET['status']) {
       case 'open':

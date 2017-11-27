@@ -1,3 +1,10 @@
+<?php
+  if (!empty($_POST['redirect'])) {
+    $redirect = $_POST['redirect'];
+  } else {
+    $redirect = '../index.php';
+  }
+?>
 <!-- Form -->
 <div class="row justify-content-center">
   <div class="col-md-6">
@@ -24,7 +31,7 @@
           </div>
         </div>
       </div>
-      <input type="hidden" name="redirect" value="../index.php">
+      <input type="hidden" name="redirect" value="<?php echo $redirect ?>">
       <div class="mb-4">
         <button class="btn btn-md btn-block u-btn-blue rounded g-py-13" type="submit" name="login" value="login">Login</button>
       </div>
