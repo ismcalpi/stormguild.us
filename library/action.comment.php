@@ -10,9 +10,9 @@ $app_link = "https://www.stormguild.us/application.php?accessid=".$_POST['access
 $member_link = "https://www.stormguild.us/application.php?status=open&appid=".$_POST['appid'];
 $discord_msg = "New Comment from ".$_POST['username']." on ".$_POST['appname']."'s Application! \n Link: ".$member_link;
 
-#notify_guild($member_link,$_POST['appname'],$_POST['username']);
+notify_guild($member_link,$_POST['appname'],$_POST['username']);
 notify_applicant($app_link,$_POST['username']);
-#notify_discord($discord_msg);
+notify_discord($discord_msg);
 
 $link = 'https://www.stormguild.us'.$_POST['redirecturi'];
 header("Location: $link");
