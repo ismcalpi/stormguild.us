@@ -80,7 +80,7 @@ if(!empty($application)) {
                 <a target="_blank" href="<?php echo $application['charArmory']; ?>" class="btn btn-block u-btn-outline-blue g-mb-10">Armory</a>
             </div>
             <div class="col-sm-2 g-py-5">
-                <a target="_blank" href="<?php echo $application['charLogs']; ?>" class="btn btn-block u-btn-outline-purple g-mb-10">Combat Logs</a>
+                <a target="_blank" href="<?php echo $application['charLogs']; ?>" class="btn btn-block u-btn-outline-purple g-mb-10">Logs</a>
             </div>
         </div>
     </div>
@@ -103,7 +103,7 @@ if(!empty($application)) {
                 <a target="_blank" href="<?php echo $application['altArmory']; ?>" class="btn btn-block u-btn-outline-blue g-mb-10">Armory</a>
             </div>
             <div class="col-2 g-py-5">
-                <a target="_blank" href="<?php echo $application['altLogs']; ?>" class="btn btn-block u-btn-outline-purple g-mb-10">Combat Logs</a>
+                <a target="_blank" href="<?php echo $application['altLogs']; ?>" class="btn btn-block u-btn-outline-purple g-mb-10">Logs</a>
             </div>
         </div>
     </div>
