@@ -71,9 +71,13 @@ function notify_guild($link, $appname, $username) {
 }
 
 function notify_applicant($link, $username) {
+  $db = new database();
   $msg = new messenger(false);
+
+  $result = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE applicaiton_id = ".$_POST['appid']);
+
   $msg->template('comment_notify_applicant', '', $_SERVER['DOCUMENT_ROOT'].'/email');
-  $msg->to($_POST['perEmail'], $_POST['perName']);
+  $msg->to($result['perEmail'], $result['perName']);
   $msg->from('applications@stormguild.us', 'Storm Raider Applications');
   $msg->assign_vars(array(
       'APP_LINK'  => $link,
