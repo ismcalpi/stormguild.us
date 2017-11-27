@@ -59,10 +59,15 @@
           $open_sql = "SELECT * FROM stormguild.application WHERE status = 'open' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()";
           $open_apps = $db -> sql_select($open_sql);
           foreach ($open_apps as $open_app) {
+            if (!empty($_GET['appid']) && $_GET['appid'] == $open_app['application_id']) {
+              $is_active = 'active';
+            } else {
+              $is_active = '';
+            }
             $open_char = $open_app['charName'].' - '.$open_app['charSpec'].' '.$open_app['charClass'];
             $open_link = 'application.php?appid='.$open_app['application_id'].'&status='.$open_app['status'];
             ?>
-            <li class="nav-item">
+            <li class="nav-item <?php echo $is_active ?>">
               <a href="<?php echo $open_link ?>" class="nav-link"><?php echo $open_char ?></a>
             </li>
         <?php } ?>
@@ -88,10 +93,15 @@
           $open_sql = "SELECT * FROM stormguild.application WHERE status = 'accepted' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()";
           $open_apps = $db -> sql_select($open_sql);
           foreach ($open_apps as $open_app) {
+            if (!empty($_GET['appid']) && $_GET['appid'] == $open_app['application_id']) {
+              $is_active = 'active';
+            } else {
+              $is_active = '';
+            }
             $open_char = $open_app['charName'].' - '.$open_app['charSpec'].' '.$open_app['charClass'];
             $open_link = 'application.php?appid='.$open_app['application_id'].'&status='.$open_app['status'];
             ?>
-            <li class="nav-item">
+            <li class="nav-item <?php echo $is_active ?>">
               <a href="<?php echo $open_link ?>" class="nav-link"><?php echo $open_char ?></a>
             </li>
         <?php } ?>
@@ -117,10 +127,15 @@
           $decline_sql = "SELECT * FROM stormguild.application WHERE status = 'declined' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()";
           $decline_apps = $db -> sql_select($decline_sql);
           foreach ($decline_apps as $decline_app) {
+            if (!empty($_GET['appid']) && $_GET['appid'] == $decline_app['application_id']) {
+              $is_active = 'active';
+            } else {
+              $is_active = '';
+            }
             $decline_char = $decline_app['charName'].' - '.$decline_app['charSpec'].' '.$decline_app['charClass'];
             $decline_link = 'application.php?appid='.$decline_app['application_id'].'&status='.$decline_app['status'];
             ?>
-            <li class="nav-item">
+            <li class="nav-item <?php echo $is_active ?>">
               <a href="<?php echo $decline_link ?>" class="nav-link"><?php echo $decline_char ?></a>
             </li>
         <?php } ?>
