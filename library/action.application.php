@@ -10,8 +10,8 @@ app_add();
 
 #notify via email and phpBB
 $appid = getAPPID();
-$member_link = 'https://www.stormguild.us/application.php?status=open&appid='.$appid
-$app_link = 'https://www.stormguild.us/application.php?accessid='.$accessid
+$member_link = 'https://www.stormguild.us/application.php?status=open&appid='.$appid;
+$app_link = 'https://www.stormguild.us/application.php?accessid='.$accessid;
 
 $discord_msg = "@here New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n".$app_link;
 notify_guild($member_link);
