@@ -7,7 +7,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 comment_add();
 
 $app_link = "https://www.stormguild.us/application.php?accessid=".$_POST['accessid'];
-$member_link = "https://www.stormguild.us/application.php?status=open&appid=".$_POST['appid'];
+$member_link = "https://www.stormguild.us/application.php?appid=".$_POST['appid'];
 $discord_msg = "New Comment from ".$_POST['username']." on ".$_POST['appname']."'s Application! \n Link: ".$member_link;
 
 notify_guild($member_link,$_POST['appname'],$_POST['username']);
