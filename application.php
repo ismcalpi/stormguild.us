@@ -10,7 +10,7 @@
 			#Then we have a valid applicant looking at us
 			include_once 'library/class.database.php';
 			$db = new database();
-		  $sql = "SELECT * FROM stormguild.application WHERE access_id = ".$_GET['accessid'];
+		  $sql = "SELECT * FROM stormguild.application WHERE access_id = '".$_GET['accessid']."'";
 		  $result = $db -> sql_fetchrow($sql);
 			$appid = $result['application_id'];
 			$username = $result['charName'];
