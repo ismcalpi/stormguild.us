@@ -15,8 +15,6 @@
 			$appid = $result['application_id'];
 			$username = $result['charName'];
 		?>
-		<h1>Testing to see if ACCESSID Works?</h1>
-		<p>AppID: <?php echo $appid ?></p>
 		<div class="col-lg-8 g-pa-20">
 				<?php include 'templates/application.body.php' ?>
 		</div>
