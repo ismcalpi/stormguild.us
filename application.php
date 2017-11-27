@@ -31,7 +31,7 @@
 		<main>
 			<div class="row" style="min-height:100vh">
 
-	<?php if ($access = 1) { ?>
+	<?php if ($access == 1) { ?>
 
 			<div class="col-lg-8 g-pa-20">
 					<?php include 'templates/application.body.php' ?>
@@ -40,7 +40,7 @@
 					<?php include 'templates/application.comments.php' ?>
 			</div>
 
-	<?php } else if ($access = 2) { ?>
+	<?php } else if ($access == 2) { ?>
 
 		<div class="col-2 g-brd-right g-brd-black">
 				<?php include 'templates/application.navbar.php' ?>
@@ -56,7 +56,7 @@
 			</div>
 		</div>
 
-	<?php } else if ($access = 3) { ?>
+	<?php } else if ($access == 3) { ?>
 
 		<div class="col-2 g-brd-right g-brd-black">
 				<?php include 'templates/application.navbar.php' ?>
