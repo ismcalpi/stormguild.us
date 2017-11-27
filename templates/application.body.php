@@ -104,14 +104,10 @@ if(!empty($application)) {
                 </h5>
             </div>
             <div class="col-2 g-py-5">
-                <a target="_blank" href="<?php echo $application['altArmory']; ?>" class="btn btn-sm u-btn-skew u-btn-outline-blue">
-                    <span class="u-btn-skew__inner">Armory Link</span>
-                </a>
+                <a target="_blank" href="<?php echo $application['altArmory']; ?>" class="btn btn-block u-btn-outline-blue g-mb-10">Armory Link</a>
             </div>
             <div class="col-2 g-py-5">
-                <a target="_blank" href="<?php echo $application['altLogs']; ?>" class="btn btn-sm u-btn-skew u-btn-outline-purple">
-                    <span class="u-btn-skew__inner">Logs Link</span>
-                </a>
+                <a target="_blank" href="<?php echo $application['altLogs']; ?>" class="btn btn-block u-btn-outline-purple g-mb-10">Logs Link</a>
             </div>
         </div>
     </div>
