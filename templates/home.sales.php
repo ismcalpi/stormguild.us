@@ -9,12 +9,12 @@
               <p><strong>Contact: </strong></p>
             </li>
             <li class="list-inline-item g-mb-10">
-              <a class="u-tags-v1 g-color-blue g-brd-around g-brd-blue g-bg-blue-opacity-0_1 g-bg-blue--hover g-color-white--hover g-py-4 g-px-10" href="#">
+              <a class="u-tags-v1 g-color-primary g-brd-around g-brd-primary g-bg-primary-opacity-0_1 g-bg-primary--hover g-color-white--hover g-py-4 g-px-10" href="#">
                 Aalistor#1455
               </a>
             </li>
             <li class="list-inline-item g-mb-10">
-              <a class="u-tags-v1 g-color-blue g-brd-around g-brd-blue g-bg-blue-opacity-0_1 g-bg-blue--hover g-color-white--hover g-py-4 g-px-10" href="#">
+              <a class="u-tags-v1 g-color-primary g-brd-around g-brd-primary g-bg-primary-opacity-0_1 g-bg-primary--hover g-color-white--hover g-py-4 g-px-10" href="#">
                 Lokilok#1587
               </a>
             </li>
@@ -22,7 +22,8 @@
           <?php
         	$json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stormrage/storm/json_rank'));
         	?>
-          <a href="https://www.wowprogress.com/guild/us/stormrage/storm" class="btn btn-lg u-btn-gray-light-v1 u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-mr-10 g-mb-15">
+          <a  href="https://www.wowprogress.com/guild/us/stormrage/storm"
+              class="btn btn-lg u-btn-gray-light-v1 u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-ma-5 g-pa-0">
             <i class="fa fa-globe pull-left g-font-size-25 g-my-10"></i>
             <span class="float-right text-left g-font-size-14">
               <span class="d-block g-font-size-11">wowprogress ranking</span>
