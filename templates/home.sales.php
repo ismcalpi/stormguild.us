@@ -24,9 +24,10 @@
         	?>
           <a  href="https://www.wowprogress.com/guild/us/stormrage/storm"
               class="btn btn-xl u-btn-bluegray u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-mb-15 g-mt-25 g-pa-5"
-              target="_blank">
-            <i class="fa fa-globe pull-left g-font-size-40 g-my-5"></i>
-            <span class="float-right text-left g-font-size-16">
+              target="_blank"
+              style="width:100%;">
+            <i class="fa fa-globe pull-left g-font-size-30"></i>
+            <span class="float-right text-left g-font-size-15">
               <span class="d-block g-font-size-12">wowprogress ranking</span>
               US #<?php echo $json->area_rank; ?> Realm #<?php echo $json->realm_rank; ?>
             </span>
