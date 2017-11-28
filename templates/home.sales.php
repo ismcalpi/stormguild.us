@@ -22,7 +22,7 @@
           <?php
         	$json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stormrage/storm/json_rank'));
         	?>
-          <a href="#" class="btn btn-xl u-btn-gray-light u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-mr-10 g-mb-15">
+          <a href="https://www.wowprogress.com/guild/us/stormrage/storm" class="btn btn-xl u-btn-blue u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-mr-10 g-mb-15">
             <i class="fa fa-globe pull-left g-font-size-42 g-mr-10"></i>
             <span class="float-right text-left">
               <span class="d-block g-font-size-11">wowprogress ranking</span>
