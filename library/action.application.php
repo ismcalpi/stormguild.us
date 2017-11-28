@@ -13,7 +13,7 @@ $appid = getAPPID();
 $member_link = 'https://www.stormguild.us/application.php?appid='.$appid;
 $app_link = 'https://www.stormguild.us/application.php?accessid='.$accessid;
 
-$discord_msg = "@here New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n".$member_link;
+$discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n".$member_link;
 notify_guild($member_link);
 notify_applicant($app_link);
 notify_discord($discord_msg);
@@ -25,7 +25,7 @@ function getAPPID() {
   $db = new database();
   global $accessid;
 
-  $sql = "SELECT application_id FROM stormguild.application WHERE access_id = ".$accessid;
+  $sql = "SELECT application_id FROM stormguild.application WHERE access_id = '".$accessid."'";
   $appid = $db -> sql_fetchrow($sql);
   return $appid['application_id'];
 }
