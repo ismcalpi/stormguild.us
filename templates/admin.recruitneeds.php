@@ -1,6 +1,6 @@
 <?php
 include_once 'library/class.database.php';
-$db = new db();
+$db = new database();
 
 if(!empty($_POST['activate']) && !empty($_POST['id'])) {
     $db-> query('UPDATE stormguild.recruitment SET is_active='.$_POST['activate'].' WHERE recruitment_id='.$_POST['id']);
