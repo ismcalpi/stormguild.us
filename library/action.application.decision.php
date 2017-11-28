@@ -70,7 +70,7 @@ function notify_applicant($decision) {
 
   $result = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE application_id = ".$_POST['appid']);
 
-  $msg->template($decision.'_notify_member', '', $_SERVER['DOCUMENT_ROOT'].'/email');
+  $msg->template($decision.'_notify_applicant', '', $_SERVER['DOCUMENT_ROOT'].'/email');
   $msg->to($result['perEmail'], $result['perName']);
   $msg->from('applications@stormguild.us', 'Storm Raider Applications');
   $msg->send();

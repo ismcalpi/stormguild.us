@@ -5,14 +5,6 @@
             Go Back Home
         </a>
     </li>
-    <!-- Application Start Here -->
-    <li class="nav-item">
-        <a class="nav-link" href="admin.php?mode=application">
-            <i class="fa fa-bars u-tab-line-icon-pro g-mr-3"></i>
-            Applications
-        </a>
-    </li>
-    <!-- Application End Here -->
     <?php
       if($user_rank >= 3) {
     ?>
