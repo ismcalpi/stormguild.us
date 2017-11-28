@@ -12,7 +12,7 @@
             foreach ($comments as $comment) {
         ?>
         <div class="media g-mb-20" id="<?php echo "head-".$comment['comment_id']; ?>">
-            <div class="media-body u-shadow-v22 g-bg-secondary g-pa-15 g-brd-around g-brd-lightgray g-brd-1">
+            <div class="media-body u-shadow-v22 g-bg-secondary g-pa-15 g-brd-around g-brd-gray-light g-brd-2">
 
                 <div class="g-mb-15">
                     <h5 class="h5"><?php echo $comment['user']; ?></h5>
@@ -50,7 +50,7 @@
         ?>
 
         <div class="media g-ml-40 g-mb-20">
-            <div class="media-body u-shadow-v22 g-bg-secondary g-pa-15 g-brd-around g-brd-lightgray g-brd-1">
+            <div class="media-body u-shadow-v22 g-bg-secondary g-pa-15 g-brd-around g-brd-gray-light g-brd-2">
 
                 <div class="g-mb-15">
                     <h5 class="h5"><?php echo $reply['user']; ?></h5>
