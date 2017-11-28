@@ -13,6 +13,7 @@ if(!empty($_POST['prog_id']) && !empty($_POST['status'])) {
 }
 ?>
 <div class="row">
+  <div class="col-12">Need to add a section here to add a new expansions / raids / bosses.</div>
   <div class="col-12 g-pa-20">
     <div class="table-responsive">
       <table class="table text-center">
