@@ -4,13 +4,14 @@ $db = new database();
 
 if(!empty($_POST['activate']) && !empty($_POST['id'])) {
     $db-> sql_query('UPDATE stormguild.recruitment SET is_active='.$_POST['activate'].' WHERE recruitment_id='.$_POST['id']);
+
 }
 ?>
 <div class="row">
   <div class="col-12"><h4 class="h5"><strong>Instructions</strong><br /> Green Buttons are classes we are seeking, Red are not specifically wanted. Clicking the spec will flip between seeking and not wanted.</h4></div>
-  <div class="col-12 g-pa-20">
+  <div class="col-12 col-md-auto g-pa-20">
     <div class="table-responsive">
-      <table class="table text-center">
+      <table class="table table-striped">
         <tbody>
           <?php
             $classes = $db -> sql_select("SELECT DISTINCT class_name FROM stormguild.recruitment order by class_name asc");
