@@ -17,7 +17,7 @@ if(!empty($_POST['activate']) && !empty($_POST['id'])) {
             $classes = $db -> sql_select("SELECT DISTINCT class_name FROM stormguild.recruitment order by class_name asc");
             foreach($classes as $class) { ?>
               <tr>
-                <td><?php echo $class['class_name'] ?></td>
+                <td><strong><?php echo $class['class_name'] ?></strong></td>
               <?php
               $specs = $db -> sql_select("SELECT spec_name, recruitment_id, is_active FROM stormguild.recruitment WHERE class_name ='".$class['class_name']."' order by spec_name asc");
                 foreach($specs as $spec) {
