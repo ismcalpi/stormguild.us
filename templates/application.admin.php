@@ -1,10 +1,10 @@
 <?php if (!empty($appid)) { ?>
-<div class="row g-brd-around g-brd-black">
+<div class="row g-brd-around g-brd-lightgray g-brd-1">
   <?php
     $result = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE application_id = ".$appid);
   ?>
-  <h3 class="h3 col">Admin Control:</h3>
-  <form method="post" action="library/action.application.decision.php" class="col g-mr-10 g-my-15">
+  <h3 class="h3 col-4 g-mr-10 g-my-15">Admin Control:</h3>
+  <form method="post" action="library/action.application.decision.php" class="col-3">
       <div class="form-group g-mb-20">
           <input type="hidden" name="redirecturi" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
           <input type="hidden" name="appid" value="<?php echo $appid ?>" />
@@ -15,7 +15,7 @@
           </button>
       </div>
   </form>
-  <form method="post" action="library/action.application.decision.php" class="col">
+  <form method="post" action="library/action.application.decision.php" class="col-3">
       <div class="form-group g-mb-20">
           <input type="hidden" name="redirecturi" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
           <input type="hidden" name="appid" value="<?php echo $appid ?>" />
