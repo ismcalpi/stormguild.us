@@ -35,7 +35,7 @@ if(!empty($_POST['activate']) && !empty($_POST['id'])) {
                       <form method="post">
                         <input type="hidden" name="id" value="<?php echo $spec['recruitment_id'] ?>">
                         <input type="hidden" name="activate" value="TRUE">
-                        <button type="submit" class="btn btn-sm u-btn-outline-primary"><?php echo $spec['spec_name'] ?></button>
+                        <button type="submit" class="btn btn-sm u-btn-outline-red"><?php echo $spec['spec_name'] ?></button>
                       </form>
                     </td>
                   <?php
