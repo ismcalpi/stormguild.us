@@ -7,7 +7,7 @@ if(!empty($_POST['activate']) && !empty($_POST['id'])) {
 }
 ?>
 <div class="row">
-  <div class="col-12"><h4 class="h4"><strong>Instructions:</strong> Green Buttons are classes we are seeking, Red are not specifically wanted. Clicking the spec will flip between seeking and not wanted.</h4></div>
+  <div class="col-12"><h4 class="h5"><strong>Instructions</strong><br /> Green Buttons are classes we are seeking, Red are not specifically wanted. Clicking the spec will flip between seeking and not wanted.</h4></div>
   <div class="col-12 g-pa-20">
     <div class="table-responsive">
       <table class="table text-center">
