@@ -9,29 +9,21 @@
               <p><strong>Contact: </strong></p>
             </li>
             <li class="list-inline-item g-mb-10">
-              <a class="u-tags-v1 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-gray-dark-v2--hover g-brd-gray-dark-v2--hover g-color-white--hover g-py-4 g-px-10" href="#">
+              <a class="u-tags-v1 g-color-blue g-brd-around g-brd-blue g-bg-blue-opacity-0_1 g-bg-blue--hover g-color-white--hover g-py-4 g-px-10" href="#">
                 Aalistor#1455
               </a>
             </li>
             <li class="list-inline-item g-mb-10">
-              <a class="u-tags-v1 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-gray-dark-v2--hover g-brd-gray-dark-v2--hover g-color-white--hover g-py-4 g-px-10" href="#">
+              <a class="u-tags-v1 g-color-blue g-brd-around g-brd-blue g-bg-blue-opacity-0_1 g-bg-blue--hover g-color-white--hover g-py-4 g-px-10" href="#">
                 Lokilok#1587
               </a>
             </li>
           </ul>
-
-            <?php
-          	$json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stormrage/storm/json_rank'));
-          	?>
-      		<div class="g-pa-30 g-ma-0">
-      			<a href='https://www.wowprogress.com/guild/us/stormrage/storm' target='_blank'>
-              <h5 class="h5 text-center g-color-white">
-                <strong><u>WoW Progress Ranking</u></strong><br /> US Rank #<?php echo $json->area_rank; ?> Realm Rank #<?php echo $json->realm_rank; ?>
-              </h5>
-            </a>
-      		</div>
-          <a href="#" class="btn btn-xl u-btn-outline-black u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-mr-10 g-mb-15">
-            <i class="fa fa-globe pull-left g-font-size-42 g-mr-15"></i>
+          <?php
+        	$json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stormrage/storm/json_rank'));
+        	?>
+          <a href="#" class="btn btn-xl u-btn-gray-light u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-mr-10 g-mb-15">
+            <i class="fa fa-globe pull-left g-font-size-42 g-mr-10"></i>
             <span class="float-right text-left">
               <span class="d-block g-font-size-11">wowprogress ranking</span>
               US Rank #<?php echo $json->area_rank; ?> Realm Rank #<?php echo $json->realm_rank; ?>
