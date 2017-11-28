@@ -7,10 +7,7 @@ if(!empty($_POST['activate']) && !empty($_POST['id'])) {
 }
 ?>
 <div class="row">
-  <div class="col-sm-2 g-brd-right g-brd-black">
-      <?php include 'include/adminNav.php' ?>
-  </div>
-  <div class="col-sm-10 g-pa-20">
+  <div class="col-12 g-pa-20">
     <div class="table-responsive">
       <table class="table text-center">
         <tbody>
