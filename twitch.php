@@ -19,7 +19,7 @@
 
 				<div class="row g-brd-around g-brd-gray-dark-v4 g-brd-left-4 g-brd-blue-left g-line-height-1_8 g-rounded-3 g-pa-15 g-ma-20" role="alert">
 					<div class="col-8">
-					  <h3 class="g-color-green g-font-weight-600">Toludin - Elemental Shaman</h3>
+					  <h3 class="g-color-green g-font-weight-600">Toludin - Restoration Shaman</h3>
 					  <p class="mb-0 g-font-size-16">Some details will go here about Toludin...but that's something he needs to give me!</p>
 					</div>
 					<div class="col-4">
