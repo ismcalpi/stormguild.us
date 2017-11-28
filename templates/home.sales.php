@@ -9,12 +9,12 @@
               <p><strong>Contact: </strong></p>
             </li>
             <li class="list-inline-item g-mb-10">
-              <a class="u-tags-v1 g-color-blue g-brd-around g-brd-blue g-bg-blue-opacity-0_1 g-bg-blue--hover g-color-white--hover g-py-4 g-px-10" href="#">
+              <a class="u-tags-v1 g-color-white g-brd-around g-brd-white g-bg-white--hover g-color-black--hover g-py-4 g-px-10" href="#">
                 Aalistor#1455
               </a>
             </li>
             <li class="list-inline-item g-mb-10">
-              <a class="u-tags-v1 g-color-blue g-brd-around g-brd-blue g-bg-blue-opacity-0_1 g-bg-blue--hover g-color-white--hover g-py-4 g-px-10" href="#">
+              <a class="u-tags-v1 g-color-white g-brd-around g-brd-white g-bg-white--hover g-color-black--hover g-py-4 g-px-10" href="#">
                 Lokilok#1587
               </a>
             </li>
@@ -23,7 +23,8 @@
         	$json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stormrage/storm/json_rank'));
         	?>
           <a  href="https://www.wowprogress.com/guild/us/stormrage/storm"
-              class="btn btn-xl u-btn-bluegray u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-ma-5 g-px-10 g-py-10">
+              class="btn btn-xl u-btn-bluegray u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-my-15 g-pa-5"
+              target="_blank">
             <i class="fa fa-globe pull-left g-font-size-30 g-my-5"></i>
             <span class="float-right text-left g-font-size-14">
               <span class="d-block g-font-size-11">wowprogress ranking</span>
