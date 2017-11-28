@@ -21,29 +21,3 @@
 
 <!-- JS Custom -->
 <script src="assets/js/custom.js"></script>
-
-<!-- Twitch Stuff -->
-<script src="https://embed.twitch.tv/embed/v1.js"></script>
-<script type="text/javascript">
-  new Twitch.Embed("twitch-embed-kniny", {
-    width: "100%",
-    height: 480,
-    channel: "kniny",
-    layout: "video",
-    autoplay: false
-  });
-  new Twitch.Embed("twitch-embed-toludin", {
-    width: "100%",
-    height: 480,
-    channel: "toludin",
-    layout: "video",
-    autoplay: false
-  });
-  new Twitch.Embed("twitch-embed-maahfky", {
-    width: "100%",
-    height: 480,
-    channel: "maahfky",
-    layout: "video",
-    autoplay: false
-  });
-</script>
