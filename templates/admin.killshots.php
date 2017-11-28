@@ -27,8 +27,8 @@ $db = new database();
             <td><button>Edit</button><button>Delete</button></td>
             <td>Garothi Kill</td>
             <td>Image Here</td>
-            <td>https://www.youtube.come/</td>
-            <td>https://www.twitch.come/</td>
+            <td><a href='https://www.youtube.com/'>https://www.youtube.com/</a></td>
+            <td><a href='https://www.twitch.com/'>https://www.twitch.com/</a></td>
             <td>11/27/2017</td>
           </tr>
         </tbody>
