@@ -8,7 +8,7 @@
           if($user_rank > 2){
         ?>
 				<div class="row">
-          <div class="col-2 g-brd-right g-brd-black">
+          <div style="min-height:100vh;" class="col-2 g-brd-right g-brd-black">
               <?php include 'templates/admin.navbar.php' ?>
           </div>
           <div class="col-9 g-pa-10">
