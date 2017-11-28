@@ -8,7 +8,7 @@ if(!empty($_POST['prog_id']) && !empty($_POST['status'])) {
     } elseif (!empty($_POST['killDate'])) {
         $killArg = 'str_to_date("'.$_POST['killDate'].'","%m/%d/%Y")';
     }
-    $db-> query('UPDATE stormguild.progression SET kill_date = '.$killArg.', status = "'.$_POST['status'].'"
+    $db-> sql_query('UPDATE stormguild.progression SET kill_date = '.$killArg.', status = "'.$_POST['status'].'"
                 WHERE prog_id = '.$_POST['prog_id']);
 }
 ?>
@@ -18,10 +18,10 @@ if(!empty($_POST['prog_id']) && !empty($_POST['status'])) {
       <table class="table text-center">
         <tbody>
           <?php
-            $raids = $db -> select("SELECT DISTINCT raid_name FROM stormguild.progression order by tier desc");
+            $raids = $db -> sql_select("SELECT DISTINCT raid_name FROM stormguild.progression order by tier desc");
               foreach($raids as $raid) {
                 echo "<tr><td colspan=2>".$raid['raid_name']."</td></tr>";
-                $bosses = $db -> select("SELECT boss_name, prog_id, status, date_format(kill_date,'%m/%d/%Y') as kill_date FROM stormguild.progression WHERE raid_name ='".$raid['raid_name']."' order by kill_order desc");
+                $bosses = $db -> sql_select("SELECT boss_name, prog_id, status, date_format(kill_date,'%m/%d/%Y') as kill_date FROM stormguild.progression WHERE raid_name ='".$raid['raid_name']."' order by kill_order desc");
                 foreach($bosses as $boss) {
                   if ($boss['status'] == 'dead') {
                     $inputStatus = '<input type="hidden" name="status" value="alive">';
