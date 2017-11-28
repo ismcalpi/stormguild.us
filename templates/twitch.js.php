@@ -39,4 +39,11 @@
     layout: "video",
     autoplay: false
   });
+  new Twitch.Embed("twitch-embed-maahfky", {
+    width: "100%",
+    height: 480,
+    channel: "maahfky",
+    layout: "video",
+    autoplay: false
+  });
 </script>
