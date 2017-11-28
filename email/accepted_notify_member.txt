@@ -1,0 +1,7 @@
+Subject: {APP_NAME}'s Application has been Accepted!
+
+{APP_NAME}'s Application has been Accepted, find the link to the application below.
+{APP_LINK}
+
+Thanks,
+Your Friendly Neighborhood Application Robot
