@@ -19,6 +19,17 @@
               </a>
             </li>
           </ul>
+
+            <?php
+          	$json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stormrage/storm/json_rank'));
+          	?>
+      		<div class="g-pa-30 g-ma-0">
+      			<a href='https://www.wowprogress.com/guild/us/stormrage/storm' target='_blank'>
+              <h5 class="h5 g-pos-abs g-left-40 g-bottom-10">
+                <strong><u>WoW Progress Ranking</u></strong><br /> US Rank #<?php echo $json->area_rank; ?> Realm Rank #<?php echo $json->realm_rank; ?>
+              </h5>
+            </a>
+      		</div>
         </div>
       </div>
   </article>

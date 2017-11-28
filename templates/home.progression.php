@@ -1,13 +1,5 @@
 <?php
 
-	$json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stormrage/storm/json_rank'));
-
-	?>
-		<div class="col-lg-12 col-sm-12 g-pa-30 g-ma-0 g-bg-white g-brd-around g-brd-2 g-brd-black">
-			<a href='https://www.wowprogress.com/guild/us/stormrage/storm' target='_blank'><h5 class="h5 g-pos-abs g-top-5 g-left-40 g-bottom-10 g-color-black"><strong><u>WoW Progress Ranking</u></strong><br /> US Rank #<?php echo $json->area_rank; ?> Realm Rank #<?php echo $json->realm_rank; ?></h5></a>
-		</div>
-	<?php
-
 	include_once 'library/class.database.php';
 	$db = new database();
 
