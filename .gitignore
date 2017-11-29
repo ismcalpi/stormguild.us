@@ -1,6 +1,5 @@
 
-*.htaccess
 *.ftpquota
-*.ini
-*.config
+/config/*
 /forums/*
+/assets/img/uploads/*

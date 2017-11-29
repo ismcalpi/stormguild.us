@@ -1,30 +1,39 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-<?php include 'include/head.php' ?>
-
-<?php include 'include/db.php' ?>
-
-<body style="main-body">
-
-    <main>
-	   
-        <div class="row">
-            <div class="col-sm-2 g-brd-right g-brd-black">
-                <?php include 'include/adminNav.php' ?>
-            </div>
-            <div class="col-sm-10 g-pa-20">
-                <h1 class="h1">
-                    Welcome to the Storm Guild Admin Console!
-                </h1>
-                <p>As you can tell this section is under construction and will be fully functional at some point soon.</p>
-                <p>This page will have instructions and information on how to customize this website and the left-hand menu will provide tools to control the current content.</p>
-            </div>
+	<?php include 'templates/all.user.php' ?>
+	<?php include 'templates/admin.head.php' ?>
+	<body>
+		<main>
+        <?php
+          if($user_rank > 2){
+        ?>
+				<div class="row">
+          <div style="min-height:100vh;" class="col-2 g-brd-right g-brd-black">
+              <?php include 'templates/admin.navbar.php' ?>
+          </div>
+          <div class="col-9 g-pa-10">
+              <?php
+								if (EMPTY($_GET['mode'])) {
+									include 'templates/admin.instruction.php';
+								} else {
+									include 'templates/admin.'.$_GET['mode'].'.php';
+								}
+							?>
+          </div>
         </div>
-	</main>
-</body>
-	
-	<?php include 'include/scripts.php' ?>
-	
+        <?php
+        } else {
+        ?>
+				<form id="redirect" method="POST" action="user.php?page=login">
+					<input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
+				</form>
+				<script type="text/javascript">
+						document.getElementById('redirect').submit(); // SUBMIT FORM
+				</script>
+        <?php
+        }
+        ?>
+		</main>
+	</body>
+	<?php include 'templates/admin.js.php' ?>
 </html>

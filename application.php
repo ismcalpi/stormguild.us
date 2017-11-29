@@ -1,99 +1,93 @@
 <!DOCTYPE html>
-
-<?php
-    
-    ob_start();
-    session_start();
-    
-    if (!empty($_GET['access_id'])) {
-        
-    } else {
-
-        if (EMPTY($_SESSION['user_rank'])) {
-            #You shouldn't be seeing this page then!
-            header('Refresh: 1; URL = index.php');
-            echo "access denied";
-            exit();
-        } else if ($_SESSION['user_rank'] != 'admin' && $_SESSION['user_rank'] != 'raider') {
-            #You shouldn't be seeing this page then!
-            header('Refresh: 1; URL = index.php');
-            echo "access denied";
-            exit();
-        }
-    }
-
-?>
-
 <html lang="en">
+	<?php include 'templates/all.user.php' ?>
+	<?php include 'templates/admin.head.php' ?>
+	<?php
+		include_once 'library/class.database.php';
+		$db = new database();
+		#Lets setup our Application access and variables
+		if (!empty($_GET['accessid'])) {
+			$sql = "SELECT * FROM stormguild.application WHERE access_id = '".$_GET['accessid']."'";
+			$result = $db -> sql_fetchrow($sql);
+			$access = 1; #Applicant
+			$appid = $result['application_id'];
+			$username = $result['charName'];
+			$status = $result['status'];
+		} else if ($user_rank >= 2) {
+			if (!empty($_GET['appid'])) {
+				$sql = "SELECT * FROM stormguild.application WHERE application_id = '".$_GET['appid']."'";
+			} else {
+				$sql = "SELECT * FROM stormguild.application WHERE status = 'open' ORDER BY create_datetime DESC LIMIT 1";
+			}
+			$result = $db -> sql_fetchrow($sql);
+			$access = $user_rank; #Raider or Officer
+			$appid = $result['application_id'];
+			$username = $user -> data['username'];
+			$status = $result['status'];
+		}
 
-    <?php include 'include/head.php' ?>
+	?>
+	<body>
+		<main>
+			<div class="row" style="min-height:100vh">
 
-    <body class="main-body" >
+	<?php if ($access == 1) { ?>
 
-        <main>
+			<div class="col-xl-8 col-md-12 g-pa-20">
+					<?php include 'templates/application.body.php' ?>
+			</div>
+			<div class="col-xl-4 col-md-12 g-pa-20">
+					<?php include 'templates/application.comments.php' ?>
+			</div>
 
-            <?php include 'include/navbar.php' ?>
-            
-            <?php $db = new db; ?>
+	<?php } else if ($access == 2) { ?>
 
-            <!-- Main Page Container -->
-            <div class="container main-container g-px-30 g-mt-50">
-                <h1>Storm Raider Applications</h1>
-                <hr />
-                <div class="row">
-                    <div class="col-sm-3 g-brd-right g-brd-black">
-                        <?php if(empty($_GET['access_id'])) { 
-                                include 'include/appNav.php';
-                            } else {
-                                $results = $db -> select("SELECT charName, application_id FROM stormguild.application WHERE access_id = '".$_GET['access_id']."' LIMIT 1");
-                                if(!empty($results)) {
-                                    foreach ($results as $result) {
-                                        $app_id = $result['application_id'];
-                                        $app_uid = $result['charName'];
-                                    }
-                                }
-                            } ?>
-                    </div>
-                    <div class="col-sm-9 g-pa-30">
-                        <?php include 'include/appBody.php' ?>
-                        <?php include 'include/appComments.php' ?>
-                    </div>
-                </div>
+		<div class="col-2 g-brd-right g-brd-black">
+				<?php include 'templates/application.navbar.php' ?>
+		</div>
+		<div class='col-10'>
+			<div class="row">
+				<div class="col-xl-8 col-md-12 g-pa-20">
+						<?php include 'templates/application.body.php' ?>
+				</div>
+				<div class="col-xl-4 col-md-12 g-pa-20">
+						<?php include 'templates/application.comments.php' ?>
+				</div>
+			</div>
+		</div>
 
-            </div>    
-        </main>
+	<?php } else if ($access == 3) { ?>
 
-        <?php include 'include/scripts.php' ?>
+		<div class="col-2 g-brd-right g-brd-black">
+				<?php include 'templates/application.navbar.php' ?>
+		</div>
+		<div class='col-10'>
+			<div class="row">
+				<div class="col-12">
+						<?php if ($status == 'open') { include 'templates/application.admin.php'; } ?>
+				</div>
+				<div class="col-xl-8 col-md-12 g-pa-20">
+						<?php include 'templates/application.body.php' ?>
+				</div>
+				<div class="col-xl-4 col-md-12 g-pa-20">
+						<?php include 'templates/application.comments.php' ?>
+				</div>
+			</div>
+		</div>
 
-        <!-- JS Unify -->
-        <script  src="assets/js/components/hs.tabs.js"></script>
+	<?php } else { ?>
 
-        <!-- JS Plugins Init. -->
+			<form id="redirect" method="POST" action="user.php?page=login">
+				<input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
+			</form>
+			<script type="text/javascript">
+			    document.getElementById('redirect').submit(); // SUBMIT FORM
+			</script>
 
-        <script >
+	<?php } ?>
 
-            $(document).on('ready', function () {
-
-                // initialization of tabs
-                $.HSCore.components.HSTabs.init('[role="tablist"]');
-                
-                // initialization of countdowns
-			     $.HSCore.components.HSPopup.init('.js-fancybox');
-
-            });
-
-            $(window).on('resize', function () {
-
-                setTimeout(function () {
-                    $.HSCore.components.HSTabs.init('[role="tablist"]');
-                }, 200);
-
-            });
-
-        </script>
-
-    </body>
-
-
-
+			</div>
+		</main>
+	</body>
+	<?php include 'templates/admin.js.php' ?>
 </html>

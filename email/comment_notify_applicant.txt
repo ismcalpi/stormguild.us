@@ -1,0 +1,7 @@
+Subject: New Comment on your Application
+
+{USERNAME} has commented on your raider application, find the link to your application below.
+{APP_LINK}
+
+Thanks,
+Your Friendly Neighborhood Application Robot

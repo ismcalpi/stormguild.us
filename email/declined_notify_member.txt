@@ -1,0 +1,7 @@
+Subject: {APP_NAME}'s Application has been Declined
+
+{APP_NAME}'s Application has been Declined, find the link to the application below.
+{APP_LINK}
+
+Thanks,
+Your Friendly Neighborhood Application Robot

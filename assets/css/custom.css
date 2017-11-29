@@ -15,7 +15,7 @@
 }
 
 .main-body {
-	background: url("../../img/bgBody.jpg"); 
+	background: url("../img/all.bg.body.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
   	background-attachment: fixed;
