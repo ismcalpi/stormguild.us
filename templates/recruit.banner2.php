@@ -1,4 +1,4 @@
-<div class="container" style="width:100%;background:url(assets/img/recruit.banner.jpg) no-repeat center center fixed; background-size: cover;">
+<div class="container" style="width:100%;background:url(assets/img/recruit.banner.jpg) no-repeat center; background-size: cover;">
 	<div class="container text-center g-color-white g-my-20 bg-black-0-70 g-pa-30">
 		<h2 class="text-uppercase g-font-weight-700 g-mb-20">Storm is Recruiting!</h2>
 		<p class="lead g-px-100--md g-mb-20">Seeking the classes and specs outlined below but always interested in exceptional applicants.</p>
@@ -14,9 +14,9 @@
 							foreach($specs as $spec) {
 								$imgPath = "assets/img/class/".$class['class_path']."/".$spec['spec_path'].".png";
 								if($spec['is_active'] == TRUE) {
-									$iconStatus = '<img src="'.$imgPath.'" style="height:40px;padding-right:2px;opacity:1.0;" title="'.$spec['spec_name'].' '.$class['class_name'].'" />';
+									$iconStatus = '<img src="'.$imgPath.'" style="height:30px;padding-right:2px;opacity:1.0;" title="'.$spec['spec_name'].' '.$class['class_name'].'" />';
 								}else{
-									$iconStatus = '<img src="'.$imgPath.'" style="height:40px;padding-right:2px;opacity:.2" title="'.$spec['spec_name'].' '.$class['class_name'].'" />';
+									$iconStatus = '<img src="'.$imgPath.'" style="height:30px;padding-right:2px;opacity:.4" title="'.$spec['spec_name'].' '.$class['class_name'].'" />';
 								}
 								echo $iconStatus;
 							}
