@@ -14,9 +14,9 @@
 							foreach($specs as $spec) {
 								$imgPath = "assets/img/class/".$class['class_path']."/".$spec['spec_path'].".png";
 								if($spec['is_active'] == TRUE) {
-									$iconStatus = '<img src="'.$imgPath.'" style="height:30px;padding-right:2px;opacity:1.0;" title="'.$spec['spec_name'].' '.$class['class_name'].'" />';
+									$iconStatus = '<img src="'.$imgPath.'" style="height:45px;padding-right:2px;opacity:1.0;" title="'.$spec['spec_name'].' '.$class['class_name'].'" />';
 								}else{
-									$iconStatus = '<img src="'.$imgPath.'" style="height:30px;padding-right:2px;opacity:.4" title="'.$spec['spec_name'].' '.$class['class_name'].'" />';
+									$iconStatus = '<img src="'.$imgPath.'" style="height:45px;padding-right:2px;opacity:.5" title="'.$spec['spec_name'].' '.$class['class_name'].'" />';
 								}
 								echo $iconStatus;
 							}
