@@ -19,7 +19,7 @@ $db = new database();
 
     }
 
-    $result = $db -> query($sql);
+    $result = $db -> sql_query($sql);
     if (!$result) {
       echo 'Failed SQL Attempt.';
     }
