@@ -45,7 +45,7 @@ $db = new database();
         <thead>
           <tr>
             <th width="20%">Name</th>
-            <th width="40%">Description</th>
+            <th width="40%">Description (Optional)</th>
             <th width="15%">Release Date</th>
             <th width="5%">Active?</th>
             <th width="20%">Action</th>
