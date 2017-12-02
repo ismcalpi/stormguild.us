@@ -48,7 +48,7 @@ $db = new database();
         </thead>
         <tbody>
           <tr>
-            <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
+            <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>" >
               <input type="hidden" name="action" value="insert">
               <input type="hidden" name="table" value="expansion">
               <td><input name="name" type="text" class="form-control form-control-md rounded-0"></td>
@@ -63,7 +63,7 @@ $db = new database();
           foreach ($expansions as $expansion) {
         ?>
           <tr>
-            <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
+            <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>" >
               <input type="hidden" name="id" value="<?php echo $expansion['expansion_id'] ?>">
               <input type="hidden" name="action" value="update">
               <input type="hidden" name="table" value="expansion">
