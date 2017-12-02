@@ -14,7 +14,6 @@ $db = new database();
       <table class="table text-center">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Description</th>
             <th>Release Date</th>
@@ -35,7 +34,7 @@ $db = new database();
             </form>
           </tr>
         <?php
-          $expansions = $db -> sql_select("SELECT * FROM stormguild.expansion");
+          $expansions = $db -> sql_select("SELECT * FROM stormguild.expansion ORDER BY release_date DESC");
           foreach ($expansions as $expansion) {
         ?>
           <tr>
