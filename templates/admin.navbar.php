@@ -32,7 +32,7 @@
     <li class="nav-item">
         <a class="nav-link" href="admin.php?mode=raids">
             <i class="fa fa-flask u-tab-line-icon-pro g-mr-3"></i>
-            Add, Edit, Deactivate
+            Add & Edit Raids
         </a>
     </li>
     <li class="nav-item">
