@@ -18,7 +18,7 @@ $db = new database();
             <th>Description</th>
             <th>Release Date</th>
             <th>Active?</th>
-            <th>Actions</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -45,7 +45,7 @@ $db = new database();
               <td><textarea name="editDescription" class="form-control form-control-md rounded-0" rows="1"><?php echo $expansion['description'] ?></textarea></td>
               <td><input name="editRelease" type="date" class="form-control form-control-md rounded-0" value="<?php echo $expansion['release_date'] ?>"></td>
               <td><input name="editActive" class="form-control form-control-md rounded-0" type="number" value="<?php echo $expansion['is_active'] ?>"></td>
-              <td><button type="submit" class="btn btn-md u-btn-blue rounded-0">Add</button></td>
+              <td><button type="submit" class="btn btn-md u-btn-blue rounded-0">Update</button></td>
             </form>
           </tr>
         <?php
