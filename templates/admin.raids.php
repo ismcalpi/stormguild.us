@@ -5,17 +5,17 @@ $db = new database();
   if ($_POST) {
     if ($_POST['action'] == 'insert' && $_POST['table'] == 'expansion') {
 
-      $name = $db -> quote($_post['name']);
-      $description = $db -> quote($_post['description']);
-      $release_date = "str_to_date('".$_post['release_date']."','%m/%d/%Y')";
+      $name = $db -> quote($_POST['name']);
+      $description = $db -> quote($_POST['description']);
+      $release_date = "str_to_date('".$_POST['release_date']."','%m/%d/%Y')";
       $sql = "INSERT INTO stormguild.expansion VALUES (NULL,".$name.",".$description.",".$release_date.",1)";
 
     } else if ($_POST['action'] == 'update' && $_POST['table'] == 'expansion') {
 
-      $name = $db -> quote($_post['name']);
-      $description = $db -> quote($_post['description']);
-      $release_date = "str_to_date('".$_post['release_date']."','%m/%d/%Y')";
-      $sql = "UPDATE stormguild.expansion SET name = ".$name.", SET description = ".$description.", SET release_date = ".$release_date.", SET is_active = ".$_post['active']." WHERE expansion_id = ".$_post['id'];
+      $name = $db -> quote($_POST['name']);
+      $description = $db -> quote($_POST['description']);
+      $release_date = "str_to_date('".$_POST['release_date']."','%m/%d/%Y')";
+      $sql = "UPDATE stormguild.expansion SET name = ".$name.", SET description = ".$description.", SET release_date = ".$release_date.", SET is_active = ".$_POST['active']." WHERE expansion_id = ".$_POST['id'];
 
     } else {
       echo 'No Task Queued';
