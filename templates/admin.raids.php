@@ -17,6 +17,8 @@ $db = new database();
       $release_date = "str_to_date('".$_post['release_date']."','%m/%d/%Y')";
       $sql = "UPDATE stormguild.".$_POST['table']." SET name = ".$name.", SET description = ".$description.", SET release_date = ".$release_date." SET is_active = ".$_post['active']." WHERE expansion_id = ".$_post['id'];
 
+    } else {
+      echo 'No Task Queued';
     }
 
     $result = $db -> sql_query($sql);
