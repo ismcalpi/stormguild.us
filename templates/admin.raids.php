@@ -23,7 +23,8 @@ $db = new database();
 
     $result = $db -> sql_query($sql);
     if (!$result) {
-      echo 'Failed SQL Attempt.';
+      $error = $db -> error();
+      echo $error;
     }
   }
 
@@ -68,7 +69,7 @@ $db = new database();
               <input type="hidden" name="action" value="update">
               <input type="hidden" name="table" value="expansion">
               <td><input name="name" type="text" class="form-control form-control-md rounded-0" value="<?php echo $expansion['name'] ?>"></td>
-              <td><textarea name="description" class="form-control form-control-md rounded-0" rows="2"><?php echo $expansion['description'] ?></textarea></td>
+              <td><textarea name="description" class="form-control form-control-md rounded-0" rows="1"><?php echo $expansion['description'] ?></textarea></td>
               <td><input name="release_date" type="date" class="form-control form-control-md rounded-0" value="<?php echo $expansion['release_date'] ?>"></td>
               <td><input name="active" class="form-control form-control-md rounded-0" type="number" value="<?php echo $expansion['is_active'] ?>"></td>
               <td><button type="submit" class="btn btn-md u-btn-blue rounded-0">Update</button></td>
