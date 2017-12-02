@@ -30,7 +30,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="admin.php?mode=editraid">
+        <a class="nav-link" href="admin.php?mode=raids">
             <i class="fa fa-flask u-tab-line-icon-pro g-mr-3"></i>
             Add, Edit, Deactivate
         </a>
