@@ -14,6 +14,8 @@ $db = new database();
         $sql = "INSERT INTO stormguild.expansion VALUES (NULL,".$name.",".$description.",".$release_date.",1)";
       } else if ($_POST['action'] == 'update') {
         $sql = "UPDATE stormguild.expansion SET name = ".$name.", description = ".$description.", release_date = ".$release_date.", is_active = ".$_POST['active']." WHERE expansion_id = ".$_POST['id'];
+      } else if ($_POST['action'] == 'delete') {
+        $sql = "DELETE FROM stormguild.expansion WHERE expansion_id = ".$_POST['id'];
       } else {
         echo 'No Task Queued';
       }
@@ -53,13 +55,12 @@ $db = new database();
         <tbody>
           <tr>
             <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>" >
-              <input type="hidden" name="action" value="insert">
               <input type="hidden" name="table" value="expansion">
               <td><input name="name" type="text" class="form-control form-control-md rounded-0"></td>
               <td><textarea name="decription" class="form-control form-control-md rounded-0" rows="1"></textarea></td>
               <td><input name="release_date" type="date" class="form-control form-control-md rounded-0"></td>
               <td><input name="active" class="form-control form-control-md rounded-0" type="number" value="1" readonly=""></td>
-              <td><button type="submit" class="btn btn-md u-btn-blue rounded-0">Add</button></td>
+              <td><button type="submit" name="action" value="insert" class="btn btn-md u-btn-blue rounded-0">Add</button></td>
             </form>
           </tr>
         <?php
@@ -75,7 +76,10 @@ $db = new database();
               <td><textarea name="description" class="form-control form-control-md rounded-0" rows="1"><?php echo $expansion['description'] ?></textarea></td>
               <td><input name="release_date" type="date" class="form-control form-control-md rounded-0" value="<?php echo $expansion['release_date'] ?>"></td>
               <td><input name="active" class="form-control form-control-md rounded-0" type="number" value="<?php echo $expansion['is_active'] ?>"></td>
-              <td><button type="submit" class="btn btn-md u-btn-blue rounded-0">Update</button></td>
+              <td>
+                <button type="submit" name="action" value="update" class="btn btn-md u-btn-blue rounded-0">Update</button>
+                <button type="submit" name="action" value="delete" class="btn btn-md u-btn-blue rounded-0">Delete</button>
+              </td>
             </form>
           </tr>
         <?php
