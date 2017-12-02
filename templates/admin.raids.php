@@ -14,11 +14,11 @@ $db = new database();
       <table class="table text-center">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Release Date</th>
-            <th>Active?</th>
-            <th>Action</th>
+            <th width="20%">Name</th>
+            <th width="40%">Description</th>
+            <th width="15%">Release Date</th>
+            <th width="5%">Active?</th>
+            <th width="20%">Action</th>
           </tr>
         </thead>
         <tbody>
