@@ -2,6 +2,25 @@
 include_once 'library/class.database.php';
 $db = new database();
 
+  if ($_POST) {
+    if ($_POST['action'] == 'insert' && $_POST['table'] == 'expansion') {
+      $name = $db -> quote($_post['name']);
+      $description = $db -> quote($_post['description']);
+      $release_date = "str_to_date('".$_post['release_date']."','%m/%d/%Y')"
+      $sql = "INSERT INTO stormguild.".$_POST['table']." VALUES (NULL,".$name.",".$description.",".$release_date.",1)";
+    } else if ($_POST['action'] == 'update' && $_POST['table'] == 'expansion') {
+      $name = $db -> quote($_post['name']);
+      $description = $db -> quote($_post['description']);
+      $release_date = "str_to_date('".$_post['release_date']."','%m/%d/%Y')"
+      $sql = "UPDATE stormguild.".$_POST['table']." SET name = ".$name.", SET description = ".$description.", SET release_date = ".$release_date." SET is_active = 1 WHERE expansion_id = ".$_post['id'];
+    }
+
+    $result = $db -> query($sql);
+    if (!$result) {
+      echo 'Failed SQL Attempt.';
+    }
+  }
+
 ?>
 
 <!-- Expansions Section -->
@@ -24,12 +43,12 @@ $db = new database();
         <tbody>
           <tr>
             <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
-              <input type="hidden" name="newID" value="NULL">
               <input type="hidden" name="action" value="insert">
-              <td><input name="newName" type="text" class="form-control form-control-md rounded-0"></td>
-              <td><textarea name="newDescription" class="form-control form-control-md rounded-0" rows="1"></textarea></td>
-              <td><input name="newRelease" type="date" class="form-control form-control-md rounded-0"></td>
-              <td><input name="newActive" class="form-control form-control-md rounded-0" type="number" value="1" readonly=""></td>
+              <input type="hidden" name="table" value="expansion">
+              <td><input name="name" type="text" class="form-control form-control-md rounded-0"></td>
+              <td><textarea name="decription" class="form-control form-control-md rounded-0" rows="1"></textarea></td>
+              <td><input name="release_date" type="date" class="form-control form-control-md rounded-0"></td>
+              <td><input name="active" class="form-control form-control-md rounded-0" type="number" value="1" readonly=""></td>
               <td><button type="submit" class="btn btn-md u-btn-blue rounded-0">Add</button></td>
             </form>
           </tr>
@@ -39,12 +58,13 @@ $db = new database();
         ?>
           <tr>
             <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
-              <input type="hidden" name="editID" value="<?php echo $expansion['expansion_id'] ?>">
+              <input type="hidden" name="id" value="<?php echo $expansion['expansion_id'] ?>">
               <input type="hidden" name="action" value="update">
-              <td><input name="editName" type="text" class="form-control form-control-md rounded-0" value="<?php echo $expansion['name'] ?>"></td>
-              <td><textarea name="editDescription" class="form-control form-control-md rounded-0" rows="1"><?php echo $expansion['description'] ?></textarea></td>
-              <td><input name="editRelease" type="date" class="form-control form-control-md rounded-0" value="<?php echo $expansion['release_date'] ?>"></td>
-              <td><input name="editActive" class="form-control form-control-md rounded-0" type="number" value="<?php echo $expansion['is_active'] ?>"></td>
+              <input type="hidden" name="table" value="expansion">
+              <td><input name="name" type="text" class="form-control form-control-md rounded-0" value="<?php echo $expansion['name'] ?>"></td>
+              <td><textarea name="description" class="form-control form-control-md rounded-0" rows="2"><?php echo $expansion['description'] ?></textarea></td>
+              <td><input name="release_date" type="date" class="form-control form-control-md rounded-0" value="<?php echo $expansion['release_date'] ?>"></td>
+              <td><input name="active" class="form-control form-control-md rounded-0" type="number" value="<?php echo $expansion['is_active'] ?>"></td>
               <td><button type="submit" class="btn btn-md u-btn-blue rounded-0">Update</button></td>
             </form>
           </tr>
