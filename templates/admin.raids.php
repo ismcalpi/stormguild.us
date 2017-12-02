@@ -7,7 +7,7 @@ $db = new database();
 
       $name = $db -> quote($_POST['name']);
       $description = $db -> quote($_POST['description']);
-      $release_date = "str_to_date('".$_POST['release_date']."','%m/%d/%Y')";
+      $release_date = "str_to_date('".$_POST['release_date']."','%Y-%m-%d')";
       echo $_POST['release_date'];
 
       if ($_POST['action'] == 'insert') {
