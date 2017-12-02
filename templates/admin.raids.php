@@ -4,15 +4,19 @@ $db = new database();
 
   if ($_POST) {
     if ($_POST['action'] == 'insert' && $_POST['table'] == 'expansion') {
+
       $name = $db -> quote($_post['name']);
       $description = $db -> quote($_post['description']);
-      $release_date = "str_to_date('".$_post['release_date']."','%m/%d/%Y')"
+      $release_date = "str_to_date('".$_post['release_date']."','%m/%d/%Y')";
       $sql = "INSERT INTO stormguild.".$_POST['table']." VALUES (NULL,".$name.",".$description.",".$release_date.",1)";
+
     } else if ($_POST['action'] == 'update' && $_POST['table'] == 'expansion') {
+
       $name = $db -> quote($_post['name']);
       $description = $db -> quote($_post['description']);
-      $release_date = "str_to_date('".$_post['release_date']."','%m/%d/%Y')"
+      $release_date = "str_to_date('".$_post['release_date']."','%m/%d/%Y')";
       $sql = "UPDATE stormguild.".$_POST['table']." SET name = ".$name.", SET description = ".$description.", SET release_date = ".$release_date." SET is_active = 1 WHERE expansion_id = ".$_post['id'];
+
     }
 
     $result = $db -> query($sql);
