@@ -7,7 +7,7 @@
       <?php include 'templates/all.navbar.php' ?>
       <?php include 'templates/recruit.banner.php' ?>
       <div id="application" class="g-mb-40"></div>
-      <div class="container g-pa-0 g-my-20 u-shadow-v1-5 g-line-height-2">
+      <div class="container g-pa-0 g-ma-0 u-shadow-v1-5 g-line-height-2">
         <div class="row">
           <div class="col-lg-12">
             <?php include 'templates/recruit.application.php' ?>

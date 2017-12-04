@@ -19,6 +19,10 @@ $db = new database();
         echo 'No Task Queued';
       }
 
+    } else if ($_POST['table'] == 'raid') {
+
+    } else if ($_POST['table'] == 'boss') {
+
     } else {
 
       echo 'No Task Queued';
