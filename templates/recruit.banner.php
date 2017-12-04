@@ -1,5 +1,5 @@
 <div class="container g-mb-0" style="width:100%;background:url(assets/img/recruit.banner.jpg) no-repeat center; background-size: cover;">
-	<div class="container text-center g-color-white bg-black-0-80 g-pa-30">
+	<div class="container text-center g-color-white bg-black-0-70 g-pa-30 g-ma-0">
 		<h2 class="text-uppercase g-font-weight-700 g-mb-20">Storm is Recruiting!</h2>
 		<p class="lead g-px-100--md g-mb-20">Seeking the classes and specs outlined below but always interested in exceptional applicants.</p>
 		<div class="row">
