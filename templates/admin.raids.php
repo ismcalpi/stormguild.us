@@ -63,7 +63,7 @@ $db = new database();
               <td><textarea name="decription" class="form-control form-control-md rounded-0" rows="1"></textarea></td>
               <td><input name="release_date" type="date" class="form-control form-control-md rounded-0"></td>
               <td><input name="active" class="form-control form-control-md rounded-0" type="number" value="1" readonly=""></td>
-              <td><button type="submit" name="action" value="insert" class="btn btn-md u-btn-blue rounded-0">Add</button></td>
+              <td><button type="submit" name="action" value="insert" class="btn btn-sm u-btn-blue rounded-0">Add</button></td>
             </form>
           </tr>
         <?php
@@ -80,8 +80,8 @@ $db = new database();
               <td><input name="release_date" type="date" class="form-control form-control-md rounded-0" value="<?php echo $expansion['release_date'] ?>"></td>
               <td><input name="active" class="form-control form-control-md rounded-0" type="number" value="<?php echo $expansion['is_active'] ?>"></td>
               <td>
-                <button type="submit" name="action" value="update" class="btn btn-md u-btn-blue rounded-0">Update</button>
-                <button type="submit" name="action" value="delete" class="btn btn-md u-btn-blue rounded-0">Delete</button>
+                <button type="submit" name="action" value="update" class="btn btn-sm u-btn-blue rounded-0">Update</button>
+                <button type="submit" name="action" value="delete" class="btn btn-sm u-btn-blue rounded-0">Delete</button>
               </td>
             </form>
           </tr>
@@ -106,12 +106,12 @@ $db = new database();
           <tr>
             <th width="15%">Name</th>
             <th width="15%">Expansion</th>
-            <th width="20%">Notes (Optional)</th>
+            <th width="30%">Notes (Optional)</th>
             <th width="10%">Release Date</th>
             <th width="10%">BG Image</th>
             <th width="5%">Total Bosses</th>
             <th width="5%">Active?</th>
-            <th width="20%">Action</th>
+            <th width="10%">Action</th>
           </tr>
         </thead>
         <tbody>
