@@ -1,5 +1,5 @@
 <div class="container g-mb-0" style="width:100%;background:url(assets/img/recruit.banner.jpg) no-repeat center; background-size: cover;">
-	<div class="container text-center g-color-white bg-black-0-70 g-pa-30">
+	<div class="container text-center g-color-white bg-black-0-80 g-pa-30">
 		<h2 class="text-uppercase g-font-weight-700 g-mb-20">Storm is Recruiting!</h2>
 		<p class="lead g-px-100--md g-mb-20">Seeking the classes and specs outlined below but always interested in exceptional applicants.</p>
 		<div class="row">
@@ -16,7 +16,7 @@
 								if($spec['is_active'] == TRUE) {
 									$iconStatus = '<img src="'.$imgPath.'" style="height:30px;padding-right:2px;opacity:1.0;" title="'.$spec['spec_name'].' '.$class['class_name'].'" />';
 								}else{
-									$iconStatus = '<img src="'.$imgPath.'" style="height:30px;padding-right:2px;opacity:.5" title="'.$spec['spec_name'].' '.$class['class_name'].'" />';
+									$iconStatus = '<img src="'.$imgPath.'" style="height:30px;padding-right:2px;opacity:.33" title="'.$spec['spec_name'].' '.$class['class_name'].'" />';
 								}
 								echo $iconStatus;
 							}
