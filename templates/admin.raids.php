@@ -119,7 +119,18 @@ $db = new database();
             <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>" >
               <input type="hidden" name="table" value="expansion">
               <td><input name="name" type="text" class="form-control form-control-md rounded-0"></td>
-              <td><input name="expansion" type="text" class="form-control form-control-md rounded-0"></td>
+              <td>
+                <select class="form-control rounded-0" name="expansion">
+                  <?php
+                    $expansions = $db -> sql_select("SELECT name FROM stormguild.expansion ORDER BY release_date DESC");
+                    foreach ($expansions as $expansion) {
+                  ?>
+                    <option><?php echo $expansion['name'] ?></option>
+                  <?php
+                    }
+                  ?>
+                </select>
+              </td>
               <td><textarea name="decription" class="form-control form-control-md rounded-0" rows="1"></textarea></td>
               <td><input name="release_date" type="date" class="form-control form-control-md rounded-0"></td>
               <td><input name="bg_image" type="file" class="form-control form-control-md rounded-0"></td>
@@ -137,7 +148,18 @@ $db = new database();
               <input type="hidden" name="id" value="<?php echo $raid['raid_id'] ?>">
               <input type="hidden" name="table" value="raid">
               <td><input name="name" type="text" class="form-control form-control-md rounded-0" value="<?php echo $raid['name'] ?>"></td>
-              <td><input name="expansion" type="text" class="form-control form-control-md rounded-0" value="<?php echo $raid['expansion'] ?>"></td>
+              <<td>
+                <select class="form-control rounded-0" name="expansion">
+                  <?php
+                    $expansions = $db -> sql_select("SELECT name FROM stormguild.expansion ORDER BY release_date DESC");
+                    foreach ($expansions as $expansion) {
+                  ?>
+                    <option><?php echo $expansion['name'] ?></option>
+                  <?php
+                    }
+                  ?>
+                </select>
+              </td>
               <td><textarea name="decription" class="form-control form-control-md rounded-0" rows="1"><?php echo $raid['description'] ?></textarea></td>
               <td><input name="release_date" type="date" class="form-control form-control-md rounded-0" value="<?php echo $raid['release_date'] ?>"></td>
               <td><input name="bg_image" type="file" class="form-control form-control-md rounded-0" value="<?php echo $raid['prog_img'] ?>"></td>
