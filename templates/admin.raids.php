@@ -136,11 +136,11 @@ $db = new database();
             <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>" >
               <input type="hidden" name="id" value="<?php echo $raid['raid_id'] ?>">
               <input type="hidden" name="table" value="raid">
-              <td><input name="name" type="text" class="form-control form-control-md rounded-0"><?php echo $raid['name'] ?></td>
+              <td><input name="name" type="text" class="form-control form-control-md rounded-0" value="<?php echo $raid['name'] ?>"></td>
               <td><input name="expansion" type="text" class="form-control form-control-md rounded-0" value="<?php echo $raid['expansion'] ?>"></td>
               <td><textarea name="decription" class="form-control form-control-md rounded-0" rows="1"><?php echo $raid['description'] ?></textarea></td>
               <td><input name="release_date" type="date" class="form-control form-control-md rounded-0" value="<?php echo $raid['release_date'] ?>"></td>
-              <td><input name="bg_image" type="file" class="form-control form-control-md rounded-0"></td>
+              <td><input name="bg_image" type="file" class="form-control form-control-md rounded-0" value="<?php echo $raid['prog_img'] ?>"></td>
               <td><input name="bosses" class="form-control form-control-md rounded-0" type="number" value="<?php echo $raid['total_bosses'] ?>"></td>
               <td><input name="active" class="form-control form-control-md rounded-0" type="number" value="<?php echo $raid['is_active'] ?>"></td>
               <td>
