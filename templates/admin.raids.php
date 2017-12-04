@@ -106,12 +106,12 @@ $db = new database();
           <tr>
             <th width="15%">Name</th>
             <th width="15%">Expansion</th>
-            <th width="30%">Notes (Optional)</th>
+            <th width="20%">Notes (Optional)</th>
             <th width="10%">Release Date</th>
-            <th width="10%">BG Image</th>
+            <th width="15%">BG Image</th>
             <th width="5%">Total Bosses</th>
             <th width="5%">Active?</th>
-            <th width="10%">Action</th>
+            <th width="15%">Action</th>
           </tr>
         </thead>
         <tbody>
