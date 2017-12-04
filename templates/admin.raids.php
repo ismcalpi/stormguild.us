@@ -148,7 +148,7 @@ $db = new database();
               <input type="hidden" name="id" value="<?php echo $raid['raid_id'] ?>">
               <input type="hidden" name="table" value="raid">
               <td><input name="name" type="text" class="form-control form-control-md rounded-0" value="<?php echo $raid['name'] ?>"></td>
-              <<td>
+              <td>
                 <select class="form-control rounded-0" name="expansion">
                   <?php
                     $expansions = $db -> sql_select("SELECT name FROM stormguild.expansion ORDER BY release_date DESC");
