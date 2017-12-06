@@ -16,7 +16,7 @@ $db = new database();
   <div class="col-12">
     <h2 class="h2 text-center text-upper">Raid Progression</h2>
   </div>
-  <div class="table-responsive">
+  <div class="table-responsive container col-12 g-pa-25">
     <table class="table table-hover">
       <tbody>
         <tr><td colspan="5">Test Expansion</td></tr>
