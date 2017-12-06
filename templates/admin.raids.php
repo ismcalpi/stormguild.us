@@ -18,6 +18,7 @@ $db = new database();
   </div>
   <div id="raids" class="u-accordion container col-12 g-pa-25" role="tablist" aria-multiselectable="true">
     <table class="table table-hover">
+      <thead><tr><th colspan="6"></th></tr></thead>
       <tbody>
         <tr>
           <td><strong><a href="#">Test Expansion</a></strong></td>
@@ -30,7 +31,7 @@ $db = new database();
               <i class="fa fa-plus"></i>
               <i class="fa fa-minus"></i>
             </span>
-            <a href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">Test Raid</a>
+            <a href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">Antorus the Burning Throne</a>
           </strong></td>
           <td><strong>Heroic</strong></td>
           <td><strong>Mythic</strong></td>
@@ -39,11 +40,11 @@ $db = new database();
         </tr>
         <tr id="raid1-body" aria-labelledby="raid1-head" class="collapse">
           <td></td>
-          <td><a href="#">Test Boss 1</a></td>
-          <td>Test Date</td>
-          <td>Test Date</td>
-          <td>Test Image</td>
-          <td>Test URL</td>
+          <td><a href="#">Garothi Worldbreaker</a></td>
+          <td>12/5/2017</td>
+          <td>12/5/2017</td>
+          <td>/path/to/image.png</td>
+          <td>https://twitch.com/</td>
         </tr>
       </tbody>
     </table>
