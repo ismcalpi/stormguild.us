@@ -9,7 +9,7 @@ $db = new database();
   <button type="button" class="close" onclick="Custombox.modal.close();">
     <i class="hs-icon hs-icon-close"></i>
   </button>
-  <h4 class="h4 g-mb-20">Expansion</h4>
+  <h4 class="h4 g-mb-20"><?php if(!empty($_GET['action'])) { echo $_GET['action'].' '; } else { echo ''; } ?>Expansion</h4>
   <form enctype="multipart/form-data" method="post" action="library/action.admin.raids.php">
     <label for="name">Expansion Name</label>
     <input id="name" class="form-control form-control-md rounded-0 g-ma-10" type="text" name="name" placeholder="Expansion Name"></input>
@@ -31,7 +31,7 @@ $db = new database();
 
   <div class="col-12">
     <p class="text-center">
-      <a href="admin.php?mode=raids&id=0#expansion" type="button" class="btn btn-sm btn-primary g-ml-10">Add New Expansion</a>
+      <a href="admin.php?mode=raids&id=0&action=add#expansion" type="button" class="btn btn-sm btn-primary g-ml-10">Add New Expansion</a>
       <a type="button" class="btn btn-sm btn-primary g-ml-10">Add New Raid</a>
       <a type="button" class="btn btn-sm btn-primary g-ml-10">Add New Boss</a>
     </p>
