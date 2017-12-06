@@ -26,25 +26,25 @@ $db = new database();
       <thead>
         <tr>
           <th colspan="5">
-          <span id="raid1-head" class="collapsed g-ml-15" href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
-            <span class="u-accordion__control-icon g-mr-10">
-              <i class="fa fa-plus"></i>
-              <i class="fa fa-minus"></i>
+            <span id="raid1-head" class="collapsed g-ml-15" href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
+              <span class="u-accordion__control-icon g-mr-10">
+                <i class="fa fa-plus"></i>
+                <i class="fa fa-minus"></i>
+              </span>
+              Raid: Antorus, the Burning Throne
             </span>
-            Raid: Antorus, the Burning Throne
-          </span>
-          <button type="button" class="btn btn-primary g-ml-10">Edit</button>
+            <button type="button" class="btn btn-sm btn-primary g-ml-10">Edit</button>
           </th>
         </tr>
       </thead>
 
       <tbody id="raid1-body" aria-labelledby="raid1-head" class="collapse">
-        <tr >
-          <td><strong>Boss Name</strong></td>
-          <td><strong>Heroic</strong></td>
-          <td><strong>Mythic</strong></td>
-          <td><strong>Killshot</strong></td>
-          <td><strong>Video</strong></td>
+        <tr>
+          <th><strong>Boss Name</strong></th>
+          <th><strong>Heroic</strong></th>
+          <th><strong>Mythic</strong></th>
+          <th><strong>Killshot</strong></th>
+          <th><strong>Video</strong></th>
         </tr>
         <tr >
           <td><a href="#">Garothi Worldbreaker</a></td>
