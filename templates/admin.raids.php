@@ -18,7 +18,16 @@ $db = new database();
   </div>
   <div id="raids" class="u-accordion container col-12 g-pa-25" role="tablist" aria-multiselectable="true">
     <table class="table table-hover">
-      <thead><tr><th colspan="6"></th></tr></thead>
+      <thead>
+        <tr>
+          <th width="10%" />
+          <th width="10%" />
+          <th width="20%" />
+          <th width="20%" />
+          <th width="20%" />
+          <th width="20%" />
+        </tr>
+      </thead>
       <tbody>
         <tr>
           <td><strong><a href="#">Test Expansion</a></strong></td>
