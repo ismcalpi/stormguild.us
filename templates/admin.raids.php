@@ -23,14 +23,14 @@ $db = new database();
           <td><strong><a href="#">Test Expansion</a></strong></td>
           <td colspan="5"></td>
         </tr>
-        <tr><strong>
+        <tr>
           <td></td>
-          <td><a href="#">Test Raid</a></td>
-          <td>Heroic</td>
-          <td>Mythic</td>
-          <td>Killshot</td>
-          <td>Video</td>
-        </strong></tr>
+          <td><strong><a href="#">Test Raid</a></strong></td>
+          <td><strong>Heroic</strong></td>
+          <td><strong>Mythic</strong></td>
+          <td><strong>Killshot</strong></td>
+          <td><strong>Video</strong></td>
+        </tr>
         <tr>
           <td></td>
           <td><a href="#">Test Boss 1</a></td>
