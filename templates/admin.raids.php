@@ -23,9 +23,9 @@ $db = new database();
 
     <table id="legion" class="table table-hover">
 
-      <thead id="raid1-head" class="collapsed g-ml-15" href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
+      <thead>
         <tr><th colspan="5">
-          <span class="u-accordion__control-icon g-mr-10">
+          <span id="raid1-head" class="u-accordion__control-icon g-mr-10 collapsed" href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
             <i class="fa fa-plus"></i>
             <i class="fa fa-minus"></i>
           </span>
