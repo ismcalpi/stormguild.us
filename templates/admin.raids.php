@@ -4,7 +4,8 @@ $db = new database();
 ?>
 
 <!-- Start Expansion Modal -->
-<div id="expansion" class="js-autonomous-popup text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;" data-modal-type="hashlink" data-open-effect="flipInY" data-close-effect="flipOutY" data-speed="500">
+<div id="expansion" class="js-autonomous-popup text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;" data-modal-type="hashlink"
+    data-open-effect="flipInY" data-close-effect="flipOutY" data-speed="500">
   <button type="button" class="close" onclick="Custombox.modal.close();">
     <i class="hs-icon hs-icon-close"></i>
   </button>
@@ -81,15 +82,3 @@ $db = new database();
 
   </div>
 </div>
-
-<script  src="assets/vendor/appear.js"></script>
-<script  src="assets/vendor/custombox/custombox.min.js"></script>
-<script  src="assets/js/components/hs.modal-window.js"></script>
-<script >
-  $(document).on('ready', function () {
-    // initialization of autonomous popups
-    $.HSCore.components.HSModalWindow.init('.js-autonomous-popup', {
-      autonomous: true
-    });
-  });
-</script>
