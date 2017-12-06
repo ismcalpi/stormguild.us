@@ -62,15 +62,15 @@ $db = new database();
           <td><strong>Killshot</strong></td>
           <td><strong>Video</strong></td>
         </tr>
-        <div id="raid2-body">
-          <tr aria-labelledby="raid2-head" class="collapse">
+        <div id="raid2-body" class="collapse" aria-labelledby="raid2-head">
+          <tr>
             <td class="g-pl-40"><a href="#">Goroth</a></td>
             <td>12/5/2017</td>
             <td>12/5/2017</td>
             <td>/path/to/image.png</td>
             <td>https://twitch.com/</td>
           </tr>
-          <tr aria-labelledby="raid2-head" class="collapse">
+          <tr>
             <td class="g-pl-40"><a href="#">Demonic Inquisition</a></td>
             <td>12/5/2017</td>
             <td>12/5/2017</td>
