@@ -1,12 +1,6 @@
 <?php
 include_once 'library/class.database.php';
 $db = new database();
-
-if ($_GET['type'] == 'expansion') {
-?>
-  <script>$('#expansion').show();</script>
-<?php
-}
 ?>
 
 <!-- Start Expansion Modal -->
@@ -39,7 +33,7 @@ if ($_GET['type'] == 'expansion') {
   </div>
 
   <div class="col-12 text-center">
-    <a href="admin.php?mode=raids&type=expansion&action=Add" type="button" class="btn btn-sm btn-primary g-ml-10">Add New Expansion</a>
+    <a class="btn u-btn-primary g-ma-10" href="admin.php?mode=raids&action=new&id=0#expansion" data-modal-target="#expansion" data-modal-effect="fadein">Add New Expansion</a>
     <a type="button" class="btn btn-sm btn-primary g-ml-10">Add New Raid</a>
     <a type="button" class="btn btn-sm btn-primary g-ml-10">Add New Boss</a>
   </div>
