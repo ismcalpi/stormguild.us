@@ -31,9 +31,9 @@ $db = new database();
 
   <div class="col-12">
     <p class="text-center">
-      <button href="admin.php?mode=raids&id=0#expansion" type="button" class="btn btn-sm btn-primary g-ml-10">Add New Expansion</button>
-      <button type="button" class="btn btn-sm btn-primary g-ml-10">Add New Raid</button>
-      <button type="button" class="btn btn-sm btn-primary g-ml-10">Add New Boss</button>
+      <a href="admin.php?mode=raids&id=0#expansion" type="button" class="btn btn-sm btn-primary g-ml-10">Add New Expansion</a>
+      <a type="button" class="btn btn-sm btn-primary g-ml-10">Add New Raid</a>
+      <a type="button" class="btn btn-sm btn-primary g-ml-10">Add New Boss</a>
     </p>
   </div>
 
