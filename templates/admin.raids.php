@@ -72,7 +72,7 @@ $db = new database();
             <i class="fa fa-plus"></i>
             <i class="fa fa-minus"></i>
           </span>
-          Raid: Antorus, the Burning Throne
+          Raid: Tomb of Sargeras
         </span>
         <button type="button" class="btn btn-sm btn-primary g-ml-10">Edit</button>
       </h3>
