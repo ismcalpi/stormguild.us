@@ -16,8 +16,9 @@ $db = new database();
   <div class="col-12">
     <h2 class="h2 text-center text-upper">Raid Progression</h2>
   </div>
-  <div id="raids" role="tablist" aria-multiselectable="true" class="u-accordion container col-12 g-pa-25">
+  <div id="raids" class="u-accordion container col-12 g-pa-25">
     <table class="table table-hover">
+
       <thead>
         <tr><th colspan="5"><a class="h4 text-upper text-center" href="#">Legion</a></th></tr>
       </thead>
@@ -46,7 +47,7 @@ $db = new database();
           <td>/path/to/image.png</td>
           <td>https://twitch.com/</td>
         </tr>
-
+        
         <tr id="raid2-head" class="collapsed g-ml-15" href="#raid2-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid2-body">
           <td class="text-upper g-pl-20">
             <strong>
@@ -78,6 +79,7 @@ $db = new database();
             <td>https://twitch.com/</td>
           </tr>
         </div>
+
       </tbody>
     </table>
   </div>
