@@ -9,12 +9,13 @@ $db = new database();
   <button type="button" class="close" onclick="Custombox.modal.close();">
     <i class="hs-icon hs-icon-close"></i>
   </button>
-  <h4 class="h4 g-mb-20">Adding a New Expansion</h4>
+  <h4 class="h4 g-mb-20">Expansion</h4>
   <form enctype="multipart/form-data" method="post" action="library/action.admin.raids.php">
-    <input class="form-control form-control-md rounded-0" type="text" name="name" placeholder="Expansion Name"></input>
-    <input class="form-control form-control-md rounded-0" type="date" name="release"></input>
-    <input type="hidden" name="id" value="0" />
-    <button type="submit" class="btn btn-md u-btn-primary rounded-0">Submit</button>
+    <input class="form-control form-control-md rounded-0 g-ma-10" type="text" name="name" placeholder="Expansion Name"></input>
+    <input class="form-control form-control-md rounded-0 g-ma-10" type="date" name="release"></input>
+    <input type="hidden" name="id" value="<?php if(!empty($_GET['id'])) { echo $_GET['id']; } else { echo 0; } ?>" />
+    <input type="hidden" name="type" value="expansion" />
+    <button type="submit" class="btn btn-md u-btn-primary rounded-0 g-ma-10">Submit</button>
   </form>
 </div>
 <!-- End Expansion Modal -->
@@ -28,7 +29,7 @@ $db = new database();
 
   <div class="col-12">
     <p class="text-center">
-      <button type="button" class="btn btn-sm btn-primary g-ml-10">Add New Expansion</button>
+      <button href="admin.php?mode=raids&id=0#expansion" type="button" class="btn btn-sm btn-primary g-ml-10">Add New Expansion</button>
       <button type="button" class="btn btn-sm btn-primary g-ml-10">Add New Raid</button>
       <button type="button" class="btn btn-sm btn-primary g-ml-10">Add New Boss</button>
     </p>
