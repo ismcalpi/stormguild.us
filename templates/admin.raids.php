@@ -23,15 +23,17 @@ $db = new database();
 
     <table id="legion" class="table table-hover">
 
-      <thead id="raid1-head" class="collapsed g-ml-15" href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
-        <tr><th colspan="5">
-          <span class="u-accordion__control-icon g-mr-10">
-            <i class="fa fa-plus"></i>
-            <i class="fa fa-minus"></i>
-          </span>
-          <a href="#">Raid: Antorus, the Burning Throne</a>
-          <button type="button" class="btn btn-primary g-ml-10">Edit</button>
-        </th></tr>
+      <thead id="raid1-head" class="collapsed g-ml-15" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
+        <tr>
+          <th colspan="5">
+            <span class="u-accordion__control-icon g-mr-10">
+              <i class="fa fa-plus"></i>
+              <i class="fa fa-minus"></i>
+            </span>
+            <a href="#raid1-body">Raid: Antorus, the Burning Throne</a>
+            <button type="button" class="btn btn-primary g-ml-10">Edit</button>
+          </th>
+        </tr>
       </thead>
 
       <tbody id="raid1-body" aria-labelledby="raid1-head" class="collapse">
