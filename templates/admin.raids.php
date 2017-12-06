@@ -1,8 +1,22 @@
 <?php
 include_once 'library/class.database.php';
 $db = new database();
-
 ?>
+
+<!-- Start Expansion Modal -->
+<div id="expansion" class="js-autonomous-popup text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;" data-modal-type="hashlink" data-open-effect="flipInY" data-close-effect="flipOutY" data-speed="500">
+  <button type="button" class="close" onclick="Custombox.modal.close();">
+    <i class="hs-icon hs-icon-close"></i>
+  </button>
+  <h4 class="h4 g-mb-20">Adding a New Expansion</h4>
+  <form enctype="multipart/form-data" method="post" action="library/action.admin.raids.php">
+    <input class="form-control form-control-md rounded-0" type="text" name="name" placeholder="Expansion Name"></input>
+    <input class="form-control form-control-md rounded-0" type="date" name="release"></input>
+    <input type="hidden" name="id" value="0" />
+    <button type="submit" class="btn btn-md u-btn-primary rounded-0">Submit</button>
+  </form>
+</div>
+<!-- End Expansion Modal -->
 
 <!-- Expansions Section -->
 <div class="row">
@@ -65,47 +79,17 @@ $db = new database();
       </div>
     </div>
 
-    <div id="tomb" class="card rounded-0">
-      <h3 class="card-header h5 rounded-0">
-        <span id="raid2-head" class="collapsed g-ml-15" href="#raid2-body" data-toggle="collapse" data-parent="#tomb" aria-expanded="true" aria-controls="raid2-body">
-          <span class="u-accordion__control-icon g-mr-10">
-            <i class="fa fa-plus"></i>
-            <i class="fa fa-minus"></i>
-          </span>
-          Raid: Tomb of Sargeras
-        </span>
-        <button type="button" class="btn btn-sm btn-primary g-ml-10">Edit</button>
-      </h3>
-      <div id="raid2-body" aria-labelledby="raid2-head" class="card-block collapse g-pa-0">
-        <table class="table table-hover g-ma-0">
-          <thead>
-            <tr>
-              <th><strong>Boss Name</strong></th>
-              <th><strong>Heroic</strong></th>
-              <th><strong>Mythic</strong></th>
-              <th><strong>Killshot</strong></th>
-              <th><strong>Video</strong></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a href="#">Goroth</a></td>
-              <td>12/5/2017</td>
-              <td>12/5/2017</td>
-              <td>/path/to/image.png</td>
-              <td>https://twitch.com/</td>
-            </tr>
-            <tr>
-              <td><a href="#">Demonic Inquisition</a></td>
-              <td>12/5/2017</td>
-              <td>12/5/2017</td>
-              <td>/path/to/image.png</td>
-              <td>https://twitch.com/</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
   </div>
 </div>
+
+<script  src="assets/vendor/appear.js"></script>
+<script  src="assets/vendor/custombox/custombox.min.js"></script>
+<script  src="assets/js/components/hs.modal-window.js"></script>
+<script >
+  $(document).on('ready', function () {
+    // initialization of autonomous popups
+    $.HSCore.components.HSModalWindow.init('.js-autonomous-popup', {
+      autonomous: true
+    });
+  });
+</script>
