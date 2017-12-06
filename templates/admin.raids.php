@@ -62,22 +62,21 @@ $db = new database();
           <td><strong>Killshot</strong></td>
           <td><strong>Video</strong></td>
         </tr>
-        <div id="raid2-body" aria-labelledby="raid2-head" class="u-accordion__body collapse">
-          <tr>
-            <td class="g-pl-40"><a href="#">Goroth</a></td>
-            <td>12/5/2017</td>
-            <td>12/5/2017</td>
-            <td>/path/to/image.png</td>
-            <td>https://twitch.com/</td>
-          </tr>
-          <tr>
-            <td class="g-pl-40"><a href="#">Demonic Inquisition</a></td>
-            <td>12/5/2017</td>
-            <td>12/5/2017</td>
-            <td>/path/to/image.png</td>
-            <td>https://twitch.com/</td>
-          </tr>
-        </div>
+        <tr id="raid2-body" aria-labelledby="raid2-head" class="collapse">
+          <td class="g-pl-40"><a href="#">Goroth</a></td>
+          <td>12/5/2017</td>
+          <td>12/5/2017</td>
+          <td>/path/to/image.png</td>
+          <td>https://twitch.com/</td>
+        </tr>
+        <tr id="raid2-body" aria-labelledby="raid2-head" class="collapse">
+          <td class="g-pl-40"><a href="#">Demonic Inquisition</a></td>
+          <td>12/5/2017</td>
+          <td>12/5/2017</td>
+          <td>/path/to/image.png</td>
+          <td>https://twitch.com/</td>
+        </tr>
+
       </tbody>
     </table>
   </div>
