@@ -16,12 +16,12 @@ $db = new database();
   <div class="col-12">
     <h2 class="h2 text-center text-upper">Raid Progression</h2>
   </div>
-  <div id="raids" class="u-accordion container col-12 g-pa-25" role="tablist" aria-multiselectable="true">
+  <div class="container col-12 g-pa-25">
     <table class="table table-hover">
-      <tbody>
-        <tr>
-          <td colspan="5" class="text-upper text-left"><strong><a href="#">Legion</a></strong></td>
-        </tr>
+      <thead>
+        <tr><th><strong><a class="h4 text-upper" href="#">Legion</a></strong></th></tr>
+      </thead>
+      <tbody id="raids" class="u-accordion" role="tablist" aria-multiselectable="true">
         <tr id="raid1-head" class="collapsed g-ml-15" href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
           <td class="text-upper g-pl-20">
             <strong>
