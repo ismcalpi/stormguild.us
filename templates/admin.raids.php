@@ -23,7 +23,7 @@ $db = new database();
           <td colspan="5" class="text-upper text-left"><strong><a href="#">Legion</a></strong></td>
         </tr>
         <tr id="raid1-head" class="collapsed g-ml-15" href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
-          <td class="text-upper g-ml-10">
+          <td class="text-upper g-pl-10">
             <strong>
             <span class="u-accordion__control-icon g-mr-10">
               <i class="fa fa-plus"></i>
@@ -38,7 +38,7 @@ $db = new database();
           <td><strong>Video</strong></td>
         </tr>
         <tr id="raid1-body" aria-labelledby="raid1-head" class="collapse">
-          <td class="g-ml-20"><a href="#">Garothi Worldbreaker</a></td>
+          <td class="g-pl-20"><a href="#">Garothi Worldbreaker</a></td>
           <td>12/5/2017</td>
           <td>12/5/2017</td>
           <td>/path/to/image.png</td>
