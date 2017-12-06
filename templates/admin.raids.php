@@ -17,9 +17,9 @@ $db = new database();
     <h2 class="h2 text-center text-upper">Raid Progression</h2>
   </div>
 
-  <div class="container col-12 g-pa-20">
+  <div class="container col-12 g-pa-40">
 
-    <a class="h4 text-center text-left" href="#">Expansion: Legion</a>
+    <a class="h4 text-center text-left g-my-20" href="#">Expansion: Legion</a>
 
     <table id="legion" class="table table-hover">
 
