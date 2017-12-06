@@ -20,10 +20,10 @@ $db = new database();
     <table class="table table-hover">
       <thead>
         <tr>
-          <th width="10%" />
-          <th width="10%" />
-          <th width="20%" />
-          <th width="20%" />
+          <th width="15%" />
+          <th width="15%" />
+          <th width="15%" />
+          <th width="15%" />
           <th width="20%" />
           <th width="20%" />
         </tr>
