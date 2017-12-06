@@ -16,7 +16,7 @@ $db = new database();
   <div class="col-12">
     <h2 class="h2 text-center text-upper">Raid Progression</h2>
   </div>
-  <div id="raids" class="container col-12 g-pa-25">
+  <div id="raids" class="u-accordion container col-12 g-pa-25" role="tablist" aria-multiselectable="true">
     <table class="table table-hover">
       <tbody>
         <tr>
@@ -26,7 +26,7 @@ $db = new database();
         <tr id="raid1-head" class="collapsed">
           <td></td>
           <td><strong>
-            <span class="u-accordion__control-icon d-inline-block text-center g-pa-10">
+            <span class="u-accordion__control-icon">
               <i class="fa fa-plus"></i>
               <i class="fa fa-minus"></i>
             </span>
