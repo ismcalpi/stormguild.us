@@ -1,15 +1,20 @@
 <?php
 include_once 'library/class.database.php';
 $db = new database();
+
+if ($_GET['type'] == 'expansion') {
+?>
+  <script>$('#expansion').modal('show');</script>
+<?php
+}
 ?>
 
 <!-- Start Expansion Modal -->
-<div id="expansion" class="js-autonomous-popup text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;" data-modal-type="hashlink"
-    data-open-effect="flipInY" data-close-effect="flipOutY" data-speed="500">
+<div id="expansion" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
   <button type="button" class="close" onclick="Custombox.modal.close();">
     <i class="hs-icon hs-icon-close"></i>
   </button>
-  <h4 class="h4 g-mb-20"><?php if(!empty($_GET['action'])) { echo $_GET['action'].' '; } else { echo ''; } ?>Expansion</h4>
+  <h4 class="h4 g-mb-20"><?php if(!empty($_GET['action'])) { echo $_GET['action'].'ing '; } else { echo ''; } ?>Expansion</h4>
   <form enctype="multipart/form-data" method="post" action="library/action.admin.raids.php">
     <label for="name">Expansion Name</label>
     <input id="name" class="form-control form-control-md rounded-0 g-ma-10" type="text" name="name" placeholder="Expansion Name"></input>
@@ -29,12 +34,10 @@ $db = new database();
     <h2 class="h2 text-center text-upper">Raid Progression</h2>
   </div>
 
-  <div class="col-12">
-    <p class="text-center">
-      <a href="admin.php?mode=raids&id=0&action=add#expansion" type="button" class="btn btn-sm btn-primary g-ml-10">Add New Expansion</a>
-      <a type="button" class="btn btn-sm btn-primary g-ml-10">Add New Raid</a>
-      <a type="button" class="btn btn-sm btn-primary g-ml-10">Add New Boss</a>
-    </p>
+  <div class="col-12 text-center">
+    <a href="admin.php?mode=raids&type=expansion&action=Add" type="button" class="btn btn-sm btn-primary g-ml-10">Add New Expansion</a>
+    <a type="button" class="btn btn-sm btn-primary g-ml-10">Add New Raid</a>
+    <a type="button" class="btn btn-sm btn-primary g-ml-10">Add New Boss</a>
   </div>
 
   <div class="container col-12 g-pa-40">
