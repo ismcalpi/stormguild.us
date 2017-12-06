@@ -17,19 +17,19 @@ $db = new database();
     <h2 class="h2 text-center text-upper">Raid Progression</h2>
   </div>
 
-  <div class="col-12">
+  <div class="container col-12 g-pa-20">
 
-    <a class="h4 text-upper text-center" href="#">Expansion: Legion</a>
+    <a class="h4 text-center text-left" href="#">Expansion: Legion</a>
 
     <table id="legion" class="table table-hover">
-      
+
       <thead id="raid1-head" class="collapsed g-ml-15" href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
         <tr><th colspan="5">
           <span class="u-accordion__control-icon g-mr-10">
             <i class="fa fa-plus"></i>
             <i class="fa fa-minus"></i>
           </span>
-          Antorus, the Burning Throne
+          <a href="#">Raid: Antorus, the Burning Throne</a>
         </th></tr>
       </thead>
 
@@ -42,7 +42,7 @@ $db = new database();
           <td><strong>Video</strong></td>
         </tr>
         <tr >
-          <td class="g-pl-40"><a href="#">Garothi Worldbreaker</a></td>
+          <td><a href="#">Garothi Worldbreaker</a></td>
           <td>12/5/2017</td>
           <td>12/5/2017</td>
           <td>/path/to/image.png</td>
