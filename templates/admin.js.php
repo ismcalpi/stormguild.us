@@ -34,8 +34,7 @@
     // initialization of countdowns
     $.HSCore.components.HSPopup.init('.js-fancybox');
 
-    $.HSCore.components.HSModalWindow.init('.js-autonomous-popup', {
-      autonomous: true
-    });
+    $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+
   });
 </script>

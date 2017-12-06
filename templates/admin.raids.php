@@ -33,7 +33,7 @@ $db = new database();
   </div>
 
   <div class="col-12 text-center">
-    <a class="btn u-btn-primary g-ma-10" href="#expansion" data-modal-target="#expansion" data-modal-effect="fadein">Add New Expansion</a>
+    <a class="btn u-btn-primary g-ma-10" href="admin.php?mode=raids&action=new&id=0#expansion" data-modal-target="#expansion" data-modal-effect="fadein">Add New Expansion</a>
     <a type="button" class="btn btn-sm btn-primary g-ml-10">Add New Raid</a>
     <a type="button" class="btn btn-sm btn-primary g-ml-10">Add New Boss</a>
   </div>
