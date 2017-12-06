@@ -62,7 +62,7 @@ $db = new database();
           <td><strong>Killshot</strong></td>
           <td><strong>Video</strong></td>
         </tr>
-        <div id="raid2-body" aria-labelledby="raid2-head" class="collapse">
+        <span id="raid2-body" aria-labelledby="raid2-head" class="collapse">
           <tr>
             <td class="g-pl-40"><a href="#">Goroth</a></td>
             <td>12/5/2017</td>
@@ -77,7 +77,7 @@ $db = new database();
             <td>/path/to/image.png</td>
             <td>https://twitch.com/</td>
           </tr>
-        </div>
+        </span>
       </tbody>
     </table>
   </div>
