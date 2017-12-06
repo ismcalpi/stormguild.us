@@ -30,12 +30,12 @@ $db = new database();
       </thead>
       <tbody>
         <tr>
-          <td class="text-center text-upper"><strong><a href="#">Legion</a></strong></td>
+          <td class="text-upper"><strong><a href="#">Legion</a></strong></td>
           <td colspan="5"></td>
         </tr>
         <tr id="raid1-head" class="collapsed" href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
           <td></td>
-          <td class="text-center text-upper"><strong>
+          <td class="text-upper"><strong>
             <span class="u-accordion__control-icon p-mr-15">
               <i class="fa fa-plus"></i>
               <i class="fa fa-minus"></i>
