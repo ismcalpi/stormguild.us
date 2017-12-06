@@ -22,8 +22,8 @@ $db = new database();
         <tr>
           <th />
           <th width="20%" />
-          <th width="10%" />
-          <th width="10%" />
+          <th width="15%" />
+          <th width="15%" />
           <th width="20%" />
           <th width="20%" />
         </tr>
@@ -36,7 +36,7 @@ $db = new database();
         <tr id="raid1-head" class="collapsed" href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
           <td></td>
           <td class="text-center text-upper"><strong>
-            <span class="u-accordion__control-icon">
+            <span class="u-accordion__control-icon p-mr-15">
               <i class="fa fa-plus"></i>
               <i class="fa fa-minus"></i>
             </span>
