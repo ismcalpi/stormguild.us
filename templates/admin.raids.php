@@ -10,11 +10,14 @@ if ($_GET['type'] == 'expansion') {
 ?>
 
 <!-- Start Expansion Modal -->
-<div id="expansion" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+<div id="expansion" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20 hide">
+
   <button type="button" class="close" onclick="Custombox.modal.close();">
     <i class="hs-icon hs-icon-close"></i>
   </button>
+
   <h4 class="h4 g-mb-20"><?php if(!empty($_GET['action'])) { echo $_GET['action'].'ing '; } else { echo ''; } ?>Expansion</h4>
+
   <form enctype="multipart/form-data" method="post" action="library/action.admin.raids.php">
     <label for="name">Expansion Name</label>
     <input id="name" class="form-control form-control-md rounded-0 g-ma-10" type="text" name="name" placeholder="Expansion Name"></input>
@@ -24,6 +27,7 @@ if ($_GET['type'] == 'expansion') {
     <input type="hidden" name="type" value="expansion" />
     <button type="submit" class="btn btn-md u-btn-primary rounded-0 g-ma-10">Submit</button>
   </form>
+
 </div>
 <!-- End Expansion Modal -->
 
