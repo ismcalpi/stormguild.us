@@ -4,13 +4,13 @@ $db = new database();
 
 if ($_GET['type'] == 'expansion') {
 ?>
-  <script>$('#expansion').modal('show');</script>
+  <script>$('#expansion').show();</script>
 <?php
 }
 ?>
 
 <!-- Start Expansion Modal -->
-<div id="expansion" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20 hide">
+<div id="expansion" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
 
   <button type="button" class="close" onclick="Custombox.modal.close();">
     <i class="hs-icon hs-icon-close"></i>
