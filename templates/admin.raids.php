@@ -34,7 +34,7 @@ $db = new database();
         <button type="button" class="btn btn-sm btn-primary g-ml-10">Edit</button>
       </h3>
 
-      <div class="card-block">
+      <div id="raid1-body" aria-labelledby="raid1-head" class="card-block collapse">
         <table class="table table-hover">
           <thead>
             <tr>
