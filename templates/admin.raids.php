@@ -20,17 +20,20 @@ $db = new database();
     <table class="table table-hover">
       <tbody>
         <tr>
-          <td colspan="6" class="g-color-blue text-center"><strong><a href="#">Test Expansion</a></strong></td>
+          <td><strong><a href="#">Test Expansion</a></strong></td>
+          <td colspan="5"></td>
         </tr>
-        <tr>
-          <td colspan="2" class="g-color-primary text-center"><a href="#">Test Raid</a></td>
+        <tr><strong>
+          <td></td>
+          <td><a href="#">Test Raid</a></td>
           <td>Heroic</td>
           <td>Mythic</td>
           <td>Killshot</td>
           <td>Video</td>
-        </tr>
+        </strong></tr>
         <tr>
-          <td colspan="2" class="text-center"><a href="#">Test Boss 1</a></td>
+          <td></td>
+          <td><a href="#">Test Boss 1</a></td>
           <td>Test Date</td>
           <td>Test Date</td>
           <td>Test Image</td>
