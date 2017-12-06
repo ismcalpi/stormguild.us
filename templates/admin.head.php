@@ -23,4 +23,5 @@
 	<link  rel="stylesheet" href="assets/vendor/fancybox/jquery.fancybox.min.css">
 	<!-- CSS Customization -->
 	<link rel="stylesheet" href="assets/css/custom.css">
+	<link rel="stylesheet" href="assets/vendor/custombox/custombox.min.css">
 </head>
