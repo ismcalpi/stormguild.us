@@ -16,12 +16,13 @@ $db = new database();
   <div class="col-12">
     <h2 class="h2 text-center text-upper">Raid Progression</h2>
   </div>
-  <div class="container col-12 g-pa-25">
+  <div id="raids" role="tablist" aria-multiselectable="true" class="u-accordion container col-12 g-pa-25">
     <table class="table table-hover">
       <thead>
         <tr><th colspan="5"><a class="h4 text-upper text-center" href="#">Legion</a></th></tr>
       </thead>
-      <tbody id="raids" class="u-accordion" role="tablist" aria-multiselectable="true">
+
+      <tbody>
 
         <tr id="raid1-head" class="collapsed g-ml-15" href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
           <td class="text-upper g-pl-20">
@@ -53,7 +54,7 @@ $db = new database();
               <i class="fa fa-plus"></i>
               <i class="fa fa-minus"></i>
             </span>
-            <a href="#">Antorus the Burning Throne</a>
+            <a href="#">Tomb of Sargeras</a>
             </strong>
           </td>
           <td><strong>Heroic</strong></td>
