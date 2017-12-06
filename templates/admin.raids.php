@@ -20,7 +20,7 @@ $db = new database();
     <table class="table table-hover">
       <thead>
         <tr>
-          <th width="20%" />
+          <th />
           <th width="20%" />
           <th width="10%" />
           <th width="10%" />
@@ -30,12 +30,12 @@ $db = new database();
       </thead>
       <tbody>
         <tr>
-          <td><strong><a href="#">Legion</a></strong></td>
+          <td class="text-center text-upper"><strong><a href="#">Legion</a></strong></td>
           <td colspan="5"></td>
         </tr>
         <tr id="raid1-head" class="collapsed" href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
           <td></td>
-          <td><strong>
+          <td class="text-center text-upper"><strong>
             <span class="u-accordion__control-icon">
               <i class="fa fa-plus"></i>
               <i class="fa fa-minus"></i>
