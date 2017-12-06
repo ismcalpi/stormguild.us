@@ -30,8 +30,7 @@ $db = new database();
             <i class="fa fa-minus"></i>
           </span>
           <a href="#">Raid: Antorus, the Burning Throne</a>
-          <button class="g-mx-10">Edit</button>
-          <button class="g-mx-10">Deactivate</button>
+          <button type="button" class="btn btn-primary g-ml-10">Edit</button>
         </th></tr>
       </thead>
 
