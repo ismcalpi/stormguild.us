@@ -19,9 +19,10 @@ $db = new database();
   <div class="container col-12 g-pa-25">
     <table class="table table-hover">
       <thead>
-        <tr><th><strong><a class="h4 text-upper" href="#">Legion</a></strong></th></tr>
+        <tr><th colspan="5"><a class="h4 text-upper text-center" href="#">Legion</a></th></tr>
       </thead>
       <tbody id="raids" class="u-accordion" role="tablist" aria-multiselectable="true">
+
         <tr id="raid1-head" class="collapsed g-ml-15" href="#raid1-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid1-body">
           <td class="text-upper g-pl-20">
             <strong>
@@ -44,6 +45,38 @@ $db = new database();
           <td>/path/to/image.png</td>
           <td>https://twitch.com/</td>
         </tr>
+
+        <tr id="raid2-head" class="collapsed g-ml-15" href="#raid2-body" data-toggle="collapse" data-parent="#raids" aria-expanded="true" aria-controls="raid2-body">
+          <td class="text-upper g-pl-20">
+            <strong>
+            <span class="u-accordion__control-icon g-mr-10">
+              <i class="fa fa-plus"></i>
+              <i class="fa fa-minus"></i>
+            </span>
+            <a href="#">Antorus the Burning Throne</a>
+            </strong>
+          </td>
+          <td><strong>Heroic</strong></td>
+          <td><strong>Mythic</strong></td>
+          <td><strong>Killshot</strong></td>
+          <td><strong>Video</strong></td>
+        </tr>
+        <div id="raid2-body" aria-labelledby="raid2-head" class="collapse">
+          <tr>
+            <td class="g-pl-40"><a href="#">Goroth</a></td>
+            <td>12/5/2017</td>
+            <td>12/5/2017</td>
+            <td>/path/to/image.png</td>
+            <td>https://twitch.com/</td>
+          </tr>
+          <tr>
+            <td class="g-pl-40"><a href="#">Demonic Inquisition</a></td>
+            <td>12/5/2017</td>
+            <td>12/5/2017</td>
+            <td>/path/to/image.png</td>
+            <td>https://twitch.com/</td>
+          </tr>
+        </div>
       </tbody>
     </table>
   </div>
