@@ -11,8 +11,10 @@ $db = new database();
   </button>
   <h4 class="h4 g-mb-20">Expansion</h4>
   <form enctype="multipart/form-data" method="post" action="library/action.admin.raids.php">
-    <input class="form-control form-control-md rounded-0 g-ma-10" type="text" name="name" placeholder="Expansion Name"></input>
-    <input class="form-control form-control-md rounded-0 g-ma-10" type="date" name="release"></input>
+    <label for="name">Expansion Name</label>
+    <input id="name" class="form-control form-control-md rounded-0 g-ma-10" type="text" name="name" placeholder="Expansion Name"></input>
+    <label for="release">Release Date</label>
+    <input id="release" class="form-control form-control-md rounded-0 g-ma-10" type="date" name="release"></input>
     <input type="hidden" name="id" value="<?php if(!empty($_GET['id'])) { echo $_GET['id']; } else { echo 0; } ?>" />
     <input type="hidden" name="type" value="expansion" />
     <button type="submit" class="btn btn-md u-btn-primary rounded-0 g-ma-10">Submit</button>
