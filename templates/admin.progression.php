@@ -46,9 +46,13 @@ $db = new database();
             ?>
             <tr>
               <form method="post" action="library/action.admin.progression.php">
-                <td><?php echo $boss['name'] ?></td>
-                <td><?php echo $boss['heroic_kill'] ?></td>
-                <td><?php echo $boss['mythic_kill'] ?></td>
+                <input type="hidden" name="bossid" value="<?php echo $boss['boss_id'] ?>">
+                <input type="hidden" name="action" value="update">
+                <input type="hidden" name="type" value="boss">
+                <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
+                <td><input type="text" name="bossname" value="<?php echo $boss['name'] ?>"></td>
+                <td><input type="date" name="heroickill" value="<?php echo $boss['heroic_kill'] ?>"></td>
+                <td><input type="date" name="mythickill" value="<?php echo $boss['mythic_kill'] ?>"></td>
                 <td><a type="submit" class="btn btn-sm u-btn-primary g-ml-10">Update</a></td>
               </form>
             </tr>
