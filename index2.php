@@ -11,7 +11,7 @@
           <div class = "col-lg-8 g-pa-10">
             <div class = "row g-mx-10 g-mb-10">
               <div class="col-lg-12 col-sm-12 g-pa-0">
-                <?php include 'templates/home.recruit.php' ?>
+                <?php include 'templates/home.recruit2.php' ?>
               </div>
             </div>
             <div class = "row g-mx-10 g-mb-10">
