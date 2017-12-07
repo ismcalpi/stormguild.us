@@ -8,12 +8,13 @@ $db = new database();
     <?php
       $raids = $db -> sql_select("SELECT * FROM stormguild.raid WHERE is_active = TRUE ORDER BY release_date DESC");
       foreach ($raids as $raid) {
+        $raidname = strtolower(preg_replace('/\s*/', '', $raid['raid']));
     ?>
-    <div id="<?php echo $raid['raid'] ?>" class="card rounded-0">
+    <div id="<?php echo $raidname ?>" class="card rounded-0">
       <!-- Raid Header -->
       <h3 class="card-header h5 rounded-0">
-        <span id="<?php echo $raid['raid'] ?>-head" class="collapsed g-ml-15"
-          href="#<?php echo $raid['raid'] ?>-body" data-toggle="collapse" data-parent="#antorus" aria-expanded="true" aria-controls="<?php echo $raid['raid'] ?>-body">
+        <span id="<?php echo $raidname ?>-head" class="collapsed g-ml-15"
+          href="#<?php echo $raidname ?>-body" data-toggle="collapse" data-parent="#<?php echo $raidname ?>" aria-expanded="true" aria-controls="<?php echo $raidname ?>-body">
           <span class="u-accordion__control-icon g-mr-10">
             <i class="fa fa-plus"></i>
             <i class="fa fa-minus"></i>
@@ -24,7 +25,7 @@ $db = new database();
       </h3>
 
       <!-- Raid Body -->
-      <div id="<?php echo $raid['raid'] ?>-body" aria-labelledby="<?php echo $raid['raid'] ?>-head" class="card-block collapse g-pa-0">
+      <div id="<?php echo $raidname ?>-body" aria-labelledby="<?php echo $raidname ?>-head" class="card-block collapse g-pa-0">
         <table class="table table-hover g-ma-0">
           <thead>
             <tr>
