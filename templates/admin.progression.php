@@ -36,7 +36,7 @@ $db = new database();
           <tbody>
             <!-- Boss Rows -->
             <?php
-              $bosses = $db -> sql_select("SELECT * FROM stormguild.boss WHERE raid_id = ".$raid['raid_id']." ORDER BY kill_order asc")
+              $bosses = $db -> sql_select("SELECT * FROM stormguild.boss WHERE raid_id = ".$raid['raid_id']." ORDER BY kill_order asc");
               foreach ($bosses as $boss) {
             ?>
             <tr>
