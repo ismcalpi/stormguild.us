@@ -3,8 +3,10 @@
 <article class="text-center g-color-white g-overflow-hidden" >
   <div class="u-block g-min-height-100 g-flex-middle g-bg-cover g-bg-bluegray-opacity-0_3--after g-transition-0_5" style="background-image: url('assets/img/home.recruit.jpg');">
     <div class="g-flex-middle-item g-pos-rel g-z-index-1 g-py-5 g-px-20 bg-black-0-70">
-      <h2 class="h1 text-uppercase pull-left">Storm is Recruiting!</h2>
-      <a class="btn btn-md u-btn-outline-white g-font-weight-600 g-font-size-11 text-uppercase g-my-10 pull-right" href="recruit.php#application">Apply Now</a>
+      <div class="row">
+        <h2 class="h1 text-uppercase pull-left">Storm is Recruiting!</h2>
+        <a class="btn btn-md u-btn-outline-white g-font-weight-600 g-font-size-11 text-uppercase g-my-10 pull-right" href="recruit.php#application">Apply Now</a>
+      </div>
 <?php
     include_once 'library/class.database.php';
     $db = new database;
