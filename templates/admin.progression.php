@@ -51,12 +51,12 @@ $db = new database();
             <!-- Add Boss -->
             <tr>
               <form method="post" action="library/action.admin.progression.php">
-                <input type="hidden" name="raidid" value="<?php echo $boss['raid_id'] ?>">
+                <input type="hidden" name="raidid" value="<?php echo $raid['raid_id'] ?>">
                 <input type="hidden" name="action" value="add">
                 <input type="hidden" name="type" value="boss">
                 <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
                 <td><input type="text" name="bossname"></td>
-                <td><input type="text" name="killorder" ></td>
+                <td><input type="text" name="killorder"></td>
                 <td></td>
                 <td></td>
                 <td><input type="submit" class="btn btn-sm u-btn-primary g-ml-10" value="Add Boss"></input></td>
