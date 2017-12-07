@@ -20,9 +20,10 @@
       $raidid = $_POST['raidid'];
       $killorder = $_POST['killorder'];
 
-      $result = $db -> sql_query("INSERT INTO stormguild.boss VALUES (NULL,".$raidid.",".$name.",".$killorder.", NULL, NULL);
+      $result = $db -> sql_query("INSERT INTO stormguild.boss VALUES (NULL,".$raidid.",".$name.",".$killorder.", NULL, NULL)");
 
     }
+
     $header = "Location:".$_POST['redirect'];
     header($header);
 
