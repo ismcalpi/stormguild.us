@@ -6,8 +6,7 @@ $db = new database();
 
   <div class="col-12 g-pa-20">
     <h2 class="h2 text-upper">Raid Progression</h2>
-    <hr />
-    <a type="button" class="btn btn-sm u-btn-primary g-ml-10">Add Expansion</a>
+    <a type="button" class="btn btn-sm u-btn-primary g-ma-10">Add Expansion</a>
     <?php
       $raids = $db -> sql_select("SELECT * FROM stormguild.raid WHERE is_active = TRUE ORDER BY release_date DESC");
       foreach ($raids as $raid) {
@@ -50,7 +49,7 @@ $db = new database();
                 <td><?php echo $boss['name'] ?></td>
                 <td><?php echo $boss['heroic_kill'] ?></td>
                 <td><?php echo $boss['mythic_kill'] ?></td>
-                <td><a type="submit" class="btn btn-sm u-btn-primary g-ml-10">Add Boss</a></td>
+                <td><a type="submit" class="btn btn-sm u-btn-primary g-ml-10">Update</a></td>
               </form>
             </tr>
             <?php
