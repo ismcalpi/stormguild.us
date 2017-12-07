@@ -57,8 +57,8 @@ $db = new database();
                 <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
                 <td><input type="text" name="bossname"></td>
                 <td><input type="text" name="killorder" ></td>
-                <td><input type="date" name="heroickill" readonly=""></td>
-                <td><input type="date" name="mythickill" readonly=""></td>
+                <td></td>
+                <td></td>
                 <td><input type="submit" class="btn btn-sm u-btn-primary g-ml-10" value="Add Boss"></input></td>
               </form>
             </tr>
