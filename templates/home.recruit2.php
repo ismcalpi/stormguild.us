@@ -1,6 +1,6 @@
 
 
-<article class="text-center g-color-white g-overflow-hidden" >
+<article class="text-center g-color-white g-overflow-hidden g-rounded-1 g-pa-10" >
   <div class="u-block g-min-height-100 g-flex-middle g-bg-cover g-bg-bluegray-opacity-0_3--after g-transition-0_5" style="background-image: url('assets/img/home.recruit.jpg');">
     <div class="g-flex-middle-item g-pos-rel g-z-index-1 g-py-5 g-px-20 bg-black-0-70">
       <div class="row">
