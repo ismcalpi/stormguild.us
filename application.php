@@ -33,10 +33,10 @@
 
 	<?php if ($access == 1) { ?>
 
-			<div class="col-xl-8 col-md-12 g-pa-20">
+			<div class="col-12 g-pa-20">
 					<?php include 'templates/application.body.php' ?>
 			</div>
-			<div class="col-xl-4 col-md-12 g-pa-20">
+			<div class="col-12 g-pa-20">
 					<?php include 'templates/application.comments.php' ?>
 			</div>
 
@@ -47,10 +47,10 @@
 		</div>
 		<div class='col-10'>
 			<div class="row">
-				<div class="col-xl-8 col-md-12 g-pa-20">
+				<div class="col-12 g-pa-20">
 						<?php include 'templates/application.body.php' ?>
 				</div>
-				<div class="col-xl-4 col-md-12 g-pa-20">
+				<div class="col-12 g-pa-20">
 						<?php include 'templates/application.comments.php' ?>
 				</div>
 			</div>
@@ -66,10 +66,10 @@
 				<div class="col-12">
 						<?php if ($status == 'open') { include 'templates/application.admin.php'; } ?>
 				</div>
-				<div class="col-xl-8 col-md-12 g-pa-20">
+				<div class="col-12 g-pa-20">
 						<?php include 'templates/application.body.php' ?>
 				</div>
-				<div class="col-xl-4 col-md-12 g-pa-20">
+				<div class="col-12 g-pa-20">
 						<?php include 'templates/application.comments.php' ?>
 				</div>
 			</div>
