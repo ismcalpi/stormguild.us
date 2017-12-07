@@ -31,9 +31,9 @@
 }
 
 .main-container {
-    background:rgba(255,255,255,0.89);
-    border-radius:5px 30px 5px 30px;
-    padding: 20px;
+    background:rgba(255,255,255,0.75);
+    border-radius:15px 15px 15px 15px;
+    padding: 10px;
     border: 2px solid #0D042F;
 }
 
