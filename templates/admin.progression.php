@@ -12,7 +12,7 @@ $db = new database();
     <a type="button" class="btn btn-sm u-btn-primary g-ma-10">Add Expansion</a>
     <?php
       $raids = $db -> sql_select("SELECT * FROM stormguild.raid WHERE is_active = TRUE ORDER BY release_date DESC");
-      $maxid = $db -> sql_fetchrow("SELECT raid_id FROM stormguild.raid WHERE is_active = TRUE ORDER BY release_date DESC LIMIT 1")
+      $maxid = $db -> sql_fetchrow("SELECT raid_id FROM stormguild.raid WHERE is_active = TRUE ORDER BY release_date DESC LIMIT 1");
       foreach ($raids as $raid) {
         $raidname = strtolower(preg_replace('/\s*/', '', $raid['raid']));
         if ($maxid['raid_id'] == $raid['raid_id']) {
