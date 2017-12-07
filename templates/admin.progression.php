@@ -53,7 +53,7 @@ $db = new database();
                 <td><input type="text" name="bossname" value="<?php echo $boss['name'] ?>"></td>
                 <td><input type="date" name="heroickill" value="<?php echo $boss['heroic_kill'] ?>"></td>
                 <td><input type="date" name="mythickill" value="<?php echo $boss['mythic_kill'] ?>"></td>
-                <td><a type="submit" class="btn btn-sm u-btn-primary g-ml-10">Update</a></td>
+                <td><input type="submit" class="btn btn-sm u-btn-primary g-ml-10">Update</input></td>
               </form>
             </tr>
             <?php
