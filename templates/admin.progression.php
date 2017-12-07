@@ -5,6 +5,9 @@ $db = new database();
 <div class="row">
 
   <div class="col-12 g-pa-20">
+    <h2 class="h2 text-upper">Raid Progression</h2>
+    <hr />
+    <a type="button" class="btn btn-sm u-btn-primary g-ml-10">Add Expansion</a>
     <?php
       $raids = $db -> sql_select("SELECT * FROM stormguild.raid WHERE is_active = TRUE ORDER BY release_date DESC");
       foreach ($raids as $raid) {
@@ -21,7 +24,8 @@ $db = new database();
           </span>
           <?php echo $raid['expansion'].' - '.$raid['raid'] ?>
         </span>
-        <button type="button" class="btn btn-sm btn-primary g-ml-10">Edit</button>
+        <a type="button" class="btn btn-sm u-btn-primary g-ml-10">Edit</a>
+        <a type="button" class="btn btn-sm u-btn-primary g-ml-10">Add Boss</a>
       </h3>
 
       <!-- Raid Body -->
@@ -32,6 +36,7 @@ $db = new database();
               <th><strong>Boss Name</strong></th>
               <th><strong>Heroic Kill Date</strong></th>
               <th><strong>Mythic Kill Date</strong></th>
+              <th><strong>Action</strong></th>
             </tr>
           </thead>
           <tbody>
@@ -41,9 +46,12 @@ $db = new database();
               foreach ($bosses as $boss) {
             ?>
             <tr>
-              <td><?php echo $boss['name'] ?></td>
-              <td><?php echo $boss['heroic_kill'] ?></td>
-              <td><?php echo $boss['mythic_kill'] ?></td>
+              <form method="post" action="library/action.admin.progression.php">
+                <td><?php echo $boss['name'] ?></td>
+                <td><?php echo $boss['heroic_kill'] ?></td>
+                <td><?php echo $boss['mythic_kill'] ?></td>
+                <td><a type="submit" class="btn btn-sm u-btn-primary g-ml-10">Add Boss</a></td>
+              </form>
             </tr>
             <?php
               }
