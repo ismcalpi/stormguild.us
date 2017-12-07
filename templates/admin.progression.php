@@ -1,7 +1,6 @@
 <?php
 include_once 'library/class.database.php';
 $db = new database();
-}
 ?>
 <div class="row">
 
