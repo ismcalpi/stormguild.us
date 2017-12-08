@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="assets/css/unify-core.css">
 	<link rel="stylesheet" href="assets/css/unify-components.css">
 	<link rel="stylesheet" href="assets/css/unify-globals.css">
-	<link  rel="stylesheet" href="assets/vendor/fancybox/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="assets/vendor/fancybox/jquery.fancybox.min.css">
 	<!-- CSS Customization -->
 	<link rel="stylesheet" href="assets/css/custom.css">
 	<link rel="stylesheet" href="assets/vendor/custombox/custombox.min.css">

@@ -3,8 +3,8 @@
   <?php
     $result = $db -> sql_fetchrow("SELECT * FROM stormguild.application WHERE application_id = ".$appid);
   ?>
-  <h3 class="h3 g-mr-10 g-my-15">Admin Control:</h3>
-  <form method="post" action="library/action.application.decision.php">
+  <h3 class="col-md-3 col-xs-12 h3 g-mr-10 g-my-15">Admin Control:</h3>
+  <form class="col-md-3 col-xs-12" method="post" action="library/action.application.decision.php">
       <div class="form-group g-mr-10">
           <input type="hidden" name="redirecturi" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
           <input type="hidden" name="appid" value="<?php echo $appid ?>" />
@@ -15,7 +15,7 @@
           </button>
       </div>
   </form>
-  <form method="post" action="library/action.application.decision.php">
+  <form class="col-md-3 col-xs-12" method="post" action="library/action.application.decision.php">
       <div class="form-group g-mr-10">
           <input type="hidden" name="redirecturi" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
           <input type="hidden" name="appid" value="<?php echo $appid ?>" />

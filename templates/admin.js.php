@@ -21,6 +21,7 @@
 <script src="assets/js/helpers/hs.height-calc.js"></script>
 <script src="assets/js/helpers/hs.navigation-splitted.js"></script>
 <script src="assets/js/components/hs.popup.js"></script>
+<script src="assets/js/components/hs.tabs.js"></script>
 
 <script src="assets/vendor/appear.js"></script>
 <script src="assets/vendor/custombox/custombox.min.js"></script>
@@ -36,12 +37,19 @@
     // initialization of countdowns
     $.HSCore.components.HSPopup.init('.js-fancybox');
     $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+    $.HSCore.components.HSTabs.init('[role="tablist"]');
   });
 
   $(window).on('load', function () {
-      // initialization of header
-      $.HSCore.components.HSHeaderSide.init($('#js-header'));
-      $.HSCore.helpers.HSHamburgers.init('.hamburger');
-    });
+    // initialization of header
+    $.HSCore.components.HSHeaderSide.init($('#js-header'));
+    $.HSCore.helpers.HSHamburgers.init('.hamburger');
+  });
+
+  $(window).on('resize', function () {
+    setTimeout(function () {
+      $.HSCore.components.HSTabs.init('[role="tablist"]');
+    }, 200);
+  });
 
 </script>
