@@ -19,7 +19,7 @@
                     <span class="g-color-gray-dark-v4 g-font-size-12"><?php echo $comment['formDate']; ?></span>
                 </div>
 
-                <p style="word-wrap: break-word;"><?php echo $comment['body']; ?></p>
+                <p style="word-wrap:break-word;overflow-wrap:break-word;"><?php echo $comment['body']; ?></p>
 
                 <ul class="list-inline d-sm-flex my-0">
                     <li class="list-inline-item ml-auto">
@@ -57,7 +57,7 @@
                     <span class="g-color-gray-dark-v4 g-font-size-12"><?php echo $reply['formDate']; ?></span>
                 </div>
 
-                <p style="word-wrap: break-word;"><?php echo $reply['body']; ?></p>
+                <p style="word-wrap:break-word;overflow-wrap:break-word;"><?php echo $reply['body']; ?></p>
 
             </div>
         </div>
