@@ -29,63 +29,29 @@
 	?>
 	<body>
 		<main>
+			<?php if($access < 1 || !$access) { ?>
+				<form id="redirect" method="POST" action="user.php?page=login">
+					<input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
+				</form>
+				<script type="text/javascript">
+				    document.getElementById('redirect').submit(); // SUBMIT FORM
+				</script>
+			<?php } ?>
+			<?php if($access >= 2) { ?>
 			<div class="row" style="min-height:100vh">
-
-	<?php if ($access == 1) { ?>
-
-			<div class="col-12 g-pa-20">
-					<?php include 'templates/application.body.php' ?>
-			</div>
-			<div class="col-12 g-pa-20">
-					<?php include 'templates/application.comments.php' ?>
-			</div>
-
-	<?php } else if ($access == 2) { ?>
-
-		<div class="col-2 g-brd-right g-brd-black">
-				<?php include 'templates/application.navbar.php' ?>
-		</div>
-		<div class='col-10'>
-			<div class="row">
-				<div class="col-12 g-pa-20">
-						<?php include 'templates/application.body.php' ?>
+				<div class="col-md-2 col-xs-12 g-brd-right g-brd-black">
+						<?php include 'templates/application.navbar.php' ?>
 				</div>
-				<div class="col-12 g-pa-20">
-						<?php include 'templates/application.comments.php' ?>
+			<?php } ?>
+				<div class='col-md-10 col-xs-12'>
+					<div class="row">
+						<div class="col-12 g-py-10 g-px-40">
+							<?php if ($status == 'open' && $access == 3) { include 'templates/application.admin.php'; } ?>
+							<?php include 'templates/application.body.php' ?>
+							<?php include 'templates/application.comments.php' ?>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-
-	<?php } else if ($access == 3) { ?>
-
-		<div class="col-2 g-brd-right g-brd-black">
-				<?php include 'templates/application.navbar.php' ?>
-		</div>
-		<div class='col-10'>
-			<div class="row">
-				<div class="col-12">
-						<?php if ($status == 'open') { include 'templates/application.admin.php'; } ?>
-				</div>
-				<div class="col-12 g-pa-20">
-						<?php include 'templates/application.body.php' ?>
-				</div>
-				<div class="col-12 g-pa-20">
-						<?php include 'templates/application.comments.php' ?>
-				</div>
-			</div>
-		</div>
-
-	<?php } else { ?>
-
-			<form id="redirect" method="POST" action="user.php?page=login">
-				<input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
-			</form>
-			<script type="text/javascript">
-			    document.getElementById('redirect').submit(); // SUBMIT FORM
-			</script>
-
-	<?php } ?>
-
 			</div>
 		</main>
 	</body>

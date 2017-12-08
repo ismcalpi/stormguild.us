@@ -19,7 +19,7 @@
       break;
   }
 ?>
-<ul class="nav flex-column u-nav-v3-1" role="tablist" data-tabs-mobile-type="slide-up-down" data-btn-classes="btn btn-md btn-block rounded-0 u-btn-outline-lightgray" aria-multiselectable="false">
+<ul class="nav flex-column u-nav-v3">
 
     <li class="nav-item">
         <a class="nav-link text-center" href="#">
