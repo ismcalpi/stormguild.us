@@ -14,7 +14,7 @@ $user->setup();
 $user_group = strtolower(get_group_name($user->data['group_id']));
 if ($user_group == 'officer') {
   $user_rank = 3;
-} else if ($user_group == 'raider') {
+} else if ($user_group == 'raider' || $user_group == 'veteran raider') {
   $user_rank = 2;
 } else if ($user_group == 'recruit') {
   $user_rank = 1;
