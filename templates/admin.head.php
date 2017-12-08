@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="assets/vendor/animate.css">
 	<link rel="stylesheet" href="assets/vendor/hamburgers/hamburgers.min.css">
 	<link rel="stylesheet" href="assets/vendor/hs-megamenu/src/hs.megamenu.css">
+	<link rel="stylesheet" href="assets/vendor/bootstrap/offcanvas.css">
 	<!-- CSS Unify -->
 	<link rel="stylesheet" href="assets/css/unify-core.css">
 	<link rel="stylesheet" href="assets/css/unify-components.css">
