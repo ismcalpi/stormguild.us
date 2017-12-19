@@ -17,7 +17,7 @@
 					));
 					// Find User Information
 					$twitch_user = curl_exec($curl);
-					$json_user = json_decode(file_get_contents($twitch_user));
+					$json_user = json_decode($twitch_user);
 
 					// Find Channel Information
 
