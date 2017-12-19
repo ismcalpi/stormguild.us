@@ -15,15 +15,15 @@
 					    CURLOPT_URL => 'https://api.twitch.tv/kraken/users?login=kniny',
 					    CURLOPT_HTTPHEADER => array('Accept: application/vnd.twitchtv.v5+json','Client-ID: dixpnolwj0yth0r3wpzxrp2edowugp')
 					));
-					// Find User Information
 					$twitch_user = curl_exec($curl);
 					$json_user = json_decode($twitch_user);
-
-					// Find Channel Information
 
 					curl_close($curl);
 				?>
 				<div class="row">
+
+					<p><?php echo $twitch_user; ?></p>
+
 					<!-- Blah Twitch Stuff -->
 					<div class="u-shadow-v19 col-3 g-bg-white text-center rounded g-pb-40 g-px-30 p-ma-20">
 			      <img class="g-brd-7 g-brd-style-solid g-brd-white g-width-100 g-height-100 rounded-circle g-pull-50x-up" src="<?php echo $json_user->logo; ?>" alt="Image Description">
