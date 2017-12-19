@@ -29,12 +29,12 @@
 					$twitch_channel = curl_exec($channel_curl);
 					$json_channel = json_decode($twitch_channel, true);
 					curl_close($channel_curl);
-					
-				?>
-				<div class="row">
 
+				?>
+				<div class="row g-pa-20">
+					<p><?php echo $twitch_channel; ?></p>
 					<!-- Blah Twitch Stuff -->
-					<div class="u-shadow-v19 col-3 g-bg-white text-center rounded g-pb-40 g-px-30 g-ma-20 g-mt-80">
+					<div class="u-shadow-v19 col-3 g-bg-white text-center rounded g-pb-40 g-px-30">
 			      <img class="g-brd-7 g-brd-style-solid g-brd-white g-width-100 g-height-100 rounded-circle g-pull-50x-up" src="<?php echo $json_user['users'][0]['logo']; ?>" alt="Image Description">
 			      <div class="g-mt-minus-20">
 			        <h4 class="h6 g-color-primary g-font-weight-600 text-uppercase g-mb-5"><?php echo $json_user['users'][0]['display_name']; ?></h4>
