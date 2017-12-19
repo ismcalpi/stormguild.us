@@ -7,63 +7,37 @@
 			<?php include 'templates/all.navbar.php' ?>
 			<div class="container main-container g-mt-80">
 
-				<div class="row g-brd-around g-brd-gray-dark-v4 g-brd-left-4 g-brd-black-left g-line-height-1_8 g-rounded-3 g-pa-15 g-ma-20" role="alert">
-					<div class="col-8">
-					  <h3 class="g-color-green g-font-weight-600">Blahpjiyah - Shadow Priest</h3>
-					  <p class="mb-0 g-font-size-16">Some details will go here about Blah...but that's something he needs to give me!</p>
-					</div>
-					<div class="col-4">
-						<div id="twitch-embed-kniny"></div>
-					</div>
-				</div>
+				<?php
+					$curl = curl_init();
+					curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+					curl_setopt($curl, CURLOPT_HEADER, 'Accept: application/vnd.twitchtv.v5+json');
+					curl_setopt($curl, CURLOPT_HEADER, 'Client-ID: dixpnolwj0yth0r3wpzxrp2edowugp');
 
-				<div class="row g-brd-around g-brd-gray-dark-v4 g-brd-left-4 g-brd-blue-left g-line-height-1_8 g-rounded-3 g-pa-15 g-ma-20" role="alert">
-					<div class="col-8">
-					  <h3 class="g-color-green g-font-weight-600">Toludin - Restoration Shaman</h3>
-					  <p class="mb-0 g-font-size-16">Some details will go here about Toludin...but that's something he needs to give me!</p>
-					</div>
-					<div class="col-4">
-						<div id="twitch-embed-toludin"></div>
-					</div>
-				</div>
+					// Find User Information
+					curl_setopt($curl, CURLOPT_URL, 'https://api.twitch.tv/kraken/users?login=kniny');
+					$twitch_user = curl_exec($curl);
+					curl_close($curl);
+					$json_user = json_decode(file_get_contents($twitch_user));
 
-				<div class="row g-brd-around g-brd-gray-dark-v4 g-brd-left-4 g-brd-purple-left g-line-height-1_8 g-rounded-3 g-pa-15 g-ma-20" role="alert">
-					<div class="col-8">
-					  <h3 class="g-color-green g-font-weight-600">Ram - Havoc Demon Hunter</h3>
-					  <p class="mb-0 g-font-size-16">Some details will go here about Ram...but that's something he needs to give me!</p>
-					</div>
-					<div class="col-4">
-						<div id="twitch-embed-maahfky"></div>
-					</div>
-				</div>
+					// Find Channel Information
+
+
+				?>
+
+				<!-- Blah Twitch Stuff -->
+				<div class="u-shadow-v19 g-bg-white text-center rounded g-pb-40 g-px-30">
+		      <img class="g-brd-7 g-brd-style-solid g-brd-white g-width-100 g-height-100 rounded-circle g-pull-50x-up" src="<?php echo $json_user->logo; ?>" alt="Image Description">
+		      <div class="g-mt-minus-20">
+		        <h4 class="h6 g-color-primary g-font-weight-600 text-uppercase g-mb-5"><?php echo $json_user->display_name; ?></h4>
+		        <em class="d-block g-color-gray-dark-v4 g-font-style-normal g-font-size-13 g-mb-20">Shadow Priest</em>
+		        <i class="d-block g-color-primary g-font-size-50 g-line-height-0_7 g-pos-rel g-top-15 g-mb-20">“</i>
+		        <blockquote class="g-color-black g-font-style-italic g-font-size-20 g-line-height-1_4">Does stuff with tentacles.</blockquote>
+		      </div>
+		    </div>
+				<!-- End Blah Section -->
 
 			</div>
 		</main>
 	</body>
 	<?php include 'templates/twitch.js.php' ?>
 </html>
-<!-- Twitch Stuff -->
-<script src="https://embed.twitch.tv/embed/v1.js"></script>
-<script type="text/javascript">
-  new Twitch.Embed("twitch-embed-kniny", {
-    width: "100%",
-    height: 180,
-    channel: "kniny",
-    layout: "video",
-    autoplay: false
-  });
-  new Twitch.Embed("twitch-embed-toludin", {
-    width: "100%",
-    height: 180,
-    channel: "toludin",
-    layout: "video",
-    autoplay: false
-  });
-  new Twitch.Embed("twitch-embed-maahfky", {
-    width: "100%",
-    height: 180,
-    channel: "maahfky",
-    layout: "video",
-    autoplay: false
-  });
-</script>
