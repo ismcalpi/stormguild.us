@@ -11,6 +11,7 @@
 
 					$curl = curl_init();
 					curl_setopt($curl, CURLOPT_URL, 'https://api.twitch.tv/kraken/users?login=kniny');
+					curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 					curl_setopt($curl, CURLOPT_HEADER, 'Accept: application/vnd.twitchtv.v5+json');
 					curl_setopt($curl, CURLOPT_HEADER, 'Client-ID: dixpnolwj0yth0r3wpzxrp2edowugp');
 
@@ -24,7 +25,7 @@
 				?>
 				<div class="row">
 					<!-- Blah Twitch Stuff -->
-					<div class="u-shadow-v19 col-4 g-bg-white text-center rounded g-pb-40 g-px-30">
+					<div class="u-shadow-v19 col-3 g-bg-white text-center rounded g-pb-40 g-px-30 p-ma-20">
 			      <img class="g-brd-7 g-brd-style-solid g-brd-white g-width-100 g-height-100 rounded-circle g-pull-50x-up" src="<?php echo $json_user->logo; ?>" alt="Image Description">
 			      <div class="g-mt-minus-20">
 			        <h4 class="h6 g-color-primary g-font-weight-600 text-uppercase g-mb-5"><?php echo $json_user->display_name; ?></h4>
