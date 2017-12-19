@@ -9,19 +9,17 @@
 
 				<?php
 					$curl = curl_init();
-					curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 					curl_setopt($curl, CURLOPT_HEADER, 'Accept: application/vnd.twitchtv.v5+json');
 					curl_setopt($curl, CURLOPT_HEADER, 'Client-ID: dixpnolwj0yth0r3wpzxrp2edowugp');
 
 					// Find User Information
 					curl_setopt($curl, CURLOPT_URL, 'https://api.twitch.tv/kraken/users?login=kniny');
 					$twitch_user = curl_exec($curl);
-					curl_close($curl);
 					$json_user = json_decode(file_get_contents($twitch_user));
 
 					// Find Channel Information
 
-
+					curl_close($curl);
 				?>
 
 				<!-- Blah Twitch Stuff -->
