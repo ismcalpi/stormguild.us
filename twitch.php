@@ -26,9 +26,9 @@
 
 					<!-- Blah Twitch Stuff -->
 					<div class="u-shadow-v19 col-3 g-bg-white text-center rounded g-pb-40 g-px-30 p-ma-20">
-			      <img class="g-brd-7 g-brd-style-solid g-brd-white g-width-100 g-height-100 rounded-circle g-pull-50x-up" src="<?php echo $json_user->logo; ?>" alt="Image Description">
+			      <img class="g-brd-7 g-brd-style-solid g-brd-white g-width-100 g-height-100 rounded-circle g-pull-50x-up" src="<?php echo $json_user->users->logo; ?>" alt="Image Description">
 			      <div class="g-mt-minus-20">
-			        <h4 class="h6 g-color-primary g-font-weight-600 text-uppercase g-mb-5"><?php echo $json_user->display_name; ?></h4>
+			        <h4 class="h6 g-color-primary g-font-weight-600 text-uppercase g-mb-5"><?php echo $json_user->users->display_name; ?></h4>
 			        <em class="d-block g-color-gray-dark-v4 g-font-style-normal g-font-size-13 g-mb-20">Shadow Priest</em>
 			        <blockquote class="g-color-black g-font-style-italic g-font-size-20 g-line-height-1_4">Does stuff with tentacles.</blockquote>
 			      </div>
