@@ -30,17 +30,30 @@
 					$json_channel = json_decode($twitch_channel, true);
 					curl_close($channel_curl);
 
+					$stream_curl = curl_init();
+					$stream_url = 'https://api.twitch.tv/kraken/streams/'.$json_user['users'][0]['_id'];
+					curl_setopt_array($stream_curl, array(
+					    CURLOPT_RETURNTRANSFER => 1,
+					    CURLOPT_URL => $channel_url,
+					    CURLOPT_HTTPHEADER => array('Accept: application/vnd.twitchtv.v5+json','Client-ID: dixpnolwj0yth0r3wpzxrp2edowugp')
+					));
+					$twitch_stream = curl_exec($stream_curl);
+					$json_stream = json_decode($stream_channel, true);
+					curl_close($stream_curl);
+
 				?>
 				<div class="row g-pa-20">
 
 					<!-- Blah Twitch Stuff -->
-					<div class="u-shadow-v19 col-3 g-bg-white text-center rounded g-pb-40 g-px-30 g-mt-100">
+					<div class="u-shadow-v19 col-3 g-bg-white text-center rounded g-pb-40 g-px-30 g-mt-75">
 			      <img class="g-brd-7 g-brd-style-solid g-brd-white g-width-100 g-height-100 rounded-circle g-pull-50x-up" src="<?php echo $json_user['users'][0]['logo']; ?>" alt="Image Description">
 			      <div class="g-mt-minus-20">
 			        <h4 class="h6 g-color-primary g-font-weight-600 text-uppercase g-mb-5"><?php echo $json_user['users'][0]['display_name']; ?></h4>
 			        <em class="d-block g-color-gray-dark-v4 g-font-style-normal g-font-size-13 g-mb-20"><?php echo $json_channel['status']; ?></em>
 			        <blockquote class="g-color-black g-font-style-italic g-font-size-20 g-line-height-1_4">Does stuff with tentacles.</blockquote>
-							<a target="_blank" href="<?php echo $json_channel['url']; ?>" class="btn u-btn-sm u-btn-purple">Watch Now!</a>
+							<?php if($json_stream['stream']){ ?>
+								<a target="_blank" href="<?php echo $json_channel['url']; ?>" class="btn u-btn-sm u-btn-primary">Live Now!</a>
+							<?php } ?>
 			      </div>
 			    </div>
 					<!-- End Blah Section -->
