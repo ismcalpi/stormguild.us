@@ -20,7 +20,7 @@
 					curl_close($user_curl);
 
 					$channel_curl = curl_init();
-					$channel_url = 'https://api.twitch.tv/kraken/channels/'.$json_user['users'][0]['logo'];
+					$channel_url = 'https://api.twitch.tv/kraken/channels/'.$json_user['users'][0]['_id'];
 					curl_setopt_array($channel_curl, array(
 					    CURLOPT_RETURNTRANSFER => 1,
 					    CURLOPT_URL => $channel_url,
