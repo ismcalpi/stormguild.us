@@ -9,25 +9,27 @@
 
 				<?php
 
-					$curl = curl_init();
-					curl_setopt_array($curl, array(
+					$user_curl = curl_init();
+					curl_setopt_array($user_curl, array(
 					    CURLOPT_RETURNTRANSFER => 1,
 					    CURLOPT_URL => 'https://api.twitch.tv/kraken/users?login=kniny',
 					    CURLOPT_HTTPHEADER => array('Accept: application/vnd.twitchtv.v5+json','Client-ID: dixpnolwj0yth0r3wpzxrp2edowugp')
 					));
-					$twitch_user = curl_exec($curl);
+					$twitch_user = curl_exec($user_curl);
 					$json_user = json_decode($twitch_user, true);
+					curl_close($user_curl);
 
+					$channel_curl = curl_init();
 					$channel_url = 'https://api.twitch.tv/kraken/channels/'.$json_user['users'][0]['logo'];
-					curl_setopt_array($curl, array(
+					curl_setopt_array($channel_curl, array(
 					    CURLOPT_RETURNTRANSFER => 1,
 					    CURLOPT_URL => $channel_url,
 					    CURLOPT_HTTPHEADER => array('Accept: application/vnd.twitchtv.v5+json','Client-ID: dixpnolwj0yth0r3wpzxrp2edowugp')
 					));
-					$twitch_channel = curl_exec($curl);
+					$twitch_channel = curl_exec($channel_curl);
 					$json_channel = json_decode($twitch_channel, true);
-
-					curl_close($curl);
+					curl_close($channel_curl);
+					
 				?>
 				<div class="row">
 
