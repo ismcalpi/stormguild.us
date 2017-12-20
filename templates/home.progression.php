@@ -3,7 +3,7 @@ $json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stor
 ?>
 <div class="col-12 g-pa-0 g-ma-0">
 	<a  href="https://www.wowprogress.com/guild/us/stormrage/storm"
-			class="btn btn-xl u-btn-bluegray u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-mb-15 g-mt-25 g-pa-5"
+			class="btn btn-xl u-btn-bluegray u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-my-15 g-pa-5"
 			target="_blank"
 			style="width:100%;">
 		<i class="fa fa-globe pull-left g-font-size-35"></i>
@@ -14,6 +14,8 @@ $json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stor
 	</a>
 </div>
 
+<div class="col-12 g-pa-0 g-ma-0">
+
 <?php
 include_once 'library/class.database.php';
 $db = new database();
@@ -23,9 +25,8 @@ $raids = $db -> read_select("SELECT * FROM stormguild.vw_progression");
 foreach($raids as $raid) {
 ?>
 
-<div class="col-12 g-pa-0 g-ma-0">
 	<a  href=""
-			class="btn btn-xl u-btn-bluegray u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-ma-15 g-pa-5"
+			class="btn btn-xl u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-my-15 g-pa-5"
 			style="width:100%;background-image:url('img/raid/antorus/main.jpg');">
 		<span class="u-accordion__control-icon d-inline-block g-color-white pull-left">
 			<i class="fa fa-plus"></i>
@@ -36,6 +37,7 @@ foreach($raids as $raid) {
 			<?php echo $raid['progression']; ?>
 		</span>
 	</a>
-</div>
 
 <?php } ?>
+
+</div>
