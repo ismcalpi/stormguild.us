@@ -25,12 +25,12 @@ $raids = $db -> read_select("SELECT * FROM stormguild.vw_progression");
 foreach($raids as $raid) {
 ?>
 
-	<a  href=""
+	<a  href="#"
 			class="btn btn-xl u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mt-5 g-pa-5"
 			style="width:100%;background-image:url('img/raid/antorus/main.jpg');background-size:cover;">
 		<span class="u-accordion__control-icon d-inline-block g-color-white pull-left">
-			<i class="fa fa-plus"></i>
-			<i class="fa fa-minus"></i>
+			<i class="fa fa-plus g-font-size-35"></i>
+			<i class="fa fa-minus g-font-size-35"></i>
 		</span>
 		<span class="float-left text-left g-font-size-15 g-color-white">
 			<span class="d-block g-font-size-12"><?php echo $raid['raid']; ?></span>
