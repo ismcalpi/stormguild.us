@@ -2,62 +2,41 @@
 <html lang="en">
 	<?php include 'templates/all.user.php' ?>
 	<?php include 'templates/twitch.head.php' ?>
+	<?php
+		include_once 'library/function.twitch.php';
+		include_once 'library/class.database.php';
+		$db = new database();
+	?>
 	<body class="main-body">
 		<main>
 			<?php include 'templates/all.navbar.php' ?>
 			<div class="container main-container g-mt-80">
-
-				<?php
-
-					$user_curl = curl_init();
-					curl_setopt_array($user_curl, array(
-					    CURLOPT_RETURNTRANSFER => 1,
-					    CURLOPT_URL => 'https://api.twitch.tv/kraken/users?login=kniny',
-					    CURLOPT_HTTPHEADER => array('Accept: application/vnd.twitchtv.v5+json','Client-ID: dixpnolwj0yth0r3wpzxrp2edowugp')
-					));
-					$twitch_user = curl_exec($user_curl);
-					$json_user = json_decode($twitch_user, true);
-					curl_close($user_curl);
-
-					$channel_curl = curl_init();
-					$channel_url = 'https://api.twitch.tv/kraken/channels/'.$json_user['users'][0]['_id'];
-					curl_setopt_array($channel_curl, array(
-					    CURLOPT_RETURNTRANSFER => 1,
-					    CURLOPT_URL => $channel_url,
-					    CURLOPT_HTTPHEADER => array('Accept: application/vnd.twitchtv.v5+json','Client-ID: dixpnolwj0yth0r3wpzxrp2edowugp')
-					));
-					$twitch_channel = curl_exec($channel_curl);
-					$json_channel = json_decode($twitch_channel, true);
-					curl_close($channel_curl);
-
-					$stream_curl = curl_init();
-					$stream_url = 'https://api.twitch.tv/kraken/streams/'.$json_user['users'][0]['_id'];
-					curl_setopt_array($stream_curl, array(
-					    CURLOPT_RETURNTRANSFER => 1,
-					    CURLOPT_URL => $channel_url,
-					    CURLOPT_HTTPHEADER => array('Accept: application/vnd.twitchtv.v5+json','Client-ID: dixpnolwj0yth0r3wpzxrp2edowugp')
-					));
-					$twitch_stream = curl_exec($stream_curl);
-					$json_stream = json_decode($stream_channel, true);
-					curl_close($stream_curl);
-
-				?>
 				<div class="row g-pa-20">
-
+					<div class="u-heading-v2-3--bottom col-12 g-brd-blue g-mb-30">
+						<h2 class="h3 text-uppercase g-font-weight-300 u-heading-v2__title">Storm Streamers</h2>
+					</div>
+					<?php
+						$results = $db -> read_select("select * from stormguild.streamers where is_active = 1");
+						foreach($results as $result) {
+							$twitchStatus = getTwitchStatus($result['username']);
+							$user = getUserJSON($result['username']);
+							$channel = getChannelJSON($result['username']);
+					?>
 					<!-- Blah Twitch Stuff -->
-					<div class="u-shadow-v19 col-3 g-bg-white g-brd-around g-brd-purple g-brd-2 text-center rounded g-pb-40 g-px-30 g-mt-50">
-			      <img class="g-brd-7 g-brd-style-solid g-brd-white g-width-100 g-height-100 rounded-circle g-pull-50x-up" src="<?php echo $json_user['users'][0]['logo']; ?>" alt="Image Description">
+					<div class="u-shadow-v19 col-md-3 col-sm-6 g-bg-white g-brd-around g-brd-purple g-brd-2 text-center rounded g-pb-40 g-px-30 g-my-50 g-mx-20">
+			      <img class="g-brd-7 g-brd-style-solid g-brd-white g-width-100 g-height-100 rounded-circle g-pull-50x-up" src="<?php echo $user['users'][0]['logo']; ?>" alt="Image Description">
 			      <div class="g-mt-minus-20">
-			        <h4 class="h6 g-color-primary g-font-weight-600 text-uppercase g-mb-5"><?php echo $json_user['users'][0]['display_name']; ?></h4>
-			        <em class="d-block g-color-gray-dark-v4 g-font-style-normal g-font-size-13 g-mb-20"><?php echo $json_channel['status']; ?></em>
-			        <blockquote class="g-color-black g-font-style-italic g-font-size-20 g-line-height-1_4">Does stuff with tentacles.</blockquote>
-							<?php if($json_stream['stream']){ ?>
-								<a target="_blank" href="<?php echo $json_channel['url']; ?>" class="btn u-btn-sm u-btn-primary">Live Now!</a>
-							<?php } ?>
+			        <h4 class="h6 g-color-purple g-font-weight-600 text-uppercase g-mb-5"><?php echo $user['users'][0]['display_name']; ?></h4>
+			        <em class="d-block g-color-gray-dark-v4 g-font-style-normal g-font-size-13 g-mb-20"><?php echo $channel['status']; ?></em>
+							<?php if($twitchStatus){ ?>
+								<a target="_blank" href="<?php echo $channel['url']; ?>" class="btn u-btn-sm u-btn-primary">Live Now!</a>
+							<?php } else { ?>
+								<a target="_blank" href="<?php echo $channel['url']; ?>" class="btn u-btn-sm u-btn-bluegray">Offline</a>
+							<?php }?>
 			      </div>
 			    </div>
 					<!-- End Blah Section -->
-
+				<?php } ?>
 				</div>
 			</div>
 		</main>
