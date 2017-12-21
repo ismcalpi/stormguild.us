@@ -22,6 +22,14 @@
   	background-size: cover;
 }
 
+.container-bg {
+	background: url("../img/all.bg.gray.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+  	background-attachment: fixed;
+  	background-size: cover;
+}
+
 .home-lg-col {
     border: 2px 0px 2px 2px double #0D042F;
 }

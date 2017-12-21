@@ -23,11 +23,11 @@
 ?>
 <header
   id="js-header"
-  class="u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance g-mb-50"
+  class="u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance"
   data-header-fix-moment="300"
   data-header-fix-effect="slide">
   <div
-    class="u-header__section u-header__section--light bg-white-0-90 g-transition-0_3 g-py-0 g-mb-50"
+    class="u-header__section u-header__section--light bg-white-0-90 g-transition-0_3 g-py-0"
     data-header-fix-moment-exclude="g-py-0"
     data-header-fix-moment-classes="u-shadow-v18 g-py-0">
     <nav class="js-mega-menu navbar navbar-expand-lg">

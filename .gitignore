@@ -2,4 +2,5 @@
 *.ftpquota
 /config/*
 /forums/*
+/blog/*
 /assets/img/uploads/*
