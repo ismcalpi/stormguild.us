@@ -19,13 +19,19 @@ $json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stor
 <?php
 include_once 'library/class.database.php';
 $db = new database();
-
+$firstraid = TRUE;
 $raids = $db -> read_select("SELECT * FROM stormguild.vw_progression");
 
 foreach($raids as $raid) {
 
 	$path = strtolower('assets/img/uploads/progression/'.preg_replace('/\PL/u', '', $raid['expansion']).'/'.preg_replace('/\PL/u', '', $raid['raid']).'/main.jpg');
 	$raidname = strtolower(preg_replace('/\PL/u', '', $raid['raid']));
+	if ($firstraid == TRUE) {
+		$collapse = array('','show');
+		$firstraid = FALSE;
+	} else {
+		$collapse = array('collapsed','');
+	}
 
 ?>
 <div id="<?php echo $raidname; ?>-header" class="u-accordion__header g-pa-0 g-ma-0" role="tab">
@@ -34,7 +40,7 @@ foreach($raids as $raid) {
 			data-parent="#raidprog"
 			aria-expanded="false"
 			aria-controls="<?php echo $raidname; ?>-body"
-			class="collapsed btn btn-xl u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mt-5 g-pa-5"
+			class="<?php echo $collapse[0]; ?> btn btn-xl u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mt-5 g-pa-5"
 			style="width:100%;background-image:url('<?php echo $path; ?>');background-size:cover;">
 		<span class="u-accordion__control-icon d-inline-block g-color-white pull-left g-my-10">
 			<i class="fa fa-plus"></i>
@@ -46,7 +52,7 @@ foreach($raids as $raid) {
 		</span>
 	</a>
 </div>
-<div id="<?php echo $raidname; ?>-body" class="collapse" role="tabpanel" aria-labelledby="<?php echo $raidname; ?>-header">
+<div id="<?php echo $raidname; ?>-body" class="collapse <?php echo $collapse[1]; ?>" role="tabpanel" aria-labelledby="<?php echo $raidname; ?>-header">
 	<div class="u-accordion__body g-brd-black g-brd-around g-brd-1 g-mx-5 g-pa-0 g-bg-white">
 		<?php
 			$sql = 'SELECT raid_id, boss_id, name, kill_order, DATE_FORMAT(heroic_kill,"%m/%d/%y") as heroic_kill, DATE_FORMAT(mythic_kill,"%m/%d/%y") as mythic_kill FROM stormguild.boss WHERE raid_id = '.$raid['raid_id'].' order by kill_order desc';
@@ -76,6 +82,8 @@ foreach($raids as $raid) {
 		<?php } ?>
 	</div>
 </div>
-<?php } ?>
+<?php
+	}
+?>
 
 </div>
