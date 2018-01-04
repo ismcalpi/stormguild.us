@@ -24,7 +24,7 @@
           </div>
 
           <div class = "col-md-9 col-xs-12 g-py-5 g-px-15">
-            <div class="u-heading-v3-1 text-center g-mb-40">
+            <div class="u-heading-v3-1 text-center g-mb-15">
               <h2 class="text-uppercase h3 u-heading-v3__title g-brd-blue">Guild News</h2>
             </div>
             <!-- <h2 class="h2 g-brd-bottom g-brd-1 g-brd-black g-color-black">Guild News</h2> -->
