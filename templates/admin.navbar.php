@@ -25,12 +25,12 @@
             Raid Progression
         </a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="admin.php?mode=guildnews">
             <i class="fa fa-file-photo-o u-tab-line-icon-pro g-mr-3"></i>
             Guild News
         </a>
-    </li>
+    </li> -->
     <?php
     }
     ?>
