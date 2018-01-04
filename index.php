@@ -18,13 +18,16 @@
           </div>
 
           <div class = "col-md-3 col-xs-12 g-pa-5">
-            <h3 class="h3 g-brd-bottom g-brd-1 g-brd-black g-color-black">Raid Progression</h3>
-            <?php include 'templates/home.progression.php' ?>
+            <!-- <h3 class="h3 g-brd-bottom g-brd-1 g-brd-black g-color-black">Raid Progression</h3> -->
             <?php include 'templates/home.sales.php' ?>
+            <?php include 'templates/home.progression.php' ?>
           </div>
 
           <div class = "col-md-9 col-xs-12 g-py-5 g-px-15">
-            <h3 class="h3 g-brd-bottom g-brd-1 g-brd-black g-color-black">Guild News</h3>
+            <div class="u-heading-v3-1 text-center g-mb-40">
+              <h2 class="text-uppercase h3 u-heading-v3__title g-brd-blue">Guild News</h2>
+            </div>
+            <!-- <h2 class="h2 g-brd-bottom g-brd-1 g-brd-black g-color-black">Guild News</h2> -->
             <iframe frameborder="0" scrolling="no" onload="resizeIframe(this)" src='blog.php' width="100%"></iframe>
           </div>
 

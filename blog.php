@@ -2,7 +2,7 @@
   <?php include 'templates/home.head.php' ?>
   <body>
     <main style="background:rgba(255,255,255,0.01);">
-      <div class="container g-pa-20">
+      <div class="container g-py-10 p-px-5">
         <div class="row justify-content-center">
           <div class="col-12">
       <?php

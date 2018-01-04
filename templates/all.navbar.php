@@ -7,6 +7,9 @@
     case 'about.php':
       $aboutActive = 'active';
       break;
+      case 'sales.php':
+        $salesActive = 'active';
+        break;
     case 'index.php':
       $homeActive = 'active';
       break;
@@ -72,6 +75,9 @@
             </li>
             <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg <?php $aboutActive ?>">
               <a href="./about.php" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg <?php $salesActive ?>">
+              <a href="./sales.php" class="nav-link">Sales</a>
             </li>
             <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg <?php $recruitActive ?>">
               <a href="recruit.php" class="nav-link">Recruitment</a>
