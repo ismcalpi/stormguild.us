@@ -35,6 +35,8 @@
     $.HSCore.helpers.HSNavigationSplitted.init($('.navbar-collapse'));
     // initialization of countdowns
     $.HSCore.components.HSPopup.init('.js-fancybox');
+    // initialization of carousel
+    $.HSCore.components.HSCarousel.init('.js-carousel');
   });
   $(window).on('load', function () {
     // initialization of header
@@ -43,16 +45,19 @@
   });
   // Initailization of Master Slider
   var slider = new MasterSlider();
-  slider.control('arrows');
-  slider.control('bullets', {autohide: true, align: 'bottom', margin: 10});
-  slider.setup('masterslider', {
-    width: 750,
-    height: 430,
-    space: 5,
-    view: 'stack',
-    loop: true,
-    autoplay: true,
-    overPause: true,
-    speed: 40
-  });
+
+   slider.control('arrows');
+   slider.control('bullets', {autohide: false, align: 'bottom', margin: 5});
+   slider.control('timebar', {align:'top'});
+   slider.setup('masterslider', {
+     width: 800,
+     height: 225,
+     space: 5,
+     view: 'scaleFlow',
+     loop: true,
+     autoplay: true,
+     overPause: true,
+     speed: 30,
+     layout: 'fillwidth'
+   });
 </script>

@@ -14,12 +14,13 @@
         <div class="row">
 
           <div class = "col-12 g-pa-0">
-            <?php include 'templates/home.recruit.php' ?>
+            <?php include 'templates/home.banner.php' ?>
           </div>
 
           <div class = "col-md-3 col-xs-12 g-pa-5">
             <!-- <h3 class="h3 g-brd-bottom g-brd-1 g-brd-black g-color-black">Raid Progression</h3> -->
-            <?php include 'templates/home.sales.php' ?>
+            <?php include 'templates/home.recruit.php' ?>
+            <!-- <?php include 'templates/home.sales.php' ?> -->
             <?php include 'templates/home.progression.php' ?>
           </div>
 
