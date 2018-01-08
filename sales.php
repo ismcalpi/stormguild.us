@@ -2,16 +2,11 @@
 <html lang="en">
   <?php include 'templates/all.user.php' ?>
   <?php include 'templates/home.head.php' ?>
-  <script>
-    function resizeIframe(obj) {
-      obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-    }
-  </script>
   <body class="main-body">
     <main>
       <?php include 'templates/all.navbar.php' ?>
       <div class="container g-bg-white g-brd-around g-brd-white g-brd-2 g-mt-80 g-pt-20" style="min-height:100vh;">
-        <?php if (!empty($_GET['status']) && !empty($_GET['accessid']) && $_GET['status'] == 'success') { ?>
+        <?php if (!empty($_GET['status']) && $_GET['status'] == 'success') { ?>
         <!-- Success Alert -->
         <div class="alert alert-dismissible fade show g-bg-primary g-color-white rounded-0" role="alert">
           <button type="button" class="close u-alert-close--light" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
