@@ -3,7 +3,7 @@ include_once 'library/class.database.php';
 $db = new database();
 ?>
 <div class="row">
-  <table class="table table-hover g-ma-0 col-12">
+  <table class="table table-hover g-ma-30 col-12">
     <thead>
       <tr>
         <th><strong>Twitch Name</strong></th>
@@ -31,7 +31,7 @@ $db = new database();
           <input type="hidden" name="streamerid" value="<?php echo $streamer['streamer_id'] ?>">
           <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
           <td><input type="text" name="name" value="<?php echo $streamer['username'] ?>"></td>
-          <td><input type="number" name="isactive" value="<?php echo $raid['is_active'] ?>"></td>
+          <td><input type="number" name="isactive" value="<?php echo $streamer['is_active'] ?>"></td>
           <td><input type="submit" class="btn btn-sm u-btn-primary g-ml-10" value="Update"></input></td>
         </form>
       </tr>
