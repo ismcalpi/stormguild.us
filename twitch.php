@@ -23,7 +23,7 @@
 							$channel = getChannelJSON($result['username']);
 					?>
 
-					<div class="col-md-4 col-6"
+					<div class="col-md-3 col-6"
 						<div class="u-shadow-v19 g-bg-white g-brd-around g-brd-purple g-brd-2 text-center rounded g-pb-20 g-px-15 g-my-50 g-mx-10">
 				      <img class="g-brd-7 g-brd-style-solid g-brd-white g-width-100 g-height-100 rounded-circle g-pull-50x-up" src="<?php echo $user['users'][0]['logo']; ?>" alt="Image Description">
 				      <div class="g-mt-minus-20">
