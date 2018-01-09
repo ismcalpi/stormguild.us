@@ -24,11 +24,11 @@
 					?>
 
 					<div class="col-md-3 col-6">
-						<div class="u-shadow-v19 g-brd-around g-brd-purple g-brd-3 text-center rounded g-pb-20 g-px-15 g-my-50 g-mx-10" style="background-color: rgba(100, 65, 165, .25);">
+						<div class="u-shadow-v19 g-brd-around g-brd-purple g-brd-3 text-center rounded g-pb-20 g-px-15 g-my-50 g-mx-10" style="background-color: rgba(100, 65, 165, .15);">
 				      <img class="g-brd-3 g-brd-style-solid g-brd-purple g-width-100 g-height-100 rounded-circle g-pull-50x-up" src="<?php echo $user['users'][0]['logo']; ?>" alt="Image Description">
 				      <div class="g-mt-minus-20">
 				        <h4 class="h6 g-color-purple g-font-weight-600 text-uppercase g-mb-5"><?php echo $user['users'][0]['display_name']; ?></h4>
-				        <em class="d-block g-color-white g-font-style-normal g-font-size-13 g-mb-20"><?php echo $channel['status']; ?></em>
+				        <em class="d-block g-color-gray-light-v4 g-font-style-normal g-font-size-13 g-mb-20"><?php echo $channel['status']; ?></em>
 								<?php if($twitchStatus){ ?>
 									<a target="_blank" href="<?php echo $channel['url']; ?>" class="btn u-btn-sm u-btn-primary">Live Now!</a>
 								<?php } else { ?>
