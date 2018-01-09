@@ -25,6 +25,18 @@
             Raid Progression
         </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="admin.php?mode=streamers">
+            <i class="fa fa-twitch u-tab-line-icon-pro g-mr-3"></i>
+            Streamers
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="admin.php?mode=banner">
+            <i class="fa fa-file-picture-o u-tab-line-icon-pro g-mr-3"></i>
+            Banners
+        </a>
+    </li>
     <!-- <li class="nav-item">
         <a class="nav-link" href="admin.php?mode=guildnews">
             <i class="fa fa-file-photo-o u-tab-line-icon-pro g-mr-3"></i>
