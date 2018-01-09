@@ -75,7 +75,7 @@
 							<li class="d-flex g-mb-10">
 								<strong>
 									<i class="fa fa-circle-o-notch g-color-blue g-mt-5 g-mr-10"></i>
-									Legion Raid Tier Four - Obtain a US 125+ Kill
+									Legion Raid Tier Four - Obtain a US 100+ Kill
 								</strong>
 							</li>
 							<!--<li class="d-flex g-mb-10 g-ml-20">
