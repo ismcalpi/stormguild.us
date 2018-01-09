@@ -13,7 +13,7 @@
 			<div class="container g-bg-white g-brd-around g-brd-white g-brd-2 g-mt-80" style="min-height:100vh;">
 				<div class="row g-pa-20">
 					<div class="u-heading-v2-3--bottom col-12 g-brd-purple g-mb-30">
-						<h2 class="h1 text-uppercase g-font-weight-300 u-heading-v2__title">Storm Streamers</h2>
+						<h2 class="h1 text-uppercase g-font-weight-300 u-heading-v2__title"><strong><i class="fa fa-twitch u-tab-line-icon-pro g-mr-3 g-color-purple"></i> Storm Streamers</strong></h2>
 					</div>
 					<?php
 						$results = $db -> read_select("select * from stormguild.streamers where is_active = 1");
