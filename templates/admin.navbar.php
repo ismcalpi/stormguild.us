@@ -31,26 +31,26 @@
       if($user_rank >= 3) {
     ?>
     <li class="nav-item">
-        <a class="nav-link" href="admin.php?mode=recruitneeds">
-            <i class="fa fa-exclamation u-tab-line-icon-pro g-mr-3 <?php echo $recruitActive; ?>"></i>
+        <a class="nav-link <?php echo $recruitActive; ?>" href="admin.php?mode=recruitneeds">
+            <i class="fa fa-exclamation u-tab-line-icon-pro g-mr-3"></i>
             Recruitment Needs
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="admin.php?mode=progression">
-            <i class="fa fa-flask u-tab-line-icon-pro g-mr-3 <?php echo $progressActive; ?>"></i>
+        <a class="nav-link <?php echo $progressActive; ?>" href="admin.php?mode=progression">
+            <i class="fa fa-flask u-tab-line-icon-pro g-mr-3"></i>
             Raid Progression
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="admin.php?mode=streamers">
-            <i class="fa fa-twitch u-tab-line-icon-pro g-mr-3 <?php echo $streamerActive; ?>"></i>
+        <a class="nav-link <?php echo $streamerActive; ?>" href="admin.php?mode=streamers">
+            <i class="fa fa-twitch u-tab-line-icon-pro g-mr-3"></i>
             Streamers
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="admin.php?mode=banner">
-            <i class="fa fa-file-picture-o u-tab-line-icon-pro g-mr-3 <?php echo $bannerActive; ?>"></i>
+        <a class="nav-link <?php echo $bannerActive; ?>" href="admin.php?mode=banner">
+            <i class="fa fa-file-picture-o u-tab-line-icon-pro g-mr-3"></i>
             Banners
         </a>
     </li>

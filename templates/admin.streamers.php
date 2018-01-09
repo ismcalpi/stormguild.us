@@ -8,6 +8,7 @@ $db = new database();
       <tr>
         <th><strong>Twitch Name</strong></th>
         <th><strong>Active?</strong></th>
+        <th><strong>Actions</strong></th>
       </tr>
     </thead>
     <tbody>
