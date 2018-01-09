@@ -2,8 +2,8 @@
 include_once 'library/class.database.php';
 $db = new database();
 ?>
-<div class="row">
-  <table class="table table-hover g-ma-30 col-12">
+<div class="row g-pa-30">
+  <table class="table table-hover g-ma-0 col-12">
     <thead>
       <tr>
         <th><strong>Twitch Name</strong></th>
