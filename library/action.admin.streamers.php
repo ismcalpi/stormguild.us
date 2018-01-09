@@ -18,6 +18,7 @@
       $active = $_POST['isactive'];
 
       $result = $db -> sql_query("INSERT INTO stormguild.boss VALUES (NULL,".$name.",".$active.")");
+    }
 
     $header = "Location:".$_POST['redirect'];
     header($header);
