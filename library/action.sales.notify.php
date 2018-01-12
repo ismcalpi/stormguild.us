@@ -5,14 +5,15 @@ include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 
 notify_admins($_POST['contact'],$_POST['contact_type'],$_POST['message']);
-// notify_discord($discord_msg);
+$discord_msg = $_POST['contact'].' ('.$_POST['contact_type'].') - '.$_POST['message'];
+notify_discord($discord_msg);
 
 $link = 'https://www.stormguild.us/'.$_POST['redirect'];
 header("Location: $link");
 
 function notify_discord($message) {
-  $data = array("content" => $message, "username" => "Application Robot");
-  $curl = curl_init("https://discordapp.com/api/webhooks/383667737525878798/-OZH5-jbnsIpngVOgzcsTuLqTpkDbx7OULmmBOd0zaPUAcYIiLdMczsU9m65iHzNF3vQ");
+  $data = array("content" => $message, "username" => "Storm Sales Bot");
+  $curl = curl_init("https://discordapp.com/api/webhooks/401504704607027210/-EIc94uOnNRcKxDPcSHqXDR2ZuZ_thuNegmZDwTQGAeexiJuvl_0YnHS79o2gJsfTBsN");
   curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
   curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
