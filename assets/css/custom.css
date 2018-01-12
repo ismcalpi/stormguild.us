@@ -7,7 +7,7 @@
 }
 
 .bg-white-0-90 {
-	background:rgba(255,255,255,0.9);
+	background:rgba(255,255,255,0.95);
 }
 
 .bg-black-0-70 {
@@ -16,6 +16,14 @@
 
 .main-body {
 	background: url("../img/all.bg.body.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+  	background-attachment: fixed;
+  	background-size: cover;
+}
+
+.container-bg {
+	background: url("../img/all.bg.gray.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
   	background-attachment: fixed;

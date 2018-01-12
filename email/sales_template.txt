@@ -1,0 +1,7 @@
+Subject: WoW Sales Request
+
+Contact: {CONTACT} ({CONTACT_TYPE})
+Request: {MESSAGE}
+
+Thanks,
+Your Friendly Sales Robot

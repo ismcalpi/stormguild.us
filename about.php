@@ -5,17 +5,17 @@
 	<body class="main-body">
 		<main>
 			<?php include 'templates/all.navbar.php' ?>
-			<div class="container main-container g-px-30 g-mt-80">
+			<div class="container g-bg-white g-brd-around g-brd-white g-brd-2 g-mt-80" style="min-height:100vh;">
 			<!-- GENERAL -->
 			<section class="g-pt-20">
 				<div class="u-heading-v2-3--bottom g-brd-blue g-mb-30">
-					<h2 class="h3 text-uppercase g-font-weight-300 u-heading-v2__title">Who Are We?</h2>
+					<h2 class="h2 text-uppercase g-font-weight-300 u-heading-v2__title">Who Are We?</h2>
 				</div>
 				<p class="lead">Storm was established with the idea that life comes before raiding. We wanted to create a competitive raiding guild with a focus on progression in a much reduced schedule than other current Mythic guilds out there. The idea was to create an age 21+ environment/community for those of us with other obligations in life such as school, work, and family. If a lot of time isn't something you have, but you enjoy the hardcore aspects of what end game content provides, then we're the place for you.</p>
 			</section>
 			<section class="g-pt-20">
 				<div class="u-heading-v2-3--bottom g-brd-blue g-mb-30">
-					<h2 class="h1 text-uppercase g-font-weight-300 u-heading-v2__title g-mb-10">Our Goals</h2>
+					<h2 class="h2 text-uppercase g-font-weight-300 u-heading-v2__title g-mb-10">Our Goals</h2>
 				</div>
 				<div class="row">
 					<div class="col-lg-6">
@@ -75,7 +75,7 @@
 							<li class="d-flex g-mb-10">
 								<strong>
 									<i class="fa fa-circle-o-notch g-color-blue g-mt-5 g-mr-10"></i>
-									Legion Raid Tier Four - Obtain a US 125+ Kill
+									Legion Raid Tier Four - Obtain a US 100+ Kill
 								</strong>
 							</li>
 							<!--<li class="d-flex g-mb-10 g-ml-20">
@@ -89,7 +89,7 @@
 			</section>
 			<section class="g-pt-20">
 				<div class="u-heading-v2-3--bottom g-brd-blue g-mb-30">
-					<h2 class="h3 text-uppercase g-font-weight-300 u-heading-v2__title">Guild Environment</h2>
+					<h2 class="h2 text-uppercase g-font-weight-300 u-heading-v2__title">Guild Environment</h2>
 				</div>
 				<p class="lead">Respect towards EVERYONE. This includes fellow guild members, peers on the server, developers, and guild competition. While any publicity is good publicity, we don't need any bad publicity. A drama free environment is essential both internally and externally.</p>
 				<p class="lead">We are a progression raiding guild above anything else. We are all adults here, and while constructive criticism is welcomed, we do not tolerate any assholes. This means we expect all players to learn from their mistakes as well as others. While mistakes are expected to be made, we will point them out. Understand that this is essential in learning an encounter. Please do not take it personally, we do this so the whole raid can learn from a mistake, not to belittle one person.</p>
@@ -107,14 +107,14 @@
 			</section>
 			<section class="g-pt-20">
 				<div class="u-heading-v2-3--bottom g-brd-blue g-mb-30">
-					<h2 class="h3 text-uppercase g-font-weight-300 u-heading-v2__title">Attendance</h2>
+					<h2 class="h2 text-uppercase g-font-weight-300 u-heading-v2__title">Attendance</h2>
 				</div>
 				<p class="lead">Near perfect attendance is required of all our raiders. We raid two nights a week, there is no time for any kind of non-sense. Attendance will be taken 15 minutes prior to the official start time of raid, as well as in 25 minute increments afterwards. If you cannot make a raid, you are required to make a post on the forums, or let the leadership know that you will be absent. If you no-post-no-show you are disrespecting every other raider in the guild. Doing so multiple times is a quick ticket out of the guild. Emergencies do happen and everyone understands that, sometimes you simply cannot get to your computer/phone and will not be there. Don't abuse this understanding.</p>
 				<p class="lead"><strong class="g-color-blue">Elaboration on attendance</strong> Because we split our attendance into 25 minute increments, your attendance for one night is split amongst 10 checkpoints. Each checkpoint is worth 10% of your attendance for the given night. You receive 10% for being on time and 10% for being present at the end of raid. For example,  if you show up late at 8:15 and are present for the remainder of the raid, your attendance for the night would be 80%.</p>
 			</section>
 				<section class="g-pt-20">
 					<div class="u-heading-v2-3--bottom g-brd-blue g-mb-30">
-						<h2 class="h3 text-uppercase g-font-weight-300 u-heading-v2__title">Raider Expectations</h2>
+						<h2 class="h2 text-uppercase g-font-weight-300 u-heading-v2__title">Raider Expectations</h2>
 					</div>
 					<div class="row">
 						<div class="col-lg-6">

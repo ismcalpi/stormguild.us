@@ -1,37 +1,11 @@
-<article class="text-center g-color-white g-overflow-hidden g-rounded-top-5" >
-     <div class="u-block g-min-height-100 g-flex-middle g-bg-cover g-bg-bluegray-opacity-0_3--after g-transition-0_5" style="background-image: url('assets/img/home.sales.jpg');">
-        <div class="g-flex-middle-item g-pos-rel g-z-index-1 g-pt-25 g-pb-5 g-px-15 bg-black-0-70">
-          <h4 class="text-uppercase">
-            Loot & Achievement Sales!
-          </h4>
-          <ul class="u-list-inline">
-            <li class="list-inline-item g-mb-10">
-              <p><strong>Contact: </strong></p>
-            </li>
-            <li class="list-inline-item g-mb-10">
-              <a class="u-tags-v1 g-color-white g-brd-around g-brd-white g-bg-white--hover g-color-black--hover g-py-4 g-px-10" href="#">
-                Aalistor#1455
-              </a>
-            </li>
-            <li class="list-inline-item g-mb-10">
-              <a class="u-tags-v1 g-color-white g-brd-around g-brd-white g-bg-white--hover g-color-black--hover g-py-4 g-px-10" href="#">
-                Lokilok#1587
-              </a>
-            </li>
-          </ul>
-          <?php
-        	$json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stormrage/storm/json_rank'));
-        	?>
-          <a  href="https://www.wowprogress.com/guild/us/stormrage/storm"
-              class="btn btn-xl u-btn-bluegray u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-mb-15 g-mt-25 g-pa-5"
-              target="_blank"
-              style="width:100%;">
-            <i class="fa fa-globe pull-left g-font-size-35"></i>
-            <span class="float-left text-left g-font-size-15">
-              <span class="d-block g-font-size-12">wowprogress ranking</span>
-              US #<?php echo $json->area_rank; ?> Realm #<?php echo $json->realm_rank; ?>
-            </span>
-          </a>
-        </div>
-      </div>
-  </article>
+<div class="col-12 g-pa-0 g-ma-0">
+	<a  href="sales.php"
+			class="btn btn-xl u-btn-darkpurple u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-mt-5 g-pa-5"
+			style="width:100%;">
+		<i class="fa fa-gg pull-left g-font-size-35"></i>
+		<span class="float-left text-left g-font-size-10 g-color-white">
+			<span class="d-block g-font-size-14">Raid & M+ Sales</span>
+      <i>only gold on stormrage accepted</i>
+		</span>
+	</a>
+</div>

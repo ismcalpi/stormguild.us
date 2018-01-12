@@ -1,81 +1,89 @@
 <?php
+$json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stormrage/storm/json_rank'));
+?>
+<div class="col-12 g-pa-0 g-ma-0">
+	<a  href="https://www.wowprogress.com/guild/us/stormrage/storm"
+			class="btn btn-xl u-btn-bluegray u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-mt-5 g-pa-5"
+			target="_blank"
+			style="width:100%;">
+		<i class="fa fa-globe pull-left g-font-size-35"></i>
+		<span class="float-left text-left g-font-size-15 g-color-white">
+			<span class="d-block g-font-size-12">wowprogress ranking</span>
+			US #<?php echo $json->area_rank; ?> Realm #<?php echo $json->realm_rank; ?>
+		</span>
+	</a>
+</div>
 
-	include_once 'library/class.database.php';
-	$db = new database();
+<div id="raidprog" class="u-accordion col-12 g-pa-0 g-my-0" role="tablist" aria-multiselectable="false">
 
-	$raids = $db -> read_select("SELECT raid_name,
-							lower(replace(raid_name,' ','')) as raid_path,
-							sum(case when status = 'alive' then 0 when status = 'dead' then 1 else 0 end) as killed_bosses,
-							count(*) as total_bosses,
-                            tier,
-                            (select max(tier) from stormguild.progression where kill_date <> 'NULL') as max_tier
-							FROM stormguild.progression
-                            WHERE expansion = 'legion'
-							group by raid_name desc order by tier desc");
+<?php
+include_once 'library/class.database.php';
+$db = new database();
+$firstraid = TRUE;
+$raids = $db -> read_select("SELECT * FROM stormguild.vw_progression");
 
-	foreach($raids as $raid) {
+foreach($raids as $raid) {
 
-        if($raid['tier'] == $raid['max_tier']) {
-            $colClass = "collapse show";
-            $colsClass = "";
-        } else {
-            $colClass = "collapse";
-            $colsClass = "collapsed";
-        }
-
-		echo '<div class="col-lg-12 col-sm-12 g-pa-0 g-ma-0">
-            <div id="'.$raid['raid_path'].'" class="u-accordion" role="tablist" aria-multiselectable="true">
-
-                <div class="u-bg-overlay g-bg-black-gradient-opacity-v1--after g-pa-0 g-ma-0" role="tab">
-                    <img style="max-height:60px;width:100%;" class="img-fluid" src="img/raid/'.$raid['raid_path'].'/main.jpg">
-                </div>
-
-			    <div id="'.$raid['raid_path'].'-head" class="g-pos-abs g-top-10 g-left-10 g-right-10">
-                <a class="'.$colsClass.' d-block g-color-main g-text-underline--none--hover" href="#'.$raid['raid_path'].'-body"
-                   data-toggle="collapse" data-parent="#'.$raid['raid_path'].'" aria-expanded="true" aria-controls="'.$raid['raid_path'].'-body">
-
-                  <span class="u-accordion__control-icon d-inline-block g-brd-right g-brd-gray-light-v4 g-color-white text-center g-pa-10">
-                    <i class="fa fa-plus"></i>
-                    <i class="fa fa-minus"></i>
-                  </span>
-
-                  <span class="d-inline-block g-pl-10 g-top-10 g-left-10 g-color-white">
-                    '.$raid['raid_name'].'
-                  </span>
-
-                  <span class="u-label g-bg-blue u-label--sm g-rounded-3 g-pos-abs g-top-5 g-right-10 g-pa-5">
-			<span class="float-left u-label g-color-white">
-			Mythic
-			</span>
-			<span class="float-right u-label u-label-default g-color-white">
-			'.$raid['killed_bosses'].'/'.$raid['total_bosses'].'
-			</span>
-                  </span>
-
-                </a>
-              </div>
-              <div id="'.$raid['raid_path'].'-body" class="'.$colClass.'" role="tabpanel" aria-labelledby="'.$raid['raid_path'].'-head">
-                <div class="u-accordion__body g-bg-gray-light-v5 g-px-10 g-py-10">';
-
-		$bosses = $db -> read_select("SELECT boss_name, lower(replace(boss_name,' ','')) as boss_path, status, date_format(kill_date, '%b %D, %Y') as kill_date
-			FROM stormguild.progression where raid_name ='".$raid['raid_name']."' order by kill_order desc");
-
-		foreach($bosses as $boss) {
-
-			if ($boss['status'] == 'alive') {
-				$iconKill = '<i class="fa fa-square-o g-color-red g-mt-5 g-mr-10"></i>';
-			} else {
-				$iconKill = '<i class="fa fa-check-square-o g-color-primary g-mt-5 g-mr-10"></i>';
-			}
-
-			echo '<p class="g-my-0">'
-					.$iconKill.$boss['boss_name'].'<span class="g-pos-abs g-right-20">'.$boss['kill_date'].'</span>
-				</p>';
-
-		}
-
-	echo '</div></div></div></div>';
-
+	$path = strtolower('assets/img/uploads/progression/'.preg_replace('/\PL/u', '', $raid['expansion']).'/'.preg_replace('/\PL/u', '', $raid['raid']).'/main.jpg');
+	$raidname = strtolower(preg_replace('/\PL/u', '', $raid['raid']));
+	if ($firstraid == TRUE) {
+		$collapse = array('','show');
+		$firstraid = FALSE;
+	} else {
+		$collapse = array('collapsed','');
 	}
 
 ?>
+<div id="<?php echo $raidname; ?>-header" class="u-accordion__header g-pa-0 g-ma-0" role="tab">
+	<a  href="#<?php echo $raidname; ?>-body"
+			data-toggle="collapse"
+			data-parent="#raidprog"
+			aria-expanded="false"
+			aria-controls="<?php echo $raidname; ?>-body"
+			class="<?php echo $collapse[0]; ?> btn btn-xl u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mt-5 g-pa-5"
+			style="width:100%;background-image:url('<?php echo $path; ?>');background-size:cover;">
+		<span class="u-accordion__control-icon d-inline-block g-color-white pull-left g-my-10">
+			<i class="fa fa-plus"></i>
+			<i class="fa fa-minus"></i>
+		</span>
+		<span class="float-left text-left g-font-size-18 g-color-white g-mx-20">
+			<span class="d-block g-font-size-14"><?php echo $raid['raid']; ?></span>
+			<?php echo $raid['progression']; ?>
+		</span>
+	</a>
+</div>
+<div id="<?php echo $raidname; ?>-body" class="collapse <?php echo $collapse[1]; ?>" role="tabpanel" aria-labelledby="<?php echo $raidname; ?>-header">
+	<div class="u-accordion__body g-brd-black g-brd-around g-brd-1 g-mx-5 g-pa-0 g-bg-white">
+		<?php
+			$sql = 'SELECT raid_id, boss_id, name, kill_order, DATE_FORMAT(heroic_kill,"%m/%d/%y") as heroic_kill, DATE_FORMAT(mythic_kill,"%m/%d/%y") as mythic_kill FROM stormguild.boss WHERE raid_id = '.$raid['raid_id'].' order by kill_order desc';
+			$bosses = $db -> read_select($sql);
+			foreach($bosses as $boss) {
+
+				if ($raid['difficulty'] == 'MYTHIC') {
+					if ($boss['mythic_kill'] > 0) {
+						$date = $boss['mythic_kill'];
+						$icon = 'fa-check-square-o g-color-primary';
+					} else {
+						$date = 'Alive';
+						$icon = 'fa-square-o g-color-red';
+					}
+				} else if ($raid['difficulty'] == 'HEROIC') {
+					if ($boss['heroic_kill'] > 0) {
+						$date = $boss['heroic_kill'];
+						$icon = 'fa-check-square-o g-color-primary';
+					} else {
+						$date = 'Alive';
+						$icon = 'fa-square-o g-color-red';
+					}
+				}
+
+		?>
+		<p class="g-my-0 g-mx-5"><i class="fa <?php echo $icon; ?> g-mr-10"></i><?php echo $boss['name']; ?><span class="g-pos-abs g-right-10"><?php echo $date; ?></span></p>
+		<?php } ?>
+	</div>
+</div>
+<?php
+	}
+?>
+
+</div>

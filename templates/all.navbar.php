@@ -7,6 +7,9 @@
     case 'about.php':
       $aboutActive = 'active';
       break;
+      case 'sales.php':
+        $salesActive = 'active';
+        break;
     case 'index.php':
       $homeActive = 'active';
       break;
@@ -23,11 +26,11 @@
 ?>
 <header
   id="js-header"
-  class="u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance g-mb-50"
+  class="u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance"
   data-header-fix-moment="300"
   data-header-fix-effect="slide">
   <div
-    class="u-header__section u-header__section--light bg-white-0-90 g-transition-0_3 g-py-0 g-mb-50"
+    class="u-header__section u-header__section--light bg-white-0-90 g-transition-0_3 g-py-0"
     data-header-fix-moment-exclude="g-py-0"
     data-header-fix-moment-classes="u-shadow-v18 g-py-0">
     <nav class="js-mega-menu navbar navbar-expand-lg">
@@ -73,6 +76,9 @@
             <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg <?php $aboutActive ?>">
               <a href="./about.php" class="nav-link">About Us</a>
             </li>
+            <!-- <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg <?php $salesActive ?>">
+              <a href="./sales.php" class="nav-link">Sales</a>
+            </li> -->
             <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg <?php $recruitActive ?>">
               <a href="recruit.php" class="nav-link">Recruitment</a>
             </li>
