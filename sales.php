@@ -39,7 +39,7 @@
           <div class="form-group g-mb-20">
             <div class="u-heading-v1-1 g-bg-main g-brd-gray-light-v2 g-mb-20">
                 <h2 class="h3 u-heading-v1__title">World of Warcraft Sales Form</h2>
-                <h4 class="h4"><a href="https://us.battle.net/forums/en/wow/topic/20758726582?page=1">Antorus Prices</a></h4>
+                <h4 class="h4"><a target="_blank" href="https://us.battle.net/forums/en/wow/topic/20758726582?page=1">Antorus Prices</a></h4>
             </div>
             <div class="row">
               <div class="form-group col-6 g-mb-20">
