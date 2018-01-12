@@ -95,6 +95,9 @@
                 <li class="dropdown-item">
                   <a class="nav-link g-px-0" target="_blank" href="admin.php?mode=instruction">Admin Console</a>
                 </li>
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0" target="_blank" href="/blog/wp-admin">Blog Admin</a>
+                </li>
                 <?php
                 }
                   if($user_rank >= 2) {
