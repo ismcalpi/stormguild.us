@@ -29,7 +29,7 @@ function notify_admins($contact, $contact_type, $message) {
     $msg->template('sales_template', '', $_SERVER['DOCUMENT_ROOT'].'/email');
     $msg->to($row['user_email'], $row['username']);
     $msg->im($row['user_jabber'], $row['username']);
-    $msg->from('applications@stormguild.us', 'Storm Raider Applications');
+    $msg->from('storm.sales@stormguild.us', 'Storm Sales');
     $msg->assign_vars(array(
         'CONTACT'  => $contact,
         'CONTACT_TYPE' => $contact_type,
