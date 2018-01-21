@@ -2,7 +2,7 @@
   <?php include 'templates/home.head.php' ?>
   <body>
     <main style="background:rgba(255,255,255,0.01);">
-      <div class="container g-py-10 p-px-5 g-brd-around g-brd-gray-light-v4">
+      <div class="container g-py-10 p-px-5">
         <div class="row justify-content-center">
           <div class="col-12">
       <?php
@@ -13,7 +13,7 @@
         while ( $latest_posts->have_posts() ) {
           $latest_posts->the_post();
       ?>
-      <article class="g-mb-15">
+      <article class="g-mb-15 g-brd-around g-brd-gray-light-v4">
         <div class="g-mb-30">
           <a target="_blank" href="<?php the_post_thumbnail_url(); ?>"><img class="img-fluid w-100 g-mb-25" src="<?php the_post_thumbnail_url(); ?>" alt="Image Description"></a>
           <h2 class="h4 g-color-black g-font-weight-600 mb-3">
