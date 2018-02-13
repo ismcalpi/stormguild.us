@@ -21,7 +21,7 @@ $db = new database();
           <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
           <td><input type="text" name="name"></td>
           <td><input type="text" name="url"></td>
-          <td><input type="text" name="image"></td>
+          <td><input class="g-ma-20" type="file" name="img" class="form-control-file" aria-describedby="fileHelp" /></td>
           <td><input type="number" name="isactive" value="1"></td>
           <td><input type="submit" class="btn btn-sm u-btn-primary g-ml-10" value="Add"></input></td>
         </form>
