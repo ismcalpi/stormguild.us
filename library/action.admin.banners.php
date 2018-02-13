@@ -21,7 +21,7 @@
 
       $name = $db -> quote($_POST['name']);
       $active = $_POST['isactive'];
-      $path = $db -> quote($_POST['path']);
+      $path = $db -> quote($_POST['img']);
       $url = $db -> quote($_POST['url']);
 
       $result = $db -> sql_query("INSERT INTO stormguild.banners VALUES (NULL,".$name.",".$path.",".$url.",".$active.",now())");
