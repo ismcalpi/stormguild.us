@@ -12,16 +12,14 @@
       $path = $db -> quote($_POST['path']);
       $url = $db -> quote($_POST['url']);
 
-      $destfile = upload_banner();
-      $path = $db -> quote($destfile);
-
       $result = $db -> sql_query("UPDATE stormguild.banners SET name = ".$name.", url = ".$url.", path = ".$path.", is_active = ".$active." WHERE banner_id =".$_POST['bannerid']);
 
     } else if ($_POST['action'] == 'add') {
 
       $name = $db -> quote($_POST['name']);
       $active = $_POST['isactive'];
-      $path = $db -> quote($_POST['img']);
+      $destfile = upload_banner();
+      $path = $db -> quote($destfile);
       $url = $db -> quote($_POST['url']);
 
       $result = $db -> sql_query("INSERT INTO stormguild.banners VALUES (NULL,".$name.",".$path.",".$url.",".$active.",now())");
