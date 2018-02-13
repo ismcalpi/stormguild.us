@@ -15,7 +15,7 @@ $db = new database();
     </thead>
     <tbody>
       <tr>
-        <form method="post" action="library/action.admin.streamers.php">
+        <form enctype="multipart/form-data" method="post" action="library/action.admin.streamers.php">
           <input type="hidden" name="action" value="add">
           <input type="hidden" name="bannerid">
           <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
@@ -31,13 +31,13 @@ $db = new database();
         foreach ($banners as $banner) {
       ?>
       <tr>
-        <form method="post" action="library/action.admin.banners.php">
+        <form enctype="multipart/form-data" method="post" action="library/action.admin.banners.php">
           <input type="hidden" name="action" value="update">
           <input type="hidden" name="bannerid" value="<?php echo $banner['banner_id'] ?>">
           <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
           <td><input type="text" name="name" value="<?php echo $banner['name'] ?>"></td>
           <td><input type="text" name="url" value="<?php echo $banner['url'] ?>"></td>
-          <td><input type="text" name="path" value="<?php echo $banner['path'] ?>"></td>
+          <td><input type="text" name="path" value="<?php echo $banner['path'] ?>" disabled></td>
           <td><input type="number" name="isactive" value="<?php echo $banner['is_active'] ?>"></td>
           <td><input type="submit" class="btn btn-sm u-btn-primary g-ml-10" value="Update"></input></td>
         </form>
