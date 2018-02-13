@@ -12,7 +12,7 @@
       $path = $db -> quote($_POST['path']);
       $url = $db -> quote($_POST['url']);
 
-      $result = $db -> sql_query("UPDATE stormguild.banners SET name = ".$name.", url = ".$url.", path = ".$path."is_active = ".$active." WHERE banner_id =".$_POST['bannerid']);
+      $result = $db -> sql_query("UPDATE stormguild.banners SET name = ".$name.", url = ".$url.", path = ".$path.", is_active = ".$active." WHERE banner_id =".$_POST['bannerid']);
 
     } else if ($_POST['action'] == 'add') {
 
