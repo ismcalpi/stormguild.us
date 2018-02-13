@@ -32,7 +32,7 @@
 
   function upload_banner() {
     #Set and make our Destination Path
-    $destPath = 'assets/img/uploads/banners/';
+    $destPath = 'assets/img/uploads/banner/';
     #Find and move our file
     $destFile = $_SERVER['DOCUMENT_ROOT']."/".$destPath.basename($_FILES['img']['name']);
     $tmpFile = $_FILES['img']['tmp_name'];
