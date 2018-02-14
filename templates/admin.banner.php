@@ -15,7 +15,7 @@ $db = new database();
     </thead>
     <tbody>
       <tr>
-        <form enctype="multipart/form-data" method="post" action="library/action.admin.streamers.php">
+        <form enctype="multipart/form-data" method="post" action="library/action.admin.banners.php">
           <input type="hidden" name="action" value="add">
           <input type="hidden" name="bannerid">
           <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
