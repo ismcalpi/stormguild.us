@@ -9,9 +9,6 @@
     #Find and move our file
     $destFile = $_SERVER['DOCUMENT_ROOT']."/".$destPath."/".basename($_FILES['img']['name']);
     $tmpFile = $_FILES['img']['tmp_name'];
-    print $destFile;
-    print $tmpFile
-    die
     if (move_uploaded_file($tmpFile, $destFile)){
       return $destPath."/".basename($_FILES['img']['name']);
     } else {
@@ -42,7 +39,7 @@
     }
 
     $header = "Location:".$_POST['redirect'];
-    header($header);
+    #header($header);
 
   }
 
