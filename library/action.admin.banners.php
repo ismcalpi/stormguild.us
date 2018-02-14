@@ -38,6 +38,8 @@
     $tmpFile = $_FILES['img']['tmp_name'];
     if (move_uploaded_file($tmpFile, $destFile)){
       return $destPath.basename($_FILES['img']['name']);
+    } else {
+      die("File Moving Failed.");
     }
   }
 
