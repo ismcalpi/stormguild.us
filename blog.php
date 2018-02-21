@@ -21,7 +21,6 @@
             <span class="d-block g-color-gray-dark-v4 g-font-size-12"><?php the_time('l jS F, Y') ?></span>
           </h2>
           <p class="g-color-gray-dark-v4 g-line-height-1_8"><?php the_excerpt(); ?></p>
-          <a target=_blank class="g-font-size-13" href="<?php the_permalink(); ?>">Read more...</a>
         </div>
       </article>
 
@@ -31,7 +30,7 @@
         }
       wp_reset_postdata();
       ?>
-          <a target=_blank class="h3 g-color-blue text-center" href="https://www.stormguild.us/blog/">See more at our BLOG</a>
+          <a target=_blank style="text-align:center;" class="h3 g-color-blue text-center" href="https://www.stormguild.us/blog/">See older posts...</a>
           </div>
         </div>
       </div>
