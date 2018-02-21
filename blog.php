@@ -31,7 +31,7 @@
         }
       wp_reset_postdata();
       ?>
-          <a target=_blank class="h3" href="https://www.stormguild.us/blog/">See more at our BLOG</a>
+          <a target=_blank class="h3 g-color-blue text-center" href="https://www.stormguild.us/blog/">See more at our BLOG</a>
           </div>
         </div>
       </div>
