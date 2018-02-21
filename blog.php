@@ -7,7 +7,7 @@
           <div class="col-12">
       <?php
       require($_SERVER['DOCUMENT_ROOT'] . '/blog/wp-load.php');
-      $args = array('posts_per_page' => 5);  // add cat as option to limit to category
+      $args = array('posts_per_page' => 3);  // add cat as option to limit to category
       $latest_posts = new WP_Query( $args );
       if ( $latest_posts->have_posts() ) {
         while ( $latest_posts->have_posts() ) {
@@ -31,6 +31,7 @@
         }
       wp_reset_postdata();
       ?>
+          <a target=_blank class="h3" href="https://www.stormguild.us/blog/">See more at our BLOG</a>
           </div>
         </div>
       </div>
