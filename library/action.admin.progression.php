@@ -27,10 +27,12 @@
       $expansion = $db -> quote($_POST['expansion']);
       $name = $db -> quote($_POST['raidname']);
       $count = $_POST['bosscount'];
+      $path = upload_banner();
+      $path = $db -> quote($path);
       $release = "str_to_date('".$_POST['releasedate']."','%Y-%m-%d')";
       $active = $_POST['isactive'];
 
-      $result = $db -> sql_query("INSERT INTO stormguild.raid VALUES (NULL,".$expansion.",".$name.",".$count.",".$release.", NULL, NULL, ".$active.")");
+      $result = $db -> sql_query("INSERT INTO stormguild.raid VALUES (NULL,".$expansion.",".$name.",".$count.",".$release.", ".$path.", NULL, ".$active.")");
 
     } else if ($_POST['action'] == 'update' && $_POST['type'] == 'raid') {
 
@@ -48,6 +50,19 @@
     $header = "Location:".$_POST['redirect'];
     header($header);
 
+  }
+
+  function upload_banner() {
+    #Set and make our Destination Path
+    $destPath = 'assets/img/uploads/progression';
+    #Find and move our file
+    $destFile = $_SERVER['DOCUMENT_ROOT']."/".$destPath."/".basename($_FILES['img']['name']);
+    $tmpFile = $_FILES['img']['tmp_name'];
+    if (move_uploaded_file($tmpFile, $destFile)){
+      return $destPath."/".basename($_FILES['img']['name']);
+    } else {
+      die("File Moving Failed.");
+    }
   }
 
 ?>
