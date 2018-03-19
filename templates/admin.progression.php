@@ -37,7 +37,7 @@ $db = new database();
           <tbody>
             <!-- Add Boss -->
             <tr>
-              <form method="post" action="library/action.admin.progression.php">
+              <form enctype="multipart/form-data"  method="post" action="library/action.admin.progression.php">
                 <input type="hidden" name="action" value="add">
                 <input type="hidden" name="type" value="raid">
                 <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
