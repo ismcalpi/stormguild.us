@@ -56,7 +56,8 @@ foreach($raids as $raid) {
 <div id="<?php echo $raidname; ?>-body" class="collapse <?php echo $collapse[1]; ?>" role="tabpanel" aria-labelledby="<?php echo $raidname; ?>-header">
 	<div class="u-accordion__body g-brd-black g-brd-around g-brd-1 g-mx-5 g-pa-0 g-bg-white">
 		<?php
-			$sql = 'SELECT raid_id, boss_id, name, kill_order, DATE_FORMAT(heroic_kill,"%m/%d/%y") as heroic_kill, DATE_FORMAT(mythic_kill,"%m/%d/%y") as mythic_kill FROM stormguild.boss WHERE raid_id = '.$raid['raid_id'].' order by kill_order desc';
+			$sql = 'SELECT raid_id, boss_id, name, kill_order, DATE_FORMAT(heroic_kill,"%m/%d/%y") as heroic_kill, DATE_FORMAT(mythic_kill,"%m/%d/%y") as mythic_kill
+							FROM stormguild.boss WHERE raid_id = '.$raid['raid_id'].' order by kill_order desc';
 			$bosses = $db -> read_select($sql);
 			foreach($bosses as $boss) {
 
@@ -76,6 +77,9 @@ foreach($raids as $raid) {
 						$date = 'Alive';
 						$icon = 'fa-square-o g-color-red';
 					}
+				} else if ($raid['difficulty'] == 'NONE') {
+						$date = 'Alive';
+						$icon = 'fa-square-o g-color-red';
 				}
 
 		?>
