@@ -24,7 +24,8 @@ $raids = $db -> read_select("SELECT * FROM stormguild.vw_progression");
 
 foreach($raids as $raid) {
 
-	$path = strtolower('assets/img/uploads/progression/'.preg_replace('/\PL/u', '', $raid['expansion']).'/'.preg_replace('/\PL/u', '', $raid['raid']).'/main.jpg');
+	$path = $raid['icon_img'];
+	#strtolower('assets/img/uploads/progression/'.preg_replace('/\PL/u', '', $raid['expansion']).'/'.preg_replace('/\PL/u', '', $raid['raid']).'/main.jpg');
 	$raidname = strtolower(preg_replace('/\PL/u', '', $raid['raid']));
 	if ($firstraid == TRUE) {
 		$collapse = array('','show');
@@ -41,7 +42,7 @@ foreach($raids as $raid) {
 			aria-expanded="false"
 			aria-controls="<?php echo $raidname; ?>-body"
 			class="<?php echo $collapse[0]; ?> btn btn-xl u-btn-content g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mt-5 g-pa-5"
-			style="width:100%;background-image:url("<?php echo $raid['icon_img']; ?>");background-size:cover;">
+			style="width:100%;background-image:url('<?php echo $path ?>');background-size:cover;">
 		<span class="u-accordion__control-icon d-inline-block g-color-white pull-left g-my-10">
 			<i class="fa fa-plus"></i>
 			<i class="fa fa-minus"></i>
