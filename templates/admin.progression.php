@@ -29,6 +29,7 @@ $db = new database();
               <th><strong>Raid Name</strong></th>
               <th><strong>Boss Count</strong></th>
               <th><strong>Release Date</strong></th>
+              <th><strong>Image</strong></th>
               <th><strong>Active?</strong></th>
               <th><strong>Action</strong></th>
             </tr>
@@ -44,6 +45,7 @@ $db = new database();
                 <td><input type="text" name="raidname"></td>
                 <td><input type="number" name="bosscount"></td>
                 <td><input type="date" name="releasedate"></td>
+                <td><input class="g-ma-0" type="file" name="img" class="form-control-file" aria-describedby="fileHelp" /></td>
                 <td><input type="number" name="isactive"></td>
                 <td><input type="submit" class="btn btn-sm u-btn-primary g-ml-10" value="Add Raid"></input></td>
               </form>
@@ -63,6 +65,7 @@ $db = new database();
                 <td><input type="text" name="raidname" value="<?php echo $raid['raid'] ?>"></td>
                 <td><input type="number" name="bosscount" value="<?php echo $raid['boss_count'] ?>"></td>
                 <td><input type="date" name="releasedate" value="<?php echo $raid['release_date'] ?>"></td>
+                <td><a target="_blank" href="<?php echo $raid['icon_img'] ?>"><img class="img-fluid w-50 g-mb-25" src="<?php echo $raid['icon_img'] ?>"></a></td>
                 <td><input type="number" name="isactive" value="<?php echo $raid['is_active'] ?>"></td>
                 <td><input type="submit" class="btn btn-sm u-btn-primary g-ml-10" value="Update"></input></td>
               </form>
