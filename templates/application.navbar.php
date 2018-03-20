@@ -50,7 +50,7 @@
       </li>
       <div id="open-body" class="<?php echo $actOpen[1] ?> g-ml-20" role="tabpanel">
         <?php
-          $open_sql = "SELECT * FROM stormguild.application WHERE status = 'open' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()";
+          $open_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status = 'open' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()";
           $open_apps = $db -> sql_select($open_sql);
           foreach ($open_apps as $open_app) {
             if ($appid == $open_app['application_id']) {
@@ -58,7 +58,7 @@
             } else {
               $is_active = '';
             }
-            $open_char = $open_app['charName'].' - '.$open_app['charSpec'].' '.$open_app['charClass'];
+            $open_char = $open_app['charName'].'<br />'.$open_app['charSpec'].' '.$open_app['charClass'].'<br />'.$open_app['submit_date'];
             $open_link = 'application.php?appid='.$open_app['application_id'];
             ?>
             <li class="nav-item">
