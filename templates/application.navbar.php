@@ -84,7 +84,7 @@
       </li>
       <div id="accepted-body" class="<?php echo $actAccept[1] ?> g-ml-20" role="tabpanel">
         <?php
-          $accept_sql = "SELECT * FROM stormguild.application WHERE status = 'accepted' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()";
+          $accept_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status = 'accepted' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()";
           $accept_apps = $db -> sql_select($accept_sql);
           foreach ($accept_apps as $accept_app) {
             if ($appid == $accept_app['application_id']) {
@@ -92,7 +92,7 @@
             } else {
               $is_active = '';
             }
-            $accept_char = $accept_app['charName'].' - '.$accept_app['charSpec'].' '.$accept_app['charClass'];
+            $accept_char = $accept_app['charName'].'<br />'.$accept_app['charSpec'].' '.$accept_app['charClass'].'<br />'.$accept_app['submit_date'];
             $accept_link = 'application.php?appid='.$accept_app['application_id'];
             ?>
             <li class="nav-item">
@@ -118,7 +118,7 @@
       </li>
       <div id="declined-body" class="<?php echo $actDecline[1] ?> g-ml-20" role="tabpanel">
         <?php
-          $decline_sql = "SELECT * FROM stormguild.application WHERE status = 'declined' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()";
+          $decline_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status = 'declined' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()";
           $decline_apps = $db -> sql_select($decline_sql);
           foreach ($decline_apps as $decline_app) {
             if ($appid == $decline_app['application_id']) {
@@ -126,7 +126,7 @@
             } else {
               $is_active = '';
             }
-            $decline_char = $decline_app['charName'].' - '.$decline_app['charSpec'].' '.$decline_app['charClass'];
+            $decline_char = $decline_app['charName'].'<br />'.$decline_app['charSpec'].' '.$decline_app['charClass'].'<br />'.$decline_app['submit_date'];
             $decline_link = 'application.php?appid='.$decline_app['application_id'];
             ?>
             <li class="nav-item">
