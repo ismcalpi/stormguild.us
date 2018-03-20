@@ -79,7 +79,7 @@
 								</strong>
 							</li>
 							<li class="d-flex g-mb-10 g-ml-20">
-								<i><span class="u-label u-label-success g-mr-10 g-ml-10 g-mb-15">Goal Achieved</span>
+								<i><!--<span class="u-label u-label-success g-mr-10 g-ml-10 g-mb-15">Goal Achieved</span>-->
 								Mythic Argus US-143 & US 13th for 2-day Guilds</i>
 							</li>
 							<!-- End Raid Goal -->
