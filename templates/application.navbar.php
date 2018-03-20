@@ -92,7 +92,7 @@
             } else {
               $is_active = '';
             }
-            $accept_char = '<strong>'.$accept_app['charName'].'</strong><br /><i>'.$accept_app['charSpec'].' '.$accept_app['charClass'].'<br />'.$accept_app['submit_date'];
+            $accept_char = '<strong>'.$accept_app['charName'].'</strong><br /><i>'.$accept_app['charSpec'].' '.$accept_app['charClass'].'</i><br />'.$accept_app['submit_date'];
             $accept_link = 'application.php?appid='.$accept_app['application_id'];
             ?>
             <li class="nav-item">
