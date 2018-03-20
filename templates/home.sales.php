@@ -5,7 +5,7 @@
 		<i class="fa fa-gg pull-left g-font-size-35"></i>
 		<span class="float-left text-left g-font-size-10 g-color-white">
 			<span class="d-block g-font-size-14">Raid & M+ Sales</span>
-      <i>only gold on stormrage accepted</i>
+      <i>only gold accepted, any server</i>
 		</span>
 	</a>
 </div>
