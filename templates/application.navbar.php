@@ -58,7 +58,7 @@
             } else {
               $is_active = '';
             }
-            $open_char = $open_app['charName'].'<br />'.$open_app['charSpec'].' '.$open_app['charClass'].'<br />'.$open_app['submit_date'];
+            $open_char = '<b>'.$open_app['charName'].'</b><br />'.$open_app['charSpec'].' '.$open_app['charClass'].'<br />'.$open_app['submit_date'];
             $open_link = 'application.php?appid='.$open_app['application_id'];
             ?>
             <li class="nav-item">
@@ -92,7 +92,7 @@
             } else {
               $is_active = '';
             }
-            $accept_char = $accept_app['charName'].'<br />'.$accept_app['charSpec'].' '.$accept_app['charClass'].'<br />'.$accept_app['submit_date'];
+            $accept_char = '<b>'.$accept_app['charName'].'</b><br />'.$accept_app['charSpec'].' '.$accept_app['charClass'].'<br />'.$accept_app['submit_date'];
             $accept_link = 'application.php?appid='.$accept_app['application_id'];
             ?>
             <li class="nav-item">
@@ -126,7 +126,7 @@
             } else {
               $is_active = '';
             }
-            $decline_char = $decline_app['charName'].'<br />'.$decline_app['charSpec'].' '.$decline_app['charClass'].'<br />'.$decline_app['submit_date'];
+            $decline_char = '<b>'.$decline_app['charName'].'</b><br />'.$decline_app['charSpec'].' '.$decline_app['charClass'].'<br />'.$decline_app['submit_date'];
             $decline_link = 'application.php?appid='.$decline_app['application_id'];
             ?>
             <li class="nav-item">
