@@ -48,7 +48,7 @@
 
    // slider.control('arrows');
    slider.control('bullets', {autohide: false, align: 'top', margin: 10});
-   slider.control('timebar', {autohide: false, align:'bottom', margin:10});
+   slider.control('timebar', {autohide: false, align:'bottom', margin:10, inset: true, color:"#e6e6e6"});
    slider.setup('masterslider', {
      width: 800,
      height: 225,
