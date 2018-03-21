@@ -10,18 +10,20 @@
       $name = $db -> quote($_POST['name']);
       $active = $_POST['isactive'];
       $url = $db -> quote($_POST['url']);
+      $priority = $_POST['priority'];
 
-      $result = $db -> sql_query("UPDATE stormguild.banners SET name = ".$name.", url = ".$url.", is_active = ".$active." WHERE banner_id =".$_POST['bannerid']);
+      $result = $db -> sql_query("UPDATE stormguild.banners SET name = ".$name.", url = ".$url.", priority = ".$priority.", is_active = ".$active." WHERE banner_id =".$_POST['bannerid']);
 
     } else if ($_POST['action'] == 'add') {
 
       $name = $db -> quote($_POST['name']);
       $active = $_POST['isactive'];
+      $priority = $_POST['priority'];
       $path = upload_banner();
       $path = $db -> quote($path);
       $url = $db -> quote($_POST['url']);
 
-      $result = $db -> sql_query("INSERT INTO stormguild.banners VALUES (NULL,".$name.",".$path.",".$url.",".$active.",now())");
+      $result = $db -> sql_query("INSERT INTO stormguild.banners VALUES (NULL,".$name.",".$path.",".$url.",".$priority.",".$active.",now())");
     }
 
     $header = "Location:".$_POST['redirect'];
