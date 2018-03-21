@@ -47,8 +47,8 @@
   var slider = new MasterSlider();
 
    // slider.control('arrows');
-   slider.control('bullets', {autohide: false, align: 'bottom', margin: 5});
-   slider.control('timebar', {align:'top'});
+   slider.control('bullets', {autohide: false, align: 'top', margin: 10});
+   slider.control('timebar', {autohide: false, align:'bottom', margin:15});
    slider.setup('masterslider', {
      width: 800,
      height: 225,
@@ -56,7 +56,7 @@
      view: 'scaleFlow',
      loop: true,
      autoplay: true,
-     overPause: true,
+     overPause: false,
      speed: 30,
      layout: 'fillwidth'
    });
