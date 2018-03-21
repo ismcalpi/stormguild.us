@@ -46,7 +46,7 @@
   // Initailization of Master Slider
   var slider = new MasterSlider();
 
-   slider.control('arrows');
+   // slider.control('arrows');
    slider.control('bullets', {autohide: false, align: 'bottom', margin: 5});
    slider.control('timebar', {align:'top'});
    slider.setup('masterslider', {
