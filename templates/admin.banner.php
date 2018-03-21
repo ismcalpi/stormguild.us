@@ -9,6 +9,7 @@ $db = new database();
         <th><strong>Name</strong></th>
         <th><strong>URL</strong></th>
         <th><strong>Image</strong></th>
+        <th><strong>Priority</strong></th>
         <th><strong>Active?</strong></th>
         <th><strong>Actions</strong></th>
       </tr>
