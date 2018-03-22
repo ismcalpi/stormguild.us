@@ -15,9 +15,9 @@
       ?>
       <article class="g-mb-15 g-pa-10 g-brd-around g-brd-gray-light-v4">
         <div class="g-ma-10 text-center">
-          <a  target="_blank" href="<?php the_post_thumbnail_url(); ?>">
+          <a  target="_blank" href="<?php the_post_thumbnail_url('full'); ?>">
             <img  class="img-fluid w-100 g-mb-15"
-                  src="<?php get_the_post_thumbnail_url(get_the_ID(),'large'); ?>"
+                  src="<?php the_post_thumbnail_url('large'); ?>"
                   style="max-height:364">
           </a>
           <h2 class="h4 g-color-black g-font-weight-600 mb-3">
