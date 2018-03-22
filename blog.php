@@ -16,7 +16,8 @@
       <article class="g-mb-15 g-pa-10 g-brd-around g-brd-gray-light-v4">
         <div class="g-ma-10 text-center">
           <a  target="_blank" href="<?php the_post_thumbnail_url(); ?>">
-            <img width="700" height="394" class="img-fluid w-100 g-mb-15" style="max-height:394;max-width:700;" src="<?php the_post_thumbnail_url(); ?>" alt="Image Description">
+            <?php the_post_thumbnail(get_the_id(),'large'); ?>
+            <img width="700" height="394" class="img-fluid g-mb-15" style="max-height:364;max-width:348;" src="<?php the_post_thumbnail_url(); ?>" alt="Image Description">
           </a>
           <h2 class="h4 g-color-black g-font-weight-600 mb-3">
             <a target=_blank class="u-link-v5 g-color-black g-color-primary--hover" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
