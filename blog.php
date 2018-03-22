@@ -17,7 +17,7 @@
         <div class="g-ma-10 text-center">
           <a  target="_blank" href="<?php the_post_thumbnail_url(); ?>">
             <img  class="img-fluid w-100 g-mb-15"
-                  src="<?php get_the_post_thumbnail_url('large'); ?>"
+                  src="<?php get_the_post_thumbnail_url(get_the_ID(),'large'); ?>"
                   style="max-height:364">
           </a>
           <h2 class="h4 g-color-black g-font-weight-600 mb-3">
