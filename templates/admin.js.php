@@ -51,5 +51,4 @@
       $.HSCore.components.HSTabs.init('[role="tablist"]');
     }, 200);
   });
-
 </script>

@@ -7,7 +7,7 @@
 			if(!isset(self::$connection)) {
 				$iniPath = $_SERVER['DOCUMENT_ROOT'].'/config/database.ini';
 				$config = parse_ini_file($iniPath);
-        self::$connection = new mysqli('localhost',$config['write_uid'],$config['write_pwd'],$config['dbname']);
+        self::$connection = new mysqli($config['db_address'],$config['write_uid'],$config['write_pwd'],$config['dbname']);
 			}
 			if(self::$connection === false) {
 				return false;

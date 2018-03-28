@@ -13,7 +13,7 @@
       <div class="container g-bg-white g-brd-around g-brd-white g-brd-2 g-mt-80" style="min-height:100vh;">
         <div class="row">
 
-          <div class = "col-12 g-pa-0">
+          <div class = "col-12 g-pa-0 g-ma-0">
             <?php include 'templates/home.banner.php' ?>
           </div>
 

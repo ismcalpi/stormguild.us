@@ -1,0 +1,144 @@
+<?php
+include_once 'library/class.database.php';
+$db = new database();
+?>
+<div class="table-responsive" style="overflow-x:scroll;">
+  <table class="table table-hover table-sm">
+
+      <thead>
+        <tr>
+          <th><strong>Image</strong></th>
+          <th><strong>Title</strong></th>
+          <th><strong>Title Style</strong></th>
+          <th><strong>Body</strong></th>
+          <th><strong>Body_Style</strong></th>
+          <th><strong>Button Text</strong></th>
+          <th><strong>Button Color</strong></th>
+          <th><strong>Button URL</strong></th>
+          <th><strong>Animation</strong></th>
+          <th><strong>Priority</strong></th>
+          <th><strong>Active?</strong></th>
+          <th><strong>Actions</strong></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <form enctype="multipart/form-data" method="post" action="library/action.admin.banners.php">
+            <input type="hidden" name="action" value="add">
+            <input type="hidden" name="bannerid">
+            <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
+            <td><input class="g-ma-0" type="file" name="img" class="form-control-file" aria-describedby="fileHelp" /></td>
+            <td><input type="text" name="title"></td>
+            <td><input type="text" name="title_style"></td>
+            <td><textarea name="body"></textarea></td>
+            <td><input type="text" name="body_style"></td>
+            <td><input type="text" name="button_text"></td>
+            <td>
+              <select name="button_color">
+                <option value="primary">Green</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="purple">Purple</option>
+                <option value="pink">Pink</option>
+                <option value="orange">Orange</option>
+                <option value="yellow">Yellow</option>
+                <option value="teal">Teal</option>
+                <option value="brown">Brown</option>
+                <option value="black">Black</option>
+                <option value="darkgray">Dark Gray</option>
+              </select>
+            </td>
+            <td><input type="text" name="button_url"></td>
+            <td>
+              <select name="animation">
+                <option value="fade()">Fade</option>
+                <option value="left(200,true)">Left</option>
+                <option value="right(200,true)">Right</option>
+                <option value="top(200,true)">Top</option>
+                <option value="bottom(200,true)">Bottom</option>
+                <option value="rotate(300,br)">Rotate</option>
+                <option value="rotateleft(180,long,bl,true)">Rotate Left</option>
+                <option value="rotateright(180,long,br,true)">Rotate Right</option>
+                <option value="rotatetop(45|180,long,br,true)">Rotate Top</option>
+                <option value="rotatebottom(45|180,long,br,true)">Rotate Bottom</option>
+                <option value="skewleft(18,35|100)">Skew Left</option>
+                <option value="skewright(18,35|100)">Skew Right</option>
+                <option value="skewtop(18,35|100,false)">Skew Top</option>
+                <option value="skewbottom(18,35|100)">Skew Bottom</option>
+              </select>
+            </td>
+            <td><input type="number" name="priority" value="1"></td>
+            <td><input type="number" name="isactive" value="1"></td>
+            <td><input type="submit" class="btn btn-sm u-btn-primary g-ml-10" value="Add"></input></td>
+          </form>
+        </tr>
+        <?php
+          $banners = $db -> sql_select("SELECT * FROM stormguild.banner ORDER BY priority DESC, banner_id DESC");
+          foreach ($banners as $banner) {
+        ?>
+        <tr>
+          <form enctype="multipart/form-data" method="post" action="library/action.admin.banners.php">
+            <input type="hidden" name="bannerid">
+            <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
+            <td><a target="_blank" href="<?php echo $banner['img_path'] ?>"><img class="img-fluid w-50 g-mb-25" src="<?php echo $banner['img_path'] ?>"></a></td>
+            <td><input type="text" name="title" value="<?php echo $banner['title'] ?>"></td>
+            <td><input type="text" name="title_style" value="<?php echo $banner['title_style'] ?>"></td>
+            <td><textarea name="body"><?php echo $banner['body'] ?></textarea></td>
+            <td><input type="text" name="body_style" value="<?php echo $banner['body_style'] ?>"></td>
+            <td><input type="text" name="button_text" value="<?php echo $banner['button_text'] ?>"></td>
+            <td>
+              <select name="button_color">
+                <option selected="" value="<?php echo $banner['button_color']; ?>">
+                  <?php echo $banner['button_color']; ?>
+                </option>
+                <option value="primary">Green</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="purple">Purple</option>
+                <option value="pink">Pink</option>
+                <option value="orange">Orange</option>
+                <option value="yellow">Yellow</option>
+                <option value="teal">Teal</option>
+                <option value="brown">Brown</option>
+                <option value="black">Black</option>
+                <option value="darkgray">Dark Gray</option>
+              </select>
+            </td>
+            <td><input type="text" name="button_url" value="<?php echo $banner['button_url']; ?>"></td>
+            <td>
+              <select name="animation">
+                <option selected="" value="<?php echo $banner['animation']; ?>">
+                  <?php echo $banner['animation']; ?>
+                </option>
+                <option value="fade()">Fade</option>
+                <option value="left(200,true)">Left</option>
+                <option value="right(200,true)">Right</option>
+                <option value="top(200,true)">Top</option>
+                <option value="bottom(200,true)">Bottom</option>
+                <option value="rotate(300,br)">Rotate</option>
+                <option value="rotateleft(180,long,bl,true)">Rotate Left</option>
+                <option value="rotateright(180,long,br,true)">Rotate Right</option>
+                <option value="rotatetop(45|180,long,br,true)">Rotate Top</option>
+                <option value="rotatebottom(45|180,long,br,true)">Rotate Bottom</option>
+                <option value="skewleft(18,35|100)">Skew Left</option>
+                <option value="skewright(18,35|100)">Skew Right</option>
+                <option value="skewtop(18,35|100,false)">Skew Top</option>
+                <option value="skewbottom(18,35|100)">Skew Bottom</option>
+              </select>
+            </td>
+            <td><input type="number" name="priority" value="<?php echo $banner['priority'] ?>"></td>
+            <td><input type="number" name="isactive" value="<?php echo $banner['is_active'] ?>"></td>
+            <td>
+              <input type="submit" class="btn btn-sm u-btn-primary g-ma-5" name="action" value="Update"></input>
+              <input type="submit" class="btn btn-sm u-btn-red g-ma-5" name="action" value="Delete"></input>
+            </td>
+          </form>
+        </tr>
+        <?php
+          }
+        ?>
+      </tbody>
+
+  </table>
+</div>
