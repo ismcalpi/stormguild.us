@@ -83,7 +83,14 @@ foreach($raids as $raid) {
 				}
 
 		?>
-		<p class="g-my-0 g-mx-5"><i class="fa <?php echo $icon; ?> g-mr-10"></i><?php echo $boss['name']; ?><span class="g-pos-abs g-right-10"><?php echo $date; ?></span></p>
+		<p class="g-my-0 g-mx-5">
+			<span><i class="fa <?php echo $icon; ?> g-mr-10"></i><?php echo $boss['name']; ?></span>
+			<span class="g-pos-abs g-right-10"><?php echo $date; ?></span>
+		</p>
+		<!-- <div class="row g-px-5">
+			<div class="col-1 g-py-5"><i class="fa <?php echo $icon; ?> g-mr-5"></i></div>
+			<div class="col-8"><?php echo $boss['name']; ?><br /><span class="g-ml-10"><?php echo $date; ?></span></div>
+		</div> -->
 		<?php } ?>
 	</div>
 </div>

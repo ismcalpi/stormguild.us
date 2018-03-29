@@ -17,14 +17,14 @@
             <?php include 'templates/home.banner.php' ?>
           </div>
 
-          <div class = "col-md-3 col-xs-12 g-pa-5">
+          <div class = "col-xl-3 col-lg-4 col-md-6 col-12 g-pa-5">
             <!-- <h3 class="h3 g-brd-bottom g-brd-1 g-brd-black g-color-black">Raid Progression</h3> -->
             <?php include 'templates/home.recruit.php' ?>
             <?php include 'templates/home.sales.php' ?>
             <?php include 'templates/home.progression.php' ?>
           </div>
 
-          <div class = "col-md-9 col-xs-12 g-py-5 g-px-15">
+          <div class = "col-xl-9 col-lg-8 col-md-6 col-12 g-py-5 g-px-15">
             <div class="u-heading-v3-1 text-center g-mb-15">
               <h2 class="text-uppercase h4 u-heading-v3__title g-brd-blue">Guild News</h2>
             </div>
