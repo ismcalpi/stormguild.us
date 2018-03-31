@@ -1,5 +1,8 @@
 <?php
-$json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stormrage/storm/json_rank'));
+include_once 'library/class.database.php';
+$db = new database();
+
+$rank = $db -> read_row('SELECT * FROM stormguild.guild_rank');
 ?>
 <div class="col-12 g-pa-0 g-ma-0">
 	<a  href="https://www.wowprogress.com/guild/us/stormrage/storm"
@@ -9,7 +12,7 @@ $json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stor
 		<i class="fa fa-globe pull-left g-font-size-35"></i>
 		<span class="float-left text-left g-font-size-15 g-color-white">
 			<span class="d-block g-font-size-12">wowprogress ranking</span>
-			US #<?php echo $json->area_rank; ?> Realm #<?php echo $json->realm_rank; ?>
+			US #<?php echo $rank['area_rank']; ?> Realm #<?php echo $rank['realm_rank']; ?>
 		</span>
 	</a>
 </div>
@@ -17,8 +20,6 @@ $json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stor
 <div id="raidprog" class="u-accordion col-12 g-pa-0 g-my-0" role="tablist" aria-multiselectable="false">
 
 <?php
-include_once 'library/class.database.php';
-$db = new database();
 $firstraid = TRUE;
 $raids = $db -> read_select("SELECT * FROM stormguild.vw_progression");
 
