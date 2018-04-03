@@ -14,7 +14,7 @@
 
             include_once 'library/class.database.php';
             $db = new Database();
-            $sql = "SELECT * FROM stormguild.guild_roster WHERE rank in (0,2,4,6) order by rank asc, name desc";
+            $sql = "SELECT * FROM stormguild.guild_roster WHERE rank in (0,2,4,6) order by rank asc, name asc";
             $results = $db -> read_select($sql);
             foreach ($results as $result) {
 
