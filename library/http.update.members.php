@@ -6,12 +6,13 @@
 
   $json = json_decode(file_get_contents('https://us.api.battle.net/wow/guild/Stormrage/Storm?fields=members&locale=en_US&apikey=mqa6xqp4dmuvbh4v6s3vu6xjgg75sryb'));
 
-  $sql = "SELECT count(*) as count FROM stormguild.roster";
+  $sql = "SELECT count(*) as count FROM stormguild.guild_roster";
   $sqlCount = $db -> read_row($sql);
 
   if (count($json->members) != $sqlCount['count']) {
-    $sql = "TRUNCATE TABLE stormguild.roster";
+    $sql = "TRUNCATE TABLE stormguild.guild_roster";
     $db -> write_query($sql);
+    echo 'Detected change in roster, truncating table and recreating.<br /><br />'
   }
 
   foreach ($json->members as $member) {
