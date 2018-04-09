@@ -6,6 +6,14 @@
 
   $json = json_decode(file_get_contents('https://us.api.battle.net/wow/guild/Stormrage/Storm?fields=members&locale=en_US&apikey=mqa6xqp4dmuvbh4v6s3vu6xjgg75sryb'));
 
+  $sql = "SELECT count(*) as count FROM stormguild.roster";
+  $sqlCount = $db -> read_row($sql);
+
+  if (count($json->members) != $sqlCount['count']) {
+    $sql = "TRUNCATE TABLE stormguild.roster";
+    $db -> write_query($sql);
+  }
+
   foreach ($json->members as $member) {
     $playerName = $member->character->name;
     $playerClass = $member->character->class;
@@ -42,6 +50,6 @@
 
     }
 
-    echo 'Handling '.$playerName.' now. Class: '.$playerClass.' Spec: '.$playerSpec.' Rank: '.$playerRank.' Thumbnail: '.$playerThumb.' <br />';
+    echo 'Handling '.$playerName.' now. <br />Class: '.$playerClass.' Spec: '.$playerSpec.' <br />Rank: '.$playerRank.' <br />Thumbnail: '.$playerThumb.' <br /><br />';
   }
 ?>
