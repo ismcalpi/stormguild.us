@@ -57,6 +57,7 @@
             </div>
           </div>
 
+          <input type="hidden" class="form-control rounded-0 u-form-control" type="text" name="verify">
           <input type="hidden" name="redirect" value="sales.php?status=success">
 
           <div class="form-group g-mb-20">

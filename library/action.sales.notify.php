@@ -4,9 +4,15 @@ include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
 include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 
-notify_admins($_POST['contact'],$_POST['contact_type'],$_POST['message']);
-$discord_msg = $_POST['contact'].' ('.$_POST['contact_type'].') - '.$_POST['message'];
-notify_discord($discord_msg);
+
+if (!$_POST['verify']) {
+  notify_admins($_POST['contact'],$_POST['contact_type'],$_POST['message']);
+  $discord_msg = $_POST['contact'].' ('.$_POST['contact_type'].') - '.$_POST['message'];
+  notify_discord($discord_msg);
+} else {
+  $discord_msg = 'Someone Fake Tried to Spam the Sales Page';
+  notify_discord($discord_msg);
+}
 
 $link = 'https://www.stormguild.us/'.$_POST['redirect'];
 header("Location: $link");
