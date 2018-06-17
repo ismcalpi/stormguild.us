@@ -4,13 +4,14 @@ include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
 include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 
+$HasLink = strpos($_POST['message'], 'http') !== false || strpos($_POST['message'], 'www.') !== false || strpos($_POST['message'], '[/url]') !== false || strpos($_POST['message'], '</a>') !== false;
 
-if (!$_POST['verify']) {
-  notify_admins($_POST['contact'],$_POST['contact_type'],$_POST['message']);
-  $discord_msg = $_POST['contact'].' ('.$_POST['contact_type'].') - '.$_POST['message'];
+if ($HasLink) {
+  $discord_msg = 'Some Spammer Just tried to make a Sales Request. Testing for Horg.';
   notify_discord($discord_msg);
 } else {
-  $discord_msg = 'Someone Fake Tried to Spam the Sales Page';
+  notify_admins($_POST['contact'],$_POST['contact_type'],$_POST['message']);
+  $discord_msg = $_POST['contact'].' ('.$_POST['contact_type'].') - '.$_POST['message'];
   notify_discord($discord_msg);
 }
 

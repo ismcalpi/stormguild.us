@@ -51,13 +51,12 @@
                 <input class="form-control rounded-0 u-form-control" type="text" name="contact_type" placeholder="Discord" required>
               </div>
               <div class="form-group col-12 g-mb-20">
-                <label for="message">Let us Know what you are looking for! Should include the class you want to bring, dates if you need a specific week and what run you'd like.</label>
+                <label for="message">Let us Know what you are looking for! Should include the class you want to bring, dates if you need a specific week and what run you'd like (Do not include a URL)</label>
                 <textarea id="message" class="form-control form-control-md rounded-0" rows="3" placeholder="" name="message" required></textarea>
               </div>
             </div>
           </div>
 
-          <input type="hidden" class="form-control rounded-0 u-form-control" type="text" name="verify">
           <input type="hidden" name="redirect" value="sales.php?status=success">
 
           <div class="form-group g-mb-20">
