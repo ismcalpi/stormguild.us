@@ -6,12 +6,15 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 
 update_app();
 
+include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
+$discord = new discord();
+
 $member_link = "https://www.stormguild.us/application.php?appid=".$_POST['appid'];
 $discord_msg = $_POST['appname']."'s Application has been ".$_POST['status']." \n Link: ".$member_link;
 
 notify_guild($member_link,$_POST['appname'],$_POST['status']);
 notify_applicant($_POST['status']);
-notify_discord($discord_msg);
+$discord -> discord_message('Application Discord Bot', $discord_msg, 'recruit');
 
 $link = 'https://www.stormguild.us'.$_POST['redirecturi'];
 header("Location: $link");
@@ -35,15 +38,6 @@ function update_app() {
     return false;
   }
 
-}
-
-function notify_discord($message) {
-  $data = array("content" => $message, "username" => "Application Robot");
-  $curl = curl_init("https://discordapp.com/api/webhooks/383667737525878798/-OZH5-jbnsIpngVOgzcsTuLqTpkDbx7OULmmBOd0zaPUAcYIiLdMczsU9m65iHzNF3vQ");
-  curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-  curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-  return curl_exec($curl);
 }
 
 function notify_guild($link, $appname, $decision) {
