@@ -3,29 +3,19 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/templates/all.user.php';
 include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
 include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
+
+$discord = new discord();
 
 $HasLink = strpos($_POST['message'], 'http') !== false || strpos($_POST['message'], 'www.') !== false || strpos($_POST['message'], '[/url]') !== false || strpos($_POST['message'], '</a>') !== false;
-
-if ($HasLink) {
-  #$discord_msg = 'Some Spammer Just tried to make a Sales Request. Testing for Horg.';
-  #notify_discord($discord_msg);
-} else {
+if (!$HasLink) {
   notify_admins($_POST['contact'],$_POST['contact_type'],$_POST['message']);
   $discord_msg = $_POST['contact'].' ('.$_POST['contact_type'].') - '.$_POST['message'];
-  notify_discord($discord_msg);
+  $discord -> discord_message('Sales Discord Bot', $discord_msg, 'sales');
 }
 
 $link = 'https://www.stormguild.us/'.$_POST['redirect'];
 header("Location: $link");
-
-function notify_discord($message) {
-  $data = array("content" => $message, "username" => "Storm Sales Bot");
-  $curl = curl_init("https://discordapp.com/api/webhooks/401504704607027210/-EIc94uOnNRcKxDPcSHqXDR2ZuZ_thuNegmZDwTQGAeexiJuvl_0YnHS79o2gJsfTBsN");
-  curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-  curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-  return curl_exec($curl);
-}
 
 function notify_admins($contact, $contact_type, $message) {
   $msg = new messenger(false);

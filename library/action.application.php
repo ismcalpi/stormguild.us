@@ -3,10 +3,13 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/templates/all.user.php';
 include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
 include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
 
 $accessid = uniqid();
 #App Application to database
 app_add();
+
+$discord = new discord();
 
 #notify via email and phpBB
 $appid = getAPPID();
@@ -16,7 +19,7 @@ $app_link = 'https://www.stormguild.us/application.php?accessid='.$accessid;
 $discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n".$member_link;
 notify_guild($member_link);
 notify_applicant($app_link);
-notify_discord($discord_msg);
+$discord -> discord_message('Application Discord Bot', $discord_msg, 'recruit');
 
 $redirect = "../recruit.php?status=success&accessid=".$accessid."#application";
 header("Location: $redirect");
@@ -75,15 +78,6 @@ function app_add() {
     return false;
   }
 
-}
-
-function notify_discord($message) {
-  $data = array("content" => $message, "username" => "Application Robot");
-  $curl = curl_init("https://discordapp.com/api/webhooks/383667737525878798/-OZH5-jbnsIpngVOgzcsTuLqTpkDbx7OULmmBOd0zaPUAcYIiLdMczsU9m65iHzNF3vQ");
-  curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-  curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-  return curl_exec($curl);
 }
 
 function notify_guild($applink) {
