@@ -29,8 +29,8 @@
               <div class='col-lg-4 col-md-6 col-12 g-mb-30'>
                 <figure class="u-block-hover u-shadow-v19 g-bg-white g-rounded-4 g-pa-5 g-brd-black g-brd-1 g-brd-around">
                   <div class="d-flex justify-content-start">
-                    <img class="g-width-60 g-height-60 rounded-circle g-mr-15" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
-                    <img class="g-width-60 g-height-60 rounded-circle g-mr-15" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
+                    <img class="g-width-60 g-height-60 rounded-circle" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
+                    <img class="g-width-40 g-height-40 rounded-circle g-mr-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
                     <!-- Figure Info -->
                     <div class="d-block">
                       <div class="g-mb-5">
