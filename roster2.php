@@ -20,8 +20,8 @@
               #echo "<p>".$class[0].", ".$class[1].", ".$class[2]."</p>";
           ?>
             <div class="row">
-              <img style="position:absolute;text-align:right;" src="<?php echo $class[2]; ?>" />
-              <h2 style="color:<?php echo $class[1]; ?>;"><?php echo $class[0]; ?></h2><br />
+              <div class="col-8"><h2 style="text-align:center;background-color:<?php echo $class[1]; ?>;"><?php echo $class[0]; ?></h2></div>
+              <div class="col-4"><img style="position:absolute;" src="<?php echo $class[2]; ?>" /></div>
             </div>
           <?php
             }
