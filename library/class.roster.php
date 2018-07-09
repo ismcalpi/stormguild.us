@@ -1,9 +1,6 @@
 <?php
 	class roster {
 
-    include_once 'library/class.database.php';
-    $db = new Database();
-
     public function get_classInfo ($classNum) {
       switch ($classNum) {
         case 1:
@@ -94,10 +91,16 @@
     }
 
     public function get_classResult ($classNum) {
+      include_once 'library/class.database.php';
+      $db = new Database();
+
       return $db -> read_select("SELECT * FROM stormguild.guild_roster WHERE rank in (0,2,4,6) AND class = $classNum order by class asc, rank asc, name asc";
     }
 
     public function get_classList () {
+      include_once 'library/class.database.php';
+      $db = new Database();
+
       $results = $db -> read_select("SELECT DISTINCT class from stormguild.guild_roster WHERE rank in (0,2,4,6) order by class asc");
       $classList = array();
       foreach ($results as $result) {
