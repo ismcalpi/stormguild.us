@@ -20,7 +20,7 @@
               #echo "<p>".$class[0].", ".$class[1].", ".$class[2]."</p>";
           ?>
             <div class="row">
-              <h2 style="margin-bottom:0px;"><img src="<?php echo $class[2]; ?>" /><?php echo $class[0]; ?></h2>
+              <h2 style="margin-bottom:0px;"><img src="<?php echo $class[2]; ?>" /><?php echo $class[0]; ?></h2><br />
               <hr style="color:<?php echo $class[1]; ?>;border: 1px solid black" />
             </div>
           <?php
