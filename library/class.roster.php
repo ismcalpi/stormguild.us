@@ -67,7 +67,7 @@
           break;
       }
 
-      $classInfo = array($className, $classColor, $classIcon);
+      $classInfo = array($className, $classColor, $classIcon, $classNum);
       return $classInfo;
 
     }
@@ -90,12 +90,11 @@
       return $rankName;
     }
 
-    #public function get_classResult ($classNum) {
-    #  include_once 'library/class.database.php';
-    #  $db = new Database();
-    #
-    #return $db -> read_select("SELECT * FROM stormguild.guild_roster WHERE rank in (0,2,4,6) AND class = $classNum order by class asc, rank asc, name asc";
-    #}
+    public function get_classResult ($classInfo) {
+      include_once 'library/class.database.php';
+      $db = new Database();
+      return $db -> read_select("SELECT * FROM stormguild.guild_roster WHERE rank in (0,2,4,6) AND class = $classInfo[3] order by rank asc, name asc";
+    }
 
     public function get_classList () {
       include_once 'library/class.database.php';
