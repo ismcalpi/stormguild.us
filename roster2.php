@@ -20,9 +20,8 @@
               #echo "<p>".$class[0].", ".$class[1].", ".$class[2]."</p>";
           ?>
             <div class="row">
-              <div class="col-lg-2 col-md-3 col-12">
+              <div class="col-lg-2 col-md-3 col-12" style="background-image:<?php echo $class[2]; ?>;">
                 <h1 style="text-center:center;"><?php echo $class[0]; ?></h1>
-                <img style="position:absolute;cover:fill;" src="<?php echo $class[2]; ?>" alt="<?php echo $class[1]; ?>" />
               </div>
               <div class="col-lg-10 col-md-9 col-12">
                 <div class="row">
