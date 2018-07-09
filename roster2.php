@@ -26,7 +26,7 @@
               foreach ($results as $result) {
                 $rank_name = $roster -> get_guildRank($result['rank']);
               ?>
-              <div class='col-lg-4 col-md-6 col-12 g-mb-30'>
+              <div class='col-lg-3 col-md-4 col-12 g-mb-30'>
                 <figure class="u-block-hover u-shadow-v19 g-bg-white g-rounded-4 g-pa-5 g-brd-black g-brd-1 g-brd-around">
                   <div class="d-flex justify-content-start">
                     <img class="g-width-70 g-height-70 rounded-circle" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
