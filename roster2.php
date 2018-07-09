@@ -33,7 +33,7 @@
                     <img class="g-width-20 g-height-20 rounded-circle g-mr-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
                     <!-- Figure Info -->
                     <div class="d-block">
-                      <div class="g-mb-5 g-mt-15">
+                      <div class="g-mb-5 g-mt-5">
                         <h4 class="h5 g-mb-0"><?php echo $result['name']; ?></h4>
                         <em class="d-block g-color-primary g-font-style-normal g-font-size-default"><?php echo $rank_name ?></em>
                       </div>
