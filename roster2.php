@@ -19,7 +19,7 @@
           ?>
             <div class="row">
               <div class="col-12">
-                <h3 style="text-center:center;color:<?php echo $class[2]; ?>;"><img src="<?php echo $class[2]; ?>"><?php echo $class[0]; ?></h3>
+                <h3 style="text-center:center;color:<?php echo $class[2]; ?>;"><img style="margin-right:10px;" src="<?php echo $class[2]; ?>"><?php echo $class[0]; ?></h3>
               </div>
               <?php
               $results = $roster -> get_classResult($class);
