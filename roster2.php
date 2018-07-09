@@ -21,7 +21,7 @@
           ?>
             <div class="row">
               <div class="col-lg-2 col-md-3 col-12">
-                <img src="<?php echo $class[2]; ?>" />
+                <div class="d-flex justify-content-start"><img class="img-fluid" src="<?php echo $class[2]; ?>" /></div>
                 <h3 style="text-center:center;color:<?php echo $class[2]; ?>;"><?php echo $class[0]; ?></h3>
               </div>
               <div class="col-lg-10 col-md-9 col-12">
