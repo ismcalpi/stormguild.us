@@ -1,7 +1,7 @@
 <?php
 	class roster {
 
-    public function get_classInfo ($classNum) {
+    function get_classInfo ($classNum) {
       switch ($classNum) {
         case 1:
           $className = 'Warrior';
@@ -72,7 +72,7 @@
 
     }
 
-    public function get_guildRank ($rankNum) {
+    function get_guildRank ($rankNum) {
       switch ($rankNum) {
         case 0:
           $rankName = 'Guild Master';
