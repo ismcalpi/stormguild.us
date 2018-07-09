@@ -34,13 +34,13 @@
                   <div class='col-lg-4 col-md-6 col-12 g-mb-30'>
                     <figure class="u-block-hover u-shadow-v19 g-bg-white g-rounded-4 g-pa-15 g-brd-black g-brd-2 g-brd-around">
                       <div class="d-flex justify-content-start">
-                        <img class="g-width-80 g-height-80 rounded-circle g-mr-15" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
-                        <img width="20" height="20" class="img-fluid g-mr-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
+                        <img class="g-width-40 g-height-40 rounded-circle g-mr-15" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
                         <!-- Figure Info -->
                         <div class="d-block">
                           <div class="g-mb-5">
                             <h4 class="h5 g-mb-0"><?php echo $result['name']; ?></h4>
                             <em class="d-block g-color-primary g-font-style-normal g-font-size-default"><?php echo $rank_name ?></em>
+                            <!--<img width="20" height="20" class="img-fluid g-mr-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">-->
                           </div>
                         </div>
                         <!-- End Figure Info -->
