@@ -26,10 +26,10 @@
               foreach ($results as $result) {
                 $rank_name = $roster -> get_guildRank($result['rank']);
               ?>
-              <div class='col-lg-4 col-md-6 col-12 g-mb-30'>
+              <div class='col-lg-3 col-md-4 col-6 g-mb-30'>
                 <figure class="u-block-hover u-shadow-v19 g-bg-white g-rounded-4 g-pa-5 g-brd-black g-brd-1 g-brd-around">
                   <div class="d-flex justify-content-start">
-                    <img class="g-width-70 g-height-70 rounded-circle" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
+                    <img class="g-width-60 g-height-60 rounded-circle" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
                     <img class="g-width-20 g-height-20 rounded-circle g-mr-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
                     <!-- Figure Info -->
                     <div class="d-block">
@@ -50,7 +50,7 @@
                               <span class="u-icon-v1 u-icon-size--xs g-mr-5">
                                 <img width="30" height="30" src="assets/img/logo.armory.png">
                               </span>
-                              Armory
+                              <!-- Armory -->
                             </a>
                           </li>
                           <li class="list-inline-item align-middle g-mx-7 g-color-white">
@@ -58,7 +58,7 @@
                               <span class="u-icon-v1 u-icon-size--xs g-mr-5">
                                 <img width="30" height="30" src="assets/img/logo.warlogs.png">
                               </span>
-                              Logs
+                              <!-- Logs -->
                             </a>
                           </li>
                           <li class="list-inline-item align-middle g-mx-7">
@@ -66,7 +66,7 @@
                               <span class="u-icon-v1 u-icon-size--xs g-mr-5">
                                 <img width="30" height="30" src="assets/img/logo.raiderio.png">
                               </span>
-                              Raider.IO
+                              <!-- Raider.IO -->
                             </a>
                           </li>
                         </ul>
