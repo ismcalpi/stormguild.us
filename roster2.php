@@ -22,7 +22,7 @@
             <div class="row">
               <div class="col-lg-2 col-md-3 col-12">
                 <div class="d-flex justify-content-start"><img class="img-fluid" src="<?php echo $class[2]; ?>" /></div>
-                <h3 style="text-center:center;color:<?php echo $class[2]; ?>;"><?php echo $class[0]; ?></h3>
+                <!--<h3 style="text-center:center;color:<?php echo $class[2]; ?>;"><?php echo $class[0]; ?></h3> -->
               </div>
               <div class="col-lg-10 col-md-9 col-12">
                 <div class="row">
@@ -35,11 +35,11 @@
                     <figure class="u-block-hover u-shadow-v19 g-bg-white g-rounded-4 g-pa-15 g-brd-black g-brd-2 g-brd-around">
                       <div class="d-flex justify-content-start">
                         <img class="g-width-80 g-height-80 rounded-circle g-mr-15" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
-
+                        <img width="20" height="20" class="img-fluid g-mr-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
                         <!-- Figure Info -->
                         <div class="d-block">
                           <div class="g-mb-5">
-                            <h4 class="h5 g-mb-0"><img width="20" height="20" class="img-fluid g-mr-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg"> <?php echo $result['name']; ?></h4>
+                            <h4 class="h5 g-mb-0"><?php echo $result['name']; ?></h4>
                             <em class="d-block g-color-primary g-font-style-normal g-font-size-default"><?php echo $rank_name ?></em>
                           </div>
                         </div>
