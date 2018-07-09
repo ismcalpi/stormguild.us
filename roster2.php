@@ -30,12 +30,12 @@
                 <figure class="u-block-hover u-shadow-v19 g-bg-white g-rounded-4 g-pa-5 g-brd-black g-brd-1 g-brd-around">
                   <div class="d-flex justify-content-start">
                     <img class="g-width-60 g-height-60 rounded-circle g-mr-15" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
+                    <img class="g-width-60 g-height-60 rounded-circle g-mr-15" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
                     <!-- Figure Info -->
                     <div class="d-block">
                       <div class="g-mb-5">
                         <h4 class="h5 g-mb-0"><?php echo $result['name']; ?></h4>
                         <em class="d-block g-color-primary g-font-style-normal g-font-size-default"><?php echo $rank_name ?></em>
-                        <!--<img width="20" height="20" class="img-fluid g-mr-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">-->
                       </div>
                     </div>
                     <!-- End Figure Info -->
