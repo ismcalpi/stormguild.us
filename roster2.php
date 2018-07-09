@@ -27,7 +27,7 @@
                 $rank_name = $roster -> get_guildRank($result['rank']);
               ?>
               <div class='col-lg-4 col-md-6 col-12 g-mb-30'>
-                <figure class="u-block-hover u-shadow-v19 g-bg-white g-rounded-4 g-pa-15 g-brd-black g-brd-2 g-brd-around">
+                <figure class="u-block-hover u-shadow-v19 g-bg-white g-rounded-4 g-pa-5 g-brd-black g-brd-1 g-brd-around">
                   <div class="d-flex justify-content-start">
                     <img class="g-width-60 g-height-60 rounded-circle g-mr-15" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
                     <!-- Figure Info -->
