@@ -18,7 +18,7 @@
             $classList = $roster -> get_classList();
             foreach ($classList as $class) {
 
-              echo "<p>$class[0], $class[1], $class[2]</p>";
+              echo "<p>".$class[0].", ".$class[1].", ".$class[2]."</p>";
 
             }
           ?>
