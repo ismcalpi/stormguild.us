@@ -1,7 +1,7 @@
 <?php
 	class roster {
 
-    function get_classInfo ($classNum) {
+    public function get_classInfo ($classNum) {
       switch ($classNum) {
         case 1:
           $className = 'Warrior';
@@ -72,7 +72,7 @@
 
     }
 
-    function get_guildRank ($rankNum) {
+    public function get_guildRank ($rankNum) {
       switch ($rankNum) {
         case 0:
           $rankName = 'Guild Master';
@@ -105,7 +105,7 @@
       $classList = array();
       foreach ($results as $result) {
         $classInfo = $this -> get_classInfo($result['class']);
-        array_push($classList,$classinfo);
+        array_push($classList,$classInfo);
       }
       sort($classList);
       return $classList;
