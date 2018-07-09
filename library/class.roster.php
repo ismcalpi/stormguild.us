@@ -93,7 +93,9 @@
     public function get_classResult ($classInfo) {
       include_once 'library/class.database.php';
       $db = new Database();
-      return $db -> read_select("SELECT * FROM stormguild.guild_roster WHERE rank in (0,2,4,6) AND class = $classInfo[3] order by rank asc, name asc";
+      $sql = "SELECT * FROM stormguild.guild_roster WHERE rank in (0,2,4,6) AND class = ".$classInfo[3]." order by rank asc, name asc";
+      $result = $db -> read_select($sql);
+      return $result;
     }
 
     public function get_classList () {
