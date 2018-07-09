@@ -9,7 +9,6 @@
         <div class="u-heading-v3-1 text-center g-mb-15">
           <h2 class="text-uppercase h4 u-heading-v3__title g-brd-blue">Guild Roster V2.0 Testing</h2>
         </div>
-        <div class="row">
           <?php
 
             include_once 'library/class.roster.php';
@@ -18,12 +17,15 @@
             $classList = $roster -> get_classList();
             foreach ($classList as $class) {
 
-              echo "<p>".$class[0].", ".$class[1].", ".$class[2]."</p>";
+              #echo "<p>".$class[0].", ".$class[1].", ".$class[2]."</p>";
+          ?>
+            <div class="row">
+              <h1 style="text-color:<?php echo $class[1]; ?>"><img src="<?php echo $class[2]; ?>" /><?php echo $class[0]; ?></h1>
 
+            </div>
+          <?php
             }
           ?>
-
-        </div>
       </div>
     </main>
   </body>
