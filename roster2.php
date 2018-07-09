@@ -21,7 +21,7 @@
           ?>
             <div class="row">
               <div class="col-lg-2 col-md-3 col-12">
-                <div class="d-flex justify-content-start"><img class="img-fluid" src="<?php echo $class[2]; ?>" /></div>
+                <img class="g-width-100 g-height-100" src="<?php echo $class[2]; ?>">
                 <!--<h3 style="text-center:center;color:<?php echo $class[2]; ?>;"><?php echo $class[0]; ?></h3> -->
               </div>
               <div class="col-lg-10 col-md-9 col-12">
@@ -34,7 +34,7 @@
                   <div class='col-lg-4 col-md-6 col-12 g-mb-30'>
                     <figure class="u-block-hover u-shadow-v19 g-bg-white g-rounded-4 g-pa-15 g-brd-black g-brd-2 g-brd-around">
                       <div class="d-flex justify-content-start">
-                        <img class="g-width-40 g-height-40 rounded-circle g-mr-15" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
+                        <img class="g-width-60 g-height-60 rounded-circle g-mr-15" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
                         <!-- Figure Info -->
                         <div class="d-block">
                           <div class="g-mb-5">
