@@ -104,7 +104,7 @@
       $results = $db -> read_select("SELECT DISTINCT class from stormguild.guild_roster WHERE rank in (0,2,4,6) order by class asc");
       $classList = array();
       foreach ($results as $result) {
-        $classInfo = get_classInfo($result['class']);
+        $classInfo = $this -> get_classInfo($result['class']);
         array_push($classList,$classinfo);
       }
       sort($classList);
