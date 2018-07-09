@@ -46,7 +46,7 @@
                         <!-- Figure Social Icons -->
                         <ul class="list-inline text-center g-flex-middle-item">
                           <li class="list-inline-item align-middle g-mx-7 g-color-white">
-                            <a target="_blank" href="https://worldofwarcraft.com/en-us/character/stormrage/<?php echo urlencode($result['name']); ?>" class="g-color-white">
+                            <a target="_blank" alt="WoW Armory" href="https://worldofwarcraft.com/en-us/character/stormrage/<?php echo urlencode($result['name']); ?>" class="g-color-white">
                               <span class="u-icon-v1 u-icon-size--xs g-mr-5">
                                 <img width="30" height="30" src="assets/img/logo.armory.png">
                               </span>
@@ -54,7 +54,7 @@
                             </a>
                           </li>
                           <li class="list-inline-item align-middle g-mx-7 g-color-white">
-                            <a target="_blank" href="https://www.warcraftlogs.com/character/us/stormrage/<?php echo urlencode($result['name']); ?>" class="g-color-white">
+                            <a target="_blank" alt="Warcraft Logs" href="https://www.warcraftlogs.com/character/us/stormrage/<?php echo urlencode($result['name']); ?>" class="g-color-white">
                               <span class="u-icon-v1 u-icon-size--xs g-mr-5">
                                 <img width="30" height="30" src="assets/img/logo.warlogs.png">
                               </span>
@@ -62,7 +62,7 @@
                             </a>
                           </li>
                           <li class="list-inline-item align-middle g-mx-7">
-                            <a target="_blank" href="https://raider.io/characters/us/stormrage/<?php echo urlencode($result['name']); ?>" class="g-color-white">
+                            <a target="_blank" alt="Raider.IO" href="https://raider.io/characters/us/stormrage/<?php echo urlencode($result['name']); ?>" class="g-color-white">
                               <span class="u-icon-v1 u-icon-size--xs g-mr-5">
                                 <img width="30" height="30" src="assets/img/logo.raiderio.png">
                               </span>
