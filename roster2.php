@@ -18,7 +18,7 @@
           ?>
             <div class="row">
               <div style="border-color: <?php echo $class[1]; ?> !important;" class="col-12 u-heading-v1-1 g-bg-main g-mb-20">
-                <h3 style="color:<?php echo $class[1]; ?>;" class="u-heading-v1__title"><img style="margin-right:10px;" src="<?php echo $class[2]; ?>"><?php echo $class[0]; ?></h3>
+                <h3 style="color:<?php echo $class[1]; ?>;" class="h3 u-heading-v1__title"><img style="margin-right:10px;" src="<?php echo $class[2]; ?>"><?php echo $class[0]; ?></h3>
               </div>
               <?php
               $results = $roster -> get_classResult($class);
@@ -26,7 +26,7 @@
                 $rank_name = $roster -> get_guildRank($result['rank']);
               ?>
               <div class='col-lg-3 col-md-6 col-12 g-mb-30'>
-                <figure class="u-block-hover u-shadow-v19 g-bg-white g-rounded-4 g-pa-5 g-brd-black g-brd-1 g-brd-around">
+                <figure class="u-block-hover u-shadow-v19 g-bg-white g-rounded-4 g-pa-5">
                   <div class="d-flex justify-content-start">
                     <img class="g-width-60 g-height-60 rounded-circle" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
                     <img class="g-width-20 g-height-20 rounded-circle g-mr-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
