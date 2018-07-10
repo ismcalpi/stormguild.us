@@ -7,7 +7,7 @@
       <?php include 'templates/all.navbar.php' ?>
       <div class="container g-bg-white g-brd-around g-brd-white g-brd-2 g-mt-80 g-pa-30" style="min-height:100vh;">
         <div class="u-heading-v3-1 text-center g-mb-15">
-          <h2 class="text-uppercase h4 u-heading-v3__title g-brd-blue">Guild Roster V2.0 Testing</h2>
+          <h2 class="text-uppercase h4 u-heading-v3__title g-brd-blue">Guild Roster</h2>
         </div>
           <?php
             include_once 'library/class.roster.php';
