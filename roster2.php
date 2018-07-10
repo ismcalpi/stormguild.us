@@ -16,9 +16,9 @@
             $classList = $roster -> get_classList();
             foreach ($classList as $class) {
           ?>
-            <div class="row">
-              <div style="border-color: <?php echo $class[1]; ?> !important;" class="col-12 u-heading-v1-1 g-bg-main g-mb-10 g-mx-20 g-px-15">
-                <h3 style="color:<?php echo $class[1]; ?>;" class="h3 u-heading-v1__title g-pl-0 g-ml-0"><img style="margin-right:10px;" src="<?php echo $class[2]; ?>"><?php echo $class[0]; ?></h3>
+            <div class="row g-mx-20">
+              <div style="border-color: <?php echo $class[1]; ?> !important;" class="col-12 u-heading-v1-1 g-bg-main g-mb-10">
+                <h3 style="color:<?php echo $class[1]; ?>;" class="h3 u-heading-v1__title"><img style="margin-right:10px;" src="<?php echo $class[2]; ?>"><?php echo $class[0]; ?></h3>
               </div>
               <?php
               $results = $roster -> get_classResult($class);
