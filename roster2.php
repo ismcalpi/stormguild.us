@@ -10,7 +10,6 @@
           <h2 class="text-uppercase h4 u-heading-v3__title g-brd-blue">Guild Roster V2.0 Testing</h2>
         </div>
 
-        <div class="row">
           <?php
 
             include_once 'library/class.roster.php';
@@ -19,7 +18,6 @@
             $classList = $roster -> get_classList();
             foreach ($classList as $class) {
           ?>
-          <div class="col-auto">
             <div class="row">
               <div class="col-12">
                 <h3 style="color:<?php echo $class[1]; ?>;"><img style="margin-right:10px;" src="<?php echo $class[2]; ?>"><?php echo $class[0]; ?></h3>
@@ -77,7 +75,6 @@
                       </div>
                     </figcaption>
                     <!-- End Figure Caption -->
-
                   </div>
                 </figure>
               </div>
@@ -85,12 +82,10 @@
               }
               ?>
             </div>
-          </div>
           <?php
             }
           ?>
         </div>
-      </div>
     </main>
   </body>
   <?php include 'templates/home.js.php' ?>
