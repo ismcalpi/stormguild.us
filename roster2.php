@@ -17,7 +17,7 @@
             foreach ($classList as $class) {
           ?>
             <div class="row">
-              <div class="col-12">
+              <div style="border-color: <?php echo $class[1]; ?> !important;" class="col-12 u-heading-v1-1 g-bg-main g-mb-20">
                 <h3 style="color:<?php echo $class[1]; ?>;"><img style="margin-right:10px;" src="<?php echo $class[2]; ?>"><?php echo $class[0]; ?></h3>
               </div>
               <?php
