@@ -81,7 +81,7 @@
                   <a class="nav-link g-px-0" href="about.php">About Us</a>
                 </li>
                 <li class="dropdown-item">
-                  <a class="nav-link g-px-0" href="roster.php">Guild Roster</a>
+                  <a class="nav-link g-px-0" href="guildroster.php">Guild Roster</a>
                 </li>
                 <li class="dropdown-item">
                   <a class="nav-link g-px-0" href="sales.php">Sales</a>
