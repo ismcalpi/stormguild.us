@@ -10,7 +10,8 @@
   $sqlCount = $db -> read_row($sql);
 
   if (count($json->members) != $sqlCount['count']) {
-    $result = $db -> write_query('TRUNCATE TABLE stormguild.guild_roster');
+    $sql = "TRUNCATE TABLE stormguild.guild_roster";
+    $result = $db -> write_query($sql);
     echo 'Detected change in roster, truncating table and recreating.<br /><br />';
   }
 
