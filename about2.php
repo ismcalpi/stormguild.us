@@ -13,10 +13,10 @@
 					foreach($sections as $section) {
 				?>
 				<section class="g-pt-20 g-mx-50 g-my-30">
-					<div class="g-bg-blue g-mb-30 g-rounded-top-10">
+					<div class="g-bg-blue g-mb-0 g-pa-10 g-rounded-top-5">
 						<h2 class="h2 text-uppercase g-font-weight-300 g-color-white g-mx-20"><?php echo $section['title']; ?></h2>
 					</div>
-					<div class="g-brd-2 g-brd-blue g-brd-around">
+					<div class="g-brd-2 g-mt-0 g-brd-blue g-brd-around">
 						<?php echo $section['content']; ?>
 					</div>
 				</section>
