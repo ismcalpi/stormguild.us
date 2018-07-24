@@ -8,7 +8,7 @@
 			<div class="container g-bg-white g-brd-around g-brd-white g-brd-2 g-mt-80 m-pa-30" style="min-height:100vh;">
 				<?php
 					include_once 'library/class.database.php';
-
+					$db = new database();
 					$sections = $db -> read_select("select * from stormguild.about_us where is_active = 1 order by a_order asc");
 					foreach($sections as $section) {
 				?>
