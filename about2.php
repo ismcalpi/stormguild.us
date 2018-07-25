@@ -14,14 +14,11 @@
 						foreach($sections as $section) {
 					?>
 					<div class="<?php echo $section['size']; ?> g-pa-5">
-						<section class=" g-bg-white g-brd-around g-brd-blue g-brd-2 g-pa-20">
-
+						<section class="g-bg-white g-brd-around g-brd-blue g-brd-2 g-px-30 g-py-10">
 							<div class="u-heading-v1-1 g-bg-main g-brd-blue g-mb-20 text-center">
-								<h2 class="h3 u-heading-v1__title g-mx-20"><?php echo $section['title']; ?></h2>
+								<h2 class="h3 u-heading-v1__title"><?php echo $section['title']; ?></h2>
 							</div>
-
 							<?php echo $section['content']; ?>
-
 						</section>
 					</div>
 					<?php
