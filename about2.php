@@ -5,7 +5,7 @@
 	<body class="main-body">
 		<main>
 			<?php include 'templates/all.navbar.php' ?>
-			<div class="container g-mt-80" style="min-height:100vh;">
+			<div class="container row g-mt-80" style="min-height:100vh;">
 				<?php
 					include_once 'library/class.database.php';
 					$db = new database();
