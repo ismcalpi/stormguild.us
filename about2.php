@@ -13,15 +13,17 @@
 						$sections = $db -> read_select("select * from stormguild.about_us where is_active = 1 order by a_order asc");
 						foreach($sections as $section) {
 					?>
-					<section class="<?php echo $section['size']; ?> g-bg-white g-brd-around g-brd-blue g-brd-2 g-pa-20 g-ma-10">
+					<div class="g-pa-10">
+						<section class="<?php echo $section['size']; ?> g-bg-white g-brd-around g-brd-blue g-brd-2 g-pa-20">
 
-						<div class="u-heading-v1-1 g-bg-main g-brd-blue g-mb-20 text-center">
-							<h2 class="h3 u-heading-v1__title g-mx-20"><?php echo $section['title']; ?></h2>
-						</div>
+							<div class="u-heading-v1-1 g-bg-main g-brd-blue g-mb-20 text-center">
+								<h2 class="h3 u-heading-v1__title g-mx-20"><?php echo $section['title']; ?></h2>
+							</div>
 
-						<?php echo $section['content']; ?>
+							<?php echo $section['content']; ?>
 
-					</section>
+						</section>
+					</div>
 					<?php
 						}
 					?>
