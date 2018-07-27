@@ -16,7 +16,7 @@
       $title = $db -> quote($_POST['title']);
       $content = $db -> quote($_POST['content']);
 
-      $sql = "UPDATE stormguild.about_us SET a_oder = ".$order." AND size = ".$size." AND title = ".$title." AND content = ".$content." AND is_active = ".$active." AND update_datetime = now() AND update_user = user() WHERE aboutus_id = ".$id;
+      $sql = "UPDATE stormguild.about_us SET a_order = ".$order." AND size = ".$size." AND title = ".$title." AND content = ".$content." AND is_active = ".$active." AND update_datetime = now() AND update_user = user() WHERE aboutus_id = ".$id;
       $result = $db -> sql_query($sql);
       echo 'Attempting to Update Entry';
       echo $db -> error();
@@ -30,9 +30,10 @@
       $title = $db -> quote($_POST['title']);
       $content = $db -> quote($_POST['content']);
 
-      $sql = "INSERT INTO stormguild.about_us VALUES (null,".$order.",".$size.",".$title.", ".$content.", ".$active.", now(), user())";
+      $sql = "INSERT INTO stormguild.about_us VALUES (null,".$order.",".$size.",".$title.", ".$content.", ".$active.", now(), user(), null, null)";
       $result = $db -> sql_query($sql);
       echo 'Attempting to Add Entry';
+      echo '<br />'
       echo $db -> error();
 
     } else if ($_POST['action'] == 'delete') {
@@ -41,12 +42,11 @@
 
       $sql = "DELETE FROM stormguild.about_us WHERE aboutus_id = ".$id;
       $result = $db -> sql_query($sql);
-      echo $db -> error();
-      Echo 3;
+
     }
 
-    #$header = "Location:".$_POST['redirect'];
-    #header($header);
+    $header = "Location:".$_POST['redirect'];
+    header($header);
 
   }
 
