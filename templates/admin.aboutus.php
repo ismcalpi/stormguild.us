@@ -23,7 +23,8 @@
         name="content" rows="6">Add Content Here...</textarea>
     </div>
     <div class="col-12">
-      <input type="submit" class="btn btn-md u-btn-primary g-ma-10" value="Add"></input>
+      <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
+      <input type="submit" class="btn btn-md u-btn-primary g-ma-10" name="action" value="add"></input>
     </div>
   </div>
 </form>
@@ -56,8 +57,10 @@
           name="content" rows="6"><?php echo $section['content']; ?></textarea>
       </div>
       <div class="col-12">
-        <input type="submit" class="btn btn-md u-btn-primary g-ma-10" value="Update"></input>
-        <input type="submit" class="btn btn-md u-btn-red g-ma-10" value="Delete"></input>
+        <input type="hidden" name="aboutus_id" value="<?php echo $section['aboutus_id']; ?>">
+        <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
+        <input type="submit" class="btn btn-md u-btn-primary g-ma-10" name="action" value="update"></input>
+        <input type="submit" class="btn btn-md u-btn-red g-ma-10" name="action" value="delete"></input>
       </div>
     </div>
   </form>
