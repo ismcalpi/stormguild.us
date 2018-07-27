@@ -22,8 +22,6 @@
 
     } else if ($_POST['action'] == 'add') {
 
-      $id = $_POST['aboutus_id'];
-
       $order = $_POST['order'];
       $size = $_POST['size'];
       $active = $_POST['active'];
@@ -34,6 +32,7 @@
       $sql = "INSERT INTO stormguild.about_us VALUES (null,".$order.",".$size.",".$title.", ".$content.", ".$active.", now(), user())";
       $result = $db -> sql_query($sql);
       Echo 2;
+
     } else if ($_POST['action'] == 'delete') {
 
       $id = $_POST['aboutus_id'];
