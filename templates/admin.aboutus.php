@@ -24,7 +24,8 @@
     </div>
     <div class="col-12">
       <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
-      <input type="submit" class="btn btn-md u-btn-primary g-ma-10" name="action" value="add"></input>
+      <input type="hidden" name="action" value="add">
+      <input type="submit" class="btn btn-md u-btn-primary g-ma-10" value="Add"></input>
     </div>
   </div>
 </form>
@@ -59,8 +60,8 @@
       <div class="col-12">
         <input type="hidden" name="aboutus_id" value="<?php echo $section['aboutus_id']; ?>">
         <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
-        <input type="submit" class="btn btn-md u-btn-primary g-ma-10" name="action" value="update"></input>
-        <input type="submit" class="btn btn-md u-btn-red g-ma-10" name="action" value="delete"></input>
+        <input type="hidden" name="action" value="update">
+        <input type="submit" class="btn btn-md u-btn-primary g-ma-10" value="Update"></input>
       </div>
     </div>
   </form>
