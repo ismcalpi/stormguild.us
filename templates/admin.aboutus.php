@@ -62,6 +62,14 @@
         <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
         <input type="hidden" name="action" value="update">
         <input type="submit" class="btn btn-md u-btn-primary g-ma-10" value="Update"></input>
+
+        <form method="post" action="library/action.admin.aboutus.php">
+          <input type="hidden" name="aboutus_id" value="<?php echo $section['aboutus_id']; ?>">
+          <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
+          <input type="hidden" name="action" value="delete">
+          <input type="submit" class="btn btn-md u-btn-red g-ma-10" value="Delete"></input>
+        </form>
+
       </div>
     </div>
   </form>

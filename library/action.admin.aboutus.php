@@ -34,7 +34,7 @@
 
       $sql = "INSERT INTO stormguild.about_us VALUES (null,".$order.",".$size.",".$title.", ".$content.", ".$active.", now(), user(), null, null)";
       $result = $db -> sql_query($sql);
-      
+
       echo 'Attempting to Add Entry';
       echo '<br />';
       echo $db -> error();
@@ -45,6 +45,10 @@
 
       $sql = "DELETE FROM stormguild.about_us WHERE aboutus_id = ".$id;
       $result = $db -> sql_query($sql);
+
+      echo 'Attempting to Delete Entry';
+      echo '<br />';
+      echo $db -> error();
 
     }
 
