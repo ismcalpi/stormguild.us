@@ -9,15 +9,15 @@
   ?>
 
   <form class="g-mx-50" enctype="multipart/form-data" method="post" action="library/action.admin.aboutus.php">
-    <div class="row g-ma-10">
+    <div class="row g-ma-10 g-brd-around g-brd-1 g-brd-black">
 
-      <div class="col-md-4 col-12">
+      <div class="col-md-3 col-12">
 
 
 
       </div>
 
-      <div class="col-md-8 col-12">
+      <div class="col-md-9 col-12">
         <label for="title">Section Title</label>
         <input id="name" class="form-control form-control-md rounded-0 g-ma-10"
           type="text" name="title" value="<?php echo $section['title']; ?>"></input>
