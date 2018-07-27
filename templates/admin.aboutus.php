@@ -8,8 +8,8 @@
   foreach($sections as $section) {
   ?>
 
-  <form enctype="multipart/form-data" method="post" action="library/action.admin.aboutus.php">
-    <div class="row g-brd-around g-brd-2 g-brd-blue g-ma-30">
+  <form class="g-mx-50" enctype="multipart/form-data" method="post" action="library/action.admin.aboutus.php">
+    <div class="row g-ma-10">
 
       <div class="col-md-4 col-12">
 
