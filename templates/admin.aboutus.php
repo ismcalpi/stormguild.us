@@ -36,7 +36,14 @@
         <label for="content">Section Content (Accepts HTML)</label>
         <textarea id="content" class="form-control form-control-md rounded-0 g-ma-10"
           name="content"><?php echo $section['content']; ?></textarea>
-          
+
+      </div>
+
+      <div class="col-12">
+
+        <input type="submit" class="btn btn-md u-btn-primary g-ma-5" value="Update"></input>
+        <input type="submit" class="btn btn-md u-btn-red g-ma-5" value="Delete"></input>
+
       </div>
 
     </div>
