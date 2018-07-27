@@ -1,5 +1,12 @@
 
-<h1 class="h1">Work in Progress</h1>
+<h3 class="h3">Instructions</h1>
+<p>
+  Order represents the order which the sections will appear on the about us page.<br />
+  Size is maximum of 12, where a value of 6 will take up half the width.<br />
+  Active is a 0 for hide, 1 for show.<br />
+  Section Title requires plain text.<br />
+  Section Content requires HTML, at a minimum <\p\> tags.<br />
+</p>
 
 <form class="g-mx-40" enctype="multipart/form-data" method="post" action="library/action.admin.aboutus.php">
   <div class="row g-ma-10 g-brd-around g-brd-1 g-brd-black">
