@@ -35,7 +35,7 @@
 
         <label for="content">Section Content (Accepts HTML)</label>
         <textarea id="content" class="form-control form-control-md rounded-0"
-          name="content"><?php echo $section['content']; ?></textarea>
+          name="content" rows="6"><?php echo $section['content']; ?></textarea>
 
       </div>
 
