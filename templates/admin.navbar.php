@@ -54,6 +54,12 @@
             Banners
         </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link <?php echo $bannerActive; ?>" href="admin.php?mode=aboutus">
+            <i class="fa fa-book u-tab-line-icon-pro g-mr-3"></i>
+            About Us
+        </a>
+    </li>
     <!-- <li class="nav-item">
         <a class="nav-link" href="admin.php?mode=guildnews">
             <i class="fa fa-file-photo-o u-tab-line-icon-pro g-mr-3"></i>
