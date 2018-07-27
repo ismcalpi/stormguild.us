@@ -18,8 +18,8 @@
 
       $sql = "UPDATE stormguild.about_us SET a_oder = ".$order." AND size = ".$size." AND title = ".$title." AND content = ".$content." AND is_active = ".$active." AND update_datetime = now() AND update_user = user() WHERE aboutus_id = ".$id;
       $result = $db -> sql_query($sql);
-      echo $result;
-      Echo 1;
+      echo 'Attempting to Update Entry';
+      echo $db -> error();
 
     } else if ($_POST['action'] == 'add') {
 
@@ -32,8 +32,8 @@
 
       $sql = "INSERT INTO stormguild.about_us VALUES (null,".$order.",".$size.",".$title.", ".$content.", ".$active.", now(), user())";
       $result = $db -> sql_query($sql);
-      echo $result;
-      Echo 2;
+      echo 'Attempting to Add Entry';
+      echo $db -> error();
 
     } else if ($_POST['action'] == 'delete') {
 
@@ -41,7 +41,7 @@
 
       $sql = "DELETE FROM stormguild.about_us WHERE aboutus_id = ".$id;
       $result = $db -> sql_query($sql);
-      echo $result;
+      echo $db -> error();
       Echo 3;
     }
 
