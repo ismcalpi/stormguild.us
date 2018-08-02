@@ -1,6 +1,6 @@
 
 
-<dvi class="row">
+<div class="row g-mx-40">
   <div class="col-md-6 col-12">
     <h3 class="h3">Instructions</h1>
     <hr />
