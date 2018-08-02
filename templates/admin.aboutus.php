@@ -17,7 +17,11 @@
     <hr />
     <ul>
       <li>Create a Bolded Blue Text (Heading) <strong class="g-color-blue">Like This</strong> <xmp><strong class="g-color-blue">Raid Times</strong></xmp></li>
-      <li>Pretty Blue Bullet Point List <i class="fa fa-circle-o-notch g-color-blue g-mt-5 g-mr-10"></i> <xmp><ul class="list-unstyled"><li><i class="fa fa-circle-o-notch g-color-blue g-mt-5 g-mr-10"></i></li></ul></xmp></li>
+      <li>Pretty Blue Bullet Point List <i class="fa fa-circle-o-notch g-color-blue g-mt-5 g-mr-10"></i>
+        <xmp>
+          <ul class="list-unstyled"></xmp><br /><xmp>    <li><i class="fa fa-circle-o-notch g-color-blue g-mt-5 g-mr-10"></i></li></xmp><br /><xmp></ul>
+        </xmp>
+      </li>
       <li>Add a Success Badge <span class="u-label u-label-success g-mr-10 g-ml-10 g-mb-15">Like This</span> <xmp><span class="u-label u-label-success g-mr-10 g-ml-10 g-mb-15">Goal Achieved</span></xmp></li>
     </ul>
   </div>
