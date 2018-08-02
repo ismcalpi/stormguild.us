@@ -16,9 +16,9 @@
     <h3 class="h3">HTML Examples</h1>
     <hr />
     <ul>
-      <li>Create a Bolded Blue Text (Heading) <strong class="g-color-blue">Like This</strong> <![CDATA[<strong class="g-color-blue">Raid Times</strong>]]></li>
-      <li>Pretty Blue Bullet Point <i class="fa fa-circle-o-notch g-color-blue g-mt-5 g-mr-10"></i> <![CDATA[<i class="fa fa-circle-o-notch g-color-blue g-mt-5 g-mr-10"></i>]]></li>
-      <li>Add a Success Badge <span class="u-label u-label-success g-mr-10 g-ml-10 g-mb-15">Like This</span> <![CDATA[<span class="u-label u-label-success g-mr-10 g-ml-10 g-mb-15">Goal Achieved</span>]]></li>
+      <li>Create a Bolded Blue Text (Heading) <strong class="g-color-blue">Like This</strong> <xmp><strong class="g-color-blue">Raid Times</strong></xmp></li>
+      <li>Pretty Blue Bullet Point <i class="fa fa-circle-o-notch g-color-blue g-mt-5 g-mr-10"></i> <xmp><i class="fa fa-circle-o-notch g-color-blue g-mt-5 g-mr-10"></i></xmp></li>
+      <li>Add a Success Badge <span class="u-label u-label-success g-mr-10 g-ml-10 g-mb-15">Like This</span> <xmp><span class="u-label u-label-success g-mr-10 g-ml-10 g-mb-15">Goal Achieved</span></xmp></li>
     </ul>
   </div>
 </div>
