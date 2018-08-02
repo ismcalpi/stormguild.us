@@ -78,7 +78,7 @@
               <!-- Submenu -->
               <ul class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-bottom g-brd-bottom-2 g-brd-blue g-brd-top-2 g-mt-0 g-mt-10--lg--scrolling" aria-labelledby="nav-link-1">
                 <li class="dropdown-item">
-                  <a class="nav-link g-px-0" href="about.php">About Us</a>
+                  <a class="nav-link g-px-0" href="aboutus.php">About Us</a>
                 </li>
                 <li class="dropdown-item">
                   <a class="nav-link g-px-0" href="guildroster.php">Guild Roster</a>
