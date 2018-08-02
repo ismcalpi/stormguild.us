@@ -104,10 +104,10 @@ if(!empty($application)) {
                     </small>
                 </h5>
             </div>
-            <div class="col-2 g-py-5">
+            <div class="col-sm-2 g-py-5">
                 <a target="_blank" href="<?php echo $altArmory; ?>" class="btn btn-block u-btn-outline-blue g-mb-10">Armory</a>
             </div>
-            <div class="col-2 g-py-5">
+            <div class="col-sm-2 g-py-5">
                 <a target="_blank" href="<?php echo $altLogs; ?>" class="btn btn-block u-btn-outline-purple g-mb-10">Logs</a>
             </div>
         </div>

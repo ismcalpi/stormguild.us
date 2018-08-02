@@ -89,7 +89,7 @@
           <input class="form-control rounded-0 u-form-control" name="charSpec" placeholder="Main Spec" type="text" required>
         </div>
         <div class="form-group col-md-12 g-mb-20">
-          <input class="form-control rounded-0 u-form-control" name="charArt" placeholder="Character Artifact Progression (Ex. Havoc 75, Vengeance 70)" type="text" required>
+          <input class="form-control rounded-0 u-form-control" name="charArt" placeholder="Character Notes (Include Azerite Level)" type="text" required>
         </div>
         <div class="form-group col-md-6 g-mb-20">
           <input class="form-control rounded-0 u-form-control" name="charArmory" placeholder="WoW Armory Link" type="url" required>
@@ -113,7 +113,7 @@
         <input class="form-control rounded-0 u-form-control" name="altSpec" placeholder="Main Spec" type="text" optional>
       </div>
       <div class="form-group col-md-12 g-mb-20">
-        <input class="form-control rounded-0 u-form-control" name="altArt" placeholder="Character Artifact Progression (Ex. Havoc 75, Vengeance 70)" type="text" optional>
+        <input class="form-control rounded-0 u-form-control" name="altArt" placeholder="Character Notes (Include Azerite Level)" type="text" optional>
       </div>
       <div class="form-group col-md-6 g-mb-20">
         <input class="form-control rounded-0 u-form-control" name="altArmory" placeholder="WoW Armory Link" type="url" optional>
