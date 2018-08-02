@@ -1,12 +1,27 @@
 
-<h3 class="h3">Instructions</h1>
-<p>
-  Order represents the order which the sections will appear on the about us page.<br />
-  Size is maximum of 12, where a value of 6 will take up half the width.<br />
-  Active is a 0 for hide, 1 for show.<br />
-  Section Title requires plain text.<br />
-  Section Content requires HTML, at a minimum <\p\> tags.<br />
-</p>
+
+<dvi class="row">
+  <div class="col-md-6 col-12">
+    <h3 class="h3">Instructions</h1>
+    <hr />
+    <p>
+      Order represents the order which the sections will appear on the about us page.<br />
+      Size is maximum of 12, where a value of 6 will take up half the width.<br />
+      Active is a 0 for hide, 1 for show.<br />
+      Section Title requires plain text.<br />
+      Section Content requires HTML, at a minimum <\p\> tags.<br />
+    </p>
+  </div>
+  <div class="col-md-6 col-12">
+    <h3 class="h3">HTML Examples</h1>
+    <hr />
+    <ul>
+      <li>Create a Bolded Blue Text (Heading) <strong class="g-color-blue">Like This</strong> <![CDATA[<strong class="g-color-blue">Raid Times</strong>]]></li>
+      <li>Pretty Blue Bullet Point <i class="fa fa-circle-o-notch g-color-blue g-mt-5 g-mr-10"></i> <![CDATA[<i class="fa fa-circle-o-notch g-color-blue g-mt-5 g-mr-10"></i>]]></li>
+      <li>Add a Success Badge <span class="u-label u-label-success g-mr-10 g-ml-10 g-mb-15">Like This</span> <![CDATA[<span class="u-label u-label-success g-mr-10 g-ml-10 g-mb-15">Goal Achieved</span>]]></li>
+    </ul>
+  </div>
+</div>
 
 <form class="g-mx-40" enctype="multipart/form-data" method="post" action="library/action.admin.aboutus.php">
   <div class="row g-ma-10 g-brd-around g-brd-1 g-brd-black">
