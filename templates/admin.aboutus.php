@@ -24,7 +24,7 @@
 </div>
 
 <form class="g-mx-40" enctype="multipart/form-data" method="post" action="library/action.admin.aboutus.php">
-  <div class="row g-ma-10 g-brd-around g-brd-1 g-brd-black">
+  <div class="row g-brd-around g-brd-1 g-brd-black">
     <div class="col-md-3 col-12">
       <label for="order">Order</label>
       <input id="order" class="form-control form-control-md rounded-0"
