@@ -23,11 +23,7 @@
 			$access = $user_rank; #Raider or Officer
 			$appid = $result['application_id'];
 			$username = $user -> data['username'];
-			if ($result['archived?'] == 'yes') {
-				$status = 'archived';
-			} else {
-				$status = $result['status'];
-			}
+			$status = $result['status'];
 		}
 
 	?>

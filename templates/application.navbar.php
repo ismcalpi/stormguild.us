@@ -27,15 +27,6 @@
     <li class="nav-item">
         <a class="nav-link text-center" href="#">
             <strong>Storm Applications</strong><br />
-            <?php
-              if (!$status) {
-                echo $result['archived?'];
-                echo 'No Status';
-              } else {
-                echo $result['archived?'];
-                echo $status;
-              }
-            ?>
         </a>
     </li>
 
@@ -149,7 +140,7 @@
       <!-- End Declined -->
 
       <!-- Archived -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
           <a class="nav-link <?php echo $actArchived[0] ?> g-color-cyan" href="#archived-body" data-toggle="collapse" data-parent="#app-accordion" aria-expanded="false" aria-controls="archived-body">
               <span class="d-inline-block">
                 <i class="fa fa-circle-o-notch u-tab-line-icon-pro g-mr-3"></i>
@@ -179,7 +170,7 @@
               <a href="<?php echo $archived_link ?>" class="nav-link <?php echo $is_active ?>"><?php echo $archived_char ?></a>
             </li>
         <?php } ?>
-      </div>
+      </div> -->
       <!-- End Declined -->
 
 
