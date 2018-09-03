@@ -27,7 +27,13 @@
     <li class="nav-item">
         <a class="nav-link text-center" href="#">
             <strong>Storm Applications</strong><br />
-            <?php echo $status; ?>
+            <?php
+              if (!$status) {
+                echo 'No Status';
+              } else {
+                echo $status;
+              }
+            ?>
         </a>
     </li>
 
