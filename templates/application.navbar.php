@@ -29,8 +29,10 @@
             <strong>Storm Applications</strong><br />
             <?php
               if (!$status) {
+                echo $result['archived?'];
                 echo 'No Status';
               } else {
+                echo $result['archived?'];
                 echo $status;
               }
             ?>

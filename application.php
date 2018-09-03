@@ -17,7 +17,7 @@
 			if (!empty($_GET['appid'])) {
 				$sql = "SELECT CASE WHEN create_datetime < date_sub(now(), INTERVAL 3 MONTH) THEN 'yes' ELSE 'no' END AS 'archived?', ap.* FROM stormguild.application ap WHERE application_id = ".$_GET['appid'];
 			} else {
-				$sql = "SELECT 0 as 'archived?', ap.* FROM stormguild.application ap WHERE status = 'open' ORDER BY create_datetime DESC LIMIT 1";
+				$sql = "SELECT * FROM stormguild.application WHERE status = 'open' ORDER BY create_datetime DESC LIMIT 1";
 			}
 			$result = $db -> sql_fetchrow($sql);
 			$access = $user_rank; #Raider or Officer
