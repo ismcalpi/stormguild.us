@@ -141,7 +141,7 @@
 
       <!-- Archived -->
       <li class="nav-item">
-          <a class="nav-link <?php echo $actArchived[0] ?> g-color-red" href="#archived-body" data-toggle="collapse" data-parent="#app-accordion" aria-expanded="false" aria-controls="archived-body">
+          <a class="nav-link <?php echo $actArchived[0] ?> g-color-cyan" href="#archived-body" data-toggle="collapse" data-parent="#app-accordion" aria-expanded="false" aria-controls="archived-body">
               <span class="d-inline-block">
                 <i class="fa fa-circle-o-notch u-tab-line-icon-pro g-mr-3"></i>
                 <span class="float-right u-label u-label-num u-label--sm u-label-default g-color-white g-rounded-15 g-ml-15"></span>
@@ -155,7 +155,7 @@
       </li>
       <div id="archived-body" class="<?php echo $actArchived[1] ?> g-ml-20" role="tabpanel">
         <?php
-          $archived_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status in ('accepted','declined') AND create_datetime >= date_sub(now(), INTERVAL 3 MONTH) order by create_datetime desc";
+          $archived_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status in ('accepted','declined') AND create_datetime <= date_sub(now(), INTERVAL 3 MONTH) order by create_datetime desc";
           $archived_apps = $db -> sql_select($archived_sql);
           foreach ($archived_apps as $archived_app) {
             if ($appid == $archived_app['application_id']) {
@@ -163,7 +163,7 @@
             } else {
               $is_active = '';
             }
-            $archived_char = '<strong>'.$archived_app['charName'].'<span class="g-color-red"> ('.$archived_app['status'].')</span></strong><br /><i>'.$archived_app['charSpec'].' '.$archived_app['charClass'].'</i><br />'.$archived_app['submit_date'];
+            $archived_char = '<strong>'.$archived_app['charName'].'<span class="g-color-cyan"> ('.$archived_app['status'].')</span></strong><br /><i>'.$archived_app['charSpec'].' '.$archived_app['charClass'].'</i><br />'.$archived_app['submit_date'];
             $archived_link = 'application.php?appid='.$archived_app['application_id'];
             ?>
             <li class="nav-item">
