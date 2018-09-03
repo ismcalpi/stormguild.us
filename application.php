@@ -15,7 +15,7 @@
 			$status = $result['status'];
 		} else if ($user_rank >= 2) {
 			if (!empty($_GET['appid'])) {
-				$sql = "SELECT CASE WHEN create_datetime < date_sub(now(), INTERVAL 3 MONTH) THEN 1 ELSE 0 END AS 'archived?', ap.* FROM stormguild.application ap WHERE application_id = ".$_GET['appid'];
+				$sql = "SELECT CASE WHEN create_datetime < date_sub(now(), INTERVAL 3 MONTH) THEN 'yes' ELSE 'no' END AS 'archived?', ap.* FROM stormguild.application ap WHERE application_id = ".$_GET['appid'];
 			} else {
 				$sql = "SELECT 0 as 'archived?', ap.* FROM stormguild.application ap WHERE status = 'open' ORDER BY create_datetime DESC LIMIT 1";
 			}
@@ -23,7 +23,7 @@
 			$access = $user_rank; #Raider or Officer
 			$appid = $result['application_id'];
 			$username = $user -> data['username'];
-			if ($result['archived?'] = 1) {
+			if ($result['archived?'] == 'yes') {
 				$status = 'archived';
 			} else {
 				$status = $result['status'];

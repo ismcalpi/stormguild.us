@@ -162,7 +162,7 @@
       </li>
       <div id="archived-body" class="<?php echo $actArchived[1] ?> g-ml-20" role="tabpanel">
         <?php
-          $archived_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status in ('accepted','declined') AND create_datetime <= date_sub(now(), INTERVAL 3 MONTH) order by create_datetime desc";
+          $archived_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status in ('accepted','declined') AND create_datetime < date_sub(now(), INTERVAL 3 MONTH) order by create_datetime desc";
           $archived_apps = $db -> sql_select($archived_sql);
           foreach ($archived_apps as $archived_app) {
             if ($appid == $archived_app['application_id']) {
