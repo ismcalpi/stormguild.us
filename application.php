@@ -49,7 +49,6 @@
 				</div>
 			<?php } ?>
 				<div class='col-md-10 col-xs-12'>
-					<h1>Status = <?php echo $status; ?></h1>
 					<div class="row">
 						<div class="col-12 g-py-10 g-px-40">
 							<?php if ($status == 'open' && $access == 3) { include 'templates/application.admin.php'; } ?>

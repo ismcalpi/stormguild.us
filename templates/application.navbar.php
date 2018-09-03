@@ -26,7 +26,8 @@
 
     <li class="nav-item">
         <a class="nav-link text-center" href="#">
-            <strong>Storm Applications</strong>
+            <strong>Storm Applications</strong><br />
+            <?php echo $status; ?>
         </a>
     </li>
 
