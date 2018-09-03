@@ -1,6 +1,6 @@
 
 <?php
-  $app_counts = $db -> sql_select("SELECT status, count(*) as count FROM stormguild.application WHERE create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now() GROUP BY status");
+  $app_counts = $db -> sql_select("SELECT status, count(*) as count FROM stormguild.application /*WHERE create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()*/ GROUP BY status");
   foreach ($app_counts as $app_count) {
     $tmp_name = $app_count['status'].'_cnt';
     $$tmp_name = $app_count['count'];
@@ -87,7 +87,7 @@
       </li>
       <div id="accepted-body" class="<?php echo $actAccept[1] ?> g-ml-20" role="tabpanel">
         <?php
-          $accept_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status = 'accepted' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now() order by create_datetime desc";
+          $accept_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status = 'accepted' /*AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()*/ order by create_datetime desc";
           $accept_apps = $db -> sql_select($accept_sql);
           foreach ($accept_apps as $accept_app) {
             if ($appid == $accept_app['application_id']) {
@@ -121,7 +121,7 @@
       </li>
       <div id="declined-body" class="<?php echo $actDecline[1] ?> g-ml-20" role="tabpanel">
         <?php
-          $decline_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status = 'declined' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now() order by create_datetime desc";
+          $decline_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status = 'declined' /*AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()*/ order by create_datetime desc";
           $decline_apps = $db -> sql_select($decline_sql);
           foreach ($decline_apps as $decline_app) {
             if ($appid == $decline_app['application_id']) {
@@ -138,41 +138,6 @@
         <?php } ?>
       </div>
       <!-- End Declined -->
-
-      <!-- Archived -->
-      <!-- <li class="nav-item">
-          <a class="nav-link <?php echo $actArchived[0] ?> g-color-cyan" href="#archived-body" data-toggle="collapse" data-parent="#app-accordion" aria-expanded="false" aria-controls="archived-body">
-              <span class="d-inline-block">
-                <i class="fa fa-circle-o-notch u-tab-line-icon-pro g-mr-3"></i>
-                <span class="float-right u-label u-label-num u-label--sm u-label-default g-color-white g-rounded-15 g-ml-15"></span>
-                Archived
-              </span>
-              <span class="u-accordion__control-icon d-inline-block g-pos-abs g-right-20">
-                  <i class="fa fa-plus"></i>
-                  <i class="fa fa-minus"></i>
-              </span>
-          </a>
-      </li>
-      <div id="archived-body" class="<?php echo $actArchived[1] ?> g-ml-20" role="tabpanel">
-        <?php
-          $archived_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status in ('accepted','declined') AND create_datetime < date_sub(now(), INTERVAL 3 MONTH) order by create_datetime desc";
-          $archived_apps = $db -> sql_select($archived_sql);
-          foreach ($archived_apps as $archived_app) {
-            if ($appid == $archived_app['application_id']) {
-              $is_active = 'active';
-            } else {
-              $is_active = '';
-            }
-            $archived_char = '<strong>'.$archived_app['charName'].'<span class="g-color-cyan"> ('.$archived_app['status'].')</span></strong><br /><i>'.$archived_app['charSpec'].' '.$archived_app['charClass'].'</i><br />'.$archived_app['submit_date'];
-            $archived_link = 'application.php?appid='.$archived_app['application_id'];
-            ?>
-            <li class="nav-item">
-              <a href="<?php echo $archived_link ?>" class="nav-link <?php echo $is_active ?>"><?php echo $archived_char ?></a>
-            </li>
-        <?php } ?>
-      </div> -->
-      <!-- End Declined -->
-
 
     </div>
 </ul>
