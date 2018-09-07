@@ -54,6 +54,7 @@
 				</div>
 			</div>
 		</main>
+		<?php include 'templates/application.archive.php' ?>
 	</body>
 	<?php include 'templates/admin.js.php' ?>
 </html>

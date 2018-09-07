@@ -1,10 +1,13 @@
 
 <?php
-  $app_counts = $db -> sql_select("SELECT status, count(*) as count FROM stormguild.application /*WHERE create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()*/ GROUP BY status");
+  $app_counts = $db -> sql_select("SELECT status, count(*) as count FROM stormguild.application WHERE create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now() GROUP BY status");
   foreach ($app_counts as $app_count) {
     $tmp_name = $app_count['status'].'_cnt';
     $$tmp_name = $app_count['count'];
   }
+
+  $archive = $db -> sql_select("SELECT count(*) as count FROM stormguild.application WHERE create_datetime < date_sub(now(), INTERVAL 3 MONTH)");
+  $archive_count = $archive['count'];
 
   $actOpen = $actAccept = $actDecline = $actArchived = array('collapsed','collapse');
   switch ($status) {
@@ -34,6 +37,13 @@
         <a class="nav-link" href="index.php">
             <i class="fa fa-home u-tab-line-icon-pro g-mr-3"></i>
             Go Back Home
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#archive" data-modal-target="#archive" data-modal-effect="fadein">
+            <i class="fa fa-archive u-tab-line-icon-pro g-mr-3"></i>
+            <span class="float-right u-label u-label-num u-label--sm u-label-default g-color-white g-rounded-15 g-ml-15"><?php echo $archive_count ?></span>
+            Archived
         </a>
     </li>
     <div id="app-accordion">
