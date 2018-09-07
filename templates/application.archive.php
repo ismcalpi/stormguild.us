@@ -1,4 +1,4 @@
-<div id="modal1" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+<div id="archive" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
   <button type="button" class="close" onclick="Custombox.modal.close();">
     <i class="hs-icon hs-icon-close"></i>
   </button>
