@@ -6,7 +6,7 @@
     $$tmp_name = $app_count['count'];
   }
 
-  $archive = $db -> sql_select("SELECT count(*) as count FROM stormguild.application WHERE create_datetime < date_sub(now(), INTERVAL 3 MONTH)");
+  $archive = $db -> sql_fetchrow("SELECT count(*) as count FROM stormguild.application WHERE create_datetime < date_sub(now(), INTERVAL 3 MONTH)");
   $archive_count = $archive['count'];
 
   $actOpen = $actAccept = $actDecline = $actArchived = array('collapsed','collapse');
