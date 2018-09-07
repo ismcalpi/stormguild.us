@@ -63,7 +63,7 @@
       </li>
       <div id="open-body" class="<?php echo $actOpen[1] ?> g-ml-20" role="tabpanel">
         <?php
-          $open_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status = 'open' order by create_datetime desc";
+          $open_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status = 'open' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now() order by create_datetime desc";
           $open_apps = $db -> sql_select($open_sql);
           foreach ($open_apps as $open_app) {
             if ($appid == $open_app['application_id']) {
@@ -97,7 +97,7 @@
       </li>
       <div id="accepted-body" class="<?php echo $actAccept[1] ?> g-ml-20" role="tabpanel">
         <?php
-          $accept_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status = 'accepted' /*AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()*/ order by create_datetime desc";
+          $accept_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status = 'accepted' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now() order by create_datetime desc";
           $accept_apps = $db -> sql_select($accept_sql);
           foreach ($accept_apps as $accept_app) {
             if ($appid == $accept_app['application_id']) {
@@ -131,7 +131,7 @@
       </li>
       <div id="declined-body" class="<?php echo $actDecline[1] ?> g-ml-20" role="tabpanel">
         <?php
-          $decline_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status = 'declined' /*AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now()*/ order by create_datetime desc";
+          $decline_sql = "SELECT *, date_format(create_datetime,'%M %d %Y') as submit_date FROM stormguild.application WHERE status = 'declined' AND create_datetime BETWEEN date_sub(now(), INTERVAL 3 MONTH) AND now() order by create_datetime desc";
           $decline_apps = $db -> sql_select($decline_sql);
           foreach ($decline_apps as $decline_app) {
             if ($appid == $decline_app['application_id']) {
