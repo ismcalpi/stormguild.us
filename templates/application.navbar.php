@@ -42,7 +42,7 @@
     <li class="nav-item">
         <a class="nav-link" href="#archive" data-modal-target="#archive" data-modal-effect="fadein">
             <i class="fa fa-archive u-tab-line-icon-pro g-mr-3"></i>
-            <span class="float-right u-label u-label-num u-label--sm u-label-default g-color-white g-rounded-15 g-ml-15"><?php echo $archive_count ?></span>
+            <span class="u-label u-label-num u-label--sm u-label-default g-color-white g-rounded-15 g-ml-15"><?php echo $archive_count ?></span>
             Archived
         </a>
     </li>
