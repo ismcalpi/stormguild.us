@@ -24,7 +24,7 @@
         <td><?php echo $app['charName']; ?></td>
         <td><?php echo $app['create_datetime']; ?></td>
         <td><?php echo $app['status']; ?></td>
-        <td><a href='application.php?appid=<?php echo $app['aplication_id']; ?>'>Open App</a></td>
+        <td><a href='application.php?appid=<?php echo $app['application_id']; ?>'>Open App</a></td>
       </tr>
 
       <?php
