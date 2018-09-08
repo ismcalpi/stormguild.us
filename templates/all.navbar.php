@@ -53,7 +53,7 @@
               </a>
             </li>
             <li class="nav-item g-mx-20--lg g-mb-5 g-mb-0--lg">
-              <a target="_blank" href="https://www.warcraftlogs.com/guilds/145258" class="nav-link">
+              <a target="_blank" href="https://www.warcraftlogs.com/guild/id/145258" class="nav-link">
                 <span class="u-icon-v1 u-icon-size--xs">
                   <img src="assets/img/logo.warlogs.png">
                 </span>
