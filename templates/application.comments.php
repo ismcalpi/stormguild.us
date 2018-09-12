@@ -10,6 +10,7 @@
         $comments = $db -> sql_select("SELECT *, date_format(create_datetime,'%b %D, %Y') as formDate FROM stormguild.app_comment WHERE application_id =".$appid." and reply_id = 0 order by create_datetime asc");
         if(!empty($comments)) {
             foreach ($comments as $comment) {
+              $comment_body = nl2br($comment['body']);
         ?>
         <div class="media g-mb-20" id="<?php echo "head-".$comment['comment_id']; ?>">
             <div class="media-body u-shadow-v22 g-bg-secondary g-pa-15 g-brd-around g-brd-gray-light-v3 g-brd-2">
@@ -19,7 +20,7 @@
                     <span class="g-color-gray-dark-v4 g-font-size-12"><?php echo $comment['formDate']; ?></span>
                 </div>
 
-                <p style="word-break:break-word;"><?php echo $comment['body']; ?></p>
+                <p style="word-break:break-word;"><?php echo $comment_body; ?></p>
 
                 <ul class="list-inline d-sm-flex my-0">
                     <li class="list-inline-item ml-auto">
@@ -47,7 +48,7 @@
                 if(!empty($replies)){
 
                     foreach($replies as $reply) {
-                      $comment_body = nl2br($reply['body']);
+                      $reply_body = nl2br($reply['body']);
         ?>
 
         <div class="media g-ml-40 g-mb-20">
@@ -58,7 +59,7 @@
                     <span class="g-color-gray-dark-v4 g-font-size-12"><?php echo $reply['formDate']; ?></span>
                 </div>
 
-                <p style="word-break:break-word;"><?php echo $comment_body; ?></p>
+                <p style="word-break:break-word;"><?php echo $reply_body; ?></p>
 
             </div>
         </div>
