@@ -47,6 +47,7 @@
                 if(!empty($replies)){
 
                     foreach($replies as $reply) {
+                      $comment_body = nl2br($reply['body']);
         ?>
 
         <div class="media g-ml-40 g-mb-20">
@@ -57,7 +58,7 @@
                     <span class="g-color-gray-dark-v4 g-font-size-12"><?php echo $reply['formDate']; ?></span>
                 </div>
 
-                <p style="word-break:break-word;"><?php echo $reply['body']; ?></p>
+                <p style="word-break:break-word;"><?php echo $comment_body; ?></p>
 
             </div>
         </div>
