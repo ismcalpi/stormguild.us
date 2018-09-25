@@ -20,7 +20,7 @@
               <div class="u-block-hover__additional g-flex-middle g-z-index-2 g-brd-around g-brd-2 g-brd-white-opacity-0_3 g-pa-15 g-ma-20">
                 <div class="g-flex-middle-item">
                   <h3 class="h4 d-inline-block">Uldir Heroic 8/8</h3>
-                  <span class="d-block g-font-weight-600 g-font-size-20 text-uppercase g-mb-20">1,000,000G</span>
+                  <span class="d-block g-font-weight-600 g-font-size-20 text-uppercase g-mb-20">1,000,000<span class="g-color-yellow">G</span></span>
                   <a class="btn btn-md u-btn-primary g-font-weight-600 g-font-size-12 text-uppercase">Purchase Now</a>
                 </div>
               </div>
@@ -34,12 +34,12 @@
             <!-- Item -->
             <article class="u-block-hover u-bg-overlay g-color-white g-bg-black-opacity-0_3--after text-center g-rounded-3">
 
-              <img class="w-100 u-block-hover__main--zoom-v1" src="https://wow.4fansites.de/bilder/dungeons/uldir/uldir.jpg" alt="Uldir Pic">
+              <img class="w-100 u-block-hover__main--zoom-v1" src="https://i0.wp.com/sunniersartofwar.com/wp-content/uploads/2018/08/unknown-loading-screen-1.jpg" alt="Uldir Pic">
 
               <div class="u-block-hover__additional g-flex-middle g-z-index-2 g-brd-around g-brd-2 g-brd-white-opacity-0_3 g-pa-15 g-ma-20">
                 <div class="g-flex-middle-item">
                   <h3 class="h4 d-inline-block">Uldir Normal 8/8</h3>
-                  <span class="d-block g-font-weight-600 g-font-size-20 text-uppercase g-mb-20">1,000,000G</span>
+                  <span class="d-block g-font-weight-600 g-font-size-20 text-uppercase g-mb-20">1,000,000<span class="g-color-yellow">G</span></span>
                   <a class="btn btn-md u-btn-primary g-font-weight-600 g-font-size-12 text-uppercase">Purchase Now</a>
                 </div>
               </div>
@@ -58,7 +58,7 @@
               <div class="u-block-hover__additional g-flex-middle g-z-index-2 g-brd-around g-brd-2 g-brd-white-opacity-0_3 g-pa-15 g-ma-20">
                 <div class="g-flex-middle-item">
                   <h3 class="h4 d-inline-block">G'Huun Heroic</h3>
-                  <span class="d-block g-font-weight-600 g-font-size-20 text-uppercase g-mb-20">1,000,000G</span>
+                  <span class="d-block g-font-weight-600 g-font-size-20 text-uppercase g-mb-20">1,000,000<span class="g-color-yellow">G</span></span>
                   <a class="btn btn-md u-btn-primary g-font-weight-600 g-font-size-12 text-uppercase">Purchase Now</a>
                 </div>
               </div>
