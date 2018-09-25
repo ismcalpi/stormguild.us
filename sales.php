@@ -34,14 +34,13 @@
         <!-- End Success Alert -->
         <?php } ?>
 
-        <form enctype="multipart/form-data" id="appForm" method="post" action="library/action.sales.notify.php" class="g-brd-around bg-white g-brd-gray-light-v4 g-pa-20 g-ma-15">
+        <form enctype="multipart/form-data" id="appForm" method="post" action="library/action.sales.notify.php" class="g-brd-around bg-white g-brd-gray-light-v4 g-pa-20">
 
           <div class="form-group g-mb-20">
             <div class="u-heading-v1-1 g-bg-main g-brd-gray-light-v2 g-mb-20">
                 <h2 class="h3 u-heading-v1__title">World of Warcraft Sales Form</h2>
             </div>
             <div class="row">
-              <h4 class="h4 col-12"><a target="_blank" href="https://us.battle.net/forums/en/wow/topic/20758726582?page=1">Antorus Prices</a></h4>
               <div class="form-group col-6 g-mb-20">
                 <label for="contact">Contact Info (How should we contact you for more information?)</label>
                 <input class="form-control rounded-0 u-form-control" type="text" name="contact" placeholder="Buddy#1234" required>
@@ -59,7 +58,7 @@
 
           <input type="hidden" name="redirect" value="sales.php?status=success">
 
-          <div class="form-group g-mb-20">
+          <div class="form-group">
             <button type="submit" class="btn btn-lg bg-blue">Send</button>
           </div>
 
