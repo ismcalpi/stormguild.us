@@ -13,7 +13,7 @@
           <div class="col-md-4 col-6">
 
             <!-- Item -->
-            <article class="u-block-hover u-bg-overlay g-color-white g-bg-black-opacity-0_3--after text-center g-rounded-3">
+            <article class="u-block-hover u-bg-overlay g-color-white g-bg-black-opacity-0_3--after text-center g-rounded-3 g-height-auto g-width-auto">
 
               <img class="w-100 u-block-hover__main--zoom-v1" src="https://wow.4fansites.de/bilder/dungeons/uldir/uldir.jpg" alt="Uldir Pic">
 
@@ -32,7 +32,7 @@
           <div class="col-md-4 col-6">
 
             <!-- Item -->
-            <article class="u-block-hover u-bg-overlay g-color-white g-bg-black-opacity-0_3--after text-center g-rounded-3">
+            <article class="u-block-hover u-bg-overlay g-color-white g-bg-black-opacity-0_3--after text-center g-rounded-3 g-height-auto g-width-auto">
 
               <img class="w-100 u-block-hover__main--zoom-v1" src="https://i0.wp.com/sunniersartofwar.com/wp-content/uploads/2018/08/unknown-loading-screen-1.jpg" alt="Uldir Pic">
 
@@ -51,7 +51,7 @@
           <div class="col-md-4 col-6">
 
             <!-- Item -->
-            <article class="u-block-hover u-bg-overlay g-color-white g-bg-black-opacity-0_3--after text-center g-rounded-3">
+            <article class="u-block-hover u-bg-overlay g-color-white g-bg-black-opacity-0_3--after text-center g-rounded-3 g-height-auto g-width-auto">
 
               <img class="w-100 u-block-hover__main--zoom-v1" src="https://d1u5p3l4wpay3k.cloudfront.net/wowpedia/thumb/1/18/G%27huun_Concept_art_cropped.jpg/1200px-G%27huun_Concept_art_cropped.jpg" alt="Uldir Pic">
 
