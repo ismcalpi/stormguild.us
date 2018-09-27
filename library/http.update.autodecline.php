@@ -17,8 +17,9 @@
         'status'   => 'declined',
     ];
 
-    $ch = curl_init('http://www.stormguild.us/library/action.application.decision.php');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://www.stormguild.us/library/action.application.decision.php");
+    curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
     // execute!
