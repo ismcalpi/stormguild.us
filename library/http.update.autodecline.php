@@ -20,12 +20,12 @@
     curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
     // execute!
-    // $response = curl_exec($ch);
+    $response = curl_exec($ch);
 
     // close the connection, release resources used
     curl_close($ch);
 
-    echo '<p>Application ID: '.$application['application_id'].' | Char Name: '.$application['charName']. ' | Has been auto-declined due to application being over 7 days open.</p><br />';
+    echo '<p>Application ID: '.$application['application_id'].' | Char Name: '.$application['charName']. ' | Has been auto-declined due to application being over 7 days open.</p>';
 
   }
 ?>
