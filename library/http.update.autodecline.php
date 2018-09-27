@@ -23,7 +23,10 @@
 
     // execute!
     $response = curl_exec($ch);
-    echo 'Response: '.$response;
+    if (curl_error($ch)) {
+        $error_msg = curl_error($ch);
+        echo 'Error: '.$error_msg;
+    }
 
     // close the connection, release resources used
     curl_close($ch);
