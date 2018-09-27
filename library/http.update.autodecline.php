@@ -20,7 +20,7 @@
     curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
     // execute!
-    $response = curl_exec($ch);
+    // $response = curl_exec($ch);
 
     // close the connection, release resources used
     curl_close($ch);
