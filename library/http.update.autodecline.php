@@ -8,6 +8,8 @@
 
   foreach ($applications as $application) {
 
+    echo '<p>Application ID: '.$application['application_id'].' | Char Name: '.$application['charName']. ' | Has been auto-declined due to application being over 7 days open.</p>';
+
     // set post fields
     $post = [
         'appid' => $application['application_id'],
@@ -21,11 +23,10 @@
 
     // execute!
     $response = curl_exec($ch);
+    echo 'Response: '.$response;
 
     // close the connection, release resources used
     curl_close($ch);
-
-    echo '<p>Application ID: '.$application['application_id'].' | Char Name: '.$application['charName']. ' | Has been auto-declined due to application being over 7 days open.</p>';
 
   }
 ?>
