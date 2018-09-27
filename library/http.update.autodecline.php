@@ -25,7 +25,7 @@
     // close the connection, release resources used
     curl_close($ch);
 
-    echo 'Application ID: '.$application['application_id'].' | Char Name: '.$application['charName']. ' | Has been auto-declined due to application being over 7 days open.';
+    echo '<p>Application ID: '.$application['application_id'].' | Char Name: '.$application['charName']. ' | Has been auto-declined due to application being over 7 days open.</p><br />';
 
   }
 ?>
