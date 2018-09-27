@@ -4,7 +4,7 @@
   $db = new database();
 
   $sql = "select * from stormguild.application where create_datetime < date_sub(now(),interval 7 day) and status = 'open'";
-  $applications = $db -> read_row($sql);
+  $applications = $db -> sql_select($sql);
 
   foreach ($applications as $application) {
 
