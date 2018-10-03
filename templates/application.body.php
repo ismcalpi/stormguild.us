@@ -34,7 +34,7 @@ if(!empty($application)) {
             <h2 class="h3 u-heading-v3__title">Personal Information</h2>
         </div>
     </div>
-    <div class="col-sm-2">
+    <div class="col-sm-3">
         <p>
             <strong>Name:</strong>
             <?php echo $perName; ?>
@@ -46,18 +46,27 @@ if(!empty($application)) {
             <?php echo $perAge; ?>
         </p>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-7">
         <p>
             <strong>E-Mail:</strong>
             <?php echo $perEmail; ?>
         </p>
     </div>
-    <div class="col-sm-4">
-        <p>
-            <strong>Battle ID:</strong>
-            <?php echo $perBnet; ?>
-        </p>
-    </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+      <p>
+          <strong>Battle ID:</strong>
+          <?php echo $perBnet; ?>
+      </p>
+  </div>
+  <div class="col-sm-6">
+      <p>
+          <strong>Discord ID:</strong>
+          <?php echo $perDisc; ?>
+      </p>
+  </div>
 </div>
 
 <div class="row">

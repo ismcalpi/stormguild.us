@@ -55,7 +55,7 @@ function app_add() {
       (NULL,".$accessid_db.",".$radScreen1.",
       ".$radScreen2.",".$perName.",
       ".$perAge.",".$perEmail.",
-      ".$perBnet.",".$charName.",
+      ".$perBnet.",".$perDisc.",".$charName.",
       ".$charRealm.",".$charClass.",
       ".$charSpec.",".$charArt.",
       ".$charArmory.",".$charLogs.",

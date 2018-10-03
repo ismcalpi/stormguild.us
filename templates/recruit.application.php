@@ -54,17 +54,22 @@
   <div class="form-group g-mb-20">
     <div class="u-heading-v1-1 g-bg-main g-brd-gray-light-v2 g-mb-20"><h2 class="h3 u-heading-v1__title">Personal Information</h2></div>
     <div class="row">
-      <div class="form-group col-md-3 g-mb-20">
+      <div class="form-group col-md-4 g-mb-20">
         <input class="form-control rounded-0 u-form-control" type="text" name="perName" placeholder="Name" required>
       </div>
       <div class="form-group col-md-2 g-mb-20">
         <input class="form-control rounded-0 u-form-control" type="number" name="perAge" placeholder="Age" required>
       </div>
-      <div class="form-group col-md-4 g-mb-20">
+      <div class="form-group col-md-6 g-mb-20">
         <input class="form-control rounded-0 u-form-control" type="email" name="perEmail" placeholder="Email Address" required>
       </div>
-      <div class="form-group col-md-3 g-mb-20">
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6 g-mb-20">
         <input class="form-control rounded-0 u-form-control" type="text" name="perBnet" placeholder="Battle Tag ID" required>
+      </div>
+      <div class="form-group col-md-6 g-mb-20">
+        <input class="form-control rounded-0 u-form-control" type="text" name="perDisc" placeholder="Discord ID" required>
       </div>
     </div>
   </div>
