@@ -5,7 +5,7 @@ include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
 
-if (requestedByTheSameDomain()) {
+if (parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST) == 'stormguild') {
 
   $accessid = uniqid();
   #App Application to database
@@ -36,7 +36,7 @@ function requestedByTheSameDomain() {
     $myDomain       = $_SERVER['SCRIPT_URI'];
     $requestsSource = $_SERVER['HTTP_REFERER'];
 
-    return parse_url($myDomain, PHP_URL_HOST) === parse_url($requestsSource, PHP_URL_HOST);
+    return parse_url($myDomain, PHP_URL_HOST) === ;
 }
 
 function getAPPID() {
