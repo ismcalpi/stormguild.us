@@ -5,11 +5,11 @@ include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
 
-$accessid = uniqid();
-#App Application to database
-$discord = new discord();
-
 if (requestedByTheSameDomain()) {
+
+  $accessid = uniqid();
+  #App Application to database
+  $discord = new discord();
 
   app_add();
   #notify via email and phpBB
@@ -26,7 +26,9 @@ if (requestedByTheSameDomain()) {
   header("Location: $redirect");
 
 } else {
+
   Echo '<h2>Nice try, fuck off</h2>'
+
 }
 
 function requestedByTheSameDomain() {
