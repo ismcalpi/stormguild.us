@@ -27,8 +27,8 @@ if (isset($_SERVER['HTTP_REFERER']) && parse_url($_SERVER['HTTP_REFERER'], PHP_U
 
 } else {
 
-  #Echo '<h2>Nice try, fuck off</h2>';
-  echo 'SCRIPT_URI: '.parse_url($_SERVER['SCRIPT_URI'], PHP_URL_HOST).'<br /> HTTP_REFERER: '.parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
+  Echo '<h2>Nice try, fuck off</h2>';
+  #echo 'SCRIPT_URI: '.parse_url($_SERVER['SCRIPT_URI'], PHP_URL_HOST).'<br /> HTTP_REFERER: '.parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
 
 }
 
