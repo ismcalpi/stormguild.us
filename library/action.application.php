@@ -27,7 +27,8 @@ if (requestedByTheSameDomain()) {
 
 } else {
 
-  Echo '<h2>Nice try, fuck off</h2>';
+  #Echo '<h2>Nice try, fuck off</h2>';
+  echo 'SCRIPT_URI: '.$_SERVER['SCRIPT_URI'].'<br /> HTTP_REFERER: '.$_SERVER['HTTP_REFERER'];
 
 }
 
