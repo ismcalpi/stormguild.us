@@ -7,22 +7,34 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
 
 $accessid = uniqid();
 #App Application to database
-app_add();
-
 $discord = new discord();
 
-#notify via email and phpBB
-$appid = getAPPID();
-$member_link = 'https://www.stormguild.us/application.php?appid='.$appid;
-$app_link = 'https://www.stormguild.us/application.php?accessid='.$accessid;
+if (requestedByTheSameDomain()) {
 
-$discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n".$member_link;
-notify_guild($member_link);
-notify_applicant($app_link);
-$discord -> discord_message('Application Discord Bot', $discord_msg, 'recruit');
+  app_add();
+  #notify via email and phpBB
+  $appid = getAPPID();
+  $member_link = 'https://www.stormguild.us/application.php?appid='.$appid;
+  $app_link = 'https://www.stormguild.us/application.php?accessid='.$accessid;
 
-$redirect = "../recruit.php?status=success&accessid=".$accessid."#application";
-header("Location: $redirect");
+  $discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n".$member_link;
+  notify_guild($member_link);
+  notify_applicant($app_link);
+  $discord -> discord_message('Application Discord Bot', $discord_msg, 'recruit');
+
+  $redirect = "../recruit.php?status=success&accessid=".$accessid."#application";
+  header("Location: $redirect");
+
+} else {
+  Echo '<h2>Nice try, fuck off</h2>'
+}
+
+function requestedByTheSameDomain() {
+    $myDomain       = $_SERVER['SCRIPT_URI'];
+    $requestsSource = $_SERVER['HTTP_REFERER'];
+
+    return parse_url($myDomain, PHP_URL_HOST) === parse_url($requestsSource, PHP_URL_HOST);
+}
 
 function getAPPID() {
   $db = new database();
