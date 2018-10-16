@@ -5,7 +5,7 @@ include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
 
-if (parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST) == 'stormguild') {
+if (parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST) == 'www.stormguild.us') {
 
   $accessid = uniqid();
   #App Application to database
