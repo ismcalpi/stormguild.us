@@ -27,7 +27,7 @@ if (requestedByTheSameDomain()) {
 
 } else {
 
-  Echo '<h2>Nice try, fuck off</h2>'
+  Echo '<h2>Nice try, fuck off</h2>';
 
 }
 
