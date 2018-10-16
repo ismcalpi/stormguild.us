@@ -28,15 +28,8 @@ if (parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST) == 'www.stormguild.us') {
 } else {
 
   #Echo '<h2>Nice try, fuck off</h2>';
-  echo 'SCRIPT_URI: '.$_SERVER['SCRIPT_URI'].'<br /> HTTP_REFERER: '.$_SERVER['HTTP_REFERER'];
+  echo 'SCRIPT_URI: '.parse_url($_SERVER['SCRIPT_URI'], PHP_URL_HOST).'<br /> HTTP_REFERER: '.parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
 
-}
-
-function requestedByTheSameDomain() {
-    $myDomain       = $_SERVER['SCRIPT_URI'];
-    $requestsSource = $_SERVER['HTTP_REFERER'];
-
-    return parse_url($myDomain, PHP_URL_HOST) === ;
 }
 
 function getAPPID() {
