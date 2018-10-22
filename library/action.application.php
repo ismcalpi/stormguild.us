@@ -5,7 +5,9 @@ include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
 
-if (isset($_SERVER['HTTP_REFERER']) && parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST) == 'www.stormguild.us') {
+$postCount = count($_POST);
+
+if ($postCount >= 20) {
 
   $accessid = uniqid();
   #App Application to database
@@ -27,8 +29,8 @@ if (isset($_SERVER['HTTP_REFERER']) && parse_url($_SERVER['HTTP_REFERER'], PHP_U
 
 } else {
 
-  Echo '<h2>Nice try, fuck off</h2>';
-  #echo 'SCRIPT_URI: '.parse_url($_SERVER['SCRIPT_URI'], PHP_URL_HOST).'<br /> HTTP_REFERER: '.parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
+  $redirect = "../recruit.php?status=failure&error=Invalid_Submission#application";
+  header("Location: $redirect");
 
 }
 
