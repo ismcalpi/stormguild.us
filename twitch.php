@@ -41,6 +41,7 @@
 				<?php } ?>
 				</div>
 			</div>
+			<?php include 'templates/all.footer.php' ?>
 		</main>
 	</body>
 	<?php include 'templates/twitch.js.php' ?>

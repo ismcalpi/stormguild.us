@@ -34,6 +34,7 @@
 
         </div>
       </div>
+      <?php include 'templates/all.footer.php' ?>
     </main>
   </body>
   <?php include 'templates/home.js.php' ?>

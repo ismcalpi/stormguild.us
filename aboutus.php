@@ -26,6 +26,7 @@
 					?>
 				</div>
 			</div>
+			<?php include 'templates/all.footer.php' ?>
 		</main>
 		<?php include 'templates/about.js.php' ?>
 	</body>

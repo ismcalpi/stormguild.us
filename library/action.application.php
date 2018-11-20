@@ -7,7 +7,18 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
 
 $postCount = count($_POST);
 
-if ($postCount >= 20) {
+if ($postCount >= 20 && resub_check()) {
+
+  submit_app();
+
+} else {
+
+  $redirect = "../recruit.php?status=failure&error=Invalid_OR_Duplicate_Submission#application";
+  header("Location: $redirect");
+
+}
+
+function submit_app() {
 
   $accessid = uniqid();
   #App Application to database
@@ -27,11 +38,6 @@ if ($postCount >= 20) {
   $redirect = "../recruit.php?status=success&accessid=".$accessid."#application";
   header("Location: $redirect");
 
-} else {
-
-  $redirect = "../recruit.php?status=failure&error=Invalid_Submission#application";
-  header("Location: $redirect");
-
 }
 
 function getAPPID() {
@@ -41,6 +47,20 @@ function getAPPID() {
   $sql = "SELECT application_id FROM stormguild.application WHERE access_id = '".$accessid."'";
   $appid = $db -> sql_fetchrow($sql);
   return $appid['application_id'];
+}
+
+function resub_check() {
+  $db = new database();
+  $sql = "SELECT COUNT(*) FROM stormguild.application WHERE lower(charName) = ".$_POST['charName']." AND create_datetime BETWEEN date_sub(now(), INTERVAL 7 DAY) AND now()";
+
+  $result = $db -> read_row($sql);
+
+  if ($result > 0) {
+    return false;
+  } else {
+    return true;
+  }
+
 }
 
 function app_add() {
