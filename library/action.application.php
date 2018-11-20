@@ -30,7 +30,7 @@ function submit_app() {
   $member_link = 'https://www.stormguild.us/application.php?appid='.$appid;
   $app_link = 'https://www.stormguild.us/application.php?accessid='.$accessid;
 
-  $discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n".$member_link;
+  $discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".strtolower($_POST['charName'])."\n".$member_link;
   notify_guild($member_link);
   notify_applicant($app_link);
   $discord -> discord_message('Application Discord Bot', $discord_msg, 'recruit');
