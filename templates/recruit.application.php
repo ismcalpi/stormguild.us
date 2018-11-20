@@ -1,7 +1,7 @@
 
 <?php if (!empty($_GET['status']) && !empty($_GET['accessid']) && $_GET['status'] == 'success') { ?>
 <!-- Success Alert -->
-<div class="alert alert-dismissible fade show g-bg-primary g-color-white rounded-0" role="alert">
+<div class="alert alert-dismissible fade show g-bg-primary g-color-white rounded-0 g-my-10" role="alert">
   <button type="button" class="close u-alert-close--light" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
   <div class="media">
     <span class="d-flex g-mr-10 g-mt-5"><i class="icon-check g-font-size-25"></i></span>
@@ -15,13 +15,13 @@
 <!-- End Success Alert -->
 <?php } else if (!empty($_GET['status']) && !empty($_GET['error']) && $_GET['status'] == 'failure') { ?>
 <!-- Success Alert -->
-<div class="alert alert-dismissible fade show g-bg-red g-color-white rounded-0" role="alert">
+<div class="alert alert-dismissible fade show g-bg-red g-color-white rounded-0 g-my-10" role="alert">
   <button type="button" class="close u-alert-close--light" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
   <div class="media">
     <span class="d-flex g-mr-10 g-mt-5"><i class="icon-check g-font-size-25"></i></span>
     <span class="media-body align-self-center">
         <strong>Application Submit Error</strong> <br />
-        Error Message: <?php $_GET['error']; ?> <br />
+        Error Message: <?php echo htmlspecialchars($_GET['error']); ?> <br />
         Please contact the site administrator if you see this message. <a href="mailto:storm_support@stormguild.us">storm_support@stormguild.us</a>
     </span>
   </div>
