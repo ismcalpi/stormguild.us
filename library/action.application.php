@@ -28,13 +28,13 @@ function test_app() {
 
   $appid = getAPPID();
   $member_link = 'https://www.stormguild.us/application.php?appid='.$appid;
-  echo $member_link;
+  echo $member_link."<br/>";
 
   $app_link = 'https://www.stormguild.us/application.php?accessid='.$accessid;
-  echo $app_link;
+  echo $app_link."<br/>";
 
   $discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n".$member_link;
-  echo $discord_msg;
+  echo $discord_msg."<br/>";
 
 }
 
@@ -71,7 +71,9 @@ function getAPPID() {
 
 function resub_check() {
   $db = new database();
-  $sql = "SELECT COUNT(*) FROM stormguild.application WHERE lower(charName) = ".strtolower($_POST['charName'])." AND create_datetime BETWEEN date_sub(now(), INTERVAL 7 DAY) AND now()";
+  $name = $db -> quote(strtolower($_POST['charName']));
+
+  $sql = "SELECT COUNT(*) FROM stormguild.application WHERE lower(charName) = ".$name." AND create_datetime BETWEEN date_sub(now(), INTERVAL 7 DAY) AND now()";
 
   $result = $db -> read_row($sql);
 
@@ -88,7 +90,7 @@ function app_add() {
   global $accessid;
 
   $destfile = upload_ui();
-  $destfile_db = $db ->quote($destfile);
+  $destfile_db = $db -> quote($destfile);
   $accessid_db = $db -> quote($accessid);
 
   #Clean up and declare all variables
