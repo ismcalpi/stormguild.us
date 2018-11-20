@@ -9,12 +9,32 @@ $postCount = count($_POST);
 
 if ($postCount >= 20 && resub_check()) {
 
-  submit_app();
+  if (strtolower($_POST['perName']) == 'testing') {
+      test_app();
+  } else {
+      submit_app();
+  }
 
 } else {
 
   $redirect = "../recruit.php?status=failure&error=Invalid_OR_Duplicate_Submission#application";
   header("Location: $redirect");
+
+}
+
+function test_app() {
+
+  $accessid = uniqid();
+
+  $appid = getAPPID();
+  $member_link = 'https://www.stormguild.us/application.php?appid='.$appid;
+  echo $member_link;
+
+  $app_link = 'https://www.stormguild.us/application.php?accessid='.$accessid;
+  echo $app_link;
+
+  $discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n".$member_link;
+  echo $discord_msg;
 
 }
 

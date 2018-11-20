@@ -22,7 +22,7 @@
     <span class="media-body align-self-center">
         <strong>Application Submit Error</strong> <br />
         Error Message: <?php $_GET['error']; ?> <br />
-        Please contact the site administrator if you see this message. <a href="storm_support@stormguild.us">storm_support@stormguild.us</a>
+        Please contact the site administrator if you see this message. <a href="mailto:storm_support@stormguild.us">storm_support@stormguild.us</a>
     </span>
   </div>
 </div>

@@ -10,7 +10,7 @@
       <div class="col-md-4 align-self-center">
         <ul class="list-inline text-center text-md-right mb-0">
           <li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Support">
-            <a href="storm_support@stormguild.us">
+            <a href="mailto:storm_support@stormguild.us">
               storm_support@stormguild.us
             </a>
           </li>
