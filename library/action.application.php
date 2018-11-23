@@ -90,10 +90,10 @@ function resub_check() {
   print($result);
 
   if ($result >= '1') {
-    print('<br />We Did Find a Previous Application')
+    print('<br />We Did Find a Previous Application');
     return false;
   } else {
-    print('<br />We Did Not Find a Previous Application')
+    print('<br />We Did Not Find a Previous Application');
     return true;
   }
 
