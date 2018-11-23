@@ -25,7 +25,7 @@ if (count_post() && resub_check()) {
 
 function count_post() {
   $count = count($_POST);
-  if $count >= 20 {
+  if ($count >= 20) {
     return true;
   } else {
     return false;
