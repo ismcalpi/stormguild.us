@@ -5,7 +5,7 @@ include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
 
-$postCount = count_post(());
+$postCount = count_post();
 $resubCheck = resub_check();
 
 if (count_post() && resub_check()) {
