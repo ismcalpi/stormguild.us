@@ -44,6 +44,9 @@ function test_app() {
   $discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n".$member_link;
   echo $discord_msg."<br/>";
 
+  $redirect = "../recruit.php?status=success&accessid=".$accessid."#application";
+  echo "<a href='".$redirect."'>".$redirect."</a>"
+
 }
 
 function submit_app() {
