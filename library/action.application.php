@@ -18,8 +18,8 @@ if (count_post() && resub_check()) {
 
 } else {
 
-  $redirect = "../recruit.php?status=failure&error=Invalid_OR_Duplicate_Submission#application";
-  header("Location: $redirect");
+  #$redirect = "../recruit.php?status=failure&error=Invalid_OR_Duplicate_Submission#application";
+  #header("Location: $redirect");
 
 }
 
