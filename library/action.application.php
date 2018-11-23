@@ -14,10 +14,8 @@ if (count_post() && resub_check()) {
   }
 
 } else {
-
-  #$redirect = "../recruit.php?status=failure&error=Invalid_OR_Duplicate_Submission#application";
-  #header("Location: $redirect");
-
+  $redirect = "../recruit.php?status=failure&error=Invalid_OR_Duplicate_Submission#application";
+  header("Location: $redirect");
 }
 
 function count_post() {
@@ -90,10 +88,8 @@ function resub_check() {
   print($result);
 
   if ($result['appCount'] >= '1') {
-    print('<br />We Did Find a Previous Application');
     return false;
   } else {
-    print('<br />We Did Not Find a Previous Application');
     return true;
   }
 
