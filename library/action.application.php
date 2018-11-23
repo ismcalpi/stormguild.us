@@ -5,9 +5,10 @@ include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
 
-$postCount = count($_POST);
+$postCount = count_post(());
+$resubCheck = resub_check();
 
-if ($postCount >= 20 && resub_check()) {
+if (count_post() && resub_check()) {
 
   if (strtolower($_POST['perName']) == 'testing') {
       test_app();
@@ -20,6 +21,15 @@ if ($postCount >= 20 && resub_check()) {
   $redirect = "../recruit.php?status=failure&error=Invalid_OR_Duplicate_Submission#application";
   header("Location: $redirect");
 
+}
+
+function count_post() {
+  $count = count($_POST);
+  if $count >= 20 {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function test_app() {
