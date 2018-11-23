@@ -45,7 +45,7 @@ function test_app() {
   echo $discord_msg."<br/>";
 
   $redirect = "../recruit.php?status=success&accessid=".$accessid."#application";
-  echo "<a href='".$redirect."'>".$redirect."</a>"
+  echo "<a href='".$redirect."'>".$redirect."</a><br />";
 
 }
 
