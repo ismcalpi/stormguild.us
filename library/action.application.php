@@ -72,12 +72,15 @@ function getAPPID() {
 function resub_check() {
   $db = new database();
   $name = $db -> quote(strtolower($_POST['charName']));
+  print($name);
 
   $sql = "SELECT COUNT(*) FROM stormguild.application WHERE lower(charName) = ".$name." AND create_datetime BETWEEN date_sub(now(), INTERVAL 7 DAY) AND now()";
+  print($sql);
 
   $result = $db -> read_row($sql);
+  print($result);
 
-  if ($result > 0) {
+  if ($result >= '1') {
     return false;
   } else {
     return true;
