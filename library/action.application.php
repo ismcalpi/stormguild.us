@@ -84,12 +84,12 @@ function resub_check() {
   $db = new database();
   $name = $db -> quote(strtolower($_POST['charName']));
 
-  $sql = "SELECT COUNT(*) FROM stormguild.application WHERE lower(charName) = ".$name." AND create_datetime BETWEEN date_sub(now(), INTERVAL 7 DAY) AND now()";
+  $sql = "SELECT COUNT(*) as appCount FROM stormguild.application WHERE lower(charName) = ".$name." AND create_datetime BETWEEN date_sub(now(), INTERVAL 7 DAY) AND now()";
 
   $result = $db -> sql_fetchrow($sql);
   print($result);
 
-  if ($result >= '1') {
+  if ($result['appCount'] >= '1') {
     print('<br />We Did Find a Previous Application');
     return false;
   } else {
