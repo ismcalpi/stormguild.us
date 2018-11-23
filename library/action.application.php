@@ -5,9 +5,6 @@ include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
 
-$postCount = count_post();
-$resubCheck = resub_check();
-
 if (count_post() && resub_check()) {
 
   if (strtolower($_POST['perName']) == 'testing') {
@@ -24,12 +21,15 @@ if (count_post() && resub_check()) {
 }
 
 function count_post() {
+
   $count = count($_POST);
+
   if ($count >= 20) {
     return true;
   } else {
     return false;
   }
+
 }
 
 function test_app() {
@@ -80,19 +80,20 @@ function getAPPID() {
 }
 
 function resub_check() {
+
   $db = new database();
   $name = $db -> quote(strtolower($_POST['charName']));
-  print($name);
 
   $sql = "SELECT COUNT(*) FROM stormguild.application WHERE lower(charName) = ".$name." AND create_datetime BETWEEN date_sub(now(), INTERVAL 7 DAY) AND now()";
-  print($sql);
 
-  $result = $db -> read_row($sql);
+  $result = $db -> sql_fetchrow($sql);
   print($result);
 
   if ($result >= '1') {
+    print('<br />We Did Find a Previous Application')
     return false;
   } else {
+    print('<br />We Did Not Find a Previous Application')
     return true;
   }
 
