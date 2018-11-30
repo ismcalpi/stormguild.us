@@ -5,6 +5,8 @@ include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
 
+$accessid = uniqid();
+
 if (count_post() && resub_check()) {
 
   if (strtolower($_POST['perName']) == 'testing') {
@@ -32,8 +34,6 @@ function count_post() {
 
 function test_app() {
 
-  $accessid = uniqid();
-
   $appid = getAPPID();
   $member_link = 'https://www.stormguild.us/application.php?appid='.$appid;
   echo $member_link."<br/>";
@@ -51,7 +51,6 @@ function test_app() {
 
 function submit_app() {
 
-  $accessid = uniqid();
   #App Application to database
   $discord = new discord();
 
@@ -73,7 +72,6 @@ function submit_app() {
 
 function getAPPID() {
   $db = new database();
-  global $accessid;
 
   $sql = "SELECT application_id FROM stormguild.application WHERE access_id = '".$accessid."'";
   $appid = $db -> sql_fetchrow($sql);
