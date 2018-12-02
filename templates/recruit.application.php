@@ -8,7 +8,7 @@
     <span class="media-body align-self-center">
         <strong>Congratulations!</strong> <br />
         You have successfully applied to Storm - Stormrage. You have been sent an E-Mail with more information on how to access your application.
-        <a href="application.php?accessid=<?php $_GET['accessid'] ?>" target="_blank">Application Link</a>
+        <a class="g-color-white" href="application.php?accessid=<?php $_GET['accessid'] ?>" target="_blank">Application Link</a>
     </span>
   </div>
 </div>
