@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /*?$
-Disallow: /*?
-Disallow: /templates/
-Disallow: /library/
-Disallow: /img/
-Disallow: /email/
-Disallow: /assets/
