@@ -3,6 +3,9 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/templates/all.user.php';
 include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
 include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
+
+$discord = new discord();
 
 comment_add();
 
@@ -12,7 +15,7 @@ $discord_msg = "New Comment from ".$_POST['username']." on ".$_POST['appname']."
 
 notify_guild($member_link,$_POST['appname'],$_POST['username']);
 notify_applicant($app_link,$_POST['username']);
-notify_discord($discord_msg);
+$discord -> discord_message('Application Discord Bot', $discord_msg, 'recruit');
 
 $link = 'https://www.stormguild.us'.$_POST['redirecturi'];
 header("Location: $link");
@@ -43,6 +46,7 @@ function comment_add() {
 }
 
 function notify_discord($message) {
+
   $data = array("content" => $message, "username" => "Application Robot");
   $curl = curl_init("https://discordapp.com/api/webhooks/383667737525878798/-OZH5-jbnsIpngVOgzcsTuLqTpkDbx7OULmmBOd0zaPUAcYIiLdMczsU9m65iHzNF3vQ");
   curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
