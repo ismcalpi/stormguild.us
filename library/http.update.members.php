@@ -1,7 +1,7 @@
 <?php
 
   include_once '../library/class.database.php';
-  include_once '../config.php';
+  include_once '../config/config.php';
 
   $db = new database();
 
