@@ -1,10 +1,11 @@
 <?php
 
-  include '../library/class.database.php';
+  include_once '../library/class.database.php';
+  include_once '../config.php';
 
   $db = new database();
 
-  $json = json_decode(file_get_contents('https://us.api.battle.net/wow/guild/Stormrage/Storm?fields=members&locale=en_US&apikey=mqa6xqp4dmuvbh4v6s3vu6xjgg75sryb'));
+  $json = json_decode(file_get_contents($blizz_api_url));
 
   $sql = "SELECT count(*) as count FROM stormguild.guild_roster";
   $sqlCount = $db -> read_row($sql);
