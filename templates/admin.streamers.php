@@ -8,7 +8,7 @@ $db = new database();
       <tr>
         <th><strong>Twitch Name</strong></th>
         <th><strong>Active?</strong></th>
-        <th><strong>Actions</strong></th>
+        <th colspan="2"><strong>Actions</strong></th>
       </tr>
     </thead>
     <tbody>
@@ -19,7 +19,7 @@ $db = new database();
           <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
           <td><input type="text" name="name"></td>
           <td><input type="number" name="isactive" value="1"></td>
-          <td><input type="submit" class="btn btn-sm u-btn-primary g-ml-10" value="Add"></input></td>
+          <td colspan="2"><input type="submit" class="btn btn-sm u-btn-primary" value="Add"></input></td>
         </form>
       </tr>
       <?php
@@ -39,7 +39,7 @@ $db = new database();
           <input type="hidden" name="action" value="delete">
           <input type="hidden" name="streamerid" value="<?php echo $streamer['streamer_id'] ?>">
           <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
-          <td><input type="submit" class="btn btn-sm u-btn-red g-ml-10" value="Delete"></input></td>
+          <td><input type="submit" class="btn btn-sm u-btn-red g-ml-5" value="Delete"></input></td>
         </form>
       </tr>
       <?php
