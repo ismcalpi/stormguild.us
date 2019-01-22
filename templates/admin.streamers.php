@@ -35,6 +35,12 @@ $db = new database();
           <td><input type="number" name="isactive" value="<?php echo $streamer['is_active'] ?>"></td>
           <td><input type="submit" class="btn btn-sm u-btn-primary g-ml-10" value="Update"></input></td>
         </form>
+        <form method="post" action="library/action.admin.streamers.php">
+          <input type="hidden" name="action" value="delete">
+          <input type="hidden" name="streamerid" value="<?php echo $streamer['streamer_id'] ?>">
+          <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
+          <td><input type="submit" class="btn btn-sm u-btn-red g-ml-10" value="Delete"></input></td>
+        </form>
       </tr>
       <?php
         }

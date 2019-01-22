@@ -13,6 +13,9 @@
     case 'banner':
       $bannerActive = 'active';
       break;
+    case 'aboutus':
+      $aboutusActive = 'active';
+      break;
   }
 ?>
 <ul class="nav flex-column u-nav-v3-1" role="tablist" data-target="nav-3-1-default-ver-default-icons" data-tabs-mobile-type="slide-up-down" data-btn-classes="btn btn-md btn-block rounded-0 u-btn-outline-lightgray">
@@ -55,7 +58,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link <?php echo $bannerActive; ?>" href="admin.php?mode=aboutus">
+        <a class="nav-link <?php echo $aboutusActive; ?>" href="admin.php?mode=aboutus">
             <i class="fa fa-book u-tab-line-icon-pro g-mr-3"></i>
             About Us
         </a>

@@ -18,6 +18,14 @@
       $active = $_POST['isactive'];
 
       $result = $db -> sql_query("INSERT INTO stormguild.streamers VALUES (NULL,".$name.",".$active.")");
+
+    } else if ($_POST['action'] == 'delete') {
+
+      $streamerid = $db -> quote($_POST['streamerid']);
+      $active = $_POST['isactive'];
+
+      $result = $db -> sql_query("DELETE FROM stormguild.streamers WHERE streamer_id = ".$streamerid);
+
     }
 
     $header = "Location:".$_POST['redirect'];
