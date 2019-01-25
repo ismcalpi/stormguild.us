@@ -11,12 +11,13 @@
 						<h2 class="h1 text-uppercase g-font-weight-300 u-heading-v2__title"><strong><i class="fa fa-twitch u-tab-line-icon-pro g-mr-3 g-color-purple"></i> Storm Streamers</strong></h2>
 					</div>
 					<?php
-						include_once 'library/class.database.php';
+						include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 						$db = new database();
 
 						$results = $db -> read_select("select * from stormguild.streamers where is_active = 1");
 						foreach($results as $result) {
-							if($result['online'] < 2){
+							$online = intval($result['online']);
+							if($online < 2){
 					?>
 
 					<div class="col-md-3 col-6">
@@ -25,7 +26,7 @@
 				      <div class="g-mt-minus-20">
 				        <h4 class="h6 g-color-purple g-font-weight-600 text-uppercase g-mb-5"><?php echo $result['displayname']; ?></h4>
 				        <em class="d-block g-color-black g-font-style-normal g-font-size-13 g-mb-20"><?php echo $result['status']; ?></em>
-								<?php if($result['online'] == 1){ ?>
+								<?php if($online == 1){ ?>
 									<a target="_blank" href="<?php echo $result['url']; ?>" class="btn u-btn-sm u-btn-primary">Live Now!</a>
 								<?php } else { ?>
 									<a target="_blank" href="<?php echo $result['url']; ?>" class="btn u-btn-sm u-btn-bluegray">Offline</a>
@@ -34,8 +35,8 @@
 				    </div>
 					</div>
 
-				<?php }
-						} ?>
+				<?php 	}
+							} ?>
 				</div>
 			</div>
 			<?php include 'templates/all.footer.php' ?>
