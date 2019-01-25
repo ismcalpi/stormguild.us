@@ -1,5 +1,5 @@
 <?php
-include_once 'library/class.database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
 $db = new database();
 
 $header = array('Accept: application/vnd.twitchtv.v5+json','Client-ID: dixpnolwj0yth0r3wpzxrp2edowugp');
