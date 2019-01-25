@@ -28,6 +28,8 @@ $db = new database();
               <th><strong>Expansion</strong></th>
               <th><strong>Raid Name</strong></th>
               <th><strong>Boss Count</strong></th>
+              <th><strong>US Rank</strong></th>
+              <th><strong>Realm Rank</strong></th>
               <th><strong>Release Date</strong></th>
               <th><strong>Image</strong></th>
               <th><strong>Active?</strong></th>
@@ -44,6 +46,8 @@ $db = new database();
                 <td><input type="text" name="expansion"></td>
                 <td><input type="text" name="raidname"></td>
                 <td><input type="number" name="bosscount"></td>
+                <td><input type="number" name="us_rank"></td>
+                <td><input type="number" name="realm_rank"></td>
                 <td><input type="date" name="releasedate"></td>
                 <td><input class="g-ma-0" type="file" name="img" class="form-control-file" aria-describedby="fileHelp" /></td>
                 <td><input type="number" name="isactive"></td>
@@ -64,6 +68,8 @@ $db = new database();
                 <td><input type="text" name="expansion" value="<?php echo $raid['expansion'] ?>"></td>
                 <td><input type="text" name="raidname" value="<?php echo $raid['raid'] ?>"></td>
                 <td><input type="number" name="bosscount" value="<?php echo $raid['boss_count'] ?>"></td>
+                <td><input type="number" name="us_rank" value="<?php echo $raid['us_rank'] ?>"></td>
+                <td><input type="number" name="realm_rank" value="<?php echo $raid['realm_rank'] ?>"></td>
                 <td><input type="date" name="releasedate" value="<?php echo $raid['release_date'] ?>"></td>
                 <td><a target="_blank" href="<?php echo $raid['icon_img'] ?>"><img class="img-fluid w-50 g-mb-25" src="<?php echo $raid['icon_img'] ?>"></a></td>
                 <td><input type="number" name="isactive" value="<?php echo $raid['is_active'] ?>"></td>

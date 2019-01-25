@@ -32,7 +32,7 @@
       $release = "str_to_date('".$_POST['releasedate']."','%Y-%m-%d')";
       $active = $_POST['isactive'];
 
-      $result = $db -> sql_query("INSERT INTO stormguild.raid VALUES (NULL,".$expansion.",".$name.",".$count.",".$release.", ".$path.", NULL, ".$active.")");
+      $result = $db -> sql_query("INSERT INTO stormguild.raid VALUES (NULL,".$expansion.",".$name.",".$count.",".$release.", ".$path.", NULL, NULL, NULL ".$active.")");
 
     } else if ($_POST['action'] == 'update' && $_POST['type'] == 'raid') {
 
@@ -40,10 +40,12 @@
       $expansion = $db -> quote($_POST['expansion']);
       $name = $db -> quote($_POST['raidname']);
       $count = $_POST['bosscount'];
+      $us_rank = $_POST['us_rank'];
+      $realm_rank = $_POST['realm_rank'];
       $release = "str_to_date('".$_POST['releasedate']."','%Y-%m-%d')";
       $active = $_POST['isactive'];
 
-      $result = $db -> sql_query("UPDATE stormguild.raid SET expansion = ".$expansion.", raid = ".$name.", boss_count = ".$count.", release_date = ".$release.", is_active = ".$active." WHERE raid_id =".$_POST['raidid']);
+      $result = $db -> sql_query("UPDATE stormguild.raid SET expansion = ".$expansion.", raid = ".$name.", boss_count = ".$count.", us_rank = ".$us_rank.", realm_rank = ".$realm_rank.", release_date = ".$release.", is_active = ".$active." WHERE raid_id =".$_POST['raidid']);
 
     }
 
