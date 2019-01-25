@@ -1,35 +1,71 @@
 <?php
+include_once 'library/class.database.php';
+$db = new database();
 
-  include '../library/class.database.php';
+$header = array('Accept: application/vnd.twitchtv.v5+json','Client-ID: dixpnolwj0yth0r3wpzxrp2edowugp');
 
-  $db = new database();
+$results = $db -> read_select("select * from stormguild.streamers where is_active = 1");
+foreach($results as $result) {
 
-  $json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stormrage/storm/json_rank'));
-  $world_rank = $json->world_rank;
-  $area_rank = $json->area_rank;
-  $realm_rank = $json->realm_rank;
+  $online = getTwitchStatus($result['username']);
+  $user = getUserJSON($result['username']);
+  $channel = getChannelJSON($result['username']);
 
-  $current = $db -> read_row('SELECT * FROM stormguild.guild_rank');
-  if(!$current) {
-    createNew();
-  } else if ($current['world_rank'] != $world_rank || $current['area_rank'] != $area_rank || $current['realm_rank'] != $realm_rank) {
-    removeOld();
-    updateCurrent();
+  $display_name = $db -> quote($user['users'][0]['display_name']);
+  $stream_logo = $db -> quote($user['users'][0]['logo']);
+  $stream_message = $db -> quote($channel['status']);
+  $url = $db -> quote($channel['url']);
+
+  $results = $db -> sql_query("UPDATE stormguild.streamers SET online = ".$online.", displayname = ".$display_name.", logo = ".$stream_logo.", status = ".$stream_message.", url = ".$url." WHERE streamer_id = ".$result['streamer_id']);
+
+}
+
+function getChannelID($username) {
+  $json = getUserJSON($username);
+  $channelID = $json['users'][0]['_id'];
+  return $channelID;
+}
+
+function getUserJSON($username) {
+  $url = 'https://api.twitch.tv/kraken/users?login='.$username;
+  $json = getJSON($url);
+  return $json;
+}
+
+function getChannelJSON($username) {
+  $channelID = getChannelID($username);
+  $url = 'https://api.twitch.tv/kraken/channels/'.$channelID;
+  $json = getJSON($url);
+  return $json;
+}
+
+function getStreamJSON($username) {
+  $channelID = getChannelID($username);
+  $url = 'https://api.twitch.tv/kraken/streams/'.$channelID;
+  $json = getJSON($url);
+  return $json;
+}
+
+function getTwitchStatus($username) {
+  $json = getStreamJSON($username);
+  if ($json['stream']) {
+    return true;
+  } else {
+    return false;
   }
+}
 
-  function createNew() {
-    $db = new database();
-    $sql = $db -> write_query('INSERT INTO stormguild.guild_rank VALUES(NULL,{$world_rank},{$area_rank},{$realm_rank},now(),now())');
-  }
-
-  function updateCurrent() {
-    $db = new database();
-    $sql = $db -> write_query('UPDATE stormguild.guild_rank set world_rank = {$world_rank}, area_rank = {$area_rank}, realm_rank = {$realm_rank}, update_datetime = now()');
-  }
-
-  function removeOld() {
-    $db = new database();
-    $sql = $db -> write_query('TRUNCATE TABLE stormguild.guild_rank');
-  }
-
+function getJSON($url) {
+  global $header;
+  $curl = curl_init();
+  curl_setopt_array($curl, array(
+      CURLOPT_RETURNTRANSFER => 1,
+      CURLOPT_URL => $url,
+      CURLOPT_HTTPHEADER => $header
+  ));
+  $raw = curl_exec($curl);
+  curl_close($curl);
+  $json = json_decode($raw, true);
+  return $json;
+}
 ?>
