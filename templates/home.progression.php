@@ -50,7 +50,7 @@ foreach($raids as $raid) {
 		</span>
 		<span class="float-left text-left g-font-size-18 g-color-white g-mx-20">
 			<span class="d-block g-font-size-14"><?php echo $raid['raid']; ?></span>
-			<?php echo $raid['progression']; ?>
+			<?php echo $raid['progression']; ?><span class="float-right text-right d-block g-font-size-14 g-color-white">US Rank #<?php echo $raid['us_rank']; ?></span>
 		</span>
 	</a>
 </div>
