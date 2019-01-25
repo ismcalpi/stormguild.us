@@ -9,7 +9,7 @@ foreach($results as $result) {
 
   echo "<p>Processing Streamer: ".$result['username']."<br />";
 
-  $online = getTwitchStatus($result['username']);
+  $online = $db -> quote(getTwitchStatus($result['username']));
   $user = getUserJSON($result['username']);
   $channel = getChannelJSON($result['username']);
 
