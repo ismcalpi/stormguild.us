@@ -8,6 +8,7 @@ $results = $db -> read_select("select * from stormguild.streamers where is_activ
 foreach($results as $result) {
 
   echo "<p>Processing Streamer: ".$result['username']."<br />";
+
   $online = getTwitchStatus($result['username']);
   $user = getUserJSON($result['username']);
   $channel = getChannelJSON($result['username']);
@@ -19,6 +20,7 @@ foreach($results as $result) {
 
   $twitch_sql = "UPDATE stormguild.streamers SET online = ".$online.", displayname = ".$display_name.", logo = ".$stream_logo.", status = ".$stream_message.", url = ".$url." WHERE streamer_id = ".$result['streamer_id'];
   $twitch_result = $db -> sql_query($twitch_sql);
+
   echo "Query: ".$twitch_sql."</p><br />";
 
 }
@@ -52,9 +54,9 @@ function getStreamJSON($username) {
 function getTwitchStatus($username) {
   $json = getStreamJSON($username);
   if ($json['stream']) {
-    return true;
+    return 1;
   } else {
-    return false;
+    return 0;
   }
 }
 
