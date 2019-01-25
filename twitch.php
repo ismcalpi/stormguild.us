@@ -16,6 +16,7 @@
 
 						$results = $db -> read_select("select * from stormguild.streamers where is_active = 1");
 						foreach($results as $result) {
+							if($result['online'] < 2){
 					?>
 
 					<div class="col-md-3 col-6">
@@ -33,7 +34,8 @@
 				    </div>
 					</div>
 
-				<?php } ?>
+				<?php }
+						} ?>
 				</div>
 			</div>
 			<?php include 'templates/all.footer.php' ?>

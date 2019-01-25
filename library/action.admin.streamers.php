@@ -17,7 +17,7 @@
       $name = $db -> quote($_POST['name']);
       $active = $_POST['isactive'];
 
-      $result = $db -> sql_query("INSERT INTO stormguild.streamers VALUES (NULL,".$name.",".$active.")");
+      $result = $db -> sql_query("INSERT INTO stormguild.streamers VALUES (NULL,".$name.",2,null,null,null,null,".$active.")");
 
     } else if ($_POST['action'] == 'delete') {
 
