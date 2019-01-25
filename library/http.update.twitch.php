@@ -17,10 +17,10 @@ foreach($results as $result) {
   $stream_message = $db -> quote($channel['status']);
   $url = $db -> quote($channel['url']);
 
-  $twitch_sql = "UPDATE stormguild.streamers SET online = ".$online.", displayname = ".$display_name.", logo = ".$stream_logo.", status = ".$stream_message.", url = ".$url." WHERE streamer_id = ".$result['streamer_id']
+  $twitch_sql = "UPDATE stormguild.streamers SET online = ".$online.", displayname = ".$display_name.", logo = ".$stream_logo.", status = ".$stream_message.", url = ".$url." WHERE streamer_id = ".$result['streamer_id'];
   $twitch_result = $db -> sql_query($twitch_sql);
   echo "Query: ".$twitch_sql."</p><br />";
-  
+
 }
 
 function getChannelID($username) {
