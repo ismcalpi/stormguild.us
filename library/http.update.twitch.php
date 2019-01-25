@@ -6,7 +6,7 @@ $header = array('Accept: application/vnd.twitchtv.v5+json','Client-ID: dixpnolwj
 
 $results = $db -> read_select("select * from stormguild.streamers where is_active = 1");
 foreach($results as $result) {
-
+  echo "<p>Processing Streamer: ".$result['username']."<br />"
   $online = getTwitchStatus($result['username']);
   $user = getUserJSON($result['username']);
   $channel = getChannelJSON($result['username']);
@@ -16,8 +16,9 @@ foreach($results as $result) {
   $stream_message = $db -> quote($channel['status']);
   $url = $db -> quote($channel['url']);
 
-  $results = $db -> sql_query("UPDATE stormguild.streamers SET online = ".$online.", displayname = ".$display_name.", logo = ".$stream_logo.", status = ".$stream_message.", url = ".$url." WHERE streamer_id = ".$result['streamer_id']);
-
+  $twitch_sql = "UPDATE stormguild.streamers SET online = ".$online.", displayname = ".$display_name.", logo = ".$stream_logo.", status = ".$stream_message.", url = ".$url." WHERE streamer_id = ".$result['streamer_id']
+  $twitch_result = $db -> sql_query($twitch_sql);
+  echo "Query: ".$twitch_sql."</p><br />"
 }
 
 function getChannelID($username) {
