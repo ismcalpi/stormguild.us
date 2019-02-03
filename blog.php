@@ -7,11 +7,11 @@
           <div class="col-12">
       <?php
       require($_SERVER['DOCUMENT_ROOT'] . '/blog/wp-load.php');
-      $args = array('posts_per_page' => 3);  // add cat as option to limit to category
-      $latest_posts = new WP_Query( $args );
-      if ( $latest_posts->have_posts() ) {
-        while ( $latest_posts->have_posts() ) {
-          $latest_posts->the_post();
+      global $post;
+      $args = array('posts_per_page' => 5, 'order' => 'DESC', 'orderby' => 'date');  // add cat as option to limit to category
+      $myposts = get_posts( $args );
+        foreach ( $myposts as $post ) :
+          setup_postdata( $post );
       ?>
       <article class="g-mb-15 g-pa-10 g-brd-around g-brd-gray-light-v4">
         <div class="g-ma-10 text-center">
@@ -28,12 +28,10 @@
         </div>
       </article>
 
-      <?php }
-        } else {
-          echo '<p>There are no posts available</p>';
-        }
-      wp_reset_postdata();
-      ?>
+        <?php
+        endforeach;
+        wp_reset_postdata();
+        ?>
           <a target=_blank style="text-align:center;" class="h3 g-color-blue text-center" href="https://www.stormguild.us/blog/">See older posts...</a>
           </div>
         </div>
