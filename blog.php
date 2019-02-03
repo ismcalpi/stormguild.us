@@ -1,6 +1,6 @@
 <html lang="en">
   <?php
-    include 'templates/home.head.php'
+    include 'templates/home.head.php';
     Header("Cache-Control: must-revalidate");
     $offset = 60 * 60 * 24 * 1;
     $ExpStr = "Expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
