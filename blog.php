@@ -1,5 +1,11 @@
 <html lang="en">
-  <?php include 'templates/home.head.php' ?>
+  <?php
+    include 'templates/home.head.php'
+    Header("Cache-Control: must-revalidate");
+    $offset = 60 * 60 * 24 * 1;
+    $ExpStr = "Expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
+    Header($ExpStr);
+  ?>
   <body>
     <main style="background:rgba(255,255,255,0.01);">
       <div class="container g-py-10 p-px-5">
