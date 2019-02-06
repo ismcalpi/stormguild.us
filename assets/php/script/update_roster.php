@@ -32,7 +32,7 @@
           }
 
           if ($playerRank == 0 OR $playerRank == 2 OR $playerRank == 4 OR $playerRank == 6) {
-            $sql = "INSERT INTO stormguild.guild_roster VALUES (NULL,{$db -> quote($playerName)},{$db -> quote($playerClass)},{$db -> quote($playerSpec)},{$db -> quote($playerClass)},{$db -> quote($playerThumb)},now(),NULL)";
+            $sql = "INSERT INTO stormguild.guild_roster VALUES (NULL,{$db -> quote($playerName)},{$db -> quote($playerRank)},{$db -> quote($playerSpec)},{$db -> quote($playerClass)},{$db -> quote($playerThumb)},now(),NULL)";
             $db -> writeQuery($sql);
             echo "Inserted {$playerName} into the guild_roster table.<br />";
           } else {
