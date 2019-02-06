@@ -13,9 +13,9 @@
       $sql = "TRUNCATE TABLE stormguild.guild_roster";
       $result = $db -> writeQuery($sql);
       if (!$result) {
-          echo "Error Truncating the Table.";
+          echo "Error Truncating the Table.<br />";
       }
-      echo "Roster Table has been Truncated.";
+      echo "Roster Table has been Truncated.<br />";
   }
 
   function populate_table($json, $db) {
@@ -25,18 +25,18 @@
           $playerRank = $member->rank;
           $playerThumb = $member->character->thumbnail;
 
-          if(!$member->character->spec) {
-            $playerSpec = "NULL";
+          if(array_key_exists('spec',$member)) {
+              $playerSpec = $member->character->spec->icon;
           } else {
-            $playerSpec = $member->character->spec->icon;
+              $playerSpec = "NULL";
           }
 
           if ($playerRank == 0 OR $playerRank == 2 OR $playerRank == 4 OR $playerRank == 6) {
             $sql = "INSERT INTO stormguild.guild_roster VALUES (NULL,{$db -> quote($playerName)},{$db -> quote($playerClass)},{$db -> quote($playerSpec)},{$db -> quote($playerClass)},{$db -> quote($playerThumb)},now(),NULL)";
             $db -> writeQuery($sql);
-            echo "Inserted {$playerName} into the guild_roster table.";
+            echo "Inserted {$playerName} into the guild_roster table.<br />";
           } else {
-            echo "Skipping {$playerName} due to insufficient rank.";
+            echo "Skipping {$playerName} due to insufficient rank.<br />";
           }
       }
   }
