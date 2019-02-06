@@ -6,8 +6,8 @@
   $db = new database();
   $json = json_decode(file_get_contents($blizz_api_url));
 
-  $this -> truncate_table();
-  $this ->  populate_table($json);
+  truncate_table();
+  populate_table($json);
 
   function truncate_table() {
       $sql = "TRUNCATE TABLE stormguild.guild_roster";
