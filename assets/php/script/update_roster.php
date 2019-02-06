@@ -25,7 +25,7 @@
           $playerRank = $member->rank;
           $playerThumb = $member->character->thumbnail;
 
-          if(array_key_exists('spec',$member)) {
+          if(isset($member->character->spec)) {
               $playerSpec = $member->character->spec->icon;
           } else {
               $playerSpec = "NULL";
