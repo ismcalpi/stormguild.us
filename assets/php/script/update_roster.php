@@ -6,10 +6,10 @@
   $db = new database();
   $json = json_decode(file_get_contents($blizz_api_url));
 
-  truncate_table();
-  populate_table($json);
+  truncate_table($db);
+  populate_table($json,$db);
 
-  function truncate_table() {
+  function truncate_table($db) {
       $sql = "TRUNCATE TABLE stormguild.guild_roster";
       $result = $db -> writeQuery($sql);
       if (!$result) {
@@ -18,7 +18,7 @@
       echo "Roster Table has been Truncated.";
   }
 
-  function populate_table($json) {
+  function populate_table($json, $db) {
       foreach ($json->members as $member) {
           $playerName = $member->character->name;
           $playerClass = $member->character->class;
