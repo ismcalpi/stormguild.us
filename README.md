@@ -17,6 +17,6 @@ Storm is a raiding guild in the game [World of Warcraft](http://www.worldofwarcr
 + [X] Code & Directory Cleanup (In Progress)
 + [X] Add Discord Web-Hook to Alert on Application
 + [X] Finalize Admin Panel
-+ [ ] Create Roster with Battle Net API
++ [X] Create Roster with Battle Net API
 + [X] Make the Twitch page look good and advertise our streamers better
 + [ ] Convert the application process into a dynamic system, allow officers to add / remove questions via admin panel
