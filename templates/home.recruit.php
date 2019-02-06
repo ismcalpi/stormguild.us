@@ -33,7 +33,7 @@
 	}
 ?>
 	    </div>
-      <a class="btn btn-sm u-btn-outline-white g-font-weight-600 g-font-size-11 text-uppercase g-mx-20 g-my-10" href="recruit.php#application">Apply Now</a>
+      <a class="btn btn-sm u-btn-outline-white g-font-weight-600 g-font-size-11 text-uppercase g-mx-20 g-my-10" href="recruit.php">Apply Now</a>
     </div>
   </div>
 </article>
