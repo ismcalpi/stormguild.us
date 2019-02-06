@@ -36,7 +36,7 @@
             $db -> writeQuery($sql);
             echo "Inserted {$playerName} into the guild_roster table.<br />";
           } else {
-            echo "Skipping {$playerName} due to insufficient rank.<br />";
+            #echo "Skipping {$playerName} due to insufficient rank.<br />";
           }
       }
   }
