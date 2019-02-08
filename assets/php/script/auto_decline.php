@@ -8,8 +8,8 @@
   $sql = "select application_id, datediff(now(),create_datetime) as age
           from stormguild.application
           where status = 'open'";
-          
-  $applications = $db -> sql_select($sql);
+
+  $applications = $db -> readResults($sql);
 
   foreach ($applications as $application) {
 
