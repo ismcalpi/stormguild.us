@@ -12,17 +12,13 @@
   $applications = $db -> readResults($sql);
 
   foreach ($applications as $application) {
-
     $age = $application['age'];
-
     if ($age == 6) {
       //application will autodecline soon, warn
       warn($application);
     } else if ($age >= 7) {
       //application is old enough to autodecline
       decline($application);
-    } else {
-      echo 'ERROR WILL ROBINSON';
     }
   }
 
@@ -31,9 +27,9 @@
 
     $discord = new discord();
 
-    $user = ':smiling_imp: Auto-Decline Bot';
+    $user = 'Application Discord Bot';
     $member_link = "https://www.stormguild.us/application.php?appid=".$app['application_id'];
-    $message = "Warning: ".$app['charName']." is ".$app['age']." days old and will be declined soon. \n Link: ".$member_link;
+    $message = "@officer ".$app['charName']."'s application is ".$app['age']." days old and will be declined soon. \n Link: ".$member_link;
     $discord -> discord_message($user,$message,'recruit');
 
   }
