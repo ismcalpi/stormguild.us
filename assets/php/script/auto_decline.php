@@ -29,7 +29,7 @@
 
     $user = 'Application Discord Bot';
     $member_link = "https://www.stormguild.us/application.php?appid=".$app['application_id'];
-    $message = "@officer ".$app['charName']."'s application is ".$app['age']." days old and will be declined soon. \n Link: ".$member_link;
+    $message = "@Officer ".$app['charName']."'s application is ".$app['age']." days old and will be declined soon. \n Link: ".$member_link;
     $discord -> discord_message($user,$message,'recruit');
 
   }
