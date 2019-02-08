@@ -33,7 +33,7 @@
 
     $user = ':smiling_imp: Auto-Decline Bot';
     $member_link = "https://www.stormguild.us/application.php?appid=".$app['application_id'];
-    $discord_msg = "Warning: ".$app['charName']." is ".$app['age']." days old and will be declined soon. \n Link: ".$member_link;
+    $message = "Warning: ".$app['charName']." is ".$app['age']." days old and will be declined soon. \n Link: ".$member_link;
     $discord -> discord_message($user,$message,'recruit');
 
   }
