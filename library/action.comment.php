@@ -45,16 +45,6 @@ function comment_add() {
 
 }
 
-function notify_discord($message) {
-
-  $data = array("content" => $message, "username" => "Application Robot");
-  $curl = curl_init("https://discordapp.com/api/webhooks/383667737525878798/-OZH5-jbnsIpngVOgzcsTuLqTpkDbx7OULmmBOd0zaPUAcYIiLdMczsU9m65iHzNF3vQ");
-  curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-  curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-  return curl_exec($curl);
-}
-
 function notify_guild($link, $appname, $username) {
   $msg = new messenger(false);
   global $dbhost, $dbuser, $dbpasswd, $dbname, $accessid;
