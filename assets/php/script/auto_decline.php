@@ -5,7 +5,7 @@
 
   $db = new database();
 
-  $sql = "select application_id, datediff(now(),create_datetime) as age
+  $sql = "select application_id, charName, datediff(now(),create_datetime) as age
           from stormguild.application
           where status = 'open'";
 
