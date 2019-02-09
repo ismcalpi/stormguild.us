@@ -35,8 +35,6 @@
             $sql = "INSERT INTO stormguild.guild_roster VALUES (NULL,{$db -> quote($playerName)},{$db -> quote($playerRank)},{$db -> quote($playerSpec)},{$db -> quote($playerClass)},{$db -> quote($playerThumb)},now(),NULL)";
             $db -> writeQuery($sql);
             echo "Inserted {$playerName} into the guild_roster table.<br />";
-          } else {
-            #echo "Skipping {$playerName} due to insufficient rank.<br />";
           }
       }
   }
