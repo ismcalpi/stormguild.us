@@ -71,7 +71,7 @@ function submit_app() {
   $discord_msg = "New ".$_POST['charSpec']." ".$_POST['charClass']." Application from ".$_POST['charName']."\n".$member_link;
   notify_guild($member_link);
   notify_applicant($app_link);
-  $discord -> discord_message('Application Discord Bot', $discord_msg, 'recruit');
+  $discord -> discord_message('App Bot', $discord_msg, 'recruit');
 
   $redirect = "../recruit.php?status=success&accessid=".$accessid."#application";
   header("Location: $redirect");

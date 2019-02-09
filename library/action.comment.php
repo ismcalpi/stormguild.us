@@ -15,7 +15,7 @@ $discord_msg = "New Comment from ".$_POST['username']." on ".$_POST['appname']."
 
 notify_guild($member_link,$_POST['appname'],$_POST['username']);
 notify_applicant($app_link,$_POST['username']);
-$discord -> discord_message('Application Discord Bot', $discord_msg, 'recruit');
+$discord -> discord_message('App Bot', $discord_msg, 'recruit');
 
 $link = 'https://www.stormguild.us'.$_POST['redirecturi'];
 header("Location: $link");

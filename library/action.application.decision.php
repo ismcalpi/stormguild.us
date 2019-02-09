@@ -14,7 +14,7 @@ $discord_msg = $_POST['appname']."'s Application has been ".$_POST['status']." \
 
 notify_guild($member_link,$_POST['appname'],$_POST['status']);
 notify_applicant($_POST['status']);
-$discord -> discord_message('Application Discord Bot', $discord_msg, 'recruit');
+$discord -> discord_message('App Bot', $discord_msg, 'recruit');
 
 $link = 'https://www.stormguild.us'.$_POST['redirecturi'];
 header("Location: $link");
