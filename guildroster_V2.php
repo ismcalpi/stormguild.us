@@ -31,14 +31,9 @@
                           <div class='col-lg-3 col-md-6 col-12 g-mb-30'>
                               <figure class="u-block-hover u-shadow-v2 g-bg-white g-rounded-4 g-pa-5">
                                   <div class="d-flex justify-content-start">
-                                      <img class="g-width-50 g-height-50" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
-                                      <img class="g-width-20 g-height-20 rounded-circle g-mr-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
-                                      <div class="d-block">
-                                          <div class="g-mb-5 g-mt-5">
-                                              <h4 class="h5 g-mb-0"><?php echo $result['name']; ?></h4>
-                                              <!--<em class="d-block g-color-primary g-font-style-normal g-font-size-default"><?php echo $rank_name ?></em>-->
-                                          </div>
-                                      </div>
+                                      <img class="g-width-60 g-height-60 rounded-circle" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
+                                      <img class="g-width-30 g-height-30 rounded-circle" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
+                                      <div class="d-block"><h4 class="h5 g-my-15"><?php echo $result['name']; ?></h4></div>
                                       <figcaption style="background-color:rgba(0,0,0,.5)" class="u-block-hover__additional--fade g-pa-30">
                                           <div class="u-block-hover__additional--fade u-block-hover__additional--fade-down g-flex-middle">
                                               <ul class="list-inline text-center g-flex-middle-item">
