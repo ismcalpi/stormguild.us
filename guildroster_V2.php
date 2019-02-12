@@ -18,10 +18,10 @@
                 $class_count = $class[5];
           ?>
             <div class="row g-mx-20">
-              <div class="col-2">
-                <img style="margin:5px;width:50%" src="<?php echo $class[2]; ?>">
+              <div class="col-1">
+                <img class="g-width-80 g-height-80" src="<?php echo $class[2]; ?>">
               </div>
-              <div class="col-10">
+              <div class="col-11">
                   <div class="row">
                       <?php
                       $results = $roster -> get_classResult($class);
@@ -31,7 +31,7 @@
                           <div class='col-lg-3 col-md-6 col-12 g-mb-30'>
                               <figure class="u-block-hover u-shadow-v2 g-bg-white g-rounded-4 g-pa-5">
                                   <div class="d-flex justify-content-start">
-                                      <img class="g-width-60 g-height-60 rounded-circle" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
+                                      <img class="g-width-70 g-height-70 rounded-circle" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
                                       <img class="g-width-20 g-height-20 rounded-circle g-mr-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
                                       <div class="d-block">
                                           <div class="g-mb-5 g-mt-5">
