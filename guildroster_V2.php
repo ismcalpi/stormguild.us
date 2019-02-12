@@ -24,13 +24,16 @@
 
                     <div class='col-lg-4 col-md-6 col-12 g-mb-30'>
                         <figure class="u-block-hover u-shadow-v2 g-bg-white g-pa-0">
-                            <div style="background-color:rgba(0,0,0,.85);border-radius: 30px; border: 2px solid #000000" class="d-flex g-pa-0">
-                                <img style="border-radius: 30px 0px 0px 30px;" class="g-width-80 g-height-80 g-mr-0 g-flex-left" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
-                                <div class="d-block g-flex-middle">
+                            <div style="background-color:rgba(0,0,0,.85);border-radius: 30px; border: 2px solid #000000" class="d-flex justify-content-start g-pa-0">
+
+                                <img style="border-radius: 30px 0px 0px 30px;" class="g-width-80 g-height-80 g-mr-0" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
+
+                                <img style="vertical-align: middle;" class="g-width-40 g-height-40 g-mx-10 rounded-circle" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
+
+                                <div class="d-block g-mx-10">
                                     <h4 style="color:<?php echo $class[1]; ?>;" class="h5 g-mt-15 g-mb-5"><?php echo $result['name']; ?></h4>
                                     <em class="d-block g-color-white g-font-style-normal g-font-size-small g-mb-15 g-mt-0"><?php echo $rank_name ?></em>
                                 </div>
-                                <img style="border-radius: 0px 30px 30px 0px;" class="g-width-80 g-height-80 g-mr-0 g-flex-right" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
 
                                 <figcaption style="background-color:rgba(255,255,255,.6)" class="u-block-hover__additional--fade g-pa-30">
                                     <div class="u-block-hover__additional--fade u-block-hover__additional--fade-down g-flex-middle">
