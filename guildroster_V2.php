@@ -33,7 +33,12 @@
                                   <div class="d-flex justify-content-start">
                                       <img class="g-width-60 g-height-60 rounded-circle" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
                                       <img class="g-width-20 g-height-20 rounded-circle g-mr-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
-                                      <h4 class="h5 g-mb-0"><?php echo $result['name']; ?><em class="d-block g-color-primary g-font-style-normal g-font-size-small"><?php echo $rank_name ?></em></h4>
+                                      <div class="d-block">
+                                          <div class="g-mb-5 g-mt-5">
+                                              <h4 class="h5 g-mb-0"><?php echo $result['name']; ?></h4>
+                                              <!--<em class="d-block g-color-primary g-font-style-normal g-font-size-default"><?php echo $rank_name ?></em>-->
+                                          </div>
+                                      </div>
                                       <figcaption style="background-color:rgba(0,0,0,.5)" class="u-block-hover__additional--fade g-pa-30">
                                           <div class="u-block-hover__additional--fade u-block-hover__additional--fade-down g-flex-middle">
                                               <ul class="list-inline text-center g-flex-middle-item">
