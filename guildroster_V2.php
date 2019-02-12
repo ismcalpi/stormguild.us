@@ -28,8 +28,8 @@
                                 <img class="g-width-80 g-height-80 rounded-left" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
                                 <img class="g-width-30 g-height-30 rounded-circle g-mr-5" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
                                 <div class="d-block">
-                                    <h4 style="color:<?php echo $class[1]; ?>;" class="h5 g-my-15"><?php echo $result['name']; ?></h4>
-                                    <em class="d-block g-color-white g-font-style-normal g-font-size-default"><?php echo $rank_name ?></em>
+                                    <h4 style="color:<?php echo $class[1]; ?>;" class="h5 g-mt-15 g-mb-5"><?php echo $result['name']; ?></h4>
+                                    <em class="d-block g-color-white g-font-style-normal g-font-size-small g-mb-15 g-mt-0"><?php echo $rank_name ?></em>
                                 </div>
                                 <figcaption style="background-color:rgba(255,255,255,.5)" class="u-block-hover__additional--fade g-pa-30">
                                     <div class="u-block-hover__additional--fade u-block-hover__additional--fade-down g-flex-middle">
