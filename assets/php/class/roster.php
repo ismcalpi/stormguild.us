@@ -25,7 +25,7 @@
             break;
           case 5:
             $className = 'Priest';
-            $classColor = '#b3b3b3';
+            $classColor = '#FFFFFF';
             $classIcon = 'http://wow.zamimg.com/images/classes/symbols/icon-priest.png';
             break;
           case 6:
