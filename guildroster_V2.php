@@ -24,7 +24,7 @@
 
                     <div class='col-lg-4 col-md-6 col-12 g-mb-30'>
                         <figure class="u-block-hover u-shadow-v2 g-bg-white g-pa-0">
-                            <div style="background-color:rgba(0,0,0,.2);border-radius: 30px; border: 2px solid #000000" class="d-flex justify-content-start g-pa-0">
+                            <div style="background-color:rgba(0,0,0,.4);border-radius: 30px; border: 2px solid #000000" class="d-flex justify-content-start g-pa-0">
 
                                 <img style="border-radius: 30px 0px 0px 30px;" class="g-width-80 g-height-80" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
 
@@ -35,7 +35,7 @@
                                     <em class="d-block g-color-white g-font-style-normal g-font-size-small g-mb-15 g-mt-0"><?php echo $rank_name ?></em>
                                 </div>
 
-                                <figcaption style="background-color:rgba(0,0,0,.65)" class="u-block-hover__additional--fade g-pa-30">
+                                <figcaption style="background-color:rgba(0,0,0,.7); border-radius: 30px;" class="u-block-hover__additional--fade g-pa-30">
                                     <div class="u-block-hover__additional--fade u-block-hover__additional--fade-down g-flex-middle">
                                         <ul class="list-inline text-center g-flex-middle-item">
                                             <li class="list-inline-item align-middle g-mx-7 g-color-white">
