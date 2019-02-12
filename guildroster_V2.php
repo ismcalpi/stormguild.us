@@ -23,8 +23,8 @@
                     ?>
 
                     <div class='col-lg-4 col-md-6 col-12 g-mb-30'>
-                        <figure class="u-block-hover u-shadow-v2 g-bg-white g-pa-5">
-                            <div style="background-color:rgba(0,0,0,.75)" class="d-flex justify-content-start g-rounded-50x">
+                        <figure class="u-block-hover u-shadow-v2 g-bg-white g-pa-5 g-brd-around--solid g-rounded-30">
+                            <div style="background-color:rgba(0,0,0,.75)" class="d-flex justify-content-start">
                                 <img class="g-width-80 g-height-80 rounded-left" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
                                 <img class="g-width-30 g-height-30 rounded-circle g-mx-5 g-my-15" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
                                 <div class="d-block">
