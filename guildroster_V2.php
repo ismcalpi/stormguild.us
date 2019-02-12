@@ -24,9 +24,9 @@
 
                     <div class='col-lg-4 col-md-6 col-12 g-mb-30'>
                         <figure class="u-block-hover u-shadow-v2 g-bg-white g-pa-0">
-                            <div style="background-color:rgba(0,0,0,.65);border-radius: 30px 5px 5px 30px; border: 2px solid #000000" class="d-flex justify-content-start g-pa-0">
+                            <div style="background-color:rgba(0,0,0,.65);border-radius: 25px; border: 2px solid #000000" class="d-flex justify-content-start g-pa-0">
 
-                                <img style="border-radius: 30px 5px 5px 30px;" class="g-width-80 g-height-80" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
+                                <img style="border-radius: 25px 2px 2px 25px;" class="g-width-80 g-height-80" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
 
                                 <img class="g-width-40 g-height-40 g-mx-10 g-my-20 rounded-circle" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
 
@@ -35,7 +35,7 @@
                                     <em class="d-block g-color-white g-font-style-normal g-font-size-small g-mb-15 g-mt-0"><?php echo $rank_name ?></em>
                                 </div>
 
-                                <figcaption style="background-color:rgba(0,0,0,.65); border-radius: 30px 5px 5px 30px;" class="u-block-hover__additional--fade g-pa-30">
+                                <figcaption style="background-color:rgba(0,0,0,.65); border-radius: 25px;" class="u-block-hover__additional--fade g-pa-30">
                                     <div class="u-block-hover__additional--fade u-block-hover__additional--fade-down g-flex-middle">
                                         <ul class="list-inline text-center g-flex-middle-item">
                                             <li class="list-inline-item align-middle g-mx-7 g-color-white">
