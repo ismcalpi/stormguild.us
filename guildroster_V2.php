@@ -18,10 +18,10 @@
                 $class_count = $class[5];
           ?>
             <div class="row g-mx-20">
-              <div style="border-color: <?php echo $class[1]; ?> !important;" class="col-3 u-heading-v1-1 g-bg-main g-mb-10 g-pa-0">
-                <img style="margin-right:10px;" src="<?php echo $class[2]; ?>">
+              <div class="col-2">
+                <img style="margin:5px;width:100%" src="<?php echo $class[2]; ?>">
               </div>
-              <div class="col-9">
+              <div class="col-10">
 
                   <div class="row">
 
