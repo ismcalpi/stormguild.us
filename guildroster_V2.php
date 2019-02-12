@@ -35,7 +35,7 @@
                                     <em class="d-block g-color-white g-font-style-normal g-font-size-small g-mb-15 g-mt-0"><?php echo $rank_name ?></em>
                                 </div>
 
-                                <figcaption style="background-color:rgba(255,255,255,.5); border-radius: 30px 5px 5px 30px;" class="u-block-hover__additional--fade g-pa-30">
+                                <figcaption style="background-color:rgba(0,0,0,.9); border-radius: 30px 5px 5px 30px;" class="u-block-hover__additional--fade g-pa-30">
                                     <div class="u-block-hover__additional--fade u-block-hover__additional--fade-down g-flex-middle">
                                         <ul class="list-inline text-center g-flex-middle-item">
                                             <li class="list-inline-item align-middle g-mx-7 g-color-white">
