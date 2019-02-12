@@ -23,10 +23,10 @@
                     ?>
 
                     <div class='col-lg-3 col-md-6 col-12 g-mb-30'>
-                        <figure class="u-block-hover u-shadow-v2 g-bg-white g-rounded-25 g-pa-5">
+                        <figure class="u-block-hover u-shadow-v2 g-bg-white g-rounded-25 g-pa-5 g-brd-2 g-brd-solid">
                             <div style="background-color:rgba(0,0,0,.7)" class="d-flex justify-content-start">
                                 <img class="g-width-80 g-height-80 rounded-left" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
-                                <img class="g-width-30 g-height-30 rounded-circle g-mr-5" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
+                                <img class="g-width-30 g-height-30 rounded-circle g-ma-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
                                 <div class="d-block">
                                     <h4 style="color:<?php echo $class[1]; ?>;" class="h5 g-mt-15 g-mb-5"><?php echo $result['name']; ?></h4>
                                     <em class="d-block g-color-white g-font-style-normal g-font-size-small g-mb-15 g-mt-0"><?php echo $rank_name ?></em>
