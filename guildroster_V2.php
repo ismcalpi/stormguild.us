@@ -28,10 +28,10 @@
 
                                 <img class="g-width-80 g-height-80 rounded-circle" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
 
-                                <img class="g-width-40 g-height-40 g-ml-0 g-mr-10 g-my-20 rounded-circle" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
+                                <img class="g-width-40 g-height-40 g-ml-5 g-mr-10 g-my-10 rounded-circle" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
 
                                 <div class="d-block g-mx-10">
-                                    <h4 style="color:<?php echo $class[1]; ?>; text-shadow: 0px 0px 5px #000, 3px 3px #000, 3px 3px #000;" class="h5 g-mt-15 g-mb-5"><?php echo $result['name']; ?></h4>
+                                    <h4 style="color:<?php echo $class[1]; ?>; text-shadow: 0px 0px 5px #000, 3px 3px #000, 0px 0px #000;" class="h5 g-mt-15 g-mb-5"><?php echo $result['name']; ?></h4>
                                     <em class="d-block g-color-black g-font-style-normal g-font-size-small g-mb-15 g-mt-0"><?php echo $rank_name ?></em>
                                 </div>
 
