@@ -25,9 +25,12 @@
                     <div class='col-lg-3 col-md-6 col-12 g-mb-30'>
                         <figure class="u-block-hover u-shadow-v2 g-bg-white g-rounded-4 g-pa-5">
                             <div style="background-color:rgba(0,0,0,.8)" class="d-flex justify-content-start">
-                                <img style="border-radius:20%" class="g-width-80 g-height-80" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
-                                <img class="g-width-20 g-height-20 rounded-circle" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
-                                <div class="d-block"><h4 style="color:<?php echo $class[1]; ?>;" class="h5 g-my-15"><?php echo $result['name']; ?></h4></div>
+                                <img style="border-radius:3" class="g-width-80 g-height-80" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
+                                <img class="g-width-30 g-height-30 rounded-circle" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
+                                <div class="d-block">
+                                    <h4 style="color:<?php echo $class[1]; ?>;" class="h5 g-my-15"><?php echo $result['name']; ?></h4>
+                                    <em class="d-block g-color-white g-font-style-normal g-font-size-default"><?php echo $rank_name ?></em>
+                                </div>
                                 <figcaption style="background-color:rgba(255,255,255,.5)" class="u-block-hover__additional--fade g-pa-30">
                                     <div class="u-block-hover__additional--fade u-block-hover__additional--fade-down g-flex-middle">
                                         <ul class="list-inline text-center g-flex-middle-item">
