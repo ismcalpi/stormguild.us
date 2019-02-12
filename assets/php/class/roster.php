@@ -91,21 +91,22 @@
       }
 
       public function get_classResult ($classInfo) {
-        include_once 'library/database.php';
+        include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
         $db = new Database();
-        $sql = "SELECT * FROM stormguild.guild_roster WHERE rank in (0,2,4,6) AND class = ".$classInfo[3]." order by rank asc, name asc";
-        $result = $db -> read_select($sql);
+        $sql = "SELECT * FROM stormguild.guild_roster WHERE class = {$classInfo[3]} order by rank asc, name asc";
+        $result = $db -> readResults($sql);
         return $result;
       }
 
       public function get_classList () {
-        include_once 'library/database.php';
+        include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
         $db = new Database();
 
-        $results = $db -> read_select("SELECT DISTINCT class from stormguild.guild_roster WHERE rank in (0,2,4,6) order by class asc");
+        $results = $db -> readResults("SELECT DISTINCT class, count(*) as class_count from stormguild.guild_roster group by class order by class asc");
         $classList = array();
         foreach ($results as $result) {
           $classInfo = $this -> get_classInfo($result['class']);
+          array_push($classInfo,$result['class_count']);
           array_push($classList,$classInfo);
         }
         sort($classList);
