@@ -19,7 +19,7 @@
           ?>
             <div class="row g-mx-20">
               <div class="col-1">
-                <img class="g-width-80 g-height-80" src="<?php echo $class[2]; ?>">
+                <img class="g-width-100 g-height-100" src="<?php echo $class[2]; ?>">
               </div>
               <div class="col-11">
                   <div class="row">
@@ -31,7 +31,7 @@
                           <div class='col-lg-3 col-md-6 col-12 g-mb-30'>
                               <figure class="u-block-hover u-shadow-v2 g-bg-white g-rounded-4 g-pa-5">
                                   <div class="d-flex justify-content-start">
-                                      <img class="g-width-70 g-height-70 rounded-circle" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
+                                      <img class="g-width-50 g-height-50" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
                                       <img class="g-width-20 g-height-20 rounded-circle g-mr-10" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
                                       <div class="d-block">
                                           <div class="g-mb-5 g-mt-5">
