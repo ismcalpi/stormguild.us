@@ -24,7 +24,7 @@
 
                     <div class='col-lg-4 col-md-6 col-12 g-mb-30'>
                         <figure class="u-block-hover u-shadow-v2 g-bg-white g-pa-0">
-                            <div style="background-color:rgba(0,0,0,.65);border-radius: 25px; border: 2px solid #000000" class="d-flex justify-content-start g-pa-0">
+                            <div style="background-color:rgba(0,0,0,.65);border-radius: 25px; border: 2px solid #FFFFFF" class="d-flex justify-content-start g-pa-0">
 
                                 <img style="border-radius: 25px 2px 2px 25px;" class="g-width-80 g-height-80" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
 
