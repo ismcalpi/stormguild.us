@@ -26,7 +26,7 @@
                         <figure class="u-block-hover u-shadow-v2 g-bg-white g-pa-0">
                             <div style="background-color:rgba(255,255,255,0);" class="d-flex justify-content-start g-pa-0">
 
-                                <img class="g-width-90 g-height-90 g-my-5 rounded-circle" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
+                                <img class="g-width-80 g-height-80 g-my-5 rounded-circle" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
 
                                 <img class="g-width-30 g-height-30 g-ml-minus-15 g-mr-10 g-my-10 rounded-circle" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
 
