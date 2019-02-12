@@ -22,10 +22,10 @@
                     $rank_name = $roster->get_guildRank($result['rank']);
                     ?>
 
-                    <div class='col-lg-3 col-md-6 col-12 g-mb-30'>
-                        <figure class="u-block-hover u-shadow-v2 g-bg-white g-rounded-20 g-pa-5">
-                            <div style="background-color:rgba(0,0,0,.75)" class="d-flex justify-content-start g-brd-2 g-brd-black">
-                                <img class="g-width-90 g-height-90 rounded-left" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
+                    <div class='col-lg-4 col-md-6 col-12 g-mb-30'>
+                        <figure class="u-block-hover u-shadow-v2 g-bg-white g-pa-5">
+                            <div style="background-color:rgba(0,0,0,.75)" class="d-flex justify-content-start rounded-left">
+                                <img class="g-width-80 g-height-80 rounded-left" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
                                 <img class="g-width-30 g-height-30 rounded-circle g-mx-5 g-my-15" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
                                 <div class="d-block">
                                     <h4 style="color:<?php echo $class[1]; ?>;" class="h5 g-mt-15 g-mb-5"><?php echo $result['name']; ?></h4>
