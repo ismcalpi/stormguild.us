@@ -24,8 +24,8 @@
 
                     <div class='col-lg-4 col-md-6 col-12 g-mb-30'>
                         <figure class="u-block-hover u-shadow-v2 g-bg-white g-pa-5">
-                            <div style="background-color:rgba(0,0,0,.75);border-radius: 50px 5px 5px 50px; border: 2px solid #000000" class="d-flex justify-content-start">
-                                <img class="g-width-80 g-height-80" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
+                            <div style="background-color:rgba(0,0,0,.75);border-radius: 30px 5px 5px 30px; border: 2px solid #000000" class="d-flex justify-content-start">
+                                <img style="border-radius: 30px 0px 0px 30px;" class="g-width-80 g-height-80" src="http://render-us.worldofwarcraft.com/character/<?php echo $result['thumbnail']; ?>">
                                 <img class="g-width-30 g-height-30 rounded-circle g-mx-5 g-my-15" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
                                 <div class="d-block">
                                     <h4 style="color:<?php echo $class[1]; ?>;" class="h5 g-mt-15 g-mb-5"><?php echo $result['name']; ?></h4>
