@@ -31,7 +31,7 @@
                                 <img class="g-width-40 g-height-40 g-ml-5 g-mr-10 g-my-10 rounded-circle" src="https://wow.zamimg.com/images/wow/icons/large/<?php echo $result['spec_icon'] ?>.jpg">
 
                                 <div class="d-block g-mx-10">
-                                    <h4 style="color:<?php echo $class[1]; ?>; text-shadow: 0px 0px 10px #000, -1px -1px #000, 1px 1px #000;" class="h5 g-mt-15 g-mb-5"><?php echo $result['name']; ?></h4>
+                                    <h4 style="color:<?php echo $class[1]; ?>; text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;" class="h5 g-mt-15 g-mb-5"><?php echo $result['name']; ?></h4>
                                     <em class="d-block g-color-black g-font-style-normal g-font-size-small g-mb-15 g-mt-0"><?php echo $rank_name ?></em>
                                 </div>
 
