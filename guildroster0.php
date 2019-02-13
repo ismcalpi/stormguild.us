@@ -6,7 +6,7 @@
     <main>
       <?php include 'templates/all.navbar.php' ?>
       <div class="container g-bg-white g-brd-around g-brd-white g-brd-2 g-mt-80 g-pa-30" style="min-height:100vh;">
-        <div class="g-height-200" style="background-image: url('assets/img/guildroster/banner.jpg'); background-size: cover; background-repeat: no-repeat;">
+        <div class="g-height-150" style="background-image: url('assets/img/guildroster/banner.jpg'); background-size: cover; background-repeat: no-repeat;">
           <h1>Guild Roster</h1>
         </div>
         <div class="row">
