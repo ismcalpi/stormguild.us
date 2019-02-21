@@ -5,7 +5,7 @@
 	<body class="main-body">
 		<main>
 			<?php include 'templates/all.navbar.php' ?>
-			<div class="container g-my-80 g-bg-white g-brd-around g-brd-blue g-brd-2" style="min-height:100vh;">
+			<div class="container g-my-80 g-bg-white" style="min-height:100vh;">
 				<div class="row">
 					<?php
 						include_once 'library/class.database.php';
