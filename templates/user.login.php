@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <input type="hidden" name="redirect" value="..<?php echo $redirect ?>">
+      <input type="hidden" name="redirect" value="<?php echo $redirect ?>">
       <div class="mb-4">
         <button class="btn btn-md btn-block u-btn-blue rounded g-py-13" type="submit" name="login" value="login">Login</button>
       </div>
