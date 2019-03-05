@@ -2,7 +2,7 @@
   if (!empty($_POST['redirect'])) {
     $redirect = $_POST['redirect'];
   } else {
-    $redirect = '/index.php';
+    $redirect = 'https://www.stormguild.us/';
   }
 ?>
 <!-- Form -->
