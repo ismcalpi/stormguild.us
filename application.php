@@ -39,7 +39,7 @@
 				</script> -->
 				<h1><a href="user.php?page=login">Please Login</a></h1>
 				<?php
-					echo "<p>Debug Info</p>"
+					echo "<p>Debug Info</p>";
 					echo "<p>User Rank: ".$user_rank."</p>";
 					echo "<p>Access Level: ".$access."</p>";
 					echo "<p>Request URI: ".$_SERVER['REQUEST_URI']."</p>";
