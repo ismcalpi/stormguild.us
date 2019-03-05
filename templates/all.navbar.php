@@ -118,7 +118,7 @@
                   if($user_rank >= 2) {
                 ?>
                 <li class="dropdown-item">
-                  <a class="nav-link g-px-0" target="_blank" href="application.php">Applications</a>
+                  <a class="nav-link g-px-0" target="_blank" href="application.php?source=navbar">Applications</a>
                 </li>
                 <?php
                 }
