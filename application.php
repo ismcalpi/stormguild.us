@@ -31,12 +31,6 @@
 	<body>
 		<main>
 			<?php if($access < 1) { ?>
-				<!-- <form id="redirect" method="POST" action="user.php?page=login">
-					<input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
-				</form>
-				<script type="text/javascript">
-				    document.getElementById('redirect').submit(); // SUBMIT FORM
-				</script> -->
 				<h1><a href="user.php?page=login">Access Denied</a></h1>
 				<?php
 					echo "<p>Debug Info</p>";
