@@ -6,6 +6,7 @@
 		include_once 'library/class.database.php';
 		$db = new database();
 		#Lets setup our Application access and variables
+		$access = 0;
 		if (!empty($_GET['accessid'])) {
 			$sql = "SELECT * FROM stormguild.application WHERE access_id = '".$_GET['accessid']."'";
 			$result = $db -> sql_fetchrow($sql);
@@ -29,7 +30,7 @@
 	?>
 	<body>
 		<main>
-			<?php if($access < 1 || !$access) { ?>
+			<?php if($access < 1) { ?>
 				<form id="redirect" method="POST" action="user.php?page=login">
 					<input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
 				</form>
@@ -55,7 +56,7 @@
 			</div>
 
 		<?php include 'templates/application.archive.php' ?>
-		
+
 		</main>
 	</body>
 	<?php include 'templates/admin.js.php' ?>
