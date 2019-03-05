@@ -31,7 +31,8 @@
 	<body>
 		<main>
 			<?php if($access < 1) { ?>
-				<h1><a href="user.php?page=login">Access Denied</a></h1>
+				<h1>Access Denied</h1>
+				<p>...or you need to <a href="user.php?page=login">login</a></p>
 				<?php
 					echo "<p>Debug Info</p>";
 					echo "<p>User Rank: ".$user_rank."</p>";
