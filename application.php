@@ -37,7 +37,7 @@
 				<script type="text/javascript">
 				    document.getElementById('redirect').submit(); // SUBMIT FORM
 				</script> -->
-				<h1><a href="user.php?page=login">Please Login</a></h1>
+				<h1><a href="user.php?page=login">Access Denied</a></h1>
 				<?php
 					echo "<p>Debug Info</p>";
 					echo "<p>User Rank: ".$user_rank."</p>";
