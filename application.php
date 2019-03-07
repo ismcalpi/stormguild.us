@@ -33,12 +33,12 @@
 			<?php if($access < 1) { ?>
 				<h1>Access Denied</h1>
 				<p>...or you need to <a href="user.php?page=login">login</a></p>
-				<?php
+				<!-- <?php
 					#echo "<p>Debug Info</p>";
 					#echo "<p>User Rank: ".$user_rank."</p>";
 					#echo "<p>Access Level: ".$access."</p>";
 					#echo "<p>Request URI: ".$_SERVER['REQUEST_URI']."</p>";
-				?>
+				?> -->
 			<?php } ?>
 			<?php if($access >= 2) { ?>
 			<div class="row" style="min-height:100vh">
