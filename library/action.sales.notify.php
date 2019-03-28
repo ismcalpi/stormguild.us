@@ -8,7 +8,14 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
 $discord = new discord();
 
 $HasLink = strpos($_POST['message'], 'http') !== false || strpos($_POST['message'], 'www.') !== false || strpos($_POST['message'], '[/url]') !== false || strpos($_POST['message'], '</a>') !== false;
-if (!$HasLink) {
+
+if (empty($_POST['contact']) || empty($_POST['contact_type']) || empty($_POST['message'])) {
+  $HasBlank = True;
+} else {
+  $HasBlank = False;
+}
+
+if (!$HasLink && !$HasBlank) {
   notify_admins($_POST['contact'],$_POST['contact_type'],$_POST['message']);
   $discord_msg = $_POST['contact'].' ('.$_POST['contact_type'].') - '.$_POST['message'];
   $discord -> discord_message('Sales Discord Bot', $discord_msg, 'sales');
