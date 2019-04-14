@@ -32,7 +32,7 @@
       $release = "str_to_date('".$_POST['releasedate']."','%Y-%m-%d')";
       $active = $_POST['isactive'];
 
-      $result = $db -> sql_query("INSERT INTO stormguild.raid VALUES (NULL,".$expansion.",".$name.",".$count.",".$release.", ".$path.", NULL, NULL, NULL ".$active.")");
+      $result = $db -> sql_query("INSERT INTO stormguild.raid VALUES (NULL,".$expansion.",".$name.",".$count.",".$release.", ".$path.", NULL, NULL, NULL, ".$active.")");
 
     } else if ($_POST['action'] == 'update' && $_POST['type'] == 'raid') {
 
