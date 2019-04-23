@@ -3,21 +3,25 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/templates/all.user.php';
 include($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
 include($phpbb_root_path . 'config.' . $phpEx);
 include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.discord.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/discord.php';
 
 $discord = new discord();
 
-$HasLink = strpos($_POST['message'], 'http') !== false || strpos($_POST['message'], 'www.') !== false || strpos($_POST['message'], '[/url]') !== false || strpos($_POST['message'], '</a>') !== false;
+$message = $_POST['message'];
+$contact = $_POST['contact'];
+$type = $_POST['contact_type'];
 
-if (empty($_POST['contact']) || empty($_POST['contact_type']) || empty($_POST['message'])) {
+$HasLink = strpos($message, 'http') !== false || strpos($message, 'www.') !== false || strpos($message, '[/url]') !== false || strpos($message, '</a>') !== false;
+
+if (empty($contact) || empty($type) || empty($message)) {
   $HasBlank = True;
 } else {
   $HasBlank = False;
 }
 
 if (!$HasLink && !$HasBlank) {
-  notify_admins($_POST['contact'],$_POST['contact_type'],$_POST['message']);
-  $discord_msg = $_POST['contact'].' ('.$_POST['contact_type'].') - '.$_POST['message'];
+  notify_admins($contact,$type,$message);
+  $discord_msg = $contact . " (" . $type . ") - " . $message;
   $discord -> discord_message('Sales Discord Bot', $discord_msg, 'sales');
 }
 
