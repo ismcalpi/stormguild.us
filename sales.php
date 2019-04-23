@@ -56,7 +56,7 @@
             </div>
           </div>
 
-          <input type="hidden" name="redirect" value="sales.php?status=success">
+          <input type="hidden" name="redirect" value="sales.php">
 
           <div class="form-group">
             <button type="submit" class="btn btn-lg bg-blue">Send</button>

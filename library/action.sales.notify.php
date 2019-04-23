@@ -10,6 +10,7 @@ $discord = new discord();
 $message = $_POST['message'];
 $contact = $_POST['contact'];
 $type = $_POST['contact_type'];
+$error_message = '';
 
 $HasLink = strpos($message, 'http') !== false || strpos($message, 'www.') !== false || strpos($message, '[/url]') !== false || strpos($message, '</a>') !== false;
 
@@ -20,11 +21,23 @@ if (empty($contact) || empty($type) || empty($message)) {
 }
 
 if (!$HasLink && !$HasBlank) {
+
   #notify_admins($contact,$type,$message);
   $discord -> discord_message('Sales Discord Bot', $contact . " (" . $type . ") - " . $message, 'sales');
+  $link = 'https://www.stormguild.us/'.$_POST['redirect'].'?status=success';
+
+} else {
+
+  if ($HasLink) {
+    $error_message = "Message contains a Link. ";
+  } else if ($HasBlank) {
+    $error_message = $error_message . "Form Contains Empty Field.";
+  }
+
+  $link = 'https://www.stormguild.us/'.$_POST['redirect'].'?status=failure&error='.urlencode($error_message);
+  
 }
 
-$link = 'https://www.stormguild.us/'.$_POST['redirect'];
 header("Location: $link");
 
 function notify_admins($contact, $contact_type, $message) {
