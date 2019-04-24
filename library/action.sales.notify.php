@@ -22,7 +22,7 @@ if (empty($contact) || empty($type) || empty($message)) {
 
 if (!$HasLink && !$HasBlank) {
 
-  #notify_admins($contact,$type,$message);
+  notify_admins($contact,$type,$message);
   $discord -> discord_message('Sales Discord Bot', $contact . " (" . $type . ") - " . $message, 'sales');
   $link = 'https://www.stormguild.us/'.$_POST['redirect'].'?status=success';
 
@@ -35,7 +35,7 @@ if (!$HasLink && !$HasBlank) {
   }
 
   $link = 'https://www.stormguild.us/'.$_POST['redirect'].'?status=failure&error='.urlencode($error_message);
-  
+
 }
 
 header("Location: $link");
