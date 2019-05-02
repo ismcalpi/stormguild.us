@@ -21,8 +21,10 @@
 
   $tierlist = $db -> readResults("select raid_id, tier_number from stormguild.raid where tier_number > 0 and is_active = 1");
   foreach ($tierlist as $tier) {
-    echo "Dealing with Tier ".$tier['tier_number']. " <br />"
-    $json = json_decode(file_get_contents('https://www.wowprogress.com/guild/us/stormrage/Storm/rating'.$tier['tier_number'].'/json_rank'));
+    echo "Dealing with Tier ".$tier['tier_number']. " <br />";
+    $link = 'https://www.wowprogress.com/guild/us/stormrage/Storm/rating'.$tier['tier_number'].'/json_rank';
+    echo $link." <br />";
+    $json = json_decode(file_get_contents($link));
     $realm_rank = $json->realm_rank;
     $us_rank = $json->area_rank;
     $update = $db -> writeQuery("update stormguild.raid set realm_rank = ".$realm_rank.", us_rank = ".$us_rank." where raid_id = ".$tier['raid_id']);
