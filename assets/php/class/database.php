@@ -3,16 +3,16 @@
 
 		protected static $connection;
 
-		private function connect($type = 'read') {
+		private function connect($type) {
 			if(!isset(self::$connection)) {
 				$iniPath = $_SERVER['DOCUMENT_ROOT'].'/config/database.ini';
 				$config = parse_ini_file($iniPath);
 				switch ($type) {
 					case 'write':
-                        self::$connection = new mysqli($config['db_address'],$config['write_uid'],$config['write_pwd'],$config['dbname']);
+            self::$connection = new mysqli($config['db_address'],$config['write_uid'],$config['write_pwd'],$config['dbname']);
 						break;
 					case 'read':
-                        self::$connection = new mysqli($config['db_address'],$config['read_uid'],$config['read_pwd'],$config['dbname']);
+            self::$connection = new mysqli($config['db_address'],$config['read_uid'],$config['read_pwd'],$config['dbname']);
 						break;
 				}
 			}
@@ -55,7 +55,7 @@
         }
 
 		public function quote($value) {
-			$connection = $this -> connect();
+			$connection = $this -> connect('read');
 			return "'" . $connection -> real_escape_string($value) . "'";
 		}
 	}
