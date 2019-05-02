@@ -10,8 +10,8 @@
   $current = $db -> readResults('SELECT * FROM stormguild.guild_rank');
   if(!$current) {
     echo "Creating New Row <br />";
-    $sql = $db -> writeQuery('INSERT INTO stormguild.guild_rank VALUES(NULL,'.$world_rank.','.$area_rank.','.$realm_rank.',now(),now())');
-  } else if ($current['world_rank'] != $world_rank || $current['area_rank'] != $area_rank || $current['realm_rank'] != $realm_rank) {
+    $sql = $db -> writeQuery('INSERT INTO stormguild.guild_rank VALUES(NULL,NULL,'.$area_rank.','.$realm_rank.',now(),now())');
+  } else if ($current['area_rank'] != $area_rank || $current['realm_rank'] != $realm_rank) {
     echo "Updating Existing Row <br />";
     $sql = $db -> writeQuery('UPDATE stormguild.guild_rank set area_rank = '.$area_rank.', realm_rank = '.$realm_rank.', update_datetime = now()');
   } else {
