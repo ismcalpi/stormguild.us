@@ -29,6 +29,7 @@
     $sql = "update stormguild.raid set realm_rank = ".$realm_rank.", us_rank = ".$us_rank." where raid_id = ".$tier['raid_id'];
     echo $sql." <br />";
     $update = $db -> writeQuery($sql);
+    echo $update." <br />";
   }
 
 ?>
