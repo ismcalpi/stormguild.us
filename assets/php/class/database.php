@@ -3,18 +3,11 @@
 
 		protected static $connection;
 
-		private function connect($type) {
+		private function connect() {
 			if(!isset(self::$connection)) {
 				$iniPath = $_SERVER['DOCUMENT_ROOT'].'/config/database.ini';
 				$config = parse_ini_file($iniPath);
-				switch ($type) {
-					case 'write':
-            self::$connection = new mysqli($config['db_address'],$config['write_uid'],$config['write_pwd'],$config['dbname']);
-						break;
-					case 'read':
-            self::$connection = new mysqli($config['db_address'],$config['read_uid'],$config['read_pwd'],$config['dbname']);
-						break;
-				}
+        self::$connection = new mysqli($config['db_address'],$config['uid'],$config['pwd'],$config['dbname']);
 			}
 			if(self::$connection === false) {
 				return false;
@@ -24,7 +17,7 @@
 
 		public function readResults($query) {
             $rows = array();
-			$connection = $this -> connect('read');
+			$connection = $this -> connect();
             $result = $connection -> query($query);
 			if($result === false) {
                 return $connection -> error;
@@ -36,7 +29,7 @@
 		}
 
         public function readRow($query) {
-            $connection = $this -> connect('read');
+            $connection = $this -> connect();
             $result = $connection -> query($query);
             if (!$result) {
                 return $connection -> error;
@@ -46,7 +39,7 @@
         }
 
         public function writeQuery($query) {
-            $connection = $this -> connect('write');
+            $connection = $this -> connect();
             $result = $connection -> query($query);
             if($result === false) {
                 return $connection -> error;
@@ -55,7 +48,7 @@
         }
 
 		public function quote($value) {
-			$connection = $this -> connect('read');
+			$connection = $this -> connect();
 			return "'" . $connection -> real_escape_string($value) . "'";
 		}
 	}
