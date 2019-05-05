@@ -2,7 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
 $db = new database();
 
-$rank = $db -> readResults('SELECT * FROM stormguild.guild_rank');
+$rank = $db -> readRow('SELECT * FROM stormguild.guild_rank');
 ?>
 <div class="col-12 g-pa-0 g-ma-0">
 	<a  href="https://www.wowprogress.com/guild/us/stormrage/storm"
