@@ -8,9 +8,9 @@
 			<div class="container g-my-80 g-bg-white" style="min-height:100vh;">
 				<div class="row">
 					<?php
-						include_once 'library/class.database.php';
+						include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
 						$db = new database();
-						$sections = $db -> read_select("select * from stormguild.about_us where is_active = 1 order by a_order asc");
+						$sections = $db -> readResults("select * from stormguild.about_us where is_active = 1 order by a_order asc");
 						foreach($sections as $section) {
 					?>
 					<div class="col-md-<?php echo $section['size']; ?> col-12 g-pa-5">

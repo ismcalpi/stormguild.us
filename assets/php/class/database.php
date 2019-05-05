@@ -28,24 +28,24 @@
 			return $rows;
 		}
 
-        public function readRow($query) {
-            $connection = $this -> connect();
-            $result = $connection -> query($query);
-            if (!$result) {
-                return $connection -> error;
-            }
-            $row = $result -> fetch_assoc();
-            return $row;
+    public function readRow($query) {
+        $connection = $this -> connect();
+        $result = $connection -> query($query);
+        if (!$result) {
+            return $connection -> error;
         }
+        $row = $result -> fetch_assoc();
+        return $row;
+    }
 
-        public function writeQuery($query) {
-            $connection = $this -> connect();
-            $result = $connection -> query($query);
-            if($result === false) {
-                return $connection -> error;
-            }
-            return $connection -> sqlstate;
+    public function writeQuery($query) {
+        $connection = $this -> connect();
+        $result = $connection -> query($query);
+        if($result === false) {
+            return $connection -> error;
         }
+        return $connection -> sqlstate;
+    }
 
 		public function quote($value) {
 			$connection = $this -> connect();
