@@ -1,5 +1,5 @@
 <?php
-include_once 'library/class.database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
 $db = new database();
 ?>
 
@@ -56,7 +56,7 @@ $db = new database();
             </tr>
             <!-- Boss Rows -->
             <?php
-              $raids = $db -> sql_select("SELECT * FROM stormguild.raid ORDER BY release_date DESC");
+              $raids = $db -> readResults("SELECT * FROM stormguild.raid ORDER BY release_date DESC");
               foreach ($raids as $raid) {
             ?>
             <tr>
@@ -86,8 +86,8 @@ $db = new database();
     </div>
 
     <?php
-      $raids = $db -> sql_select("SELECT * FROM stormguild.raid WHERE is_active = TRUE ORDER BY release_date DESC");
-      $maxid = $db -> sql_fetchrow("SELECT raid_id FROM stormguild.raid WHERE is_active = TRUE ORDER BY release_date DESC LIMIT 1");
+      $raids = $db -> readResults("SELECT * FROM stormguild.raid WHERE is_active = TRUE ORDER BY release_date DESC");
+      $maxid = $db -> readRow("SELECT raid_id FROM stormguild.raid WHERE is_active = TRUE ORDER BY release_date DESC LIMIT 1");
       foreach ($raids as $raid) {
         $raidname = strtolower(preg_replace('/\s*/', '', $raid['raid']));
         if ($maxid['raid_id'] == $raid['raid_id']) {
@@ -138,7 +138,7 @@ $db = new database();
             </tr>
             <!-- Boss Rows -->
             <?php
-              $bosses = $db -> sql_select("SELECT * FROM stormguild.boss WHERE raid_id = ".$raid['raid_id']." ORDER BY kill_order asc");
+              $bosses = $db -> readResults("SELECT * FROM stormguild.boss WHERE raid_id = ".$raid['raid_id']." ORDER BY kill_order asc");
               foreach ($bosses as $boss) {
             ?>
             <tr>

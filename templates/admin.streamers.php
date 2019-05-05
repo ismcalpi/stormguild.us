@@ -1,5 +1,5 @@
 <?php
-include_once 'library/class.database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
 $db = new database();
 ?>
 <div class="row g-pa-30">
@@ -24,7 +24,7 @@ $db = new database();
         </form>
       </tr>
       <?php
-        $streamers = $db -> sql_select("SELECT * FROM stormguild.streamers ORDER BY streamer_id DESC");
+        $streamers = $db -> readResults("SELECT * FROM stormguild.streamers ORDER BY streamer_id DESC");
         foreach ($streamers as $streamer) {
       ?>
       <tr>

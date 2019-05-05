@@ -106,9 +106,9 @@
 
 
   <?php
-  include_once 'library/class.database.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
   $db = new database();
-  $banners = $db -> read_select("SELECT * FROM stormguild.banner");
+  $banners = $db -> readResults("SELECT * FROM stormguild.banner");
   foreach($banners as $banner) {
   ?>
 

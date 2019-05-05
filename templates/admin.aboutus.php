@@ -57,9 +57,9 @@
 </form>
 
   <?php
-  include_once 'library/class.database.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
   $db = new database();
-  $sections = $db -> read_select("SELECT * FROM stormguild.about_us ORDER BY a_order ASC");
+  $sections = $db -> readResults("SELECT * FROM stormguild.about_us ORDER BY a_order ASC");
   foreach($sections as $section) {
   ?>
   <form enctype="multipart/form-data" method="post" action="library/action.admin.aboutus.php">
