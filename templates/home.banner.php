@@ -1,8 +1,8 @@
 <div class="master-slider g-ma-0 g-pa-0 ms-skin-default w-100" id="masterslider">
   <?php
-  include_once 'library/class.database.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
   $db = new database();
-  $banners = $db -> read_select("SELECT * FROM stormguild.banner WHERE is_active = 1");
+  $banners = $db -> readResults("SELECT * FROM stormguild.banner WHERE is_active = 1");
   foreach($banners as $banner) {
   ?>
   <div class="ms-slide" data-delay="10">
