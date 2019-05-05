@@ -5,9 +5,9 @@
     <div class="g-flex-middle-item g-pos-rel g-z-index-1 g-py-5 g-px-20 bg-black-0-70">
       <h3 class="h5 text-uppercase text-center">Recruitment</h3>
 <?php
-    include_once 'library/class.database.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
     $db = new database;
-  	$classes = $db -> read_select("SELECT DISTINCT class_name, lower(replace(class_name,' ','')) as class_path, class_color FROM stormguild.recruitment order by class_name asc");
+  	$classes = $db -> readResults("SELECT DISTINCT class_name, lower(replace(class_name,' ','')) as class_path, class_color FROM stormguild.recruitment order by class_name asc");
 ?>
       <div class="row">
 <?php
@@ -17,7 +17,7 @@
 ?>
 		    <div class="col-6 text-left">
 <?php
-		$specs = $db -> read_select("SELECT spec_name, lower(replace(spec_name,' ','')) as spec_path, is_active FROM stormguild.recruitment WHERE class_name ='".$class['class_name']."' order by spec_name asc");
+		$specs = $db -> readResults("SELECT spec_name, lower(replace(spec_name,' ','')) as spec_path, is_active FROM stormguild.recruitment WHERE class_name ='".$class['class_name']."' order by spec_name asc");
 		foreach($specs as $spec) {
 			$imgPath = "assets/img/class/".$class['class_path']."/".$spec['spec_path'].".png";
 			if($spec['is_active'] == TRUE) {
