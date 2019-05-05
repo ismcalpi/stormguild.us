@@ -4,13 +4,13 @@
 		<p class="lead g-px-100--md g-mb-20">Seeking the classes and specs outlined below but always interested in exceptional applicants.</p>
 		<div class="row">
 					<?php
-						include_once 'library/class.database.php';
+						include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
 						$db = new database();
-						$classes = $db -> read_select("SELECT DISTINCT class_name, lower(replace(class_name,' ','')) as class_path, class_color FROM stormguild.recruitment order by class_name asc");
+						$classes = $db -> readResults("SELECT DISTINCT class_name, lower(replace(class_name,' ','')) as class_path, class_color FROM stormguild.recruitment order by class_name asc");
 						foreach($classes as $class) {
 							echo '<div style="color:'.$class['class_color'].';text-transform: uppercase;" class="col-lg-3 col-xs-3 text-right g-my-5"><strong>'.$class['class_name'].'</strong></div>';
 							echo '<div class="col-lg-3 col-xs-3 text-left g-my-5">';
-							$specs = $db -> read_select("SELECT spec_name, lower(replace(spec_name,' ','')) as spec_path, is_active FROM stormguild.recruitment WHERE class_name ='".$class['class_name']."' order by spec_name asc");
+							$specs = $db -> readResults("SELECT spec_name, lower(replace(spec_name,' ','')) as spec_path, is_active FROM stormguild.recruitment WHERE class_name ='".$class['class_name']."' order by spec_name asc");
 							foreach($specs as $spec) {
 								$imgPath = "assets/img/class/".$class['class_path']."/".$spec['spec_path'].".png";
 								if($spec['is_active'] == TRUE) {
