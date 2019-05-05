@@ -1,8 +1,8 @@
 <?php
-include_once 'library/class.database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
 $db = new database();
 
-$rank = $db -> read_row('SELECT * FROM stormguild.guild_rank');
+$rank = $db -> readResults('SELECT * FROM stormguild.guild_rank');
 ?>
 <div class="col-12 g-pa-0 g-ma-0">
 	<a  href="https://www.wowprogress.com/guild/us/stormrage/storm"
@@ -21,7 +21,7 @@ $rank = $db -> read_row('SELECT * FROM stormguild.guild_rank');
 
 <?php
 $firstraid = TRUE;
-$raids = $db -> read_select("SELECT * FROM stormguild.vw_progression");
+$raids = $db -> readResults("SELECT * FROM stormguild.vw_progression");
 
 foreach($raids as $raid) {
 
@@ -62,7 +62,7 @@ foreach($raids as $raid) {
 		<?php
 			$sql = 'SELECT raid_id, boss_id, name, kill_order, DATE_FORMAT(heroic_kill,"%m/%d/%y") as heroic_kill, DATE_FORMAT(mythic_kill,"%m/%d/%y") as mythic_kill
 							FROM stormguild.boss WHERE raid_id = '.$raid['raid_id'].' order by kill_order desc';
-			$bosses = $db -> read_select($sql);
+			$bosses = $db -> readResults($sql);
 			foreach($bosses as $boss) {
 
 				if ($raid['difficulty'] == 'MYTHIC') {
