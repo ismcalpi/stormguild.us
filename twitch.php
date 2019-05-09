@@ -11,10 +11,10 @@
 						<h2 class="h1 text-uppercase g-font-weight-300 u-heading-v2__title"><strong><i class="fa fa-twitch u-tab-line-icon-pro g-mr-3 g-color-purple"></i> Storm Streamers</strong></h2>
 					</div>
 					<?php
-						include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
+						include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
 						$db = new database();
 
-						$results = $db -> read_select("select * from stormguild.streamers where is_active = 1");
+						$results = $db -> readResults("select * from stormguild.streamers where is_active = 1");
 						foreach($results as $result) {
 							$online = intval($result['online']);
 							if($online < 2){
