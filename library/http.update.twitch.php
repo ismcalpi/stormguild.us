@@ -1,10 +1,10 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/library/class.database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/php/class/database.php';
 $db = new database();
 
 $header = array('Accept: application/vnd.twitchtv.v5+json','Client-ID: dixpnolwj0yth0r3wpzxrp2edowugp');
 
-$results = $db -> read_select("select * from stormguild.streamers where is_active = 1");
+$results = $db -> readResults("select * from stormguild.streamers where is_active = 1");
 foreach($results as $result) {
 
   echo "<p>Processing Streamer: ".$result['username']."<br />";
@@ -19,7 +19,7 @@ foreach($results as $result) {
   $url = $db -> quote($channel['url']);
 
   $twitch_sql = "UPDATE stormguild.streamers SET online = ".$online.", displayname = ".$display_name.", logo = ".$stream_logo.", status = ".$stream_message.", url = ".$url." WHERE streamer_id = ".$result['streamer_id'];
-  $twitch_result = $db -> sql_query($twitch_sql);
+  $twitch_result = $db -> writeQuery($twitch_sql);
 
   echo "Query: ".$twitch_sql."</p><br />";
 
