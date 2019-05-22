@@ -4,7 +4,7 @@
     public function discord_message($user,$message,$channel) {
 
       $data = array("content" => $message, "username" => $user);
-      $hookurl = get_hook_url($channel);
+      $hookurl = $this->get_hook_url($channel);
 
       $curl = curl_init($hookurl);
       curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
