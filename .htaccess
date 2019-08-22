@@ -1,7 +1,11 @@
 # Re-route the user to HTTPS if they try to access HTTP
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Guild Website no longer needed, route to 404 always
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^ - [R=404,L]
 
 # Control that Cache
 
@@ -20,3 +24,5 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 <filesMatch ".(css|js|html|jpg|jpeg|png|gif|ico)$">
 Header set Cache-Control "max-age=14400, public"
 </filesMatch>
+
+ErrorDocument 404 /404.shtml
