@@ -1,28 +1,5 @@
-# Re-route the user to HTTPS if they try to access HTTP
-# RewriteEngine On
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
 # Guild Website no longer needed, route to 404 always
 RewriteEngine On
 RewriteRule ^ - [R=404,L]
 
-ErrorDocument 404 https://www.stormguild.us/404.shtml
-
-# Control that Cache
-
-# Turn off caching for php
-<filesMatch ".(php)$">
-	FileETag None
-	<ifModule mod_headers.c>
-		Header unset ETag
-		Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
-		Header set Pragma "no-cache"
-		Header set Expires "Wed, 08 Jan 1975 05:00:00 GMT"
-	</ifModule>
-</filesMatch>
-
-# One Day for Everything else
-<filesMatch ".(css|js|html|jpg|jpeg|png|gif|ico)$">
-Header set Cache-Control "max-age=14400, public"
-</filesMatch>
+ErrorDocument 404 http://www.stormguild.us/404.php
