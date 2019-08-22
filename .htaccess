@@ -7,6 +7,8 @@
 RewriteEngine On
 RewriteRule ^ - [R=404,L]
 
+ErrorDocument 404 https://www.stormguild.us/404.shtml
+
 # Control that Cache
 
 # Turn off caching for php
@@ -24,5 +26,3 @@ RewriteRule ^ - [R=404,L]
 <filesMatch ".(css|js|html|jpg|jpeg|png|gif|ico)$">
 Header set Cache-Control "max-age=14400, public"
 </filesMatch>
-
-ErrorDocument 404 http://www.stormguild.us/404.shtml
