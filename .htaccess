@@ -25,4 +25,4 @@ RewriteRule ^ - [R=404,L]
 Header set Cache-Control "max-age=14400, public"
 </filesMatch>
 
-ErrorDocument 404 /404.shtml
+ErrorDocument 404 http://www.stormguild.us/404.shtml
