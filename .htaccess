@@ -1,5 +1,3 @@
 # Guild Website no longer needed, route to 404 always
 RewriteEngine On
 RewriteRule ^ - [R=404,L]
-
-ErrorDocument 404 /404.php
